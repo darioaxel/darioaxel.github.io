@@ -1,0 +1,2 @@
+import "/home/darioaxel/Proyectos/darioaxel.github.io/node_modules/.pnpm/@vuepress+plugin-markdown-image@2.0.0-rc.112_markdown-it@14.1.0_vuepress@2.0.0-rc.24_@v_d3c8f25da6d7e30a96f2f75b492c1708/node_modules/@vuepress/plugin-markdown-image/lib/client/styles/figure.css"
+
