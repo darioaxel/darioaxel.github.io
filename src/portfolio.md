@@ -16,7 +16,7 @@ footer: false
 
 ## Description
 
-This is a portfolio home page demo.
+This is a portfolio home page demo. funciona??
 
 To use this layout, you should set `home: true` and `portfolio: true` in the page front matter.
 
