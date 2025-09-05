@@ -1,2 +1,0 @@
-    import "/home/darioaxel/Proyectos/darioaxel.github.io/node_modules/.pnpm/@vuepress+plugin-markdown-ext@2.0.0-rc.112_markdown-it@14.1.0_vuepress@2.0.0-rc.24_@vue_f93d490b9f771f7160e9e796c382ecb9/node_modules/@vuepress/plugin-markdown-ext/lib/client/styles/footnote.css"
-    import "/home/darioaxel/Proyectos/darioaxel.github.io/node_modules/.pnpm/@vuepress+plugin-markdown-ext@2.0.0-rc.112_markdown-it@14.1.0_vuepress@2.0.0-rc.24_@vue_f93d490b9f771f7160e9e796c382ecb9/node_modules/@vuepress/plugin-markdown-ext/lib/client/styles/tasklist.css"
