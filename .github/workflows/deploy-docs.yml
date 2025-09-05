@@ -24,16 +24,16 @@ jobs:
         uses: pnpm/action-setup@v4
         with:
           version: 8
-          
-      - name: Install dependencies
-        run: pnpm install
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 22
           cache: pnpm
-
+      
+      - name: List repository files
+        run: ls -la
+        
       - name: Install Deps
         run: |
           corepack enable
