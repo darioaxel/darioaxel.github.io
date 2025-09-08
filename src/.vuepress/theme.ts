@@ -7,13 +7,13 @@ export default hopeTheme({
   hostname: "https://vuepress-theme-hope-docs-demo.netlify.app",
 
   author: {
-    name: "Mr.Hope",
-    url: "https://mister-hope.com",
+    name: "darioaxel",
+    url: "darioaxel.dev",
   },
 
-  logo: "https://theme-hope-assets.vuejs.press/logo.svg",
+  logo: "assets/image/space-invader-icon.svg",
 
-  repo: "vuepress-theme-hope/vuepress-theme-hope",
+  repo: "github.com/darioaxel/darioaxel.dev",
 
   docsDir: "src",
 
@@ -44,6 +44,7 @@ export default hopeTheme({
   markdown: {
     align: true,
     attrs: true,
+    alert: true,
     codeTabs: true,
     component: true,
     demo: true,
@@ -74,53 +75,15 @@ export default hopeTheme({
     tasklist: true,
     vPre: true,
 
-    // uncomment these if you need TeX support
-    // math: {
-    //   // install katex before enabling it
-    //   type: "katex",
-    //   // or install mathjax-full before enabling it
-    //   type: "mathjax",
-    // },
-
-    // install chart.js before enabling it
-    // chartjs: true,
-
-    // install echarts before enabling it
-    // echarts: true,
-
-    // install flowchart.ts before enabling it
-    // flowchart: true,
-
-    // install mermaid before enabling it
-    // mermaid: true,
-
-    // playground: {
-    //   presets: ["ts", "vue"],
-    // },
-
-    // install @vue/repl before enabling it
-    // vuePlayground: true,
-
-    // install sandpack-vue3 before enabling it
-    // sandpack: true,
-
-    // install @vuepress/plugin-revealjs and uncomment these if you need slides
-    // revealjs: {
-    //   plugins: ["highlight", "math", "search", "notes", "zoom"],
-    // },
+   
   },
 
   plugins: {
-    // Note: This is for testing ONLY!
-    // You MUST generate and use your own comment service in production.
-    comment: {
-      provider: "Giscus",
-      repo: "vuepress-theme-hope/giscus-discussions",
-      repoId: "R_kgDOG_Pt2A",
-      category: "Announcements",
-      categoryId: "DIC_kwDOG_Pt2M4COD69",
+    blog: {   
+      filter: (page) =>
+        page.frontmatter.type === "article",
+    article: "/blog/article/",    
     },
-
     components: {
       components: ["Badge", "VPCard"],
     },
@@ -129,61 +92,6 @@ export default hopeTheme({
       prefix: "fa6-solid:",
     },
 
-    // install @vuepress/plugin-pwa and uncomment these if you want a PWA
-    // pwa: {
-    //   favicon: "/favicon.ico",
-    //   cacheHTML: true,
-    //   cacheImage: true,
-    //   appendBase: true,
-    //   apple: {
-    //     icon: "/assets/icon/apple-icon-152.png",
-    //     statusBarColor: "black",
-    //   },
-    //   msTile: {
-    //     image: "/assets/icon/ms-icon-144.png",
-    //     color: "#ffffff",
-    //   },
-    //   manifest: {
-    //     icons: [
-    //       {
-    //         src: "/assets/icon/chrome-mask-512.png",
-    //         sizes: "512x512",
-    //         purpose: "maskable",
-    //         type: "image/png",
-    //       },
-    //       {
-    //         src: "/assets/icon/chrome-mask-192.png",
-    //         sizes: "192x192",
-    //         purpose: "maskable",
-    //         type: "image/png",
-    //       },
-    //       {
-    //         src: "/assets/icon/chrome-512.png",
-    //         sizes: "512x512",
-    //         type: "image/png",
-    //       },
-    //       {
-    //         src: "/assets/icon/chrome-192.png",
-    //         sizes: "192x192",
-    //         type: "image/png",
-    //       },
-    //     ],
-    //     shortcuts: [
-    //       {
-    //         name: "Demo",
-    //         short_name: "Demo",
-    //         url: "/demo/",
-    //         icons: [
-    //           {
-    //             src: "/assets/icon/guide-maskable.png",
-    //             sizes: "192x192",
-    //             purpose: "maskable",
-    //             type: "image/png",
-    //           },
-    //         ],
-    //       },
-    //     ],
-    //   },
-    // },
+   
   },
 });

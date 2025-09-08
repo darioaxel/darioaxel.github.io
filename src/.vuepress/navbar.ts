@@ -2,30 +2,43 @@ import { navbar } from "vuepress-theme-hope";
 
 export default navbar([
   "/",
-  "/portfolio",
-  "/demo/",
   {
-    text: "Guide",
+    text: "Docencia",
     icon: "lightbulb",
-    prefix: "/guide/",
+    prefix: "/docencia/",
     children: [
       {
-        text: "Bar",
+        text: "CFGS DAM/DAW",
         icon: "lightbulb",
-        prefix: "bar/",
-        children: ["baz", { text: "...", icon: "ellipsis", link: "#" }],
+        prefix: "dam-daw/", 
+        children: [{ text: "0484 Bases de Datos", link: "basesdatos/" },
+          { text: "0613 Desarrollo Web Entorno Servidor", link: "DWES/" },
+        ],       
+      },
+       {
+        text: "CFGS ASIR",
+        icon: "lightbulb",
+        prefix: "asir/",
+        children: [{ text: "0378 Gestión Bases de Datos", link: "gestionbasesdatos/" },
+          { text: "0378 Admon. Sistemas Gestores BBDD", link: "admonsgbd/" }
+        ],
       },
       {
-        text: "Foo",
+        text: "Ciclos Expecialización",
         icon: "lightbulb",
-        prefix: "foo/",
-        children: ["ray", { text: "...", icon: "ellipsis", link: "#" }],
+        prefix: "ce/",
+        children: [{ text: "Programación para IA", link: "pia/" }],
       },
     ],
-  },
+  }, 
   {
-    text: "V2 Docs",
+    text: "Blog",
     icon: "book",
-    link: "https://theme-hope.vuejs.press/",
+    link: "/blog/",
+  },   
+  {
+    text: "Proyectos",
+    icon: "book",
+    link: "/proyectos/",
   },
 ]);
