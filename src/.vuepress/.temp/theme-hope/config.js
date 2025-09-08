@@ -3,6 +3,8 @@ import { Layout, NotFound, injectDarkMode, setupDarkMode, setupSidebarItems, scr
 import { defineCatalogInfoGetter } from "/home/darioaxel/Proyectos/darioaxel.github.io/node_modules/.pnpm/@vuepress+plugin-catalog@2.0.0-rc.112_vuepress@2.0.0-rc.24_@vuepress+bundler-vite@2.0.0_e1ca3f25526a5c94bfe0aa18bfe2ca2b/node_modules/@vuepress/plugin-catalog/lib/client/index.js"
 import { h } from "vue"
 import { resolveComponent } from "vue"
+import { Blog, BloggerInfo, SocialMedias, setupBlog } from "/home/darioaxel/Proyectos/darioaxel.github.io/node_modules/.pnpm/vuepress-theme-hope@2.0.0-rc.94_markdown-it@14.1.0_sass-embedded@1.92.0_sass@1.92.0_vue_50af93d90cdc6233d775127c7e20588c/node_modules/vuepress-theme-hope/lib/bundle/exports/blog.js";
+import "/home/darioaxel/Proyectos/darioaxel.github.io/node_modules/.pnpm/vuepress-theme-hope@2.0.0-rc.94_markdown-it@14.1.0_sass-embedded@1.92.0_sass@1.92.0_vue_50af93d90cdc6233d775127c7e20588c/node_modules/vuepress-theme-hope/lib/bundle/styles/blog/bundle.scss";
 import { GlobalEncrypt, LocalEncrypt } from "/home/darioaxel/Proyectos/darioaxel.github.io/node_modules/.pnpm/vuepress-theme-hope@2.0.0-rc.94_markdown-it@14.1.0_sass-embedded@1.92.0_sass@1.92.0_vue_50af93d90cdc6233d775127c7e20588c/node_modules/vuepress-theme-hope/lib/bundle/exports/encrypt.js";
 import "/home/darioaxel/Proyectos/darioaxel.github.io/node_modules/.pnpm/vuepress-theme-hope@2.0.0-rc.94_markdown-it@14.1.0_sass-embedded@1.92.0_sass@1.92.0_vue_50af93d90cdc6233d775127c7e20588c/node_modules/vuepress-theme-hope/lib/bundle/styles/encrypt/bundle.scss"
 
@@ -37,17 +39,19 @@ export default {
     // inject global properties
     injectDarkMode(app);
 
+    app.component("BloggerInfo", BloggerInfo);
+    app.component("SocialMedias", SocialMedias);
     app.component("GlobalEncrypt", GlobalEncrypt);
     app.component("LocalEncrypt", LocalEncrypt);
   },
   setup: () => {
     setupDarkMode();
     setupSidebarItems();
-
+    setupBlog();
   },
   layouts: {
     Layout,
     NotFound,
-
+    Blog,
   }
 };

@@ -1,0 +1,16 @@
+import comp from "/home/darioaxel/Proyectos/darioaxel.github.io/src/.vuepress/.temp/pages/blog/article/adaptacion-theme-hope.html.vue"
+const data = JSON.parse("{\"path\":\"/blog/article/adaptacion-theme-hope.html\",\"title\":\"Adaptación de Theme Hope para mi Blog\",\"lang\":\"en-US\",\"frontmatter\":{\"title\":\"Adaptación de Theme Hope para mi Blog\",\"date\":\"2025-06-23T00:00:00.000Z\",\"category\":[\"Blog\"],\"tag\":[\"Vue\",\"Nuxt\",\"Theme Hope\"],\"type\":\"article\",\"description\":\"Adaptación de Theme Hope para mi Blog Descripción del Proyecto Este proyecto es una API RESTful desarrollada con Django y PostgreSQL para el testeo de futuros usos en los módulo...\",\"head\":[[\"script\",{\"type\":\"application/ld+json\"},\"{\\\"@context\\\":\\\"https://schema.org\\\",\\\"@type\\\":\\\"Article\\\",\\\"headline\\\":\\\"Adaptación de Theme Hope para mi Blog\\\",\\\"image\\\":[\\\"https://vuepress-theme-hope-docs-demo.netlify.app/images/bbdd/01_image_1.png\\\"],\\\"datePublished\\\":\\\"2025-06-23T00:00:00.000Z\\\",\\\"dateModified\\\":null,\\\"author\\\":[{\\\"@type\\\":\\\"Person\\\",\\\"name\\\":\\\"darioaxel\\\",\\\"url\\\":\\\"darioaxel.dev\\\"}]}\"],[\"meta\",{\"property\":\"og:url\",\"content\":\"https://vuepress-theme-hope-docs-demo.netlify.app/blog/article/adaptacion-theme-hope.html\"}],[\"meta\",{\"property\":\"og:site_name\",\"content\":\"Docs Demo\"}],[\"meta\",{\"property\":\"og:title\",\"content\":\"Adaptación de Theme Hope para mi Blog\"}],[\"meta\",{\"property\":\"og:description\",\"content\":\"Adaptación de Theme Hope para mi Blog Descripción del Proyecto Este proyecto es una API RESTful desarrollada con Django y PostgreSQL para el testeo de futuros usos en los módulo...\"}],[\"meta\",{\"property\":\"og:type\",\"content\":\"article\"}],[\"meta\",{\"property\":\"og:image\",\"content\":\"https://vuepress-theme-hope-docs-demo.netlify.app/images/bbdd/01_image_1.png\"}],[\"meta\",{\"property\":\"og:locale\",\"content\":\"en-US\"}],[\"meta\",{\"property\":\"article:tag\",\"content\":\"Theme Hope\"}],[\"meta\",{\"property\":\"article:tag\",\"content\":\"Nuxt\"}],[\"meta\",{\"property\":\"article:tag\",\"content\":\"Vue\"}],[\"meta\",{\"property\":\"article:published_time\",\"content\":\"2025-06-23T00:00:00.000Z\"}]]},\"readingTime\":{\"minutes\":0.48,\"words\":145},\"filePathRelative\":\"blog/article/adaptacion-theme-hope.md\",\"excerpt\":\"\\n<h2>Descripción del Proyecto</h2>\\n<p>Este proyecto es una API RESTful desarrollada con Django y PostgreSQL para el testeo de futuros<br>\\nusos en los módulos.</p>\\n<h2>Software a utilizar</h2>\\n<ul>\\n<li>Python: 3.11 (última estable)</li>\\n<li>Django: 5.2.3 (última estable, requiere Python ≥3.10)</li>\\n<li>PostgreSQL: 17 (última estable, disponible como imagen oficial en Docker)</li>\\n<li>Poetry: para gestión de dependencias y entorno virtual</li>\\n<li>Docker y Docker Compose: para contenerización</li>\\n</ul>\",\"autoDesc\":true}")
+export { comp, data }
+
+if (import.meta.webpackHot) {
+  import.meta.webpackHot.accept()
+  if (__VUE_HMR_RUNTIME__.updatePageData) {
+    __VUE_HMR_RUNTIME__.updatePageData(data)
+  }
+}
+
+if (import.meta.hot) {
+  import.meta.hot.accept(({ data }) => {
+    __VUE_HMR_RUNTIME__.updatePageData(data)
+  })
+}
