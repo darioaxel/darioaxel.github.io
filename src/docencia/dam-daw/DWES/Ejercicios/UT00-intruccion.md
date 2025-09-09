@@ -1,6 +1,6 @@
 ---
 title: Ejercicios UT00. Introducción
-icon: circle-info
+icon: pen
 ---
 # Hola a todo el mundo
 Ey ho!
