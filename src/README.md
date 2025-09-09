@@ -8,7 +8,7 @@ bgImageDark: https://theme-hope-assets.vuejs.press/bg/6-dark.svg
 bgImageStyle:
   background-attachment: fixed
 heroText: darioaxel.dev
-tagline:  Mi nombre es Darío Ureña y soy Profe de FPs e Ingeniero en Informática.         
+tagline:  Mi nombre es Darío Ureña y soy Profe de FPs e Ingeniero en Informática. Este es mi repositorio de documentos para la docucencia que se encuentra... EN CONTRUCCIÓN :-)        
 actions:
   - text: Docencia
     icon: lightbulb

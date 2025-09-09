@@ -1,8 +1,46 @@
 <template><div><h1 id="ut00-introduccion" tabindex="-1"><a class="header-anchor" href="#ut00-introduccion"><span>UT00 Introducción</span></a></h1>
+<p>El módulo Desarrollo Web en Entorno Servidor (DWES) es el de mayor cantidad de horas de trabajo dentro del segundo curso del ciclo DAW.</p>
+<p>Este módulo profesional tiene como objetivo principal capacitar a los estudiantes en el desarrollo de aplicaciones web dinámicas y funcionales utilizando tecnologías del lado del servidor. A lo largo del curso, los estudiantes aprenderán a diseñar, implementar y mantener aplicaciones web que interactúan con bases de datos, gestionan sesiones de usuario y proporcionan una experiencia de usuario enriquecida.</p>
+<p>Para lograr estos objetivos, se abordarán multiples aspectos cruciales dentro del desarrollo de aplicaciones:</p>
+<ul>
+<li>Se trabajará con herramientas de control de versiones e IDEs modernos.</li>
+<li>Se profundizará en el conocimiento de arquitecturas y patrones de desarrollo.</li>
+<li>Se estudiarán diversos protocolos de comunicaciones entre servidores y clientes.</li>
+<li>Se implementaran soluciones para administrar la seguridad de sitios web.</li>
+<li>Se abordarán las técnicas de testing de aplicaciones y el desarrollo de test en entornos web.</li>
+<li>Y, sobretodo, se aprenderá a programar en múltiples lenguajes aplicando los conocimientos del módulo de primero.</li>
+</ul>
+<p>Debido a la complejidad del contenido que se abordará en el módulo, es fundamental que los estudiantes tengan una base sólida de conocimientos.</p>
+<p>Aunque la mayoría de los siguientes temas se han tratado en módulos del primer curso, se recomienda refrescar los conocimientos utilizando los recursos que se proporcionan en esta unidad.</p>
+<p>Para todo aquel alumnado que no haya visto alguno de los temas que se listan a continuación, será<br>
+necesario que dedique tiempo a estudiar y comprender estos conceptos antes de avanzar en el módulo DWES.</p>
+<h2 id="_1-entornos-de-desarrollo-ides-visual-studio-code" tabindex="-1"><a class="header-anchor" href="#_1-entornos-de-desarrollo-ides-visual-studio-code"><span>1. Entornos de Desarrollo IDEs - Visual Studio Code</span></a></h2>
 <h2 id="_2-control-de-versiones" tabindex="-1"><a class="header-anchor" href="#_2-control-de-versiones"><span>2. Control de Versiones</span></a></h2>
+<ul>
+<li><em><strong>¿Qué es un sistema de control de versiones?</strong></em></li>
+</ul>
 <p>Un Sistema de Control de Versiones (VCS) es una herramienta que registra los cambios realizados sobre un archivo o conjunto de archivos a lo largo del tiempo, de modo que puedas recuperar versiones específicas más adelante. Git es un sistema de control de versiones distribuido, diseñado para gestionar y rastrear cambios en archivos y proyectos de software. Fue creado por Linus Torvalds en 2005 como una alternativa al sistema de control de versiones centralizado llamado Subversion (SVN).</p>
-<p>Git permite a los desarrolladores trabajar en colaboración en un proyecto, manteniendo un historial completo de todos los cambios realizados en los archivos. Cada vez que se realiza una modificación en un archivo, Git registra esos cambios y permite a los desarrolladores rastrear quién hizo cada cambio, cuándo se realizó y qué se modificó específicamente. Una de las características destacadas de Git es su capacidad para trabajar de forma distribuida. Esto significa que cada desarrollador tiene una copia completa del repositorio de Git en su máquina local, lo que les permite trabajar de manera independiente y luego fusionar sus cambios cuando sea necesario. Esto facilita la colaboración en equipos distribuidos y permite trabajar sin conexión a internet. Git utiliza una estructura de árbol de commits para mantener un historial de versiones. Los commits representan instantáneas de los archivos en un momento dado y se organizan en ramas, que permiten el desarrollo paralelo de diferentes características o soluciones. Además, Git ofrece herramientas para crear ramas, fusionar cambios, revertir modificaciones y resolver conflictos cuando dos o más personas modifican el mismo archivo simultáneamente.</p>
-<p>GitHub es una plataforma en línea que utiliza el sistema de control de versiones Git para alojar y administrar proyectos de software. Es un servicio basado en la nube que proporciona un entorno colaborativo para que los desarrolladores trabajen juntos en proyectos, compartan código y realicen un seguimiento de los cambios. En GitHub, los desarrolladores pueden crear repositorios para almacenar y organizar su código fuente. Cada repositorio es una colección de archivos y carpetas, junto con un historial completo de cambios realizado mediante Git. Los repositorios en GitHub son públicos de forma predeterminada, lo que significa que cualquier persona puede verlos y contribuir a ellos. Sin embargo, también es posible crear repositorios privados para proyectos que requieren confidencialidad. GitHub permite a los desarrolladores colaborar en proyectos al permitirles clonar (copiar) un repositorio en sus máquinas locales, realizar cambios y enviar &quot;pull requests&quot; para proponer modificaciones al proyecto principal. Los propietarios del repositorio pueden revisar los cambios y fusionarlos si son apropiados.</p>
+<ul>
+<li><em><strong>Git y GitHub</strong></em></li>
+</ul>
+<p>Linus Torvalds creó Git en 2005 como respuesta directa a una situación urgente: la comunidad del núcleo Linux perdió el acceso gratuito a BitKeeper, el sistema propietario de control de versiones que empleaban desde 2002. Torvalds sintió que ninguna alternativa existente, como CVS o Subversion, era suficientemente rápida ni adecuada para el gran volumen de archivos que manejaba el kernel de Linux.</p>
+<p>Movido por la necesidad, diseñó Git en apenas diez días para lograr eficiencia, estabilidad y descentralización, permitiendo que cada copia de un repositorio fuera autónoma y completa, sin depender de servidores centrales<br>
+Git permite a los desarrolladores trabajar en colaboración en un proyecto, manteniendo un historial completo de todos los cambios realizados en los archivos. Cada vez que se realiza una modificación en un archivo, Git registra esos cambios y permite a los desarrolladores rastrear quién hizo cada cambio, cuándo se realizó y qué se modificó específicamente.</p>
+<p>Una de las características destacadas de Git es su capacidad para trabajar de forma distribuida. Esto significa que <strong>cada desarrollador tiene una copia completa del repositorio de Git en su máquina local</strong>, lo que les permite trabajar de manera independiente y luego <strong>fusionar</strong> sus cambios cuando sea necesario. Esto facilita la colaboración en equipos distribuidos y permite trabajar sin conexión a internet.</p>
+<p>Git utiliza una <strong>estructura de árbol de commits</strong> para mantener un historial de versiones. Los commits representan instantáneas de los archivos en un momento dado y se organizan en ramas, que permiten el desarrollo paralelo de diferentes características o soluciones.</p>
+<p>Además, Git ofrece herramientas para crear ramas, fusionar cambios, revertir modificaciones y resolver conflictos cuando dos o más personas modifican el mismo archivo simultáneamente.</p>
+<ul>
+<li><em><strong>Documentación para aprender a usar Git</strong></em></li>
+</ul>
+<p>En los dos enlaces que se proporcionan a continuación, puedes encontrar documentación oficial y tutoriales para aprender a usar Git y GitHub:</p>
+<ul>
+<li><a href="https://iescelia.org/docs/dwes/_site/scv-git/" target="_blank" rel="noopener noreferrer">Apuntes IES Celia Viñas (Almería)</a></li>
+<li><a href="https://github.com/joseluisgs/git-tutorial" target="_blank" rel="noopener noreferrer">Apuntes de Jose Luis GS</a></li>
+</ul>
+<h2 id="enlaces-de-interes" tabindex="-1"><a class="header-anchor" href="#enlaces-de-interes"><span>Enlaces de interés</span></a></h2>
+<ul>
+<li>Entrevista especial a Linus Torvalds por el 20º aniversario, organizada por GitHub: <RouteLink to="/docencia/dam-daw/DWES/skatox.com/blog/2025/06/23/entrevista-a-linus-torvalds-por-los-20-anos-de-git/">Enlace</RouteLink></li>
+</ul>
 </div></template>
 
 

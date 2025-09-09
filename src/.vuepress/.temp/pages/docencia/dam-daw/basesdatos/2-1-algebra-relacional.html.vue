@@ -1,6 +1,6 @@
 <template><div><h1 id="motivacion" tabindex="-1"><a class="header-anchor" href="#motivacion"><span>Motivación</span></a></h1>
 <div class="hint-container info">
-<p class="hint-container-title">Info</p>
+<p class="hint-container-title">Información</p>
 <p>En los apuntes anteriores hablamos de cómo SQL es un lenguaje de programación <strong>declarativo</strong>. Esto significa que especificas <strong>qué</strong> quieres, pero no <strong>cómo</strong> obtenerlo. Esto es genial desde la perspectiva del usuario, ya que hace que las consultas sean mucho más fáciles de escribir.</p>
 <p>Sin embargo, como ingenieros de bases de datos, a menudo queremos un lenguaje más <strong>expresivo</strong>. Cuando estudiemos la <strong>optimización de consultas</strong> dentro de unas semanas, necesitaremos una forma de expresar los distintos planes válidos que una base de datos puede usar para ejecutar una consulta.</p>
 <p>Para esto usaremos el <strong>Álgebra Relacional</strong>, un lenguaje de programación <strong>procedimental</strong> (lo que significa que la consulta especifica exactamente qué operadores usar y en qué orden).</p>
