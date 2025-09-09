@@ -38,15 +38,107 @@ servidor y repositorios heterogéneos de información. |
 
 
 #### Criterios de evaluación:
-a) Se han caracterizado y diferenciado los modelos de ejecución de código en el servidor y en
-el cliente Web.
-b) Se han reconocido las ventajas que proporciona la generación dinámica de páginas Web y
-sus diferencias con la inclusión de sentencias de guiones en el interior de las páginas Web.
+##### RA 1 #####
+Criterios de evaluación:
+a) Se han caracterizado y diferenciado los modelos de ejecución de código en el servidor y
+en el cliente Web.
+b) Se han reconocido las ventajas que proporciona la generación dinámica de páginas.
 c) Se han identificado los mecanismos de ejecución de código en los servidores Web.
 d) Se han reconocido las funcionalidades que aportan los servidores de aplicaciones y su
 integración con los servidores Web.
-e) Se han identificado y caracterizado los principales lenguajes y tecnologías relacionados con
-la programación Web en entorno servidor.
+e) Se han identificado y caracterizado los principales lenguajes y tecnologías relacionados
+con la programación Web en entorno servidor.
 f) Se han verificado los mecanismos de integración de los lenguajes de marcas con los
 lenguajes de programación en entorno servidor.
-g) Se han reconocido y evaluado las herramientas de programación en entorno servidor.
+g) Se han reconocido y evaluado las herramientas y frameworks de programación en
+entorno servidor.
+
+##### RA 2 #####
+Criterios de evaluación:
+a) Se han reconocido los mecanismos de generación de páginas Web a partir de lenguajes
+de marcas con código embebido.
+b) Se han identificado las principales tecnologías asociadas.
+c) Se han utilizado etiquetas para la inclusión de código en el lenguaje de marcas.
+d) Se ha reconocido la sintaxis del lenguaje de programación que se ha de utilizar.
+e) Se han escrito sentencias simples y se han comprobado sus efectos en el documento
+resultante.
+f) Se han utilizado directivas para modificar el comportamiento predeterminado.
+g) Se han utilizado los distintos tipos de variables y operadores disponibles en el lenguaje.
+h) Se han identificado los ámbitos de utilización de las variables.
+
+##### RA 3 #####
+Criterios de evaluación:
+a) Se han utilizado mecanismos de decisión en la creación de bloques de sentencias.
+b) Se han utilizado bucles y se ha verificado su funcionamiento.
+c) Se han utilizado matrices (arrays) para almacenar y recuperar conjuntos de datos.
+d) Se han creado y utilizado funciones.
+e) Se han utilizado formularios web para interactuar con el usuario del navegador web.
+f) Se han empleado métodos para recuperar la información introducida en el formulario.
+g) Se han añadido comentarios al código.
+
+##### RA 4 #####
+Criterios de evaluación:
+a) Se han identificado los mecanismos disponibles para el mantenimiento de la información
+que concierne a un cliente web concreto y se han señalado sus ventajas.
+b) Se han utilizado mecanismos para mantener el estado de las aplicaciones Web.
+c) Se han utilizado mecanismos para almacenar información en el cliente Web y para recuperar su contenido.
+d) Se han identificado y caracterizado los mecanismos disponibles para la autentificación de usuarios.
+e) Se han escrito aplicaciones que integren mecanismos de autentificación de usuarios.
+f) Se han utilizado herramientas y entornos para facilitar la programación, prueba y depuración del código.
+
+##### RA 5 #####
+Criterios de evaluación:
+a) Se han identificado las ventajas de separar la lógica de negocio de los aspectos de presentación de la aplicación.
+b) Se han analizado y utilizado mecanismos y frameworks que permiten realizar esta separación y sus características principales.
+c) Se han utilizado objetos y controles en el servidor para generar el aspecto visual de la aplicación web en el cliente.
+d) Se han utilizado formularios generados de forma dinámica para responder a los eventos de la aplicación Web.
+e) Se han identificado y aplicado los parámetros relativos a la configuración de la aplicación Web.
+f) Se han escrito aplicaciones Web con mantenimiento de estado y separación de la lógica de negocio.
+g) Se han aplicado los principios y patrones de diseño de la programación orientada a objetos.
+h) Se ha probado y documentado el código.
+
+##### RA 6 #####
+Criterios de evaluación:
+a) Se han analizado las tecnologías que permiten el acceso mediante programación a la
+información disponible en almacenes de datos.
+b) Se han creado aplicaciones que establezcan conexiones con bases de datos.
+c) Se ha recuperado información almacenada en bases de datos.
+d) Se ha publicado en aplicaciones web la información recuperada.
+e) Se han utilizado conjuntos de datos para almacenar la información.
+f) Se han creado aplicaciones web que permitan la actualización y la eliminación de
+información disponible en una base de datos.
+g) Se han utilizado transacciones para mantener la consistencia de la información.
+h) Se han probado y documentado las aplicaciones.
+
+##### RA 7 #####
+Criterios de evaluación:
+a) Se han reconocido las características propias y el ámbito de aplicación de los servicios Web.
+b) Se han reconocido las ventajas de utilizar servicios Web para proporcionar acceso a funcionalidades incorporadas a la lógica de negocio de una aplicación.
+c) Se han identificado las tecnologías y los protocolos implicados en el consumo de servicios Web.
+d) Se han utilizado los estándares y arquitecturas más difundidos e implicados en el desarrollo de servicios Web.
+e) Se ha programado un servicio Web.
+f) Se ha verificado el funcionamiento del servicio Web.
+g) Se ha consumido el servicio Web.
+h) Se ha documentado un servicio Web.
+
+##### RA 8 #####
+Criterios de evaluación:
+a) Se han identificado las diferencias entre la ejecución de código en el servidor y en el cliente Web.
+b) Se han reconocido las ventajas de unir ambas tecnologías en el proceso de desarrollo de programas.
+c) Se han identificado las tecnologías y frameworks relacionadas con la generación por parte del servidor de páginas Web con guiones embebidos.
+d) Se han utilizado estas tecnologías y frameworks para generar páginas Web que incluyan interacción con el usuario en forma de advertencias y peticiones de confirmación.
+e) Se han utilizado estas tecnologías y frameworks, para generar páginas Web que incluyan verificación de formularios.
+f) Se han utilizado estas tecnologías y frameworks para generar páginas web que incluyan modificación dinámica de su contenido y su estructura.
+g) Se han aplicado estas tecnologías y frameworks en la programación de aplicaciones Web.
+
+##### RA 9 #####
+Criterios de evaluación:
+a) Se han reconocido las ventajas que proporciona la reutilización de código y el provechamiento de información ya existente.
+b) Se han identificado tecnologías y frameworks aplicables en la creación de aplicaciones web híbridas.
+c) Se ha creado una aplicación web que recupere y procese repositorios de información ya existentes.
+d) Se han creado repositorios específicos a partir de información existente en almacenes de información.
+e) Se han utilizado librerías de código y frameworks para incorporar funcionalidades específicas a una aplicación web.
+f) Se han programado servicios y aplicaciones web utilizando como base información y código generados por terceros.
+g) Se han analizado y utilizado librerías de código relacionadas con Big Data e inteligencia de negocios, para incorporar análisis e inteligencia de datos proveniente de repositorios.
+h) Se han probado, depurado y documentado las aplicaciones generadas.
+
