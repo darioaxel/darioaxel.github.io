@@ -247,7 +247,7 @@ Robert C. Martin también publicó uno de los libros de cabecera que casi todo p
 </li>
 </ol>
 <div class="hint-container important">
-<p class="hint-container-title">Important</p>
+<p class="hint-container-title">Importante</p>
 <p>Las API web son fundamentales en el desarrollo de aplicaciones modernas, ya que permiten la integración de diferentes servicios y la creación de aplicaciones más flexibles y escalables.</p>
 </div>
 <figure><img src="/images/dwes/apis.gif" alt="apis" tabindex="0" loading="lazy"><figcaption>apis</figcaption></figure>

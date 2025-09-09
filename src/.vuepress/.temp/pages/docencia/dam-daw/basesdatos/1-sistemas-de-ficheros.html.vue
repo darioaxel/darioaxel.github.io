@@ -5,7 +5,7 @@
 <p><em>R.A.1.</em> Reconoce los elementos de las bases de datos analizando sus funciones y valorando la utilidad de sistemas gestores.</p>
 </blockquote>
 <div class="hint-container info">
-<p class="hint-container-title">Info</p>
+<p class="hint-container-title">Información</p>
 <p><strong>Caso Práctico</strong></p>
 <p>A la empresa <strong>BK Sistemas Informáticos</strong> le ha surgido un nuevo proyecto a desarrollar para un pequeño taller mecánico.</p>
 <p>El analista del que dispone la empresa ha estado hablando con ellos y ha concluido que su actividad consiste en la reparación de vehículos de todas las marcas tanto de mecánica, como de chapa y pintura y electricidad.</p>
