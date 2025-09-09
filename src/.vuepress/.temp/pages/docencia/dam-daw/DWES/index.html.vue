@@ -68,15 +68,19 @@
 </tr>
 <tr>
 <td>RA7.</td>
-<td>Desarrolla servicios Web analizando su funcionamiento e implantando la estructura de sus componentes.</td>
+<td>Desarrolla servicios Web reutilizables y accesibles mediante protocolos Web, verificando su funcionamiento.</td>
 </tr>
 <tr>
 <td>RA8.</td>
-<td>Genera páginas Web dinámicas analizando y utilizando tecnologías del servidor Web que añadan código al lenguaje de marcas.</td>
+<td>Genera páginas Web dinámicas analizando y utilizando tecnologías y frameworks del servidor Web que añadan código al lenguaje de marcas.</td>
 </tr>
 <tr>
 <td>RA9.</td>
-<td>Desarrolla aplicaciones Web híbridas seleccionando y utilizando librerías de código y repositorios heterogéneos de información.</td>
+<td>Desarrolla aplicaciones Web híbridas seleccionando y utilizando tecnologías, frameworks</td>
+</tr>
+<tr>
+<td>servidor y repositorios heterogéneos de información.</td>
+<td></td>
 </tr>
 </tbody>
 </table>
