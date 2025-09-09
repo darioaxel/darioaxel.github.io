@@ -1,7 +1,7 @@
 ---
 title: UT00 Introducción
 date: 2024-09-01    
-icon: circle-info
+icon: hand-wave-outline
 ---
 
 # UT00 Introducción
