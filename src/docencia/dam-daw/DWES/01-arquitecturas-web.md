@@ -1,6 +1,6 @@
 ---
 title: UT01 Arquitecturas Web
-icon: circle-info
+icon: gears
 ---
 
 # UT01 Arquitecturas Web
@@ -505,3 +505,4 @@ php.ini
 
 Es el archivo de configuración de PHP, y en toda instalación vienen dos plantillas (php.ini-development y php.ini-production) para que elijamos los valores más acordes a nuestro proyecto y creemos nuestro archivo propio de php.ini.
 -->
+
