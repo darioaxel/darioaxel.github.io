@@ -1,7 +1,7 @@
 ---
 title: UT00 Introducción
 date: 2024-09-01    
-icon: hand-wave-outline
+icon: rocket
 ---
 
 # UT00 Introducción
@@ -27,6 +27,15 @@ necesario que dedique tiempo a estudiar y comprender estos conceptos antes de av
 
 ## 1. Entornos de Desarrollo IDEs - Visual Studio Code
 
+El ecosistema de herramientas en el entorno web es amplio, rico y en constante evolución. Es por ello que hacer una lista exhaustiva se hace difícil, y puede quedar obsoleta en unos pocos meses. En este [enlace](https://kinsta.com/es/blog/herramientas-desarrollo-web/) se propone una muestra de estas herramientas.
+
+Algunas de estas herramientas te resultarán familiares, otras las utilizarás en tu futura vida profesional o no (dependiendo del campo en que te especialices), y otras muchas serán sustituidas o dejarán de ser usadas.
+
+Durante este curso podrás utilizar el IDE o editor de texto de tu elección. [Visual Studio Code](https://code.visualstudio.com/) (para cualquier lenguaje de programación) o [PyCharm](https://www.jetbrains.com/es-es/pycharm/) (para Python) son la opción recomendada.
+
+Como fuentes de consulta de problemas específicos, [StackOverflow](https://www.jetbrains.com/es-es/pycharm/) es una de las plataformas más utilizadas.
+
+Finalmente, como base para lenguajes de programación y de marcado, o como repaso del primer curso del ciclo, te puedes apoyar en los manuales de [W3CSchools](www.w3schools.org).
 
 ## 2. Control de Versiones
 * ***¿Qué es un sistema de control de versiones?***
@@ -52,6 +61,73 @@ En los dos enlaces que se proporcionan a continuación, puedes encontrar documen
  - [Apuntes de Jose Luis GS](https://github.com/joseluisgs/git-tutorial)
 
 
-## Enlaces de interés
+## 3. Tecnologías
+Al igual que en las herramientas de programación, el ecosistema de tecnologías alrededor de las aplicaciones web también es muy variado, rico, y en constante evolución. Continuamente surgen nuevas versiones de las tecnologías existentes (que rompen con las anteriores), o tecnologías/frameworks/librerías novedosas a los que se adhieren multitud de profesionales. Todo ello hace que la curva de aprendizaje inicial en el ámbito de las aplicaciones web sea más acusada en un principio.
+
+A continuación se presentan algunas de estas tecnologías, agrupadas por tipología.
+
+ 1. Virtualización
+    * Proxmox
+    * Docker
+    * Kubernetes
+ 
+ 2. Servidores web
+    * Nginx
+    * Apache
+
+ 3. Sevidores de aplicaciones
+    * Payara
+    * Tomcat
+    * GlassFish
+    * DenoJS
+    * Flask
+ 
+ 5. Gestores de BBDD
+    * MySQL
+    * PostgreSQL
+    * Oracle
+    * SQLServer
+    * MongoDB
+    * Redis
+ 6. Frameworks servidor
+ 7. Frameworks backend más populares.
+    * Django
+    * Jakarta EE
+    * Spring Boot
+    * ExpressJS
+    * Laravel
+ 8. Frameworks frontend más populares.
+    * VueJS
+    * ReactJS
+    * AngularJS
+    * Svelte
+
+ 
+
+### 3.1. Navegadores. Tipos y características
+Dado que el entorno de ejecución en el lado cliente es el navegador web, se ha dedicado un apartado exclusivamente para caracterizar este tipo de software.
+
+Los navegadores representan un software complejo, en constante evolución, y en el que las diferentes opciones del mercado están respaldadas por motivaciones diversas (detrás de algunos existe una empresa multinacional, otros están respaldados por una comunidad de desarrolladores, etc.), así como diferentes principios de desarrollo.
+
+En la siguiente tabla se resumen algunas de las características que diferencia a diferentes navegadores:
+
+| Criterio | Comparativa| !
+Etiquetado HTML	| HTML Reference - Browser Support|
+Etiquetado CSS	CSS Browser Support Reference|
+Rendimiento	Browser performance|
+Velocidad	The Fastest Browser Options in 2022|
+Seguridad	Navegadores seguros: comparativa de Chrome, Firefox, Brave y otros|
+
+## 4. Estándares web
+Dada la gran cantidad de tecnologías y navegadores utilizados en el lado cliente, existe la voluntad de estandarizar determinados aspectos que gobiernan estas tecnologías, en forma de especificaciones emitidas por organismos reconocidos como oficiales. Se trata de que los diferentes desarrolladores tengan suficiente libertad para ser competitivos, pero sin que el panorama se disperse excesivamente.
+
+A continuación se citan varios de estos estándares:
+
+ * **HTML5:** del W3C (Consorcio de la World Wide Web)
+ * **CSS:** también del W3C
+ * **ECMAScript:** aplicado a JavaScript, y desarrollado por ECMA International (organización internacional basada en membresías de estándares para la comunicación y la información)
+En este artículo se discute la necesidad de los estándares web, como visión general.
+
+## 5. Enlaces de interés
 
 * Entrevista especial a Linus Torvalds por el 20º aniversario, organizada por GitHub: [Enlace](skatox.com/blog/2025/06/23/entrevista-a-linus-torvalds-por-los-20-anos-de-git/)
