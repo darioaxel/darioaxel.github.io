@@ -60,6 +60,21 @@ En los dos enlaces que se proporcionan a continuación, puedes encontrar documen
  - [Apuntes IES Celia Viñas (Almería)](https://iescelia.org/docs/dwes/_site/scv-git/) 
  - [Apuntes de Jose Luis GS](https://github.com/joseluisgs/git-tutorial)
 
+:::tip 
+:pill: **¿Cómo colaborar o corregir un cambio de un proyecto/repositorio git?**
+Para solicitar un cambio o ayudarme a pulir errores o a mejorar el contenido del curso y las transparencias lo podéis hacer de la siguiente manera:
+
+ * Siempre debéis hacer un fork del proyecto para trabajar con él.
+ * Lo primero es crear una rama con tu nombre de usuario de GitHub (vamos a ser ordenados)
+ * En la carpeta updates de tu rama añadís un fichero con vuestro nombre de GitHub para que en dicho fichero vayáis actualizando con las cosas que queráis aportar. Este fichero debe estar redactado usando markdown.
+ * Indicáis el número de la página de la presentación (por ejemplo página 34). Indicáis el texto y remarcáis la palabra o error detectado.
+ * De la misma manera si queréis incorporar un gráfico o figura lo indicáis en qué página, o si es nueva donde iría y subís ese recurso en la carpeta updates.
+ * También podéis aportar referencias, herramientas y cosas útiles que os han servidor para dominar Git y GitHub.
+ * Posteriormente hacéis un commit en vuestro repositorio y luego un pull request de los cambios indicados en tu rama y en la conversación me detallas algo de información y si el cambio se aprueba lo verás en la próxima versión Mira este vídeo y este otro.
+
+Gracias por colaborar y entre todos mejoramos usando GitHub. Espero vuestros pull requests 😄
+:::
+
 
 ## 3. Tecnologías
 Al igual que en las herramientas de programación, el ecosistema de tecnologías alrededor de las aplicaciones web también es muy variado, rico, y en constante evolución. Continuamente surgen nuevas versiones de las tecnologías existentes (que rompen con las anteriores), o tecnologías/frameworks/librerías novedosas a los que se adhieren multitud de profesionales. Todo ello hace que la curva de aprendizaje inicial en el ámbito de las aplicaciones web sea más acusada en un principio.
@@ -90,6 +105,7 @@ A continuación se presentan algunas de estas tecnologías, agrupadas por tipolo
     * MongoDB
     * Redis
  6. Frameworks servidor
+    * Laravel
  7. Frameworks backend más populares.
     * Django
     * Jakarta EE
@@ -98,6 +114,7 @@ A continuación se presentan algunas de estas tecnologías, agrupadas por tipolo
     * Laravel
  8. Frameworks frontend más populares.
     * VueJS
+    * NuxtJS
     * ReactJS
     * AngularJS
     * Svelte
@@ -111,12 +128,13 @@ Los navegadores representan un software complejo, en constante evolución, y en 
 
 En la siguiente tabla se resumen algunas de las características que diferencia a diferentes navegadores:
 
-| Criterio | Comparativa| !
-Etiquetado HTML	| HTML Reference - Browser Support|
-Etiquetado CSS	CSS Browser Support Reference|
-Rendimiento	Browser performance|
-Velocidad	The Fastest Browser Options in 2022|
-Seguridad	Navegadores seguros: comparativa de Chrome, Firefox, Brave y otros|
+| Criterio | Comparativa| 
+| --- | --- |
+|Etiquetado HTML| HTML Reference - Browser Support|
+|Etiquetado CSS	| CSS Browser Support Reference|
+|Rendimiento | 	Browser performance|
+|Velocidad |	The Fastest Browser Options in 2022|
+|Seguridad |	Navegadores seguros: comparativa de Chrome, Firefox, Brave y otros|
 
 ## 4. Estándares web
 Dada la gran cantidad de tecnologías y navegadores utilizados en el lado cliente, existe la voluntad de estandarizar determinados aspectos que gobiernan estas tecnologías, en forma de especificaciones emitidas por organismos reconocidos como oficiales. Se trata de que los diferentes desarrolladores tengan suficiente libertad para ser competitivos, pero sin que el panorama se disperse excesivamente.

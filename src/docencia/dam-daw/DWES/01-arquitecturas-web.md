@@ -343,7 +343,7 @@ Las API web son fundamentales en el desarrollo de aplicaciones modernas, ya que 
 :::
 ![apis](/images/dwes/apis.gif)
 
-<!-->
+<!--
 Arquitecturas Web¶
 Duración y criterios de evaluación
 

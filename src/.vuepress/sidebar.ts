@@ -1,6 +1,7 @@
 import { sidebar } from "vuepress-theme-hope";
 
 export default sidebar({
+  "/docencia/": "structure",
   "/docencia/dam-daw/basesdatos": "structure",
   "/docencia/dam-daw/DWES": "structure",
   "/docencia/asir/admonsgbd": "structure",
