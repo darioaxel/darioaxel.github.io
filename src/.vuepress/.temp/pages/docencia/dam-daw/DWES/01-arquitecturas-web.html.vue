@@ -312,167 +312,230 @@ Robert C. Martin también publicó uno de los libros de cabecera que casi todo p
 <p>Las API web son fundamentales en el desarrollo de aplicaciones modernas, ya que permiten la integración de diferentes servicios y la creación de aplicaciones más flexibles y escalables.</p>
 </div>
 <figure><img src="/images/dwes/apis.gif" alt="apis" tabindex="0" loading="lazy"><figcaption>apis</figcaption></figure>
-<!-->
-<p>Arquitecturas Web¶<br>
-Duración y criterios de evaluación</p>
-<p>Decisiones de diseño¶<br>
-¿Qué tamaño tiene el proyecto?<br>
-¿Qué lenguajes de programación conozco? ¿Vale la pena el esfuerzo de aprender uno nuevo?<br>
-¿Voy a usar herramientas de código abierto o herramientas propietarias? ¿Cuál es el coste de utilizar soluciones comerciales?<br>
-¿Voy a programar la aplicación yo solo o formaré parte de un grupo de programadores?<br>
-¿Cuento con algún servidor web o gestor de base de datos disponible o puedo decidir libremente utilizar el que crea necesario?<br>
-¿Qué tipo de licencia voy a aplicar a la aplicación que desarrolle?<br>
-Herramientas¶<br>
-Servidor Web¶<br>
-Software que recibe peticiones HTTP (GET, POST, DELETE, ...). Devuelve el recurso solicitado (HTML, CSS, JS, JSON, imágenes, etc...)</p>
-<p>El producto más implantando es Apache Web Server (<a href="https://httpd.apache.org/" target="_blank" rel="noopener noreferrer">https://httpd.apache.org/</a>), creado en 1995.</p>
-<p>Software libre y multiplataforma<br>
-Sistema de módulos dinámicos → PHP, Python, Perl<br>
-Utiliza el archivo .htaccess para su configuración<br>
-En la actualidad, Apache está perdiendo mercado respecto a Nginx (<a href="https://www.nginx.com" target="_blank" rel="noopener noreferrer">https://www.nginx.com</a>). Se trata de un producto más moderno (2004) y que en determinados escenarios tiene mejor rendimiento que Apache.</p>
-<p>Comparativa servidores web: <a href="https://w3techs.com/technologies/history_overview/web_server/ms/q" target="_blank" rel="noopener noreferrer">https://w3techs.com/technologies/history_overview/web_server/ms/q</a><br>
-Servidor de Aplicaciones¶<br>
-Software que ofrece servicios adicionales a los de un servidor web:<br>
-Clustering<br>
-Balanceo de carga<br>
-Tolerancia a fallos<br>
-Tomcat (<a href="http://tomcat.apache.org/" target="_blank" rel="noopener noreferrer">http://tomcat.apache.org/</a>) es el servidor de aplicaciones open source y multiplataforma de referencia para una arquitectura Java.<br>
-Contiende un contenedor Web Java que interpreta Servlets y JSP.<br>
-Info</p>
-<p>Tanto los servidores web como los servidores de aplicaciones los estudiaremos en profundidad en el módulo de &quot;Despliegue de Aplicaciones Web&quot;.</p>
-<p>Lenguajes en el servidor¶<br>
-Las aplicaciones que generan las páginas web se programan en alguno de los siguientes lenguajes:</p>
-<p>PHP<br>
-JavaEE: Servlets / JSP<br>
-Python<br>
-<a href="http://ASP.NET" target="_blank" rel="noopener noreferrer">ASP.NET</a> → Visual Basic .NET / C#<br>
-Ruby<br>
-...<br>
-JavaEE¶<br>
-Java Enterprise Edition es la solución Java para el desarrollo de aplicaciones enterprise. Ofrece una arquitectura muy completa y compleja, escalable y tolerante a fallos. Planteada para aplicaciones para grandes sistemas.</p>
-<p>JavaEE</p>
-<p>PHP¶<br>
-Lenguaje de propósito general diseñado para el desarrollo de páginas web dinámicas<br>
-En un principio, lenguaje no tipado.<br>
-Actualmente en la versión 8. Se recomienda al menos utilizar una versión superior a la 7.0.<br>
-Código embebido en el HTML<br>
-Instrucciones entre etiquetas</p>
-<div class="language-php line-numbers-mode" data-highlighter="shiki" data-ext="php" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code" v-pre=""><code class="language-php"><span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">&#x3C;</span><span style="--shiki-light:#383A42;--shiki-dark:#C678DD">?</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p>php y</p>
-<div class="language-php line-numbers-mode" data-highlighter="shiki" data-ext="php" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code" v-pre=""><code class="language-php"><span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#C678DD">?</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">></span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p>Para generar codigo dentro de PHP, podemos usar la instrucción echo<br>
-Multitud de librerías y frameworks:<br>
-Laravel, Symfony, Codeigniter, Zend<br>
-Su documentación es bastante completa: <a href="https://www.php.net/manual/es/index.php" target="_blank" rel="noopener noreferrer">https://www.php.net/manual/es/index.php</a></p>
-<p>El siguiente mapa mental muestra un resumen de sus elementos:</p>
-<p>Elementos del lenguaje PHP<br>
-Durante las siguientes unidades vamos a estudiar PHP en profundidad.</p>
-<p>Puesta en marcha¶<br>
-Para poder trabajar con un entorno de desarrollo local, hemos de preparar nuestro entorno de desarrollo con las herramientas comentadas. A lo largo del curso vamos a utilizar la versión 8 de PHP.</p>
-<p>XAMPP¶<br>
-XAMPP (<a href="https://www.apachefriends.org/es/index.html" target="_blank" rel="noopener noreferrer">https://www.apachefriends.org/es/index.html</a>) es una distribución compuesta con el software necesario para desarrollar en entorno servidor. Se compone de las siguientes herramientas en base a sus siglas:</p>
-<p>X para el sistema operativo (de ahí que se conozca tamnbién como LAMP o WAMP).<br>
-A para Apache.<br>
-M para MySQL / MariaDB. También incluye phpMyAdmin para la administración de la base de datos desde un interfaz web.<br>
-P para PHP.<br>
-la última P para Perl.<br>
-Desde la propia página se puede descargar el archivo ejecutable para el sistema operativo de nuestro ordenador. Se recomienda leer la FAQ de cada sistema operativo con instrucciones para su puesta en marcha.</p>
-<p>XAMPP en Windows</p>
-<p>Si vas a trabajar con tu propio ordenador, XAMPP es una solución más sencilla que Docker, sobre todo si trabajar con Windows como sistema operativo.</p>
-<p>Docker¶<br>
-Docker (<a href="https://www.docker.com" target="_blank" rel="noopener noreferrer">https://www.docker.com</a>) es un gestor de contenedores, considerando un contenedor como un método de virtualización del sistema operativo.</p>
-<p>El uso de contenedores requiere menos recursos que una máquina virtual, por lo tanto, su lanzamiento y detención son más rápidos que las máquinas virtuales.</p>
-<p>Así pues, Docker permite crear, probar e implementar aplicaciones rápidamente, a partir de una serie de plantillas que se conocen como imágenes de Docker.</p>
-<p>Para ello es necesario tener instalado Docker Desktop (<a href="https://www.docker.com/products/docker-desktop" target="_blank" rel="noopener noreferrer">https://www.docker.com/products/docker-desktop</a>) en nuestros entornos de desarrollo (el cual ya incluye en nucleo de Docker y la herramienta docker compose). En los ordenadores del aula ya está instalado. Para instalarlo en casa, en el caso de Windows, es necesario instalar previamente WSL 2, el cual es un subsistema de Linux dentro de Windows.</p>
-<p>A lo largo del curso iremos creando diferentes contenedores con los servicios necesarios, de manera que cada vez sólo trabajemos con el software mínimo.</p>
-<p>Versiones</p>
-<p>A lo largo del curso vamos a usar PHP 8.0. Respecto a Docker, para escribir los apuntes hemos utilizado la version 20.10 y la version 2.19 de docker compose. Finalmente, la versión de Docker Desktop que hemos utilizado es la 4.0.</p>
-<p>Plantilla Servidor Web + PHP¶<br>
-Docker se basa en el uso de imágenes para crear contenedores. Docker Compose simplifica el trabajo con múltiples contenedores, y por ello, para facilitar el arraque, nos centraremos en Docker Compose utilizando una plantilla que únicamente va a contener como servicios Apache/Nginx y PHP.</p>
-<p>Para ello, vamos a rellenar el archivo docker-compose.yaml con:</p>
-<p>Apache y PHP<br>
-Nginx y PHP</p>
-<h1 id="services" tabindex="-1"><a class="header-anchor" href="#services"><span>Services</span></a></h1>
-<p>services:</p>
-<h1 id="apache-php" tabindex="-1"><a class="header-anchor" href="#apache-php"><span>Apache + PHP</span></a></h1>
-<p>apache_php:<br>
-image: php:8-apache<br>
-# Preparamos un volumen para almacenar nuestro código<br>
-volumes:<br>
-- ./src/:/var/www/html<br>
-expose:<br>
-- 80<br>
-ports:<br>
-- 80:80</p>
-<p>Dentro de la carpeta que contenga dicho archivo, hemos de crear una carpeta src donde colocaremos nuestro código fuente. Para facilitar la puesta en marcha, tenéis la plantilla de Apache/PHP (versión 2 con a2enmod rewrite) o Nginx/PHP disponible para su descarga.</p>
-<p>Cuando estemos listos, lanzaremos el servicio mediante:</p>
-<p>docker-compose up -d<br>
-Si queremos ver el contenido de los archivos de log del servicio utilizaremos:</p>
-<p>docker-compose logs -f<br>
-Para copiar un archivo desde nuestro sistema al interior del contenedor:</p>
-<p>docker cp ./miFichero idContenedor:/tmp<br>
-Y al revés, si queremos consultar un archivo contenido dentro de un contenedor, lo copiaremos a nuestro sistema:</p>
-<p>docker cp idContenedor:/tmp/archivoAConsultar.txt ./<br>
-Finalmente, si queremos acceder a un terminal interactivo dentro del contenedor:</p>
-<p>docker exec -it nombreContenedor bash<br>
-Otros comandos que podemos llegar a utilizar son:</p>
-<p>docker ps: Ver los contenedores que se estan ejecutando<br>
-docker ps -a: Ver todos los contenedores<br>
-docker start nombreContenedor: Arrancar un contenedor<br>
-docker images: Ver las imágenes que tenemos descargadas<br>
-Otra forma más sencilla para lanzar de nuevo los contenedores y gestionarlos una vez creados es utilizar el interfaz gráfico que ofrece Docker Desktop:</p>
-<p>Arranque de contenedor mediante Docker Desktop<br>
-Docker stack</p>
-<p>Existen diversas opciones mediante Docker que ofrecen soluciones completas y empaquetas para todo el stack de desarrollo. En posteriores sesiones utilizaremos tanto Devilbox (<a href="http://devilbox.org" target="_blank" rel="noopener noreferrer">http://devilbox.org</a>) como Laradock (<a href="https://laradock.io" target="_blank" rel="noopener noreferrer">https://laradock.io</a>)</p>
-<p>Pero quiero saber cómo funciona...</p>
-<p>En el módulo de Despliegue de aplicaciones estudiaréis en profundidad, además de Docker, Apache y otros servicios que nos servirán de ayuda para el desarrollo en entorno servidor.</p>
-<p>Entorno de desarrollo¶<br>
-En este curso vamos a emplear Visual Studio Code (<a href="https://code.visualstudio.com" target="_blank" rel="noopener noreferrer">https://code.visualstudio.com</a>) como entorno de desarrollo (IDE). Existen otras alternativas, siendo PhpStorm la más conocida pero siendo de pago. Otra posibilidad es utilizar Eclipse, aunque es un entorno bastante pesado.</p>
-<p>VSCode es un editor de código fuente que se complementa mediante extensiones. Para facilitar el trabajo a lo largo del curso vamos a utilizar las siguientes extensiones:</p>
-<p>PHP Intelephense<br>
-Docker<br>
-En la siguiente sesión comenzaremos a utilizar Intelephense pero en esta sesión nos vamos a centrar en Docker (más adelante instalaremos nuevas extensiones).</p>
-<p>Por ejemplo, si abrimos la extensión de Docker, podréis visualizar tanto los contenedores como las imágenes de vuestro sistema. Desde cada contenedor, mediante clic derecho, podemos iniciar/detener/reiniciar cada contenedor, así como ver su contenido o abrir un terminal dentro del mismo.</p>
-<p>Opciones mediante extensión Docker en VSCode<br>
-Hola Mundo¶<br>
-Y como no, nuestro primer ejemplo será un Hola Mundo en PHP.</p>
-<p>Si nombramos el archivo como index.php, al acceder a <a href="http://localhost" target="_blank" rel="noopener noreferrer">http://localhost</a> automáticamente cargará el resultado:</p>
-<div class="language-php line-numbers-mode" data-highlighter="shiki" data-ext="php" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code" v-pre=""><code class="language-php"><span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">&#x3C;!</span><span style="--shiki-light:#986801;--shiki-dark:#ABB2BF">DOCTYPE</span><span style="--shiki-light:#986801;--shiki-dark:#ABB2BF"> html</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">></span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">&#x3C;</span><span style="--shiki-light:#986801;--shiki-dark:#ABB2BF">html</span><span style="--shiki-light:#986801;--shiki-dark:#ABB2BF"> lang</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"es"</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">></span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">&#x3C;</span><span style="--shiki-light:#986801;--shiki-dark:#ABB2BF">head</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">></span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">    &#x3C;</span><span style="--shiki-light:#986801;--shiki-dark:#ABB2BF">meta</span><span style="--shiki-light:#986801;--shiki-dark:#ABB2BF"> charset</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"UTF-8"</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">></span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">    &#x3C;</span><span style="--shiki-light:#986801;--shiki-dark:#ABB2BF">meta</span><span style="--shiki-light:#986801;--shiki-dark:#ABB2BF"> name</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"viewport"</span><span style="--shiki-light:#986801;--shiki-dark:#ABB2BF"> content</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"width=device-width, initial-scale=1.0"</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">></span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">    &#x3C;</span><span style="--shiki-light:#986801;--shiki-dark:#ABB2BF">title</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">></span><span style="--shiki-light:#986801;--shiki-dark:#ABB2BF">Hola</span><span style="--shiki-light:#986801;--shiki-dark:#ABB2BF"> Mundo</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">&#x3C;/</span><span style="--shiki-light:#986801;--shiki-dark:#ABB2BF">title</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">></span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">&#x3C;/</span><span style="--shiki-light:#986801;--shiki-dark:#ABB2BF">head</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">></span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">&#x3C;</span><span style="--shiki-light:#986801;--shiki-dark:#ABB2BF">body</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">></span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">    &#x3C;</span><span style="--shiki-light:#383A42;--shiki-dark:#C678DD">?</span><span style="--shiki-light:#986801;--shiki-dark:#ABB2BF">php</span></span>
-<span class="line"><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">        echo</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> "Hola Mundo"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">;</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#C678DD">    ?</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">></span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">&#x3C;/</span><span style="--shiki-light:#986801;--shiki-dark:#ABB2BF">body</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">></span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>Referencias¶<br>
-Curso de introducción a Docker, por Sergi García Barea : <a href="https://sergarb1.github.io/CursoIntroduccionADocker/" target="_blank" rel="noopener noreferrer">https://sergarb1.github.io/CursoIntroduccionADocker/</a><br>
-Artículo Arquitecturas Web y su evolución<br>
-Actividades¶<br>
-Busca en internet cuales son los tres frameworks PHP más utilizados, y indica:</p>
-<p>Nombre y URL<br>
-Año de creación<br>
-Última versión<br>
-Busca tres ofertas de trabajo de desarrollo de software en Infojobs en la provincia de Alicante que citen PHP y anota:</p>
-<p>Empresa + puesto + frameworks PHP + requísitos + sueldo + enlace a la oferta.<br>
-Una vez arrancado el servicio PHP (mediante XAMPP o Docker), crea el archivo info.php y añade el siguiente fragmento de código:</p>
-<div class="language-php line-numbers-mode" data-highlighter="shiki" data-ext="php" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code" v-pre=""><code class="language-php"><span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">&#x3C;</span><span style="--shiki-light:#383A42;--shiki-dark:#C678DD">?</span><span style="--shiki-light:#986801;--shiki-dark:#ABB2BF">php</span><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2"> phpinfo</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">() </span><span style="--shiki-light:#383A42;--shiki-dark:#C678DD">?</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">></span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p>Anota los valores de:<br>
-Versión de PHP<br>
-Loaded Configuration File<br>
-memory_limit<br>
-DOCUMENT_ROOT<br>
-Abre el archivo php.ini-production que está dentro del contenedor (puedes averiguar la ruta a partir de la propiedad Configuration File (php.ini) Path) e indica para qué sirven las siguientes propiedades y qué valores contienen:</p>
-<p>file_uploads<br>
-max_execution_time<br>
-short_open_tag<br>
-php.ini</p>
-<p>Es el archivo de configuración de PHP, y en toda instalación vienen dos plantillas (php.ini-development y php.ini-production) para que elijamos los valores más acordes a nuestro proyecto y creemos nuestro archivo propio de php.ini.<br>
---&gt;</p>
+<!--
+Arquitecturas Web¶
+Duración y criterios de evaluación
+
+
+Decisiones de diseño¶
+¿Qué tamaño tiene el proyecto?
+¿Qué lenguajes de programación conozco? ¿Vale la pena el esfuerzo de aprender uno nuevo?
+¿Voy a usar herramientas de código abierto o herramientas propietarias? ¿Cuál es el coste de utilizar soluciones comerciales?
+¿Voy a programar la aplicación yo solo o formaré parte de un grupo de programadores?
+¿Cuento con algún servidor web o gestor de base de datos disponible o puedo decidir libremente utilizar el que crea necesario?
+¿Qué tipo de licencia voy a aplicar a la aplicación que desarrolle?
+Herramientas¶
+Servidor Web¶
+Software que recibe peticiones HTTP (GET, POST, DELETE, ...). Devuelve el recurso solicitado (HTML, CSS, JS, JSON, imágenes, etc...)
+
+El producto más implantando es Apache Web Server (https://httpd.apache.org/), creado en 1995.
+
+Software libre y multiplataforma
+Sistema de módulos dinámicos → PHP, Python, Perl
+Utiliza el archivo .htaccess para su configuración
+En la actualidad, Apache está perdiendo mercado respecto a Nginx (https://www.nginx.com). Se trata de un producto más moderno (2004) y que en determinados escenarios tiene mejor rendimiento que Apache.
+
+Comparativa servidores web: https://w3techs.com/technologies/history_overview/web_server/ms/q
+Servidor de Aplicaciones¶
+Software que ofrece servicios adicionales a los de un servidor web:
+Clustering
+Balanceo de carga
+Tolerancia a fallos
+Tomcat (http://tomcat.apache.org/) es el servidor de aplicaciones open source y multiplataforma de referencia para una arquitectura Java.
+Contiende un contenedor Web Java que interpreta Servlets y JSP.
+Info
+
+Tanto los servidores web como los servidores de aplicaciones los estudiaremos en profundidad en el módulo de "Despliegue de Aplicaciones Web".
+
+Lenguajes en el servidor¶
+Las aplicaciones que generan las páginas web se programan en alguno de los siguientes lenguajes:
+
+PHP
+JavaEE: Servlets / JSP
+Python
+ASP.NET → Visual Basic .NET / C#
+Ruby
+...
+JavaEE¶
+Java Enterprise Edition es la solución Java para el desarrollo de aplicaciones enterprise. Ofrece una arquitectura muy completa y compleja, escalable y tolerante a fallos. Planteada para aplicaciones para grandes sistemas.
+
+JavaEE
+
+PHP¶
+Lenguaje de propósito general diseñado para el desarrollo de páginas web dinámicas
+En un principio, lenguaje no tipado.
+Actualmente en la versión 8. Se recomienda al menos utilizar una versión superior a la 7.0.
+Código embebido en el HTML
+Instrucciones entre etiquetas 
+```php
+<?
+``` 
+php y 
+
+```php
+?>
+```
+Para generar codigo dentro de PHP, podemos usar la instrucción echo
+Multitud de librerías y frameworks:
+Laravel, Symfony, Codeigniter, Zend
+Su documentación es bastante completa: https://www.php.net/manual/es/index.php
+
+El siguiente mapa mental muestra un resumen de sus elementos:
+
+
+Elementos del lenguaje PHP
+Durante las siguientes unidades vamos a estudiar PHP en profundidad.
+
+Puesta en marcha¶
+Para poder trabajar con un entorno de desarrollo local, hemos de preparar nuestro entorno de desarrollo con las herramientas comentadas. A lo largo del curso vamos a utilizar la versión 8 de PHP.
+
+XAMPP¶
+XAMPP (https://www.apachefriends.org/es/index.html) es una distribución compuesta con el software necesario para desarrollar en entorno servidor. Se compone de las siguientes herramientas en base a sus siglas:
+
+X para el sistema operativo (de ahí que se conozca tamnbién como LAMP o WAMP).
+A para Apache.
+M para MySQL / MariaDB. También incluye phpMyAdmin para la administración de la base de datos desde un interfaz web.
+P para PHP.
+la última P para Perl.
+Desde la propia página se puede descargar el archivo ejecutable para el sistema operativo de nuestro ordenador. Se recomienda leer la FAQ de cada sistema operativo con instrucciones para su puesta en marcha.
+
+XAMPP en Windows
+
+Si vas a trabajar con tu propio ordenador, XAMPP es una solución más sencilla que Docker, sobre todo si trabajar con Windows como sistema operativo.
+
+Docker¶
+Docker (https://www.docker.com) es un gestor de contenedores, considerando un contenedor como un método de virtualización del sistema operativo.
+
+El uso de contenedores requiere menos recursos que una máquina virtual, por lo tanto, su lanzamiento y detención son más rápidos que las máquinas virtuales.
+
+Así pues, Docker permite crear, probar e implementar aplicaciones rápidamente, a partir de una serie de plantillas que se conocen como imágenes de Docker.
+
+Para ello es necesario tener instalado Docker Desktop (https://www.docker.com/products/docker-desktop) en nuestros entornos de desarrollo (el cual ya incluye en nucleo de Docker y la herramienta docker compose). En los ordenadores del aula ya está instalado. Para instalarlo en casa, en el caso de Windows, es necesario instalar previamente WSL 2, el cual es un subsistema de Linux dentro de Windows.
+
+A lo largo del curso iremos creando diferentes contenedores con los servicios necesarios, de manera que cada vez sólo trabajemos con el software mínimo.
+
+Versiones
+
+A lo largo del curso vamos a usar PHP 8.0. Respecto a Docker, para escribir los apuntes hemos utilizado la version 20.10 y la version 2.19 de docker compose. Finalmente, la versión de Docker Desktop que hemos utilizado es la 4.0.
+
+Plantilla Servidor Web + PHP¶
+Docker se basa en el uso de imágenes para crear contenedores. Docker Compose simplifica el trabajo con múltiples contenedores, y por ello, para facilitar el arraque, nos centraremos en Docker Compose utilizando una plantilla que únicamente va a contener como servicios Apache/Nginx y PHP.
+
+Para ello, vamos a rellenar el archivo docker-compose.yaml con:
+
+
+Apache y PHP
+Nginx y PHP
+# Services
+services:
+  # Apache + PHP
+  apache_php:
+    image: php:8-apache
+    # Preparamos un volumen para almacenar nuestro código
+    volumes:
+      - ./src/:/var/www/html
+    expose:
+      - 80
+    ports:
+      - 80:80
+
+Dentro de la carpeta que contenga dicho archivo, hemos de crear una carpeta src donde colocaremos nuestro código fuente. Para facilitar la puesta en marcha, tenéis la plantilla de Apache/PHP (versión 2 con a2enmod rewrite) o Nginx/PHP disponible para su descarga.
+
+Cuando estemos listos, lanzaremos el servicio mediante:
+
+docker-compose up -d
+Si queremos ver el contenido de los archivos de log del servicio utilizaremos:
+
+docker-compose logs -f
+Para copiar un archivo desde nuestro sistema al interior del contenedor:
+
+docker cp ./miFichero idContenedor:/tmp
+Y al revés, si queremos consultar un archivo contenido dentro de un contenedor, lo copiaremos a nuestro sistema:
+
+docker cp idContenedor:/tmp/archivoAConsultar.txt ./
+Finalmente, si queremos acceder a un terminal interactivo dentro del contenedor:
+
+docker exec -it nombreContenedor bash
+Otros comandos que podemos llegar a utilizar son:
+
+docker ps: Ver los contenedores que se estan ejecutando
+docker ps -a: Ver todos los contenedores
+docker start nombreContenedor: Arrancar un contenedor
+docker images: Ver las imágenes que tenemos descargadas
+Otra forma más sencilla para lanzar de nuevo los contenedores y gestionarlos una vez creados es utilizar el interfaz gráfico que ofrece Docker Desktop:
+
+
+Arranque de contenedor mediante Docker Desktop
+Docker stack
+
+Existen diversas opciones mediante Docker que ofrecen soluciones completas y empaquetas para todo el stack de desarrollo. En posteriores sesiones utilizaremos tanto Devilbox (http://devilbox.org) como Laradock (https://laradock.io)
+
+Pero quiero saber cómo funciona...
+
+En el módulo de Despliegue de aplicaciones estudiaréis en profundidad, además de Docker, Apache y otros servicios que nos servirán de ayuda para el desarrollo en entorno servidor.
+
+Entorno de desarrollo¶
+En este curso vamos a emplear Visual Studio Code (https://code.visualstudio.com) como entorno de desarrollo (IDE). Existen otras alternativas, siendo PhpStorm la más conocida pero siendo de pago. Otra posibilidad es utilizar Eclipse, aunque es un entorno bastante pesado.
+
+VSCode es un editor de código fuente que se complementa mediante extensiones. Para facilitar el trabajo a lo largo del curso vamos a utilizar las siguientes extensiones:
+
+PHP Intelephense
+Docker
+En la siguiente sesión comenzaremos a utilizar Intelephense pero en esta sesión nos vamos a centrar en Docker (más adelante instalaremos nuevas extensiones).
+
+Por ejemplo, si abrimos la extensión de Docker, podréis visualizar tanto los contenedores como las imágenes de vuestro sistema. Desde cada contenedor, mediante clic derecho, podemos iniciar/detener/reiniciar cada contenedor, así como ver su contenido o abrir un terminal dentro del mismo.
+
+
+Opciones mediante extensión Docker en VSCode
+Hola Mundo¶
+Y como no, nuestro primer ejemplo será un Hola Mundo en PHP.
+
+Si nombramos el archivo como index.php, al acceder a http://localhost automáticamente cargará el resultado:
+```php
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hola Mundo</title>
+</head>
+<body>
+    <?php
+        echo "Hola Mundo";
+    ?>
+</body>
+```
+Referencias¶
+Curso de introducción a Docker, por Sergi García Barea : https://sergarb1.github.io/CursoIntroduccionADocker/
+Artículo Arquitecturas Web y su evolución
+Actividades¶
+Busca en internet cuales son los tres frameworks PHP más utilizados, y indica:
+
+Nombre y URL
+Año de creación
+Última versión
+Busca tres ofertas de trabajo de desarrollo de software en Infojobs en la provincia de Alicante que citen PHP y anota:
+
+Empresa + puesto + frameworks PHP + requísitos + sueldo + enlace a la oferta.
+Una vez arrancado el servicio PHP (mediante XAMPP o Docker), crea el archivo info.php y añade el siguiente fragmento de código:
+```php
+<?php phpinfo() ?>
+```
+
+Anota los valores de:
+Versión de PHP
+Loaded Configuration File
+memory_limit
+DOCUMENT_ROOT
+Abre el archivo php.ini-production que está dentro del contenedor (puedes averiguar la ruta a partir de la propiedad Configuration File (php.ini) Path) e indica para qué sirven las siguientes propiedades y qué valores contienen:
+
+file_uploads
+max_execution_time
+short_open_tag
+php.ini
+
+Es el archivo de configuración de PHP, y en toda instalación vienen dos plantillas (php.ini-development y php.ini-production) para que elijamos los valores más acordes a nuestro proyecto y creemos nuestro archivo propio de php.ini.
+-->
 </div></template>
 
 

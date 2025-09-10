@@ -12,7 +12,7 @@ tagline:  Mi nombre es Darío Ureña y soy Profe de FPs e Ingeniero en Informát
 actions:
   - text: Docencia
     icon: lightbulb
-    link: ./docencia
+    link: ./docencia/index.html
     type: primary
 
   - text: Proyectos
@@ -22,16 +22,6 @@ actions:
     link: ./blog/
 
 highlights:
-  - header: Easy to install
-    image: /assets/image/box.svg
-    bgImage: https://theme-hope-assets.vuejs.press/bg/3-light.svg
-    bgImageDark: https://theme-hope-assets.vuejs.press/bg/3-dark.svg
-    highlights:
-      - title: Run <code>pnpm create vuepress-theme-hope hope-project</code> to create a new project with this theme.
-      - title: Run <code>pnpm create vuepress-theme-hope add .</code> in your project root to create a new project with this theme.
-
-  
-
   - header: Blog
     description: Blog personal con artículos programación y proyectos varios.
     image: /assets/image/blog.svg
