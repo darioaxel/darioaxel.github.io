@@ -2,6 +2,8 @@
 title: UT01 Arquitecturas Web
 icon: gears
 ---
+> **En este tema trabajaremos los siguientes RAs:**
+> - RA1. Selecciona las arquitecturas y tecnologías de programación Web en entorno servidor, analizando sus capacidades y características propias.
 
 # UT01 Arquitecturas Web
 
@@ -30,29 +32,83 @@ Existen dos formas principales de generar páginas dinámicas:
  * **Consumo de servicios externos desde el cliente:** El navegador ejecuta JavaScript para solicitar datos a servicios REST de terceros y actualizar la página dinámicamente, sin necesidad de recargarla por completo.
 
 
+## Arquitectura Cliente-Servidor
+
+El modelo cliente-servidor es un modelo que reparte tareas entre los proveedores de un recurso o servicio, llamados **servidores**, y los solicitantes/consumidores del servicio, llamados **clientes**.
+
+Lo más frecuente es que los clientes y los servidores se comuniquen a través de una red de comunicaciones, pero ambos pueden residir en la misma máquina (normalmente en tareas de desarrollo).
+
+El esquema de funcionamiento más básico del modelo cliente-servidor para una arquitectura web está basado en uno o varios clientes que solicitan una página web a un servidor web:
+
+ 1. Desde el navegador web (o agente de usuario, que puede ser también una app nativa u otro servidor incluso) el usuario solicita un servicio web indicando su URL.
+ 2. El servidor recibe la **petición** mediante el protocolo de aplicación HTTP, y la procesa mediante su **lógica de negocio**.
+ 3. Produce una **respuesta** HTTP a la petición, que envía al cliente. Esta respuesta puede contener **ficheros** de distinta naturaleza: HTML, CSS, XML, JSON, ficheros multimedia, código JavaScript, etc.
+ 4. El navegador web recibe la información enviada por el servidor y la interpreta. En función de la respuesta enviada, se respresenta en el navegador la respuesta al usuario (normalmente en forma de página web).
+![Arquitectura Cliente-Servidor](/images/dwes/arquitectura-cliente-servidor.png)
+A continuación se muestran las ventajas y desventajas al respecto:
+
+***Ventajas:***
+
+ * **Centralización** del control: los accesos, recursos y la integridad de los datos son controlados por el servidor. Esta centralización también facilita la tarea de actualizar datos u otros recursos.
+ * **Escalabilidad**: se puede aumentar la capacidad de clientes y servidores por separado. Cualquier elemento puede ser aumentado (o mejorado) en cualquier momento, o se pueden añadir nuevos nodos a la red (clientes y/o servidores), siempre que el sistema esté diseñado para ello.
+ * **Portabilidad**: el hecho de que la aplicación web se ejecute en un navegador web, hace que se independice el software del sistema operativo sobre el que se ejecuta. De esta forma, se aprovecha el desarrollo para las diferentes plataformas.
+ * Fácil **mantenimiento**: al estar distribuidas las funciones y responsabilidades entre varios ordenadores independientes, es posible reemplazar, reparar, actualizar, o incluso trasladar un servidor, mientras que sus clientes no se verán afectados por ese cambio (o se afectarán mínimamente). Esta independencia de los cambios también se conoce como **encapsulación**.
+ * Existen **tecnologías**, suficientemente desarrolladas, diseñadas para el modelo de cliente-servidor que aseguran la seguridad en las transacciones, la usabilidad de la interfaz, y la facilidad de uso.
+
+***Desventajas:***
+
+ * La **congestión** del tráfico ha sido siempre un problema en esta arquitectura. Cuando una gran cantidad de clientes envían peticiones simultáneas al mismo servidor, se pueden producir situaciones de sobrecarga.
+ * Cuando un servidor está caído, las peticiones de los clientes **no pueden ser satisfechas**, ya que los recursos no están distribuidos.
+ * El software y el hardware de un servidor son generalmente muy determinantes. Normalmente se necesita **software y hardware específico**, dependiendo del tipo de servicio web, sobre todo en el lado del servidor. Esto aumentará el coste. Como alternativa, se dispone de servicios web en la nube, con diversos tipos de costes dependientes de la arquitectura web.
+
+::: note
+ Estas desventajas se refieren al caso en que los recursos del servidor no están replicados y/o distribuidos. Actualmente existen técnicas de escalado horizontal y vertical que pueden subsanar estos problemas.
+:::
+
+### :pill: Ejemplo práctico
+En este apartado vamos a tratar de indagar un poco más en qué sucede detrás de las cortinas cuando consultamos una URL. 
+Vamos a observar, a través de las herramientas de desarrollador del navegador web de Chrome (igual nos puede servir Firefox o cualquier otro), los 4 pasos que se detallaban en el apartado anterior.
+
+Para ello vamos a utilizar la página web del Campus Virtual FP (www.campusvirtualfp.com).
+
+ 1. Abrimos una pestaña del navegador web e introducimos la URL www.campusvirtualfp.com.
+
+
+A continuación abrimos las herramientas de desarrollador y vamos a la pestaña Network (o Red):
+
+## Generación de páginas web
+### Estáticas
+Una página web estática es un documento o conjunto de documentos (generalmente: HTML, CSS, contenido multimedia, código JavaScript) en el que no existe una actualización dinámica de su contenido al interactuar con el sistema (servidor, ya sea remoto o local) que provee el documento/s. Es decir, la misma petición a la misma URL (Uniform Resource Locator), aunque la repitamos en múltiples ocasiones a lo largo del tiempo, siempre va a devolver la misma información (a no ser que la modifique un desarrollador en el lado servidor, manualmente). Puede existir interacción con la página web estática (mediante código JavaScript), en forma de mensajes, eventos, actualizaciones de su apariencia...
+
+En este caso, un navegador web es capaz de representar la página web en una máquina local, sin necesidad de disponer de un servidor web adicional.
+
+### Dinámicas
+Una página web dinámica puede contener una parte estática, y además el contenido que se muestre dependerá del momento en el cual se realice la petición. Esto es debido a que el servidor conformará dicho contenido dependiendo de los datos de que se disponga en ese momento en un sistema de bases de datos. La comunicación entre el navegador web y el servidor será más compleja, ya que, además de consultar contenidos, se podrán realizar potencialmente operaciones de creación, modificación, y eliminación de datos.
+
+Una aplicación Web es una herramienta software, formada por páginas web dinámicas (aunque también puede contener documentos web estáticos), basada en tecnologías web que la dotan de un carácter dinámico (interactúan con un sistema remoto) haciendo uso de servicios web (basados en la arquitectura TCP/IP), y que proporcionan al usuario un servicio o conjunto de servicios. Sería lo más parecido a una aplicación nativa o de escritorio, pero ejecutada en un navegador web. El hecho de ejecutarse en un navegador web las independiza del sistema operativo en el que se ejecutan, pero también presentan determinadas limitaciones debido a esta independencia.
+
+En este caso, un navegador web NO es capaz de representar la página web en una máquina local sin un servidor web adicional y el resto de componentes que acompañan a esta arquitectura, como sí era el caso de una página web estática.
+
+
 ## Arquitecturas Web: Capas Físicas y Lógicas
 
-Las arquitecturas web no son tan sencillas como un simple servidor y una serie de clientes. Mediante una estructura de capas o layers, se intenta minorar la complejidad que una aplicación real tiene de forma que sean mantenibles, comprensibles por los desarrolladores y testeables.
-En realidad, las aplicaciones web modernas suelen estar organizadas en capas físicas y lógicas que facilitan su desarrollo, mantenimiento y escalabilidad. 
+Las arquitecturas web no son tan sencillas como un simple servidor y una serie de clientes. Mediante una estructura de **capas** o **layers**, se intenta minorar la complejidad que una aplicación real tiene de forma que sean mantenibles, comprensibles por los desarrolladores y testeables.
+En realidad, las aplicaciones web modernas suelen estar organizadas en **capas físicas** y **lógicas** que facilitan su desarrollo, mantenimiento y escalabilidad. 
 
 ### Capas Físicas (Tiers)
 Una capa física o tier corresponde a un componente hardware separado dentro de la arquitectura. Por ejemplo, en una arquitectura de tres capas físicas (3-tier) se distinguen:
-Servidor web
-
-Servidor de aplicaciones
-
-Servidor de base de datos
+* Servidor web
+* Servidor de aplicaciones
+* Servidor de base de datos
 
 En entornos modernos, es común utilizar clusters de servidores en una misma capa para lograr tolerancia a fallos y escalabilidad.
 
 ### Capas Lógicas (Layers)
 Las capas lógicas organizan el código según su función:
 
-Presentación: Interfaz de usuario.
-
-Negocio/Aplicación: Lógica de negocio y procesamiento.
-
-Datos/Persistencia: Gestión y almacenamiento de datos.
+* Presentación: Interfaz de usuario.
+* Negocio/Aplicación: Lógica de negocio y procesamiento.
+* Datos/Persistencia: Gestión y almacenamiento de datos.
 
 Cada capa puede implementarse con diferentes tecnologías y lenguajes, permitiendo flexibilidad y modularidad.
 
@@ -255,6 +311,12 @@ Una arquitectura de software se refiere a la estructura organizativa fundamental
     - Permite la adopción de diferentes tecnologías y enfoques dentro de cada microservicio.
 
 Estas son solo algunas de las arquitecturas de software más comunes en el desarrollo de aplicaciones web backend. Cada una tiene sus ventajas y desafíos, y la elección de la arquitectura adecuada depende de los requisitos y objetivos del proyecto.
+::: info
+:ghost: Aunque la utilización de arquitecturas basadas en microservicios tuvieron un hype importante durante los últimos años, identificando estas prácticas como la panacea para todo tipo de proyectos, la realidad es que no son adecuadas para todos los casos. Su complejidad y coste de mantenimiento puede ser excesivo para proyectos pequeños o medianos, donde una arquitectura monolítica o en capas puede ser más adecuada.
+
+Actualmente, múltiples empresas están migrando sus arquitecturas de microservicios a arquitecturas monolíticas o en capas, buscando simplificar su mantenimiento y reducir costes, sobretodo en proyectos pequeños o medianos.
+:::
+
 
 ### Ejemplo de arquitectura: Netflix
 La arquitectura de backend de Netflix es conocida por ser altamente escalable y resiliente, diseñada para manejar grandes volúmenes de tráfico y garantizar la disponibilidad y el rendimiento de sus servicios. Netflix adopta una arquitectura basada en microservicios, donde las diferentes funcionalidades se dividen en servicios independientes. Cada microservicio se enfoca en una tarea específica y se comunica con otros servicios a través de interfaces bien definidas. Esto permite una mayor flexibilidad, escalabilidad y mantenimiento de los servicios individuales.

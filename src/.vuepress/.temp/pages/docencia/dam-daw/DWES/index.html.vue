@@ -76,16 +76,12 @@
 </tr>
 <tr>
 <td>RA9.</td>
-<td>Desarrolla aplicaciones Web híbridas seleccionando y utilizando tecnologías, frameworks</td>
-</tr>
-<tr>
-<td>servidor y repositorios heterogéneos de información.</td>
-<td></td>
+<td>Desarrolla aplicaciones Web híbridas seleccionando y utilizando tecnologías, frameworks servidor y repositorios heterogéneos de información.</td>
 </tr>
 </tbody>
 </table>
-<h4 id="criterios-de-evaluacion" tabindex="-1"><a class="header-anchor" href="#criterios-de-evaluacion"><span>Criterios de evaluación:</span></a></h4>
-<h5 id="ra-1" tabindex="-1"><a class="header-anchor" href="#ra-1"><span>RA 1</span></a></h5>
+<h3 id="criterios-de-evaluacion" tabindex="-1"><a class="header-anchor" href="#criterios-de-evaluacion"><span>Criterios de evaluación:</span></a></h3>
+<h4 id="ra1" tabindex="-1"><a class="header-anchor" href="#ra1"><span>RA1</span></a></h4>
 <p>Criterios de evaluación:<br>
 a) Se han caracterizado y diferenciado los modelos de ejecución de código en el servidor y<br>
 en el cliente Web.<br>
@@ -99,7 +95,7 @@ f) Se han verificado los mecanismos de integración de los lenguajes de marcas c
 lenguajes de programación en entorno servidor.<br>
 g) Se han reconocido y evaluado las herramientas y frameworks de programación en<br>
 entorno servidor.</p>
-<h5 id="ra-2" tabindex="-1"><a class="header-anchor" href="#ra-2"><span>RA 2</span></a></h5>
+<h4 id="ra-2" tabindex="-1"><a class="header-anchor" href="#ra-2"><span>RA 2</span></a></h4>
 <p>Criterios de evaluación:<br>
 a) Se han reconocido los mecanismos de generación de páginas Web a partir de lenguajes<br>
 de marcas con código embebido.<br>
@@ -111,7 +107,7 @@ resultante.<br>
 f) Se han utilizado directivas para modificar el comportamiento predeterminado.<br>
 g) Se han utilizado los distintos tipos de variables y operadores disponibles en el lenguaje.<br>
 h) Se han identificado los ámbitos de utilización de las variables.</p>
-<h5 id="ra-3" tabindex="-1"><a class="header-anchor" href="#ra-3"><span>RA 3</span></a></h5>
+<h4 id="ra-3" tabindex="-1"><a class="header-anchor" href="#ra-3"><span>RA 3</span></a></h4>
 <p>Criterios de evaluación:<br>
 a) Se han utilizado mecanismos de decisión en la creación de bloques de sentencias.<br>
 b) Se han utilizado bucles y se ha verificado su funcionamiento.<br>
@@ -120,7 +116,7 @@ d) Se han creado y utilizado funciones.<br>
 e) Se han utilizado formularios web para interactuar con el usuario del navegador web.<br>
 f) Se han empleado métodos para recuperar la información introducida en el formulario.<br>
 g) Se han añadido comentarios al código.</p>
-<h5 id="ra-4" tabindex="-1"><a class="header-anchor" href="#ra-4"><span>RA 4</span></a></h5>
+<h4 id="ra-4" tabindex="-1"><a class="header-anchor" href="#ra-4"><span>RA 4</span></a></h4>
 <p>Criterios de evaluación:<br>
 a) Se han identificado los mecanismos disponibles para el mantenimiento de la información<br>
 que concierne a un cliente web concreto y se han señalado sus ventajas.<br>
@@ -129,7 +125,7 @@ c) Se han utilizado mecanismos para almacenar información en el cliente Web y p
 d) Se han identificado y caracterizado los mecanismos disponibles para la autentificación de usuarios.<br>
 e) Se han escrito aplicaciones que integren mecanismos de autentificación de usuarios.<br>
 f) Se han utilizado herramientas y entornos para facilitar la programación, prueba y depuración del código.</p>
-<h5 id="ra-5" tabindex="-1"><a class="header-anchor" href="#ra-5"><span>RA 5</span></a></h5>
+<h4 id="ra-5" tabindex="-1"><a class="header-anchor" href="#ra-5"><span>RA 5</span></a></h4>
 <p>Criterios de evaluación:<br>
 a) Se han identificado las ventajas de separar la lógica de negocio de los aspectos de presentación de la aplicación.<br>
 b) Se han analizado y utilizado mecanismos y frameworks que permiten realizar esta separación y sus características principales.<br>
@@ -139,7 +135,7 @@ e) Se han identificado y aplicado los parámetros relativos a la configuración 
 f) Se han escrito aplicaciones Web con mantenimiento de estado y separación de la lógica de negocio.<br>
 g) Se han aplicado los principios y patrones de diseño de la programación orientada a objetos.<br>
 h) Se ha probado y documentado el código.</p>
-<h5 id="ra-6" tabindex="-1"><a class="header-anchor" href="#ra-6"><span>RA 6</span></a></h5>
+<h4 id="ra-6" tabindex="-1"><a class="header-anchor" href="#ra-6"><span>RA 6</span></a></h4>
 <p>Criterios de evaluación:<br>
 a) Se han analizado las tecnologías que permiten el acceso mediante programación a la<br>
 información disponible en almacenes de datos.<br>
@@ -151,7 +147,7 @@ f) Se han creado aplicaciones web que permitan la actualización y la eliminaci�
 información disponible en una base de datos.<br>
 g) Se han utilizado transacciones para mantener la consistencia de la información.<br>
 h) Se han probado y documentado las aplicaciones.</p>
-<h5 id="ra-7" tabindex="-1"><a class="header-anchor" href="#ra-7"><span>RA 7</span></a></h5>
+<h4 id="ra-7" tabindex="-1"><a class="header-anchor" href="#ra-7"><span>RA 7</span></a></h4>
 <p>Criterios de evaluación:<br>
 a) Se han reconocido las características propias y el ámbito de aplicación de los servicios Web.<br>
 b) Se han reconocido las ventajas de utilizar servicios Web para proporcionar acceso a funcionalidades incorporadas a la lógica de negocio de una aplicación.<br>
@@ -161,7 +157,7 @@ e) Se ha programado un servicio Web.<br>
 f) Se ha verificado el funcionamiento del servicio Web.<br>
 g) Se ha consumido el servicio Web.<br>
 h) Se ha documentado un servicio Web.</p>
-<h5 id="ra-8" tabindex="-1"><a class="header-anchor" href="#ra-8"><span>RA 8</span></a></h5>
+<h4 id="ra-8" tabindex="-1"><a class="header-anchor" href="#ra-8"><span>RA 8</span></a></h4>
 <p>Criterios de evaluación:<br>
 a) Se han identificado las diferencias entre la ejecución de código en el servidor y en el cliente Web.<br>
 b) Se han reconocido las ventajas de unir ambas tecnologías en el proceso de desarrollo de programas.<br>
@@ -170,7 +166,7 @@ d) Se han utilizado estas tecnologías y frameworks para generar páginas Web qu
 e) Se han utilizado estas tecnologías y frameworks, para generar páginas Web que incluyan verificación de formularios.<br>
 f) Se han utilizado estas tecnologías y frameworks para generar páginas web que incluyan modificación dinámica de su contenido y su estructura.<br>
 g) Se han aplicado estas tecnologías y frameworks en la programación de aplicaciones Web.</p>
-<h5 id="ra-9" tabindex="-1"><a class="header-anchor" href="#ra-9"><span>RA 9</span></a></h5>
+<h4 id="ra-9" tabindex="-1"><a class="header-anchor" href="#ra-9"><span>RA 9</span></a></h4>
 <p>Criterios de evaluación:<br>
 a) Se han reconocido las ventajas que proporciona la reutilización de código y el provechamiento de información ya existente.<br>
 b) Se han identificado tecnologías y frameworks aplicables en la creación de aplicaciones web híbridas.<br>

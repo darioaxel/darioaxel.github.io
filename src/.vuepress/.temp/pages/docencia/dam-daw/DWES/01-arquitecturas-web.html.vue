@@ -1,4 +1,10 @@
-<template><div><h1 id="ut01-arquitecturas-web" tabindex="-1"><a class="header-anchor" href="#ut01-arquitecturas-web"><span>UT01 Arquitecturas Web</span></a></h1>
+<template><div><blockquote>
+<p><strong>En este tema trabajaremos los siguientes RAs:</strong></p>
+<ul>
+<li>RA1. Selecciona las arquitecturas y tecnologías de programación Web en entorno servidor, analizando sus capacidades y características propias.</li>
+</ul>
+</blockquote>
+<h1 id="ut01-arquitecturas-web" tabindex="-1"><a class="header-anchor" href="#ut01-arquitecturas-web"><span>UT01 Arquitecturas Web</span></a></h1>
 <div class="hint-container info">
 <p class="hint-container-title">¿Qué vamos a aprender en esta unidad?</p>
 <p>En esta unidad vamos a aprender los conceptos básicos de las arquitecturas web. Para ello empezaremos analizando los principios SOLID, los patrones de diseño y las arquitecturas de software más comunes.<br>
@@ -16,20 +22,70 @@ Estas páginas pueden cambiar su contenido en función de la interacción del us
 <li><strong>Procesamiento en el servidor:</strong> El servidor genera el contenido dinámico utilizando lenguajes como PHP, Python, Ruby, Java, .NET, etc., y puede acceder a bases de datos o servicios externos para construir la respuesta.</li>
 <li><strong>Consumo de servicios externos desde el cliente:</strong> El navegador ejecuta JavaScript para solicitar datos a servicios REST de terceros y actualizar la página dinámicamente, sin necesidad de recargarla por completo.</li>
 </ul>
+<h2 id="arquitectura-cliente-servidor" tabindex="-1"><a class="header-anchor" href="#arquitectura-cliente-servidor"><span>Arquitectura Cliente-Servidor</span></a></h2>
+<p>El modelo cliente-servidor es un modelo que reparte tareas entre los proveedores de un recurso o servicio, llamados <strong>servidores</strong>, y los solicitantes/consumidores del servicio, llamados <strong>clientes</strong>.</p>
+<p>Lo más frecuente es que los clientes y los servidores se comuniquen a través de una red de comunicaciones, pero ambos pueden residir en la misma máquina (normalmente en tareas de desarrollo).</p>
+<p>El esquema de funcionamiento más básico del modelo cliente-servidor para una arquitectura web está basado en uno o varios clientes que solicitan una página web a un servidor web:</p>
+<ol>
+<li>Desde el navegador web (o agente de usuario, que puede ser también una app nativa u otro servidor incluso) el usuario solicita un servicio web indicando su URL.</li>
+<li>El servidor recibe la <strong>petición</strong> mediante el protocolo de aplicación HTTP, y la procesa mediante su <strong>lógica de negocio</strong>.</li>
+<li>Produce una <strong>respuesta</strong> HTTP a la petición, que envía al cliente. Esta respuesta puede contener <strong>ficheros</strong> de distinta naturaleza: HTML, CSS, XML, JSON, ficheros multimedia, código JavaScript, etc.</li>
+<li>El navegador web recibe la información enviada por el servidor y la interpreta. En función de la respuesta enviada, se respresenta en el navegador la respuesta al usuario (normalmente en forma de página web).<br>
+<img src="/images/dwes/arquitectura-cliente-servidor.png" alt="Arquitectura Cliente-Servidor" loading="lazy"><br>
+A continuación se muestran las ventajas y desventajas al respecto:</li>
+</ol>
+<p><em><strong>Ventajas:</strong></em></p>
+<ul>
+<li><strong>Centralización</strong> del control: los accesos, recursos y la integridad de los datos son controlados por el servidor. Esta centralización también facilita la tarea de actualizar datos u otros recursos.</li>
+<li><strong>Escalabilidad</strong>: se puede aumentar la capacidad de clientes y servidores por separado. Cualquier elemento puede ser aumentado (o mejorado) en cualquier momento, o se pueden añadir nuevos nodos a la red (clientes y/o servidores), siempre que el sistema esté diseñado para ello.</li>
+<li><strong>Portabilidad</strong>: el hecho de que la aplicación web se ejecute en un navegador web, hace que se independice el software del sistema operativo sobre el que se ejecuta. De esta forma, se aprovecha el desarrollo para las diferentes plataformas.</li>
+<li>Fácil <strong>mantenimiento</strong>: al estar distribuidas las funciones y responsabilidades entre varios ordenadores independientes, es posible reemplazar, reparar, actualizar, o incluso trasladar un servidor, mientras que sus clientes no se verán afectados por ese cambio (o se afectarán mínimamente). Esta independencia de los cambios también se conoce como <strong>encapsulación</strong>.</li>
+<li>Existen <strong>tecnologías</strong>, suficientemente desarrolladas, diseñadas para el modelo de cliente-servidor que aseguran la seguridad en las transacciones, la usabilidad de la interfaz, y la facilidad de uso.</li>
+</ul>
+<p><em><strong>Desventajas:</strong></em></p>
+<ul>
+<li>La <strong>congestión</strong> del tráfico ha sido siempre un problema en esta arquitectura. Cuando una gran cantidad de clientes envían peticiones simultáneas al mismo servidor, se pueden producir situaciones de sobrecarga.</li>
+<li>Cuando un servidor está caído, las peticiones de los clientes <strong>no pueden ser satisfechas</strong>, ya que los recursos no están distribuidos.</li>
+<li>El software y el hardware de un servidor son generalmente muy determinantes. Normalmente se necesita <strong>software y hardware específico</strong>, dependiendo del tipo de servicio web, sobre todo en el lado del servidor. Esto aumentará el coste. Como alternativa, se dispone de servicios web en la nube, con diversos tipos de costes dependientes de la arquitectura web.</li>
+</ul>
+<div class="hint-container note">
+<p class="hint-container-title">Nota</p>
+<p>Estas desventajas se refieren al caso en que los recursos del servidor no están replicados y/o distribuidos. Actualmente existen técnicas de escalado horizontal y vertical que pueden subsanar estos problemas.</p>
+</div>
+<h3 id="ejemplo-practico" tabindex="-1"><a class="header-anchor" href="#ejemplo-practico"><span>💊 Ejemplo práctico</span></a></h3>
+<p>En este apartado vamos a tratar de indagar un poco más en qué sucede detrás de las cortinas cuando consultamos una URL.<br>
+Vamos a observar, a través de las herramientas de desarrollador del navegador web de Chrome (igual nos puede servir Firefox o cualquier otro), los 4 pasos que se detallaban en el apartado anterior.</p>
+<p>Para ello vamos a utilizar la página web del Campus Virtual FP (<a href="http://www.campusvirtualfp.com" target="_blank" rel="noopener noreferrer">www.campusvirtualfp.com</a>).</p>
+<ol>
+<li>Abrimos una pestaña del navegador web e introducimos la URL <a href="http://www.campusvirtualfp.com" target="_blank" rel="noopener noreferrer">www.campusvirtualfp.com</a>.</li>
+</ol>
+<p>A continuación abrimos las herramientas de desarrollador y vamos a la pestaña Network (o Red):</p>
+<h2 id="generacion-de-paginas-web" tabindex="-1"><a class="header-anchor" href="#generacion-de-paginas-web"><span>Generación de páginas web</span></a></h2>
+<h3 id="estaticas" tabindex="-1"><a class="header-anchor" href="#estaticas"><span>Estáticas</span></a></h3>
+<p>Una página web estática es un documento o conjunto de documentos (generalmente: HTML, CSS, contenido multimedia, código JavaScript) en el que no existe una actualización dinámica de su contenido al interactuar con el sistema (servidor, ya sea remoto o local) que provee el documento/s. Es decir, la misma petición a la misma URL (Uniform Resource Locator), aunque la repitamos en múltiples ocasiones a lo largo del tiempo, siempre va a devolver la misma información (a no ser que la modifique un desarrollador en el lado servidor, manualmente). Puede existir interacción con la página web estática (mediante código JavaScript), en forma de mensajes, eventos, actualizaciones de su apariencia...</p>
+<p>En este caso, un navegador web es capaz de representar la página web en una máquina local, sin necesidad de disponer de un servidor web adicional.</p>
+<h3 id="dinamicas" tabindex="-1"><a class="header-anchor" href="#dinamicas"><span>Dinámicas</span></a></h3>
+<p>Una página web dinámica puede contener una parte estática, y además el contenido que se muestre dependerá del momento en el cual se realice la petición. Esto es debido a que el servidor conformará dicho contenido dependiendo de los datos de que se disponga en ese momento en un sistema de bases de datos. La comunicación entre el navegador web y el servidor será más compleja, ya que, además de consultar contenidos, se podrán realizar potencialmente operaciones de creación, modificación, y eliminación de datos.</p>
+<p>Una aplicación Web es una herramienta software, formada por páginas web dinámicas (aunque también puede contener documentos web estáticos), basada en tecnologías web que la dotan de un carácter dinámico (interactúan con un sistema remoto) haciendo uso de servicios web (basados en la arquitectura TCP/IP), y que proporcionan al usuario un servicio o conjunto de servicios. Sería lo más parecido a una aplicación nativa o de escritorio, pero ejecutada en un navegador web. El hecho de ejecutarse en un navegador web las independiza del sistema operativo en el que se ejecutan, pero también presentan determinadas limitaciones debido a esta independencia.</p>
+<p>En este caso, un navegador web NO es capaz de representar la página web en una máquina local sin un servidor web adicional y el resto de componentes que acompañan a esta arquitectura, como sí era el caso de una página web estática.</p>
 <h2 id="arquitecturas-web-capas-fisicas-y-logicas" tabindex="-1"><a class="header-anchor" href="#arquitecturas-web-capas-fisicas-y-logicas"><span>Arquitecturas Web: Capas Físicas y Lógicas</span></a></h2>
-<p>Las arquitecturas web no son tan sencillas como un simple servidor y una serie de clientes. Mediante una estructura de capas o layers, se intenta minorar la complejidad que una aplicación real tiene de forma que sean mantenibles, comprensibles por los desarrolladores y testeables.<br>
-En realidad, las aplicaciones web modernas suelen estar organizadas en capas físicas y lógicas que facilitan su desarrollo, mantenimiento y escalabilidad.</p>
+<p>Las arquitecturas web no son tan sencillas como un simple servidor y una serie de clientes. Mediante una estructura de <strong>capas</strong> o <strong>layers</strong>, se intenta minorar la complejidad que una aplicación real tiene de forma que sean mantenibles, comprensibles por los desarrolladores y testeables.<br>
+En realidad, las aplicaciones web modernas suelen estar organizadas en <strong>capas físicas</strong> y <strong>lógicas</strong> que facilitan su desarrollo, mantenimiento y escalabilidad.</p>
 <h3 id="capas-fisicas-tiers" tabindex="-1"><a class="header-anchor" href="#capas-fisicas-tiers"><span>Capas Físicas (Tiers)</span></a></h3>
-<p>Una capa física o tier corresponde a un componente hardware separado dentro de la arquitectura. Por ejemplo, en una arquitectura de tres capas físicas (3-tier) se distinguen:<br>
-Servidor web</p>
-<p>Servidor de aplicaciones</p>
-<p>Servidor de base de datos</p>
+<p>Una capa física o tier corresponde a un componente hardware separado dentro de la arquitectura. Por ejemplo, en una arquitectura de tres capas físicas (3-tier) se distinguen:</p>
+<ul>
+<li>Servidor web</li>
+<li>Servidor de aplicaciones</li>
+<li>Servidor de base de datos</li>
+</ul>
 <p>En entornos modernos, es común utilizar clusters de servidores en una misma capa para lograr tolerancia a fallos y escalabilidad.</p>
 <h3 id="capas-logicas-layers" tabindex="-1"><a class="header-anchor" href="#capas-logicas-layers"><span>Capas Lógicas (Layers)</span></a></h3>
 <p>Las capas lógicas organizan el código según su función:</p>
-<p>Presentación: Interfaz de usuario.</p>
-<p>Negocio/Aplicación: Lógica de negocio y procesamiento.</p>
-<p>Datos/Persistencia: Gestión y almacenamiento de datos.</p>
+<ul>
+<li>Presentación: Interfaz de usuario.</li>
+<li>Negocio/Aplicación: Lógica de negocio y procesamiento.</li>
+<li>Datos/Persistencia: Gestión y almacenamiento de datos.</li>
+</ul>
 <p>Cada capa puede implementarse con diferentes tecnologías y lenguajes, permitiendo flexibilidad y modularidad.</p>
 <h3 id="modelo-mvc-modelo-vista-controlador" tabindex="-1"><a class="header-anchor" href="#modelo-mvc-modelo-vista-controlador"><span>Modelo MVC (Modelo-Vista-Controlador)</span></a></h3>
 <p>El patrón MVC (Model-View-Controller) es una arquitectura que separa la lógica de negocio, la gestión de datos y la presentación visual:</p>
@@ -227,6 +283,11 @@ Robert C. Martin también publicó uno de los libros de cabecera que casi todo p
 </li>
 </ol>
 <p>Estas son solo algunas de las arquitecturas de software más comunes en el desarrollo de aplicaciones web backend. Cada una tiene sus ventajas y desafíos, y la elección de la arquitectura adecuada depende de los requisitos y objetivos del proyecto.</p>
+<div class="hint-container info">
+<p class="hint-container-title">Información</p>
+<p>👻 Aunque la utilización de arquitecturas basadas en microservicios tuvieron un hype importante durante los últimos años, identificando estas prácticas como la panacea para todo tipo de proyectos, la realidad es que no son adecuadas para todos los casos. Su complejidad y coste de mantenimiento puede ser excesivo para proyectos pequeños o medianos, donde una arquitectura monolítica o en capas puede ser más adecuada.</p>
+<p>Actualmente, múltiples empresas están migrando sus arquitecturas de microservicios a arquitecturas monolíticas o en capas, buscando simplificar su mantenimiento y reducir costes, sobretodo en proyectos pequeños o medianos.</p>
+</div>
 <h3 id="ejemplo-de-arquitectura-netflix" tabindex="-1"><a class="header-anchor" href="#ejemplo-de-arquitectura-netflix"><span>Ejemplo de arquitectura: Netflix</span></a></h3>
 <p>La arquitectura de backend de Netflix es conocida por ser altamente escalable y resiliente, diseñada para manejar grandes volúmenes de tráfico y garantizar la disponibilidad y el rendimiento de sus servicios. Netflix adopta una arquitectura basada en microservicios, donde las diferentes funcionalidades se dividen en servicios independientes. Cada microservicio se enfoca en una tarea específica y se comunica con otros servicios a través de interfaces bien definidas. Esto permite una mayor flexibilidad, escalabilidad y mantenimiento de los servicios individuales.</p>
 <figure><img src="/images/dwes/netflix.gif" alt="netflix" tabindex="0" loading="lazy"><figcaption>netflix</figcaption></figure>
