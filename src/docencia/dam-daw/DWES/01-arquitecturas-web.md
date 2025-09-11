@@ -71,10 +71,53 @@ Vamos a observar, a través de las herramientas de desarrollador del navegador w
 
 Para ello vamos a utilizar la página web del Campus Virtual FP (www.campusvirtualfp.com).
 
- 1. Abrimos una pestaña del navegador web e introducimos la URL www.campusvirtualfp.com.
+ 1. Abrimos una pestaña del navegador web e introducimos la URL www.campusvirtualfp.com.  
+![Acceso a la web y herramientas](/images/dwes/pill-01-campusdigitalfp.png)
 
 
-A continuación abrimos las herramientas de desarrollador y vamos a la pestaña Network (o Red):
+ 2. A continuación abrimos las herramientas de desarrollador y vamos a la pestaña Network (o Red)  
+ ![Herramientas](/images/dwes/pill-02-campusdigitalfp.png)
+
+
+En estos momentos sólo vemos unos pocos datos de llamadas a Youtube que realiza la web para mostrar los vídeos, porque no hemos hecho una petición al servidor con la ventana de herramientas de desarrollador activa. 
+
+Por tanto, refrescamos la página (equivalente a hacer una petición al servidor que gestiona www.campusdigitalfp.com) y pasamos al punto siguiente.  
+
+ 3. Refrescamos la página y observamos:
+
+ ![Red](/images/dwes/pill-03-campusdigitalfp.png)
+
+El servidor recibe la petición mediante el protocolo de aplicación HTTP, y la procesa mediante su lógica de negocio.
+Realmente no podemos saber exactamente qué está sucediendo en el servidor durante este paso, a no ser que tuviésemos acceso al mismo, con los privilegios y herramientas correctas, pero sí podemos averiguar muchos datos mediante herramientas como:
+
+ * **whois:** nos indica, entre otros datos, que la IP del servidor es 217.13.88.8 (registro DNS de tipo A).
+ * **builtwith:** nos indica, entre otras cosas, que la plataforma web dispone de dos servidores web (Apache y nginx).
+
+::: warning
+Existe otro tipo de métodos para conocer más datos sobre el servidor podría implicar prácticas ilegales, en el ámbito de la ciberseguridad.
+:::
+
+Este paso se llevaría a cabo en lo que se denomina Back-end.
+
+Vamos a ver el resultado en el siguiente paso.  
+ ![Red Accedida](/images/dwes/pill-04-campusdigitalfp.png)
+
+
+El servidor produce una respuesta a la petición del cliente, que la envía a través de internet y recupera nuestro navegador.  
+
+Ahora, si consultamos la pestaña Network después de refrescar la URL, podremos ver que han aparecido muchos registros, el primero de los cuales tiene como nombre www.campusdigitalfp.com:
+
+
+Este registro corresponde a la primera petición que hemos realizado al servidor de www.elche.es. Si pinchamos sobre él podremos ver tanto los datos de la petición realizada, como la respuesta enviada por el servidor a través de Internet, mediante HTTP. Se puede ver que el código devuelto por el servidor es 200 (en color verde, signo de que no ha habido error), y ha respondido un servidor web Apache:
+
+ ![Red Accedida](/images/dwes/pill-05-campusdigitalfp.png)
+::: tip
+El servidor puede enviar también su versión software, pero esto podría conllevar ataques maliciosos, dependiendo de las vulnerabilidades de dicha > versión. Es por ello que es una buena práctica configurar el servidor web para que no envíe dicha versión (entre otros aspectos).
+:::
+
+Más abajo, en la misma respuesta, nos indica los parámetros con que se ha realizado la petición. Entre éstos, podemos ver el tipo de petición que hemos hecho (GET), la versión de nuestro navegador web, el lenguaje en que queremos recibir la información, entre otros detalles. 
+
+![Headers](/images/dwes/pill-06-campusdigitalfp.png)
 
 ## Generación de páginas web
 ### Estáticas

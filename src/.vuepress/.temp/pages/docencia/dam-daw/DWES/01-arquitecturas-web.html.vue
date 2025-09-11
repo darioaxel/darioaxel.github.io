@@ -57,9 +57,44 @@ A continuación se muestran las ventajas y desventajas al respecto:</li>
 Vamos a observar, a través de las herramientas de desarrollador del navegador web de Chrome (igual nos puede servir Firefox o cualquier otro), los 4 pasos que se detallaban en el apartado anterior.</p>
 <p>Para ello vamos a utilizar la página web del Campus Virtual FP (<a href="http://www.campusvirtualfp.com" target="_blank" rel="noopener noreferrer">www.campusvirtualfp.com</a>).</p>
 <ol>
-<li>Abrimos una pestaña del navegador web e introducimos la URL <a href="http://www.campusvirtualfp.com" target="_blank" rel="noopener noreferrer">www.campusvirtualfp.com</a>.</li>
+<li>
+<p>Abrimos una pestaña del navegador web e introducimos la URL <a href="http://www.campusvirtualfp.com" target="_blank" rel="noopener noreferrer">www.campusvirtualfp.com</a>.<br>
+<img src="/images/dwes/pill-01-campusdigitalfp.png" alt="Acceso a la web y herramientas" loading="lazy"></p>
+</li>
+<li>
+<p>A continuación abrimos las herramientas de desarrollador y vamos a la pestaña Network (o Red)<br>
+<img src="/images/dwes/pill-02-campusdigitalfp.png" alt="Herramientas" loading="lazy"></p>
+</li>
 </ol>
-<p>A continuación abrimos las herramientas de desarrollador y vamos a la pestaña Network (o Red):</p>
+<p>En estos momentos sólo vemos unos pocos datos de llamadas a Youtube que realiza la web para mostrar los vídeos, porque no hemos hecho una petición al servidor con la ventana de herramientas de desarrollador activa.</p>
+<p>Por tanto, refrescamos la página (equivalente a hacer una petición al servidor que gestiona <a href="http://www.campusdigitalfp.com" target="_blank" rel="noopener noreferrer">www.campusdigitalfp.com</a>) y pasamos al punto siguiente.</p>
+<ol start="3">
+<li>Refrescamos la página y observamos:</li>
+</ol>
+<figure><img src="/images/dwes/pill-03-campusdigitalfp.png" alt="Red" tabindex="0" loading="lazy"><figcaption>Red</figcaption></figure>
+<p>El servidor recibe la petición mediante el protocolo de aplicación HTTP, y la procesa mediante su lógica de negocio.<br>
+Realmente no podemos saber exactamente qué está sucediendo en el servidor durante este paso, a no ser que tuviésemos acceso al mismo, con los privilegios y herramientas correctas, pero sí podemos averiguar muchos datos mediante herramientas como:</p>
+<ul>
+<li><strong>whois:</strong> nos indica, entre otros datos, que la IP del servidor es 217.13.88.8 (registro DNS de tipo A).</li>
+<li><strong>builtwith:</strong> nos indica, entre otras cosas, que la plataforma web dispone de dos servidores web (Apache y nginx).</li>
+</ul>
+<div class="hint-container warning">
+<p class="hint-container-title">Aviso</p>
+<p>Existe otro tipo de métodos para conocer más datos sobre el servidor podría implicar prácticas ilegales, en el ámbito de la ciberseguridad.</p>
+</div>
+<p>Este paso se llevaría a cabo en lo que se denomina Back-end.</p>
+<p>Vamos a ver el resultado en el siguiente paso.<br>
+<img src="/images/dwes/pill-04-campusdigitalfp.png" alt="Red Accedida" loading="lazy"></p>
+<p>El servidor produce una respuesta a la petición del cliente, que la envía a través de internet y recupera nuestro navegador.</p>
+<p>Ahora, si consultamos la pestaña Network después de refrescar la URL, podremos ver que han aparecido muchos registros, el primero de los cuales tiene como nombre <a href="http://www.campusdigitalfp.com" target="_blank" rel="noopener noreferrer">www.campusdigitalfp.com</a>:</p>
+<p>Este registro corresponde a la primera petición que hemos realizado al servidor de <a href="http://www.elche.es" target="_blank" rel="noopener noreferrer">www.elche.es</a>. Si pinchamos sobre él podremos ver tanto los datos de la petición realizada, como la respuesta enviada por el servidor a través de Internet, mediante HTTP. Se puede ver que el código devuelto por el servidor es 200 (en color verde, signo de que no ha habido error), y ha respondido un servidor web Apache:</p>
+<figure><img src="/images/dwes/pill-05-campusdigitalfp.png" alt="Red Accedida" tabindex="0" loading="lazy"><figcaption>Red Accedida</figcaption></figure>
+<div class="hint-container tip">
+<p class="hint-container-title">Consejos</p>
+<p>El servidor puede enviar también su versión software, pero esto podría conllevar ataques maliciosos, dependiendo de las vulnerabilidades de dicha &gt; versión. Es por ello que es una buena práctica configurar el servidor web para que no envíe dicha versión (entre otros aspectos).</p>
+</div>
+<p>Más abajo, en la misma respuesta, nos indica los parámetros con que se ha realizado la petición. Entre éstos, podemos ver el tipo de petición que hemos hecho (GET), la versión de nuestro navegador web, el lenguaje en que queremos recibir la información, entre otros detalles.</p>
+<figure><img src="/images/dwes/pill-06-campusdigitalfp.png" alt="Headers" tabindex="0" loading="lazy"><figcaption>Headers</figcaption></figure>
 <h2 id="generacion-de-paginas-web" tabindex="-1"><a class="header-anchor" href="#generacion-de-paginas-web"><span>Generación de páginas web</span></a></h2>
 <h3 id="estaticas" tabindex="-1"><a class="header-anchor" href="#estaticas"><span>Estáticas</span></a></h3>
 <p>Una página web estática es un documento o conjunto de documentos (generalmente: HTML, CSS, contenido multimedia, código JavaScript) en el que no existe una actualización dinámica de su contenido al interactuar con el sistema (servidor, ya sea remoto o local) que provee el documento/s. Es decir, la misma petición a la misma URL (Uniform Resource Locator), aunque la repitamos en múltiples ocasiones a lo largo del tiempo, siempre va a devolver la misma información (a no ser que la modifique un desarrollador en el lado servidor, manualmente). Puede existir interacción con la página web estática (mediante código JavaScript), en forma de mensajes, eventos, actualizaciones de su apariencia...</p>
