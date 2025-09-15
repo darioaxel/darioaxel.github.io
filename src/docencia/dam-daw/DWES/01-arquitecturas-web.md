@@ -107,7 +107,6 @@ El servidor produce una respuesta a la petición del cliente, que la envía a tr
 
 Ahora, si consultamos la pestaña Network después de refrescar la URL, podremos ver que han aparecido muchos registros, el primero de los cuales tiene como nombre www.campusdigitalfp.com:
 
-
 Este registro corresponde a la primera petición que hemos realizado al servidor de www.elche.es. Si pinchamos sobre él podremos ver tanto los datos de la petición realizada, como la respuesta enviada por el servidor a través de Internet, mediante HTTP. Se puede ver que el código devuelto por el servidor es 200 (en color verde, signo de que no ha habido error), y ha respondido un servidor web Apache:
 
  ![Red Accedida](/images/dwes/pill-05-campusdigitalfp.png)
