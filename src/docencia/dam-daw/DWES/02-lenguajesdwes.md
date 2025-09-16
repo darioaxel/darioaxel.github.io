@@ -223,6 +223,12 @@ Al igual que sucede con PHP y Laravel, en Java el código “puro” (servlets, 
   * **Jakarta EE** sigue siendo clave en entornos corporativos y servidores de aplicaciones.
   * Nuevas alternativas como **Quarkus** o **Micronaut** buscan optimización en la nube y microservicios.
 
+::: note
+Aunque lo hemos nombrado también al comienzo del tema, no ha sido explicado y hemos de abordarlo.
+El concepto de **"convention over configuration"** (convención sobre configuración) es un paradigma de diseño de software que busca simplificar y agilizar el desarrollo reduciendo la cantidad de decisiones y configuraciones explícitas que debe realizar un programador. 
+
+La idea principal es que el entorno, framework o sistema asume ciertas reglas y comportamientos predeterminados (convenciones) que el desarrollador solo debe seguir, de modo que no tenga que definir cada aspecto manualmente (configuración) salvo cuando quiera desviarse de esas convenciones.
+:::
 
 #### 4.1.2. Ventajas de Java en la web
 
