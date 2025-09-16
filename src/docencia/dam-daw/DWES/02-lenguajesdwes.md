@@ -293,11 +293,6 @@ mvn install
 mvn clean package
 ```
 
-Perfecto 🙌.
-Voy a seguir la misma **estructura y estilo** que usaste para PHP y que ya repliqué con Java, pero ahora aplicado a **Python en desarrollo web**, con foco en **Django** como framework principal (aunque mencionaré también Flask para dar contexto).
-
----
-
 ## 5. Python en el Desarrollo Web
 
 ![Logo de Python](https://www.python.org/static/community_logos/python-logo.png)
