@@ -198,6 +198,12 @@ Hoy coexisten: lenguajes interpretados (PHP, Python/Django), frameworks Java (Sp
 </ul>
 </li>
 </ul>
+<div class="hint-container note">
+<p class="hint-container-title">Nota</p>
+<p>Aunque lo hemos nombrado también al comienzo del tema, no ha sido explicado y hemos de abordarlo.<br>
+El concepto de <strong>&quot;convention over configuration&quot;</strong> (convención sobre configuración) es un paradigma de diseño de software que busca simplificar y agilizar el desarrollo reduciendo la cantidad de decisiones y configuraciones explícitas que debe realizar un programador.</p>
+<p>La idea principal es que el entorno, framework o sistema asume ciertas reglas y comportamientos predeterminados (convenciones) que el desarrollador solo debe seguir, de modo que no tenga que definir cada aspecto manualmente (configuración) salvo cuando quiera desviarse de esas convenciones.</p>
+</div>
 <h4 id="_4-1-2-ventajas-de-java-en-la-web" tabindex="-1"><a class="header-anchor" href="#_4-1-2-ventajas-de-java-en-la-web"><span>4.1.2. Ventajas de Java en la web</span></a></h4>
 <ul>
 <li><strong>Gran comunidad</strong> y documentación abundante.</li>
