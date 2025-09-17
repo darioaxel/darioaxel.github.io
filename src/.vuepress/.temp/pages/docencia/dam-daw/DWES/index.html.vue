@@ -89,10 +89,7 @@
 </thead>
 <tbody>
 <tr>
-<td>a) Se han caracterizado y diferenciado los modelos de ejecución de código en el servidor y</td>
-</tr>
-<tr>
-<td>en el cliente Web.</td>
+<td>a) Se han caracterizado y diferenciado los modelos de ejecución de código en el servidor y en el cliente Web.</td>
 </tr>
 <tr>
 <td>b) Se han reconocido las ventajas que proporciona la generación dinámica de páginas.</td>
@@ -101,22 +98,13 @@
 <td>c) Se han identificado los mecanismos de ejecución de código en los servidores Web.</td>
 </tr>
 <tr>
-<td>d) Se han reconocido las funcionalidades que aportan los servidores de aplicaciones y su</td>
+<td>d) Se han reconocido las funcionalidades que aportan los servidores de aplicaciones y su integración con los servidores Web.</td>
 </tr>
 <tr>
-<td>integración con los servidores Web.</td>
+<td>e) Se han identificado y caracterizado los principales lenguajes y tecnologías relacionados con la programación Web en entorno servidor.</td>
 </tr>
 <tr>
-<td>e) Se han identificado y caracterizado los principales lenguajes y tecnologías relacionados</td>
-</tr>
-<tr>
-<td>con la programación Web en entorno servidor.</td>
-</tr>
-<tr>
-<td>f) Se han verificado los mecanismos de integración de los lenguajes de marcas con los</td>
-</tr>
-<tr>
-<td>lenguajes de programación en entorno servidor.</td>
+<td>f) Se han verificado los mecanismos de integración de los lenguajes de marcas con los lenguajes de programación en entorno servidor.</td>
 </tr>
 <tr>
 <td>g) Se han reconocido y evaluado las herramientas y frameworks de programación en entorno servidor.</td>
@@ -132,10 +120,7 @@
 </thead>
 <tbody>
 <tr>
-<td>a) Se han reconocido los mecanismos de generación de páginas Web a partir de lenguajes</td>
-</tr>
-<tr>
-<td>de marcas con código embebido.</td>
+<td>a) Se han reconocido los mecanismos de generación de páginas Web a partir de lenguajes de marcas con código embebido.</td>
 </tr>
 <tr>
 <td>b) Se han identificado las principales tecnologías asociadas.</td>
@@ -147,10 +132,7 @@
 <td>d) Se ha reconocido la sintaxis del lenguaje de programación que se ha de utilizar.</td>
 </tr>
 <tr>
-<td>e) Se han escrito sentencias simples y se han comprobado sus efectos en el documento</td>
-</tr>
-<tr>
-<td>resultante.</td>
+<td>e) Se han escrito sentencias simples y se han comprobado sus efectos en el documento resultante.</td>
 </tr>
 <tr>
 <td>f) Se han utilizado directivas para modificar el comportamiento predeterminado.</td>

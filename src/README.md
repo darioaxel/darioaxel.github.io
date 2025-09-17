@@ -23,15 +23,11 @@ actions:
 
 highlights:
   - header: Blog
-    description: Blog personal con artículos programación y proyectos varios.
+    description: Blog personal con artículos programación y proyectos varios. 
     image: /assets/image/blog.svg
     bgImage: https://theme-hope-assets.vuejs.press/bg/5-light.svg
     bgImageDark: https://theme-hope-assets.vuejs.press/bg/5-dark.svg
-    highlights:
-      - title: Blog features
-        icon: blog
-        details: Listing your articles with their dates, tags and categories
-        link: https://theme-hope.vuejs.press/guide/blog/intro.html
+    link: https://theme-hope.vuejs.press/guide/blog/intro.html
 
 
   

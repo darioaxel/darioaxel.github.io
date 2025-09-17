@@ -40,28 +40,22 @@ category:
 
 | Criterios de evaluación: RA1 |
 | --- | 
-|a) Se han caracterizado y diferenciado los modelos de ejecución de código en el servidor y
-en el cliente Web.|
+|a) Se han caracterizado y diferenciado los modelos de ejecución de código en el servidor y en el cliente Web.|
 |b) Se han reconocido las ventajas que proporciona la generación dinámica de páginas.|
 |c) Se han identificado los mecanismos de ejecución de código en los servidores Web.|
-|d) Se han reconocido las funcionalidades que aportan los servidores de aplicaciones y su
-integración con los servidores Web.|
-|e) Se han identificado y caracterizado los principales lenguajes y tecnologías relacionados
-con la programación Web en entorno servidor.|
-|f) Se han verificado los mecanismos de integración de los lenguajes de marcas con los
-lenguajes de programación en entorno servidor.|
+|d) Se han reconocido las funcionalidades que aportan los servidores de aplicaciones y su integración con los servidores Web.|
+|e) Se han identificado y caracterizado los principales lenguajes y tecnologías relacionados con la programación Web en entorno servidor.|
+|f) Se han verificado los mecanismos de integración de los lenguajes de marcas con los lenguajes de programación en entorno servidor.|
 |g) Se han reconocido y evaluado las herramientas y frameworks de programación en entorno servidor.|
 ---
 
 | Criterios de evaluación: RA2  |
 | --- |
-|a) Se han reconocido los mecanismos de generación de páginas Web a partir de lenguajes
-de marcas con código embebido.|
+|a) Se han reconocido los mecanismos de generación de páginas Web a partir de lenguajes de marcas con código embebido.|
 |b) Se han identificado las principales tecnologías asociadas.|
 |c) Se han utilizado etiquetas para la inclusión de código en el lenguaje de marcas.|
 |d) Se ha reconocido la sintaxis del lenguaje de programación que se ha de utilizar.|
-|e) Se han escrito sentencias simples y se han comprobado sus efectos en el documento
-resultante.|
+|e) Se han escrito sentencias simples y se han comprobado sus efectos en el documento resultante.|
 |f) Se han utilizado directivas para modificar el comportamiento predeterminado.|
 |g) Se han utilizado los distintos tipos de variables y operadores disponibles en el lenguaje.|
 |h) Se han identificado los ámbitos de utilización de las variables.|

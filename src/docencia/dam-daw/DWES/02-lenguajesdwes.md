@@ -407,3 +407,7 @@ poetry install
 poetry add django
 ```
 
+## 6. Guías de desarrollo para los distintos lenguajes
+### 6.1. Guía de desarrollo para PHP
+### 6.2. Guía de desarrollo para Java
+### 6.3. Guía de desarrollo para Python
