@@ -385,228 +385,68 @@ Las API web son fundamentales en el desarrollo de aplicaciones modernas, ya que 
 :::
 ![apis](/images/dwes/apis.gif)
 
-<!--
-Arquitecturas Web¶
-Duración y criterios de evaluación
+## El Protocolo HTTP y HTTPS
+### Características y Ventajas del Protocolo HTTP
+El **Protocolo HTTP (HyperText Transfer Protocol)** es la base de la comunicación en la World Wide Web. Es un protocolo no orientado a la conexión, lo que significa que cada petición entre cliente y servidor es independiente y no requiere mantener una conexión continua.
+
+Sus principales características son:
+
+* **Sencillo**: Es en modo texto y fácil de usar directamente por una persona.
+* **Extensible**: Se pueden enviar más metadatos que los que están por defecto.
+* **Sin estado**: Cada petición es independiente. Esto es un problema para sitios como un carrito de la compra, pero se soluciona con cookies y sesiones.
+HTTP es fundamental en arquitecturas distribuidas como los microservicios y es la base para la creación de APIs REST. Ofrece ventajas como la mejora de la velocidad al controlar la caché de las páginas, la autenticación de usuarios, el uso transparente de proxies y el mantenimiento del estado entre peticiones gracias a las sesiones. También permite indicar el formato de lo que se envía, pide y retorna.
+
+### Formato de Peticiones y Respuestas HTTP
+La interacción en la web se basa en un intercambio constante de peticiones y respuestas HTTP entre el navegador del cliente y el servidor. Una petición HTTP tiene una primera línea que incluye el método (ej. GET), la ruta del recurso solicitado (ej. /index.html), y la versión del protocolo (ej. HTTP/1.1), seguida de varias líneas con cabeceras que proporcionan metadatos. La respuesta HTTP del servidor comienza con la versión del protocolo (ej. HTTP/1.1), seguida de un código de estado (ej. 200 OK) y un texto que indica el resultado de la operación. Después de una línea vacía, se incluye el contenido del recurso solicitado (ej. HTML).
+
+![Protocolo HTTP](/images/dwes/http-protocol.png)
+
+### Cabeceras HTTP
+
+Las cabeceras HTTP son mensajes adicionales que se envían tanto en las peticiones como en las respuestas para proporcionar información clave sobre la comunicación.
+**Cabeceras de Petición Comunes**:
+*   `Accept`: El formato MIME type en el que se quieren los datos (ej., `text/html`, `application/json`).
+*   `Accept-Language`: El idioma preferido para la respuesta (ej., `fr`).
+*   `Host`: El dominio al que se dirige la petición, muy útil para alojar varios dominios en un mismo servidor.
+*   `Content-Type`: Describe el formato y la codificación de los datos que se envían en el cuerpo de la petición.
+*   `Content-Length`: Tamaño en bytes de los datos que se envían.
+*   `User-Agent`: Información sobre el navegador del cliente.
+
+**Cabeceras de Respuesta Comunes**:
+*   `Content-Type`: El formato y la codificación de los datos que se retornan (ej., `text/html; charset=utf-8`), crucial para que el navegador interprete correctamente el contenido.
+*   `Content-Language`: El idioma de los datos que se retornan.
+*   `Content-Length`: Tamaño en bytes de los datos que se retornan.
+*   `Cache-Control`: Cuánto tiempo pueden estar cacheados los datos.
+*   `Server`: Indica información del servidor (ej. Apache/2.2.3).
 
 
-Decisiones de diseño¶
-¿Qué tamaño tiene el proyecto?
-¿Qué lenguajes de programación conozco? ¿Vale la pena el esfuerzo de aprender uno nuevo?
-¿Voy a usar herramientas de código abierto o herramientas propietarias? ¿Cuál es el coste de utilizar soluciones comerciales?
-¿Voy a programar la aplicación yo solo o formaré parte de un grupo de programadores?
-¿Cuento con algún servidor web o gestor de base de datos disponible o puedo decidir libremente utilizar el que crea necesario?
-¿Qué tipo de licencia voy a aplicar a la aplicación que desarrolle?
-Herramientas¶
-Servidor Web¶
-Software que recibe peticiones HTTP (GET, POST, DELETE, ...). Devuelve el recurso solicitado (HTML, CSS, JS, JSON, imágenes, etc...)
+### Métodos/Verbos HTTP (GET, POST, PUT, DELETE, HEAD)
 
-El producto más implantando es Apache Web Server (https://httpd.apache.org/), creado en 1995.
+Los métodos HTTP, también llamados verbos, definen la acción que un cliente desea realizar sobre un recurso en el servidor.
+*   **GET**: Se utiliza para **obtener** o recuperar un recurso. Generalmente, no se envían datos en el cuerpo de la petición; cualquier parámetro se adjunta a la URL como una cadena de consulta (*query string*).
+*   **POST**: Se usa para **añadir** un nuevo recurso o **enviar** datos al servidor. Los datos se incluyen en el cuerpo de la petición, después de las cabeceras, y no son visibles en la URL.
+*   **PUT**: Se utiliza para **actualizar** o **reemplazar** completamente un recurso existente en el servidor con los datos proporcionados.
+*   **DELETE**: Se usa para **borrar** un recurso o entidad específica del servidor.
+*   **HEAD**: Solicita las mismas cabeceras de respuesta que un método GET, pero sin el cuerpo de la respuesta. Es útil para verificar la existencia de un recurso o sus metadatos sin descargar el contenido completo.
 
-Software libre y multiplataforma
-Sistema de módulos dinámicos → PHP, Python, Perl
-Utiliza el archivo .htaccess para su configuración
-En la actualidad, Apache está perdiendo mercado respecto a Nginx (https://www.nginx.com). Se trata de un producto más moderno (2004) y que en determinados escenarios tiene mejor rendimiento que Apache.
+![img](/images/dwes/http-metodos.gif)
 
-Comparativa servidores web: https://w3techs.com/technologies/history_overview/web_server/ms/q
-Servidor de Aplicaciones¶
-Software que ofrece servicios adicionales a los de un servidor web:
-Clustering
-Balanceo de carga
-Tolerancia a fallos
-Tomcat (http://tomcat.apache.org/) es el servidor de aplicaciones open source y multiplataforma de referencia para una arquitectura Java.
-Contiende un contenedor Web Java que interpreta Servlets y JSP.
-Info
+### Códigos de Estado HTTP
 
-Tanto los servidores web como los servidores de aplicaciones los estudiaremos en profundidad en el módulo de "Despliegue de Aplicaciones Web".
+Después de cada petición, el servidor envía una respuesta que incluye un código de estado HTTP. Este código es un número de tres dígitos que indica el resultado y el estado de la petición.
+*   **1XX (Informativas)**: La petición ha sido recibida y el proceso continúa.
+*   **2XX (Éxito)**: La acción del cliente fue recibida, entendida y aceptada. Por ejemplo, **200 OK** indica que la petición se ha procesado correctamente.
+*   **3XX (Redirección)**: El cliente necesita realizar una acción adicional para completar la petición (ej., el recurso se ha movido).
+*   **4XX (Error del Cliente)**: La petición contiene un error o no puede ser completada debido a un problema en el lado del cliente (ej. **403 Forbidden**, **404 Not Found**).
+*   **5XX (Error del Servidor)**: El servidor falló al completar una petición aparentemente válida.
 
-Lenguajes en el servidor¶
-Las aplicaciones que generan las páginas web se programan en alguno de los siguientes lenguajes:
+![img](/images/dwes/status-code.png)
 
-PHP
-JavaEE: Servlets / JSP
-Python
-ASP.NET → Visual Basic .NET / C#
-Ruby
-...
-JavaEE¶
-Java Enterprise Edition es la solución Java para el desarrollo de aplicaciones enterprise. Ofrece una arquitectura muy completa y compleja, escalable y tolerante a fallos. Planteada para aplicaciones para grandes sistemas.
+### El Protocolo HTTPS (SSL/TLS y Certificados Digitales)
 
-JavaEE
+**HTTPS** (HyperText Transfer Protocol Secure) es la versión segura del protocolo HTTP, esencial para la transferencia confidencial y segura de información entre el cliente y el servidor. A diferencia de HTTP, que transmite datos en texto claro y vulnerable a la intercepción, HTTPS **cifra** la información, asegurando su privacidad.
 
-PHP¶
-Lenguaje de propósito general diseñado para el desarrollo de páginas web dinámicas
-En un principio, lenguaje no tipado.
-Actualmente en la versión 8. Se recomienda al menos utilizar una versión superior a la 7.0.
-Código embebido en el HTML
-Instrucciones entre etiquetas 
-```php
-<?
-``` 
-php y 
+La seguridad en HTTPS se basa en el uso de **certificados digitales**. Estos documentos electrónicos vinculan una clave pública a la identidad de un propietario (servidor web). Son emitidos por **Autoridades de Certificación (AC)**, que son entidades de confianza que firman digitalmente los certificados para validar su autenticidad. Los navegadores web confían en estas AC y alertan al usuario si un certificado no es válido, está autofirmado o no coincide con el sitio, lo que puede generar advertencias de seguridad.
 
-```php
-?>
-```
-Para generar codigo dentro de PHP, podemos usar la instrucción echo
-Multitud de librerías y frameworks:
-Laravel, Symfony, Codeigniter, Zend
-Su documentación es bastante completa: https://www.php.net/manual/es/index.php
-
-El siguiente mapa mental muestra un resumen de sus elementos:
-
-
-Elementos del lenguaje PHP
-Durante las siguientes unidades vamos a estudiar PHP en profundidad.
-
-Puesta en marcha¶
-Para poder trabajar con un entorno de desarrollo local, hemos de preparar nuestro entorno de desarrollo con las herramientas comentadas. A lo largo del curso vamos a utilizar la versión 8 de PHP.
-
-XAMPP¶
-XAMPP (https://www.apachefriends.org/es/index.html) es una distribución compuesta con el software necesario para desarrollar en entorno servidor. Se compone de las siguientes herramientas en base a sus siglas:
-
-X para el sistema operativo (de ahí que se conozca tamnbién como LAMP o WAMP).
-A para Apache.
-M para MySQL / MariaDB. También incluye phpMyAdmin para la administración de la base de datos desde un interfaz web.
-P para PHP.
-la última P para Perl.
-Desde la propia página se puede descargar el archivo ejecutable para el sistema operativo de nuestro ordenador. Se recomienda leer la FAQ de cada sistema operativo con instrucciones para su puesta en marcha.
-
-XAMPP en Windows
-
-Si vas a trabajar con tu propio ordenador, XAMPP es una solución más sencilla que Docker, sobre todo si trabajar con Windows como sistema operativo.
-
-Docker¶
-Docker (https://www.docker.com) es un gestor de contenedores, considerando un contenedor como un método de virtualización del sistema operativo.
-
-El uso de contenedores requiere menos recursos que una máquina virtual, por lo tanto, su lanzamiento y detención son más rápidos que las máquinas virtuales.
-
-Así pues, Docker permite crear, probar e implementar aplicaciones rápidamente, a partir de una serie de plantillas que se conocen como imágenes de Docker.
-
-Para ello es necesario tener instalado Docker Desktop (https://www.docker.com/products/docker-desktop) en nuestros entornos de desarrollo (el cual ya incluye en nucleo de Docker y la herramienta docker compose). En los ordenadores del aula ya está instalado. Para instalarlo en casa, en el caso de Windows, es necesario instalar previamente WSL 2, el cual es un subsistema de Linux dentro de Windows.
-
-A lo largo del curso iremos creando diferentes contenedores con los servicios necesarios, de manera que cada vez sólo trabajemos con el software mínimo.
-
-Versiones
-
-A lo largo del curso vamos a usar PHP 8.0. Respecto a Docker, para escribir los apuntes hemos utilizado la version 20.10 y la version 2.19 de docker compose. Finalmente, la versión de Docker Desktop que hemos utilizado es la 4.0.
-
-Plantilla Servidor Web + PHP¶
-Docker se basa en el uso de imágenes para crear contenedores. Docker Compose simplifica el trabajo con múltiples contenedores, y por ello, para facilitar el arraque, nos centraremos en Docker Compose utilizando una plantilla que únicamente va a contener como servicios Apache/Nginx y PHP.
-
-Para ello, vamos a rellenar el archivo docker-compose.yaml con:
-
-
-Apache y PHP
-Nginx y PHP
-# Services
-services:
-  # Apache + PHP
-  apache_php:
-    image: php:8-apache
-    # Preparamos un volumen para almacenar nuestro código
-    volumes:
-      - ./src/:/var/www/html
-    expose:
-      - 80
-    ports:
-      - 80:80
-
-Dentro de la carpeta que contenga dicho archivo, hemos de crear una carpeta src donde colocaremos nuestro código fuente. Para facilitar la puesta en marcha, tenéis la plantilla de Apache/PHP (versión 2 con a2enmod rewrite) o Nginx/PHP disponible para su descarga.
-
-Cuando estemos listos, lanzaremos el servicio mediante:
-
-docker-compose up -d
-Si queremos ver el contenido de los archivos de log del servicio utilizaremos:
-
-docker-compose logs -f
-Para copiar un archivo desde nuestro sistema al interior del contenedor:
-
-docker cp ./miFichero idContenedor:/tmp
-Y al revés, si queremos consultar un archivo contenido dentro de un contenedor, lo copiaremos a nuestro sistema:
-
-docker cp idContenedor:/tmp/archivoAConsultar.txt ./
-Finalmente, si queremos acceder a un terminal interactivo dentro del contenedor:
-
-docker exec -it nombreContenedor bash
-Otros comandos que podemos llegar a utilizar son:
-
-docker ps: Ver los contenedores que se estan ejecutando
-docker ps -a: Ver todos los contenedores
-docker start nombreContenedor: Arrancar un contenedor
-docker images: Ver las imágenes que tenemos descargadas
-Otra forma más sencilla para lanzar de nuevo los contenedores y gestionarlos una vez creados es utilizar el interfaz gráfico que ofrece Docker Desktop:
-
-
-Arranque de contenedor mediante Docker Desktop
-Docker stack
-
-Existen diversas opciones mediante Docker que ofrecen soluciones completas y empaquetas para todo el stack de desarrollo. En posteriores sesiones utilizaremos tanto Devilbox (http://devilbox.org) como Laradock (https://laradock.io)
-
-Pero quiero saber cómo funciona...
-
-En el módulo de Despliegue de aplicaciones estudiaréis en profundidad, además de Docker, Apache y otros servicios que nos servirán de ayuda para el desarrollo en entorno servidor.
-
-Entorno de desarrollo¶
-En este curso vamos a emplear Visual Studio Code (https://code.visualstudio.com) como entorno de desarrollo (IDE). Existen otras alternativas, siendo PhpStorm la más conocida pero siendo de pago. Otra posibilidad es utilizar Eclipse, aunque es un entorno bastante pesado.
-
-VSCode es un editor de código fuente que se complementa mediante extensiones. Para facilitar el trabajo a lo largo del curso vamos a utilizar las siguientes extensiones:
-
-PHP Intelephense
-Docker
-En la siguiente sesión comenzaremos a utilizar Intelephense pero en esta sesión nos vamos a centrar en Docker (más adelante instalaremos nuevas extensiones).
-
-Por ejemplo, si abrimos la extensión de Docker, podréis visualizar tanto los contenedores como las imágenes de vuestro sistema. Desde cada contenedor, mediante clic derecho, podemos iniciar/detener/reiniciar cada contenedor, así como ver su contenido o abrir un terminal dentro del mismo.
-
-
-Opciones mediante extensión Docker en VSCode
-Hola Mundo¶
-Y como no, nuestro primer ejemplo será un Hola Mundo en PHP.
-
-Si nombramos el archivo como index.php, al acceder a http://localhost automáticamente cargará el resultado:
-```php
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hola Mundo</title>
-</head>
-<body>
-    <?php
-        echo "Hola Mundo";
-    ?>
-</body>
-```
-Referencias¶
-Curso de introducción a Docker, por Sergi García Barea : https://sergarb1.github.io/CursoIntroduccionADocker/
-Artículo Arquitecturas Web y su evolución
-Actividades¶
-Busca en internet cuales son los tres frameworks PHP más utilizados, y indica:
-
-Nombre y URL
-Año de creación
-Última versión
-Busca tres ofertas de trabajo de desarrollo de software en Infojobs en la provincia de Alicante que citen PHP y anota:
-
-Empresa + puesto + frameworks PHP + requísitos + sueldo + enlace a la oferta.
-Una vez arrancado el servicio PHP (mediante XAMPP o Docker), crea el archivo info.php y añade el siguiente fragmento de código:
-```php
-<?php phpinfo() ?>
-```
-
-Anota los valores de:
-Versión de PHP
-Loaded Configuration File
-memory_limit
-DOCUMENT_ROOT
-Abre el archivo php.ini-production que está dentro del contenedor (puedes averiguar la ruta a partir de la propiedad Configuration File (php.ini) Path) e indica para qué sirven las siguientes propiedades y qué valores contienen:
-
-file_uploads
-max_execution_time
-short_open_tag
-php.ini
-
-Es el archivo de configuración de PHP, y en toda instalación vienen dos plantillas (php.ini-development y php.ini-production) para que elijamos los valores más acordes a nuestro proyecto y creemos nuestro archivo propio de php.ini.
--->
+El proceso de cifrado utiliza el **cifrado de clave pública o asimétrico**. El navegador cifra la información con la clave pública del servidor, y solo el servidor, con su clave privada correspondiente, puede descifrarla, garantizando así la confidencialidad. Los protocolos **SSL/TLS** (Secure Sockets Layer/Transport Layer Security) son los estándares criptográficos que hacen posibles estas conexiones seguras, proporcionando autenticación y privacidad. El cifrado requiere recursos computacionales, lo que puede tener un impacto mínimo en el rendimiento del servidor web. HTTP y HTTPS pueden convivir en un mismo dominio.
 

@@ -13,7 +13,7 @@ export default hopeTheme({
 
   logo: "assets/image/space-invader-icon.svg",
 
-  repo: "github.com/darioaxel/darioaxel.dev",
+  repo: "/darioaxel",
 
   docsDir: "src",
 
