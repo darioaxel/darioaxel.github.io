@@ -1,5 +1,8 @@
 <template><div><h1 id="ut00-introduccion" tabindex="-1"><a class="header-anchor" href="#ut00-introduccion"><span>UT00 Introducción</span></a></h1>
-<p>El módulo Desarrollo Web en Entorno Servidor (DWES) es el de mayor cantidad de horas de trabajo dentro del segundo curso del ciclo DAW.</p>
+<div class="hint-container note">
+<p class="hint-container-title">Nota</p>
+<p>El módulo Desarrollo Web en Entorno Servidor (DWES) es el de <strong>mayor cantidad de horas de trabajo</strong> dentro del segundo curso del ciclo DAW.</p>
+</div>
 <p>Este módulo profesional tiene como objetivo principal capacitar a los estudiantes en el desarrollo de aplicaciones web dinámicas y funcionales utilizando tecnologías del lado del servidor. A lo largo del curso, los estudiantes aprenderán a diseñar, implementar y mantener aplicaciones web que interactúan con bases de datos, gestionan sesiones de usuario y proporcionan una experiencia de usuario enriquecida.</p>
 <p>Para lograr estos objetivos, se abordarán multiples aspectos cruciales dentro del desarrollo de aplicaciones:</p>
 <ul>
