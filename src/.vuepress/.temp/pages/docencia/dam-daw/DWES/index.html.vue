@@ -370,6 +370,48 @@
 </tr>
 </tbody>
 </table>
+<h2 id="unidades-de-trabajo-para-2025-2026" tabindex="-1"><a class="header-anchor" href="#unidades-de-trabajo-para-2025-2026"><span>Unidades de trabajo para 2025-2026</span></a></h2>
+<table>
+<thead>
+<tr>
+<th>Unidad de trabajo</th>
+<th>Horas</th>
+<th>Contenidos</th>
+<th>RA's</th>
+<th>Criterios de evaluación</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. Arquitecturas Web</td>
+<td>36h</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2. Lenguajes de programación en entorno servidor</td>
+<td>36h</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>1. Arquitecturas Web</td>
+<td>36h</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>x. Apliaciones web híbridas: Nuxt</td>
+<td>36h</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 </div></template>
 
 

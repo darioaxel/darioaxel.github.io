@@ -6,6 +6,7 @@ category:
 ---
 
 
+
 # Módulo profesional: 0613 DESARROLLO WEB ENTORNO SERVIDOR (DWES)
 
 **Contenidos:**
@@ -140,3 +141,11 @@ category:
 |g) Se han analizado y utilizado librerías de código relacionadas con Big Data e inteligencia de negocios, para incorporar análisis e inteligencia de datos proveniente de repositorios.|
 |h) Se han probado, depurado y documentado las aplicaciones generadas.|
 
+## Unidades de trabajo para 2025-2026
+
+| Unidad de trabajo | Horas | Contenidos | RA's | Criterios de evaluación |
+| --- | --- | --- | --- | --- |
+| 1. Arquitecturas Web | 36h |
+| 2. Lenguajes de programación en entorno servidor | 36h |
+| 1. Arquitecturas Web | 36h |
+| x. Apliaciones web híbridas: Nuxt | 36h |
