@@ -1,4 +1,5 @@
 <template><div><h1 id="modulo-profesional-0613-desarrollo-web-entorno-servidor-dwes" tabindex="-1"><a class="header-anchor" href="#modulo-profesional-0613-desarrollo-web-entorno-servidor-dwes"><span>Módulo profesional: 0613 DESARROLLO WEB ENTORNO SERVIDOR (DWES)</span></a></h1>
+<h2 id="_1-contenidos-y-resultados-de-aprendizaje-ra-s" tabindex="-1"><a class="header-anchor" href="#_1-contenidos-y-resultados-de-aprendizaje-ra-s"><span>1. Contenidos y Resultados de aprendizaje (RA's)</span></a></h2>
 <p><strong>Contenidos:</strong></p>
 <ul>
 <li>UF0613_14. Arquitecturas de programación y optimización de códigos fuente</li>
@@ -33,7 +34,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="ra-s-que-componen-el-modulo" tabindex="-1"><a class="header-anchor" href="#ra-s-que-componen-el-modulo"><span>RA's que componen el módulo</span></a></h2>
+<h3 id="_1-1-ra-s-que-componen-el-modulo" tabindex="-1"><a class="header-anchor" href="#_1-1-ra-s-que-componen-el-modulo"><span>1.1. RA's que componen el módulo</span></a></h3>
 <table>
 <thead>
 <tr>
@@ -80,11 +81,11 @@
 </tr>
 </tbody>
 </table>
-<h3 id="criterios-de-evaluacion" tabindex="-1"><a class="header-anchor" href="#criterios-de-evaluacion"><span>Criterios de evaluación</span></a></h3>
+<h3 id="_1-2-criterios-de-evaluacion" tabindex="-1"><a class="header-anchor" href="#_1-2-criterios-de-evaluacion"><span>1.2. Criterios de evaluación</span></a></h3>
 <table>
 <thead>
 <tr>
-<th>Criterios de evaluación: RA1</th>
+<th>Criterios de evaluación: <strong>RA1 Selecciona las arquitecturas y tecnologías de programación Web en entorno servidor, analizando sus capacidades y características propias.</strong></th>
 </tr>
 </thead>
 <tbody>
@@ -370,48 +371,75 @@
 </tr>
 </tbody>
 </table>
-<h2 id="unidades-de-trabajo-para-2025-2026" tabindex="-1"><a class="header-anchor" href="#unidades-de-trabajo-para-2025-2026"><span>Unidades de trabajo para 2025-2026</span></a></h2>
+<h2 id="_2-curso-2025-2026" tabindex="-1"><a class="header-anchor" href="#_2-curso-2025-2026"><span>2. Curso 2025/2026</span></a></h2>
+<h3 id="_2-1-unidades-de-trabajo-para-el-modulo" tabindex="-1"><a class="header-anchor" href="#_2-1-unidades-de-trabajo-para-el-modulo"><span>2.1. Unidades de trabajo para el módulo</span></a></h3>
 <table>
 <thead>
 <tr>
 <th>Unidad de trabajo</th>
 <th>Horas</th>
-<th>Contenidos</th>
 <th>RA's</th>
-<th>Criterios de evaluación</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>1. Arquitecturas Web</td>
-<td>36h</td>
-<td></td>
-<td></td>
-<td></td>
+<td>ToDo h</td>
+<td>RA1</td>
 </tr>
 <tr>
 <td>2. Lenguajes de programación en entorno servidor</td>
-<td>36h</td>
-<td></td>
-<td></td>
-<td></td>
+<td>ToDo h</td>
+<td>RA2, RA3</td>
 </tr>
 <tr>
-<td>1. Arquitecturas Web</td>
-<td>36h</td>
-<td></td>
-<td></td>
-<td></td>
+<td>3. Arquitecturas Web</td>
+<td>ToDo h</td>
+<td>RA1</td>
 </tr>
 <tr>
-<td>x. Apliaciones web híbridas: Nuxt</td>
-<td>36h</td>
-<td></td>
-<td></td>
-<td></td>
+<td>4. Apliaciones web híbridas: Nuxt</td>
+<td>ToDo h</td>
+<td>RA1</td>
+</tr>
+<tr>
+<td>5. Apliaciones web híbridas: Nuxt</td>
+<td>ToDo h</td>
+<td>RA1</td>
+</tr>
+<tr>
+<td>6. Apliaciones web híbridas: Nuxt</td>
+<td>ToDo h</td>
+<td>RA1</td>
+</tr>
+<tr>
+<td>7. Apliaciones web híbridas: Nuxt</td>
+<td>ToDo h</td>
+<td>RA1</td>
+</tr>
+<tr>
+<td>8. Apliaciones web híbridas: Nuxt</td>
+<td>ToDo h</td>
+<td>RA9</td>
 </tr>
 </tbody>
 </table>
+<h3 id="_2-2-distribucion-de-las-unidades-por-semanas" tabindex="-1"><a class="header-anchor" href="#_2-2-distribucion-de-las-unidades-por-semanas"><span>2.2. Distribución de las unidades por semanas</span></a></h3>
+<div class="hint-container warning">
+<p class="hint-container-title">Aviso</p>
+<p>Cuidado! Esta distribución es una aproximación y puede variar según las necesidades del grupo.</p>
+</div>
+<p>| Unidad de trabajo | Fechas | Semanas |<br>
+| --- |  --- |<br>
+| UT01 | 1/10/2025 al 15/10/2025 | 2 |<br>
+| UT02 | 16/10/2025 al 5/11/2025 | 3 |<br>
+| UT03 | 6/11/2025 al 26/11/2025 |3 |<br>
+| UT04 | 27/11/2025 al 19/12/2025 y<br>
+7/1/2026 al 23/2/2026 | 6 |<br>
+| UT05 | 11/2/202 al -/-/- |X |<br>
+| UT06 | 1/10/2025 al 15/10/2025 |X |<br>
+| UT07 | 1/10/2025 al 15/10/2025 |X |<br>
+| UT08 | 1/10/2025 al 15/10/2025 |X |</p>
 </div></template>
 
 
