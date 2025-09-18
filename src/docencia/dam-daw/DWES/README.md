@@ -5,10 +5,9 @@ category:
   - Docencia
 ---
 
-
-
 # Módulo profesional: 0613 DESARROLLO WEB ENTORNO SERVIDOR (DWES)
 
+## 1. Contenidos y Resultados de aprendizaje (RA's)
 **Contenidos:**
 - UF0613_14. Arquitecturas de programación y optimización de códigos fuente
 - UF0613_24. Lenguajes de programación: Códigos embebidos
@@ -23,7 +22,7 @@ category:
 | UF0613_34 | 45h |
 | UF0613_44 | 54h |
 
-## RA's que componen el módulo
+### 1.1. RA's que componen el módulo
 | RA | Descripción |
 | --- | --- |
 | RA1. |Selecciona las arquitecturas y tecnologías de programación Web en entorno servidor, analizando sus capacidades y características propias. |
@@ -37,9 +36,9 @@ category:
 | RA9. |Desarrolla aplicaciones Web híbridas seleccionando y utilizando tecnologías, frameworks servidor y repositorios heterogéneos de información. |
 
 
-### Criterios de evaluación
+### 1.2. Criterios de evaluación
 
-| Criterios de evaluación: RA1 |
+| Criterios de evaluación: **RA1 Selecciona las arquitecturas y tecnologías de programación Web en entorno servidor, analizando sus capacidades y características propias.**|
 | --- | 
 |a) Se han caracterizado y diferenciado los modelos de ejecución de código en el servidor y en el cliente Web.|
 |b) Se han reconocido las ventajas que proporciona la generación dinámica de páginas.|
@@ -141,11 +140,33 @@ category:
 |g) Se han analizado y utilizado librerías de código relacionadas con Big Data e inteligencia de negocios, para incorporar análisis e inteligencia de datos proveniente de repositorios.|
 |h) Se han probado, depurado y documentado las aplicaciones generadas.|
 
-## Unidades de trabajo para 2025-2026
+## 2. Curso 2025/2026
+### 2.1. Unidades de trabajo para el módulo
 
-| Unidad de trabajo | Horas | Contenidos | RA's | Criterios de evaluación |
-| --- | --- | --- | --- | --- |
-| 1. Arquitecturas Web | 36h |
-| 2. Lenguajes de programación en entorno servidor | 36h |
-| 1. Arquitecturas Web | 36h |
-| x. Apliaciones web híbridas: Nuxt | 36h |
+| Unidad de trabajo | Horas | RA's | 
+| --- | --- | --- | 
+| 1. Arquitecturas Web | ToDo h | RA1 |
+| 2. Lenguajes de programación en entorno servidor |ToDo h |RA2, RA3 |
+| 3. Arquitecturas Web | ToDo h |RA1 |
+| 4. Apliaciones web híbridas: Nuxt | ToDo h |RA1 |
+| 5. Apliaciones web híbridas: Nuxt | ToDo h |RA1 |
+| 6. Apliaciones web híbridas: Nuxt | ToDo h |RA1 |
+| 7. Apliaciones web híbridas: Nuxt | ToDo h |RA1 |
+| 8. Apliaciones web híbridas: Nuxt | ToDo h |RA9 |
+
+### 2.2. Distribución de las unidades por semanas
+:::warning
+Cuidado! Esta distribución es una aproximación y puede variar según las necesidades del grupo.
+:::
+
+| Unidad de trabajo | Fechas | Semanas | 
+| --- |  --- |
+| UT01 | 1/10/2025 al 15/10/2025 | 2 |
+| UT02 | 16/10/2025 al 5/11/2025 | 3 |
+| UT03 | 6/11/2025 al 26/11/2025 |3 |
+| UT04 | 27/11/2025 al 19/12/2025 y
+         7/1/2026 al 23/2/2026 | 6 |
+| UT05 | 11/2/202 al -/-/- |X |
+| UT06 | 1/10/2025 al 15/10/2025 |X |
+| UT07 | 1/10/2025 al 15/10/2025 |X |
+| UT08 | 1/10/2025 al 15/10/2025 |X |
