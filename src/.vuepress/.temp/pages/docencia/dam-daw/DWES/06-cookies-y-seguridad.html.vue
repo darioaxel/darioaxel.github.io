@@ -1,11 +1,6 @@
----
-title: EnObras- Cookies y Seguridad en aplicaciones web
-date: 2025-09-01    
-icon: gear
----
-
-# UTX0 Cookies y Seguridad en aplicaciones web
-
+<template><div><h1 id="ut06-cookies-y-seguridad-en-aplicaciones-web" tabindex="-1"><a class="header-anchor" href="#ut06-cookies-y-seguridad-en-aplicaciones-web"><span>UT06 Cookies y Seguridad en aplicaciones web</span></a></h1>
+<figure><img src="/images/under-construction.jpg" alt="En construcción" tabindex="0" loading="lazy"><figcaption>En construcción</figcaption></figure>
+<!--
 En este capítulo vamos a profundizar en varios aspectos de vital importancia para las aplicaciones web.
 
 Por un lado, tenemos las cookies y las sesiones, dos mecanismos que permiten a la aplicación mantener vivas algunas variables de forma indefinida.
@@ -246,3 +241,7 @@ public class SSLClient {
 ```
 
 Asegúrate de reemplazar los valores de `keystorePath`, `keystorePassword`, `truststorePath` y `truststorePassword` con la ubicación y contraseña correctas de tus archivos de certificado.
+
+--></div></template>
+
+

@@ -1,12 +1,9 @@
----
-title: EnObras- Servicios REST
-date: 2025-09-01    
-icon: gear
----
+<template><div><!-- ![banner](/images/dwes/banner02.webp)-->
+<h1 id="ut05-servicios-rest" tabindex="-1"><a class="header-anchor" href="#ut05-servicios-rest"><span>UT05 Servicios REST</span></a></h1>
+<figure><img src="/images/under-construction.jpg" alt="En construcción" tabindex="0" loading="lazy"><figcaption>En construcción</figcaption></figure>
+<!--
 
-<!-- ![banner](/images/dwes/banner02.webp)-->
 
-# Servicios REST
 
 REST, que significa Representational State Transfer, es un estilo de arquitectura para sistemas de software que se utiliza principalmente en el desarrollo de servicios web. Los servicios web que siguen los principios de REST se denominan servicios web RESTful.
 
@@ -58,7 +55,7 @@ El formato de una API RESTful tiene tres componentes principales: URL endpoint; 
 
 Las API RESTful son muy populares porque son fáciles de entender y usar. Además, son altamente escalables y flexibles, y son compatibles con la mayoría de los lenguajes y plataformas.
 
-<!-- ![rest](/images/dwes/rest.webp) -->
+<!-- ![rest](/images/dwes/rest.webp) 
 
 ## Recursos y Endpoints
 Diseñar una API REST (Representational State Transfer) para gestionar un recurso implica seguir ciertas convenciones y principios fundamentales. 
@@ -132,3 +129,7 @@ Es aconsejable versionar tu API para que puedas hacer cambios y mejoras sin romp
 | /productos/{id} | PUT | `{ "nombre": "Producto Actualizado", "precio": 12.99 }` | 200 (OK) | `{ "id": 1, "nombre": "Producto Actualizado", "precio": 12.99 }` | 400 (Solicitud incorrecta), 404 (No encontrado) |
 | /productos/{id} | PATCH | `{ "precio": 12.99 }` | 200 (OK) | `{ "id": 1, "nombre": "Producto Actualizado", "precio": 12.99 }` | 400 (Solicitud incorrecta), 404 (No encontrado) |
 | /productos/{id} | DELETE | N/A | 204 (No Content) | N/A | 404 (No encontrado) |
+
+--></div></template>
+
+
