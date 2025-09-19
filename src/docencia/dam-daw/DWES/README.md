@@ -38,7 +38,7 @@ category:
 
 ### 1.2. Criterios de evaluación
 
-| Criterios de evaluación: **RA1 Selecciona las arquitecturas y tecnologías de programación Web en entorno servidor, analizando sus capacidades y características propias.**|
+|**RA1 Selecciona las arquitecturas y tecnologías de programación Web en entorno servidor, analizando sus capacidades y características propias.**|
 | --- | 
 |a) Se han caracterizado y diferenciado los modelos de ejecución de código en el servidor y en el cliente Web.|
 |b) Se han reconocido las ventajas que proporciona la generación dinámica de páginas.|
@@ -49,7 +49,7 @@ category:
 |g) Se han reconocido y evaluado las herramientas y frameworks de programación en entorno servidor.|
 ---
 
-| Criterios de evaluación: RA2  |
+| **RA2 Escribe sentencias ejecutables por un servidor Web reconociendo y aplicando procedimientos de integración del código en lenguajes de marcas.**  |
 | --- |
 |a) Se han reconocido los mecanismos de generación de páginas Web a partir de lenguajes de marcas con código embebido.|
 |b) Se han identificado las principales tecnologías asociadas.|
@@ -60,7 +60,7 @@ category:
 |g) Se han utilizado los distintos tipos de variables y operadores disponibles en el lenguaje.|
 |h) Se han identificado los ámbitos de utilización de las variables.|
 
-|Criterios de evaluación: RA3|
+|**RA3. Escribe bloques de sentencias embebidos en lenguajes de marcas, seleccionando y utilizando las estructuras de programación.**|
 | --- |
 |a) Se han utilizado mecanismos de decisión en la creación de bloques de sentencias.|
 |b) Se han utilizado bucles y se ha verificado su funcionamiento.|
@@ -147,11 +147,11 @@ category:
 | --- | --- | --- | 
 | 1. Arquitecturas Web | ToDo h | RA1 |
 | 2. Lenguajes de programación en entorno servidor |ToDo h |RA2, RA3 |
-| 3. Arquitecturas Web | ToDo h |RA1 |
-| 4. Apliaciones web híbridas: Nuxt | ToDo h |RA1 |
-| 5. Apliaciones web híbridas: Nuxt | ToDo h |RA1 |
-| 6. Apliaciones web híbridas: Nuxt | ToDo h |RA1 |
-| 7. Apliaciones web híbridas: Nuxt | ToDo h |RA1 |
+| 3. MVC y otros patrones de arquitectura | ToDo h |RA1 |
+| 4. Persistencia de datos | ToDo h |RA1 |
+| 5. Servicios Web | ToDo h |RA1 |
+| 6. Sesiones, cookies y Seguridad | ToDo h |RA1 |
+| 7. Apliaciones web dinámicas | ToDo h |RA1 |
 | 8. Apliaciones web híbridas: Nuxt | ToDo h |RA9 |
 
 ### 2.2. Distribución de las unidades por semanas
@@ -160,12 +160,11 @@ Cuidado! Esta distribución es una aproximación y puede variar según las neces
 :::
 
 | Unidad de trabajo | Fechas | Semanas | 
-| --- |  --- |
+| --- |  --- | --- |
 | UT01 | 1/10/2025 al 15/10/2025 | 2 |
 | UT02 | 16/10/2025 al 5/11/2025 | 3 |
 | UT03 | 6/11/2025 al 26/11/2025 |3 |
-| UT04 | 27/11/2025 al 19/12/2025 y
-         7/1/2026 al 23/2/2026 | 6 |
+| UT04 | 27/11/2025 al 19/12/2025 y 7/1/2026 al 23/2/2026 | 6 |
 | UT05 | 11/2/202 al -/-/- |X |
 | UT06 | 1/10/2025 al 15/10/2025 |X |
 | UT07 | 1/10/2025 al 15/10/2025 |X |

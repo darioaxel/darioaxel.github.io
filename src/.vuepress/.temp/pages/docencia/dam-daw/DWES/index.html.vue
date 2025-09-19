@@ -85,7 +85,7 @@
 <table>
 <thead>
 <tr>
-<th>Criterios de evaluación: <strong>RA1 Selecciona las arquitecturas y tecnologías de programación Web en entorno servidor, analizando sus capacidades y características propias.</strong></th>
+<th><strong>RA1 Selecciona las arquitecturas y tecnologías de programación Web en entorno servidor, analizando sus capacidades y características propias.</strong></th>
 </tr>
 </thead>
 <tbody>
@@ -116,7 +116,7 @@
 <table>
 <thead>
 <tr>
-<th>Criterios de evaluación: RA2</th>
+<th><strong>RA2 Escribe sentencias ejecutables por un servidor Web reconociendo y aplicando procedimientos de integración del código en lenguajes de marcas.</strong></th>
 </tr>
 </thead>
 <tbody>
@@ -149,7 +149,7 @@
 <table>
 <thead>
 <tr>
-<th>Criterios de evaluación: RA3</th>
+<th><strong>RA3. Escribe bloques de sentencias embebidos en lenguajes de marcas, seleccionando y utilizando las estructuras de programación.</strong></th>
 </tr>
 </thead>
 <tbody>
@@ -393,27 +393,27 @@
 <td>RA2, RA3</td>
 </tr>
 <tr>
-<td>3. Arquitecturas Web</td>
+<td>3. MVC y otros patrones de arquitectura</td>
 <td>ToDo h</td>
 <td>RA1</td>
 </tr>
 <tr>
-<td>4. Apliaciones web híbridas: Nuxt</td>
+<td>4. Persistencia de datos</td>
 <td>ToDo h</td>
 <td>RA1</td>
 </tr>
 <tr>
-<td>5. Apliaciones web híbridas: Nuxt</td>
+<td>5. Servicios Web</td>
 <td>ToDo h</td>
 <td>RA1</td>
 </tr>
 <tr>
-<td>6. Apliaciones web híbridas: Nuxt</td>
+<td>6. Sesiones, cookies y Seguridad</td>
 <td>ToDo h</td>
 <td>RA1</td>
 </tr>
 <tr>
-<td>7. Apliaciones web híbridas: Nuxt</td>
+<td>7. Apliaciones web dinámicas</td>
 <td>ToDo h</td>
 <td>RA1</td>
 </tr>
@@ -429,17 +429,57 @@
 <p class="hint-container-title">Aviso</p>
 <p>Cuidado! Esta distribución es una aproximación y puede variar según las necesidades del grupo.</p>
 </div>
-<p>| Unidad de trabajo | Fechas | Semanas |<br>
-| --- |  --- |<br>
-| UT01 | 1/10/2025 al 15/10/2025 | 2 |<br>
-| UT02 | 16/10/2025 al 5/11/2025 | 3 |<br>
-| UT03 | 6/11/2025 al 26/11/2025 |3 |<br>
-| UT04 | 27/11/2025 al 19/12/2025 y<br>
-7/1/2026 al 23/2/2026 | 6 |<br>
-| UT05 | 11/2/202 al -/-/- |X |<br>
-| UT06 | 1/10/2025 al 15/10/2025 |X |<br>
-| UT07 | 1/10/2025 al 15/10/2025 |X |<br>
-| UT08 | 1/10/2025 al 15/10/2025 |X |</p>
+<table>
+<thead>
+<tr>
+<th>Unidad de trabajo</th>
+<th>Fechas</th>
+<th>Semanas</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>UT01</td>
+<td>1/10/2025 al 15/10/2025</td>
+<td>2</td>
+</tr>
+<tr>
+<td>UT02</td>
+<td>16/10/2025 al 5/11/2025</td>
+<td>3</td>
+</tr>
+<tr>
+<td>UT03</td>
+<td>6/11/2025 al 26/11/2025</td>
+<td>3</td>
+</tr>
+<tr>
+<td>UT04</td>
+<td>27/11/2025 al 19/12/2025 y 7/1/2026 al 23/2/2026</td>
+<td>6</td>
+</tr>
+<tr>
+<td>UT05</td>
+<td>11/2/202 al -/-/-</td>
+<td>X</td>
+</tr>
+<tr>
+<td>UT06</td>
+<td>1/10/2025 al 15/10/2025</td>
+<td>X</td>
+</tr>
+<tr>
+<td>UT07</td>
+<td>1/10/2025 al 15/10/2025</td>
+<td>X</td>
+</tr>
+<tr>
+<td>UT08</td>
+<td>1/10/2025 al 15/10/2025</td>
+<td>X</td>
+</tr>
+</tbody>
+</table>
 </div></template>
 
 

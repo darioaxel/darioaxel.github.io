@@ -80,7 +80,83 @@ Puedes usar Badges diversos y hay una amplia variedad de temas e incluso los pue
 <li><a href="https://githubprofile.com/" target="_blank" rel="noopener noreferrer">Web Profile Generator</a></li>
 </ul>
 <p>Además, como el proyecto de un perfil github es público, también puedes buscar inspiración en otros usuarios, leer el README de otros perfiles y ver qué cosas te gustaría incluir en el tuyo.</p>
-<h2 id="ejercicio-2-clonacion-del-repositorio-de-pruebas-y-creacion-de-una-rama" tabindex="-1"><a class="header-anchor" href="#ejercicio-2-clonacion-del-repositorio-de-pruebas-y-creacion-de-una-rama"><span>Ejercicio 2. Clonación del repositorio de pruebas y creación de una rama</span></a></h2>
+<h2 id="ejercicio-2-clonacion-del-repositorio-de-pruebas-y-creacion-de-pull-request" tabindex="-1"><a class="header-anchor" href="#ejercicio-2-clonacion-del-repositorio-de-pruebas-y-creacion-de-pull-request"><span>Ejercicio 2. Clonación del repositorio de pruebas y creación de pull request</span></a></h2>
+<p>Un <strong>Pull Request (PR)</strong> es la forma en que propones cambios a un proyecto en el que no tienes control directo. Permite colaborar, discutir y mejorar código antes de que sea integrado en la rama principal.</p>
+<h3 id="_2-1-preparacion-inicial" tabindex="-1"><a class="header-anchor" href="#_2-1-preparacion-inicial"><span>2.1. Preparación inicial</span></a></h3>
+<h4 id="a-haz-un-fork-del-repositorio" tabindex="-1"><a class="header-anchor" href="#a-haz-un-fork-del-repositorio"><span>a. Haz un <strong>fork</strong> del repositorio</span></a></h4>
+<ul>
+<li>Accede al repositorio de GitHub del proyecto.</li>
+<li>Pulsa en el botón <strong>Fork</strong> para crear una copia en tu cuenta.<br>
+👉 Esto te da un espacio propio donde puedes trabajar sin afectar el original.</li>
+</ul>
+<h4 id="b-clona-tu-fork-en-local" tabindex="-1"><a class="header-anchor" href="#b-clona-tu-fork-en-local"><span>b. Clona tu fork en local</span></a></h4>
+<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code" v-pre=""><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">git</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> clone</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> https://github.com/tu-usuario/nombre-del-proyecto.git</span></span>
+<span class="line"><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">cd</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> nombre-del-proyecto</span></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="c-configura-el-remoto-upstream-el-proyecto-original" tabindex="-1"><a class="header-anchor" href="#c-configura-el-remoto-upstream-el-proyecto-original"><span>c. Configura el remoto “upstream” (el proyecto original)</span></a></h4>
+<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code" v-pre=""><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">git</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> remote</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> add</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> upstream</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> https://github.com/autor-original/nombre-del-proyecto.git</span></span>
+<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">git</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> remote</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -v</span><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">   # Comprueba que tienes origin (tu fork) y upstream (repo original)</span></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_2-2-manten-tu-fork-sincronizado" tabindex="-1"><a class="header-anchor" href="#_2-2-manten-tu-fork-sincronizado"><span>2.2. Mantén tu fork sincronizado</span></a></h3>
+<p>Antes de empezar un cambio, asegúrate de tener la última versión del repositorio original:</p>
+<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code" v-pre=""><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">git</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> fetch</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> upstream</span></span>
+<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">git</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> checkout</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> main</span></span>
+<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">git</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> merge</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> upstream/main</span></span>
+<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">git</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> push</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> origin</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> main</span></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_2-3-crea-una-rama-para-tu-cambio" tabindex="-1"><a class="header-anchor" href="#_2-3-crea-una-rama-para-tu-cambio"><span>2.3. Crea una rama para tu cambio</span></a></h3>
+<p>Nunca trabajes directamente sobre <code v-pre>main</code>. Crea ramas temáticas y descriptivas:</p>
+<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code" v-pre=""><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">git</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> checkout</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -b</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> fix-bug-login</span></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><hr>
+<h3 id="_2-4-haz-tus-cambios" tabindex="-1"><a class="header-anchor" href="#_2-4-haz-tus-cambios"><span>2.4. Haz tus cambios</span></a></h3>
+<ul>
+<li>Aplica la mejora o corrección.</li>
+<li>Haz commits <strong>atómicos</strong> y con mensajes claros:</li>
+</ul>
+<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code" v-pre=""><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">git</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> add</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> archivo_modificado.py</span></span>
+<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">git</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> commit</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -m</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> "Fix: corrige validación de login en caso de email vacío"</span></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div></div></div><blockquote>
+<p>💡 Buenas prácticas:</p>
+<ul>
+<li>Usa un prefijo como <code v-pre>Fix:</code>, <code v-pre>Feat:</code>, <code v-pre>Docs:</code>, <code v-pre>Refactor:</code> en los commits.</li>
+<li>Haz commits pequeños y frecuentes.</li>
+</ul>
+</blockquote>
+<h3 id="_2-5-empuja-tu-rama-a-tu-fork" tabindex="-1"><a class="header-anchor" href="#_2-5-empuja-tu-rama-a-tu-fork"><span>2.5. Empuja tu rama a tu fork</span></a></h3>
+<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code" v-pre=""><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">git</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> push</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> origin</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> fix-bug-login</span></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3 id="_2-6-crea-el-pull-request" tabindex="-1"><a class="header-anchor" href="#_2-6-crea-el-pull-request"><span>2.6. Crea el Pull Request</span></a></h3>
+<ol>
+<li>
+<p>Entra en tu repositorio fork en GitHub.</p>
+</li>
+<li>
+<p>GitHub detectará la rama nueva y mostrará la opción <strong>Compare &amp; pull request</strong>.</p>
+</li>
+<li>
+<p>Revisa:</p>
+<ul>
+<li>Base repository: <strong>proyecto original</strong></li>
+<li>Base branch: normalmente <code v-pre>main</code></li>
+<li>Compare: tu rama (<code v-pre>fix-bug-login</code>)</li>
+</ul>
+</li>
+<li>
+<p>Escribe un título claro y una descripción detallada:</p>
+<ul>
+<li><strong>Qué problema soluciona o qué aporta</strong>.</li>
+<li><strong>Cómo se probó</strong>.</li>
+<li>Referencias a issues relacionadas (<code v-pre>Closes #123</code>).</li>
+</ul>
+</li>
+</ol>
+<h3 id="_2-7-interaccion-y-feedback" tabindex="-1"><a class="header-anchor" href="#_2-7-interaccion-y-feedback"><span>2.7. Interacción y feedback</span></a></h3>
+<ul>
+<li>El equipo del proyecto puede pedir cambios → hazlos en tu rama local, haz <code v-pre>git push</code> y se actualizarán automáticamente en el PR.</li>
+<li>Mantén un tono profesional y respetuoso en los comentarios.</li>
+<li>Considera añadir tests y documentación si aplica.</li>
+</ul>
+<h3 id="_2-8-cierre-del-pull-request" tabindex="-1"><a class="header-anchor" href="#_2-8-cierre-del-pull-request"><span>2.8. Cierre del Pull Request</span></a></h3>
+<ul>
+<li>Si aceptan el PR → tus cambios entran en el proyecto oficial. 🎉</li>
+<li>Si lo rechazan → aprovecha el feedback para mejorar.</li>
+</ul>
 </div></template>
 
 

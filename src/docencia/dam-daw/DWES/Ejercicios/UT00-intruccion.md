@@ -97,4 +97,102 @@ Existen herramientas y webs que te permiten crear perfiles de forma mucho más s
 
 Además, como el proyecto de un perfil github es público, también puedes buscar inspiración en otros usuarios, leer el README de otros perfiles y ver qué cosas te gustaría incluir en el tuyo.
   
-## Ejercicio 2. Clonación del repositorio de pruebas y creación de una rama
+## Ejercicio 2. Clonación del repositorio de pruebas y creación de pull request
+
+Un **Pull Request (PR)** es la forma en que propones cambios a un proyecto en el que no tienes control directo. Permite colaborar, discutir y mejorar código antes de que sea integrado en la rama principal.
+
+### 2.1. Preparación inicial
+
+#### a. Haz un **fork** del repositorio
+
+* Accede al repositorio de GitHub del proyecto.
+* Pulsa en el botón **Fork** para crear una copia en tu cuenta.
+  👉 Esto te da un espacio propio donde puedes trabajar sin afectar el original.
+
+#### b. Clona tu fork en local
+
+```bash
+git clone https://github.com/tu-usuario/nombre-del-proyecto.git
+cd nombre-del-proyecto
+```
+
+#### c. Configura el remoto “upstream” (el proyecto original)
+
+```bash
+git remote add upstream https://github.com/autor-original/nombre-del-proyecto.git
+git remote -v   # Comprueba que tienes origin (tu fork) y upstream (repo original)
+```
+
+### 2.2. Mantén tu fork sincronizado
+
+Antes de empezar un cambio, asegúrate de tener la última versión del repositorio original:
+
+```bash
+git fetch upstream
+git checkout main
+git merge upstream/main
+git push origin main
+```
+
+### 2.3. Crea una rama para tu cambio
+
+Nunca trabajes directamente sobre `main`. Crea ramas temáticas y descriptivas:
+
+```bash
+git checkout -b fix-bug-login
+```
+
+---
+
+### 2.4. Haz tus cambios
+
+* Aplica la mejora o corrección.
+* Haz commits **atómicos** y con mensajes claros:
+
+```bash
+git add archivo_modificado.py
+git commit -m "Fix: corrige validación de login en caso de email vacío"
+```
+
+> 💡 Buenas prácticas:
+>
+> * Usa un prefijo como `Fix:`, `Feat:`, `Docs:`, `Refactor:` en los commits.
+> * Haz commits pequeños y frecuentes.
+
+
+### 2.5. Empuja tu rama a tu fork
+
+```bash
+git push origin fix-bug-login
+```
+
+### 2.6. Crea el Pull Request
+
+1. Entra en tu repositorio fork en GitHub.
+
+2. GitHub detectará la rama nueva y mostrará la opción **Compare & pull request**.
+
+3. Revisa:
+
+   * Base repository: **proyecto original**
+   * Base branch: normalmente `main`
+   * Compare: tu rama (`fix-bug-login`)
+
+4. Escribe un título claro y una descripción detallada:
+
+   * **Qué problema soluciona o qué aporta**.
+   * **Cómo se probó**.
+   * Referencias a issues relacionadas (`Closes #123`).
+
+### 2.7. Interacción y feedback
+
+* El equipo del proyecto puede pedir cambios → hazlos en tu rama local, haz `git push` y se actualizarán automáticamente en el PR.
+* Mantén un tono profesional y respetuoso en los comentarios.
+* Considera añadir tests y documentación si aplica.
+
+### 2.8. Cierre del Pull Request
+
+* Si aceptan el PR → tus cambios entran en el proyecto oficial. 🎉
+* Si lo rechazan → aprovecha el feedback para mejorar.
+
+
