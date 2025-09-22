@@ -83,6 +83,84 @@ Ese programa se ejecuta en el servidor, y el resultado de esa ejecución es lo q
 
 Pues bien: si un sitio web funciona del primer modo, no es una aplicación web, sino una página web estática. Para que sea considerado una aplicación web, debe funcionar del segundo modo.
 
+## 2. Lenguajes y Frameworks de Programación en Entorno Servidor
+
+El desarrollo web en entorno servidor se apoya en distintos lenguajes y frameworks que permiten crear aplicaciones dinámicas, seguras y escalables. Cada tecnología aborda de forma distinta la ejecución del código, la integración con el servidor web y la gestión de datos.
+
+### 2.1. Tipos de Ejecución de Lenguajes del Lado del Servidor
+
+Los lenguajes de programación utilizados en el lado del servidor se ejecutan de diferentes maneras. Debemos distinguir tres grandes grupos:
+*   **Lenguajes de Guiones (Scripting)**: Los programas se ejecutan directamente a partir de su código fuente. Un intérprete procesa el código línea por línea y genera la respuesta. Pertenecen a este grupo Perl, Python, PHP y ASP (el precursor de ASP.NET). Tienen la ventaja de que no es necesario traducir el código fuente para ser ejecutados, lo que aumenta su portabilidad, pero ofrecen un rendimiento inferior.
+*   **Lenguajes Compilados a Código Nativo**: El código fuente se traduce completamente a código máquina antes de la ejecución. Los programas se almacenan en modo binario y se ejecutan directamente. Son los más rápidos, pero presentan problemas de integración con el servidor web, ya que no están pensados para ejecutarse en este entorno. No son portables entre distintas plataformas y no reutilizan procesos para atender a varias peticiones.
+*   **Lenguajes Compilados a Código Intermedio**: El código fuente se compila a un formato intermedio que luego es ejecutado por una máquina virtual. Operan de esta forma Java EE (Servlets, JSP) y ASP.NET. Ofrecen un equilibrio entre buen rendimiento y portabilidad entre distintas plataformas en las que exista una implementación de la arquitectura (como un contenedor de *servlets* o un servidor de aplicaciones Java EE).
+
+
+### 2.2. Plataformas Web Libres y Propietarias
+
+Una plataforma web es el entorno de desarrollo de software empleado para diseñar y ejecutar un sitio web. Generalmente, se compone de cuatro elementos clave:
+1.  El **sistema operativo**: Bajo el cual opera el equipo donde se hospedan las páginas web y que representa la base misma del funcionamiento del computador. En ocasiones limita la elección de otros componentes.
+2.  El **servidor web**: Es el software que maneja las peticiones desde equipos remotos a través de Internet. En el caso de páginas estáticas, el servidor web simplemente provee el archivo solicitado, el cual se muestra en el navegador. En el caso de sitios dinámicos, el servidor web se encarga de pasar las solicitudes a otros programas que puedan gestionarlas adecuadamente.
+3.  El **gestor de bases de datos**: Se encarga de almacenar sistemáticamente un conjunto de registros de datos relacionados para ser usados posteriormente.
+4.  Un **lenguaje de programación interpretado**: Que controla las aplicaciones de software que corren en el sitio web.
+
+Algunas plataformas populares incluyen:
+*   **LAMP**: Combina **L**inux, **A**pache, **M**ySQL (o MariaDB) y **P**HP/Perl/Python. Es una plataforma de código abierto muy difundida.
+*   **WISA**: Integra **W**indows, **I**IS (Internet Information Services), **S**QL Server y **A**SP/ASP.NET. Es una plataforma propietaria de Microsoft.
+*   **WAMP**: Consiste en **W**indows, **A**pache, **M**ySQL y **P**HP. Es una configuración común para entornos de desarrollo local, a menudo facilitada por paquetes como XAMPP.
+*   **WIMP**: Otra combinación para Windows, con **W**indows, **I**IS, **M**ySQL y **P**HP.
+
+
+### 2.3. Tecnologías para el Desarrollo de Servicios
+
+El desarrollo de servicios se centra en la creación de APIs para que las aplicaciones se comuniquen. Las tecnologías varían según el lenguaje y el paradigma de la API.
+
+**Tabla Comparativa de Tecnologías para el Desarrollo de Servicios**
+
+| Tecnología                  | Lenguaje   | Uso Principal                                                                       | Ejemplos de Frameworks/Librerías                         |
+| :-------------------------- | :--------- | :---------------------------------------------------------------------------------- | :------------------------------------------------------- |
+| **Java con Spring Boot**    | Java       | APIs RESTful, microservicios, aplicaciones web de alta escala, *enterprise*.        | Spring MVC, Spring WebFlux, Spring Data REST, Hibernate. |
+| **C# con ASP.NET Core**     | C#         | APIs RESTful, microservicios, servicios en la nube, aplicaciones web empresariales. | ASP.NET Core Web API.                                    |
+| **PHP con Laravel**         | PHP        | APIs RESTful, aplicaciones web con MVC, desarrollo rápido.                          | Laravel API Resources, Symfony.                          |
+| **Node.js (JavaScript)**    | JavaScript | APIs RESTful, microservicios, aplicaciones en tiempo real, *Full-stack* JavaScript. | Express.js, NestJS, Hapi.js, Meteor.js.                  |
+| **Python con Django/Flask** | Python     | APIs RESTful, aplicaciones web complejas, Machine Learning, backend de datos.       | Django REST Framework, Flask-RESTful.                    |
+| **Ruby con Rails**          | Ruby       | APIs RESTful, aplicaciones web con MVC, desarrollo rápido.                          | Ruby on Rails.                                           |
+| **gRPC**                    | Varios     | Comunicación de alto rendimiento entre microservicios, *backend-to-backend*.        | Soporte nativo en Java, C#, Python, Go, Node.js, etc.    |
+
+
+### 2.4. Integración del Código con Lenguajes de Marcas
+
+Una técnica fundamental para crear páginas web dinámicas es integrar código de programación directamente dentro de lenguajes de marcado como HTML. Esto permite generar dinámicamente secciones de contenido HTML basándose en la lógica del programa.
+
+*   En el modelo **MVC (Modelo-Vista-Controlador)**, esta combinación se realiza en el **lado del servidor**. El lenguaje de programación (ej. PHP, Python) se incrusta en el HTML, y el documento web resultante se envía al cliente desde el servidor.
+*   En aplicaciones web basadas en **servicios REST**, la combinación se lleva a cabo en el **lado del cliente**. El lenguaje de programación (JavaScript o TypeScript) consume datos JSON del servidor y modifica el HTML de forma dinámica en el navegador del usuario.
+
+Por ejemplo, un bucle en PHP puede recorrer una lista de productos y crear un bloque HTML para cada uno. Los lenguajes de programación utilizan etiquetas especiales (como `<?php ... ?>` en PHP) para delimitar el código incrustado.
+
+
+Cuando hablamos de *“código embebido”* nos referimos a mezclar fragmentos de código de programación dentro de un documento escrito en un lenguaje de marcas (normalmente HTML).
+Esto permite que el servidor procese instrucciones dinámicas antes de enviar el resultado al cliente.
+
+Ejemplo típico en PHP:
+```php
+<html>
+  <body>
+    <h1>Bienvenido</h1>
+    <p>Hoy es <?php echo date("d/m/Y"); ?></p>
+  </body>
+</html>
+```
+
+El navegador solo recibe HTML ya procesado (con la fecha en texto plano) y el cliente no ve el código PHP porque se ejecuta en el servidor.
+
+Otros lenguajes permiten algo parecido:
+
+**JSP (Java Server Pages)**: `<% ... código Java ... %>` dentro de HTML.
+
+**Plantillas Django (Python)**: usan llaves {{ variable }} o bloques `{% instrucciones %}`.
+
+En general, los frameworks modernos intentan separar lo más posible la lógica del código de la estructura HTML, pero la idea inicial fue insertar código en las páginas, siendo este un mecanismo clave en la transición de páginas estáticas a dinámicas.
+
+
 
 ## 3. PHP
 
@@ -407,7 +485,80 @@ poetry install
 poetry add django
 ```
 
-## 6. Guías de desarrollo para los distintos lenguajes
-### 6.1. Guía de desarrollo para PHP
-### 6.2. Guía de desarrollo para Java
-### 6.3. Guía de desarrollo para Python
+## 6. Funcionamiento y Configuración de Servidores Web y de Aplicaciones
+
+### 6.1. Servidores Web: Apache y Nginx
+
+Un **servidor web** es un programa que se ejecuta continuamente en un ordenador, esperando peticiones de un cliente (un navegador) y respondiendo con el recurso solicitado (páginas web, imágenes, etc.). Puede servir contenido estático o delegar la ejecución de aplicaciones para generar contenido dinámico.
+
+**Apache HTTP Server** es uno de los servidores web más populares y utilizados, conocido por ser de código abierto y gratuito, disponible para Windows y GNU/Linux.
+*   **Características**: Apache se caracteriza por su **modularidad**, lo que permite activar o desactivar módulos específicos (ej., para PHP, SSL, control de acceso) para extender su funcionalidad. El archivo principal de configuración suele ser `apache2.conf` o `httpd.conf`.
+
+
+#### 6.1.1. Instalación y Configuración Básica de Apache (Linux)
+
+En sistemas Linux basados en Debian/Ubuntu, Apache se instala fácilmente. Una vez instalado, se verifica su funcionamiento accediendo a `http://localhost` o a la dirección IP del servidor.
+
+Apache sirve las páginas web desde el directorio especificado por la directiva `DocumentRoot`, que por defecto suele ser `/var/www/html/`.
+Las **directivas** son reglas que controlan el comportamiento de Apache. Algunas directivas básicas incluyen:
+*   `ServerRoot`: Define el directorio base de la configuración de Apache.
+*   `ServerName`: Establece el nombre del servidor web (ej., `www.ejemplo.local`). Puede estar a nivel global o dentro de un VirtualHost.
+*   `Listen`: Especifica el puerto (y opcionalmente la dirección IP) por el que Apache escuchará las peticiones (por defecto el puerto 80 para HTTP).
+*   `ErrorLog`: Ubicación del archivo donde se registran los errores.
+*   `KeepAlive`: Permite mantener conexiones persistentes para múltiples peticiones.
+*   `Timeout`: Tiempo máximo que el servidor esperará antes de cerrar una conexión inactiva.
+Apache solo aplica los cambios después de ser iniciado o reiniciado.
+
+
+#### 6.1.2. Arranque y Detención del Servicio Apache
+
+En sistemas Linux, Apache se puede controlar (iniciar, detener, reiniciar) utilizando comandos como `sudo service apache2 start|stop|restart`. Es una buena práctica verificar la sintaxis de la configuración con `apache2ctl configtest` antes de reiniciar para evitar errores.
+
+
+#### 6.1.3. Configuración de Hosts Virtuales
+
+Los **Virtual Hosts** son una funcionalidad clave que permite a un único servidor físico alojar múltiples sitios web o dominios independientes.
+*   **Virtual Hosts basados en nombre**: Varios nombres de dominio (ej., `www.miejemplo.local`, `www.misitio.local`) apuntan a la misma dirección IP del servidor. `ServerName` define el nombre principal y `ServerAlias` permite nombres alternativos.
+*   **Virtual Hosts basados en IP**: Cada Virtual Host se asocia a una dirección IP distinta del servidor.
+*   **Configuraciones mixtas**: Es posible combinar Virtual Hosts basados en nombre y en IP.
+En sistemas Debian/Ubuntu, los Virtual Hosts se configuran en archivos específicos (ej., `/etc/apache2/sites-available/*.conf`) y se habilitan o deshabilitan mediante enlaces simbólicos y comandos como `a2ensite` y `a2dissite`. Las directivas no especificadas explícitamente en un Virtual Host se heredan de la configuración principal de Apache.
+
+
+### 6.2. Servidores de Aplicaciones para Jakarta EE
+
+Un **servidor de aplicaciones** es un software que proporciona servicios adicionales a los de un servidor web. Se especializa en contenido dinámico, ofrece servicios adicionales como balanceo de carga o *clustering*, y se integra frecuentemente con bases de datos. Simplifican el desarrollo al permitir ensamblar aplicaciones a partir de componentes predefinidos.
+
+ * **Apache Tomcat** es un servidor de aplicaciones de código abierto desarrollado por la Apache Software Foundation. Es uno de los servidores de aplicaciones Java más utilizados y es compatible con una variedad de protocolos, incluido el protocolo HTTP y el protocolo de red privada virtual (VPN). Es un servidor ligero y simple, ideal para aplicaciones pequeñas o de desarrollo. Además Tomcat es fácil de configurar y escalar según las necesidades de la aplicación. El uso de Tomcat suele ser habitual en el desarrollo de sitios web y aplicaciones web personales o pequeñas empresas.
+
+ * **GlassFish** es un servidor de aplicaciones Java de código abierto desarrollado por Oracle Corporation. Es una de las opciones más utilizadas para desarrollar y desplegar aplicaciones web basadas en JavaEE (Java Enterprise Edition) y cuenta con una serie de características avanzadas, como la escalabilidad y el soporte para clustering. Es utilizado para desarrollar y desplegar aplicaciones empresariales complejas como por ejemplo sistemas de gestión de recursos humanos y sistemas de gestión de inventario.
+
+ * **Payara** es un servidor de aplicaciones Java de código abierto desarrollado por Payara Services Limited. Es una versión de código abierto de GlassFish y se basa en la misma arquitectura y código base, pero incluye un conjunto de mejoras y características adicionales en cuanto a la seguridad y la monitorización, y ofrece soporte comercial. Incluyen su uso en la industria financiera y en sistemas de gestión de recursos humanos.
+
+ * **WildFly** es un servidor de aplicaciones Java de código abierto desarrollado por Red Hat. Es una de las opciones más utilizadas para desarrollar y desplegar aplicaciones web basadas en JavaEE. Se enfoca en la simplicidad y ofrece características avanzadas como escalabilidad, soporte para clustering y mecanismos de seguridad. Al igual que Glassfish y Payara, se usa principalmente para desarrollar y desplegar aplicaciones empresariales complejas.
+
+Si tuviésemos que hacerte una recomendación entre uno u otro, te indicaríamos que dependerá de las necesidades de tu aplicación y del entorno en el que se desplegará.
+
+
+#### 6.2.1. Instalación y Configuración Básica de Tomcat (requisito JDK)
+
+La instalación de cualquier versión de Tomcat requiere que el **Kit de Desarrollo de Java (JDK)** esté previamente instalado, ya que las peticiones a Apache a menudo se redirigen a Tomcat usando un conector Java. La gestión del servicio Tomcat se realiza mediante el *script* `catalina`, utilizando comandos como `start` y `stop`. Se puede verificar su funcionamiento accediendo a `http://127.0.0.1:8080` en un navegador.
+
+
+### 6.3. Gestores de Bases de Datos
+
+Los **gestores de bases de datos** son componentes fundamentales en cualquier plataforma web moderna. Son software encargados de almacenar, estructurar y recuperar grandes volúmenes de datos de manera eficiente.
+ *   **MySQL / MariaDB**: Son gestores de bases de datos relacionales de código abierto, muy populares por su eficiencia y velocidad, a menudo utilizados en combinación con PHP. MariaDB es un *fork* de MySQL completamente libre.
+ *   **PostgreSQL**: Otro potente gestor de bases de datos relacionales de código abierto, conocido por su robustez y cumplimiento de estándares.
+ *   **SQL Server**: Es el sistema gestor de bases de datos de Microsoft, típicamente empleado en plataformas WISA.
+ *   **MongoDB**: Es un gestor de bases de datos NoSQL orientado a documentos, ideal para aplicaciones que requieren alta escalabilidad y flexibilidad en el esquema de datos.
+
+
+## 7. Despliegue de Aplicaciones Web
+
+### 7.1. Concepto de Despliegue
+
+Para desplegar una aplicación web, se necesitan varios elementos:
+ *   **Software**: Los componentes básicos de una plataforma web: un sistema operativo, un servidor web (Apache, Nginx), un servidor de aplicaciones (Tomcat para Java), el *runtime* del lenguaje de programación (JDK para Java, entorno PHP, .NET runtime) y un gestor de bases de datos. Además, para entornos de desarrollo local, herramientas como Docker Desktop o XAMPP son esenciales.
+ *   **Hardware**: Un servidor con la capacidad adecuada de CPU, memoria RAM y almacenamiento para la aplicación y la carga de usuarios prevista. La **escalabilidad** del hardware es un factor crítico.
+ *   **Dependencias**: Incluye librerías específicas del *framework* o del proyecto (como archivos JAR para Java, paquetes NuGet para C# o paquetes Composer para PHP).
+
