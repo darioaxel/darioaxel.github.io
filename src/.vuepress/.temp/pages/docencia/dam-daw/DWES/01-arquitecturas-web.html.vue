@@ -11,6 +11,12 @@
 También veremos cómo se relacionan con el desarrollo de aplicaciones web del lado del servidor (backend) y cómo se utilizan en la práctica.</p>
 </div>
 <h2 id="introduccion" tabindex="-1"><a class="header-anchor" href="#introduccion"><span>Introducción</span></a></h2>
+<h3 id="el-desarrollo-web-actual-web" tabindex="-1"><a class="header-anchor" href="#el-desarrollo-web-actual-web"><span>El Desarrollo Web Actual Web</span></a></h3>
+<p>¿Algunas vez has pensado lo que pasa una vez le das al botón de &quot;Enviar&quot; en un formulario web? ¿O cómo es posible que puedas ver tu perfil en una red social, comprar en una tienda online o ver una película en streaming desde cualquier dispositivo? ¿O que pasa cuando pones una URL en el navegador? Detrás de estas acciones aparentemente simples, hay un complejo ecosistema de tecnologías y procesos que hacen posible la experiencia web moderna.</p>
+<figure><img src="/images/dwes/anatomia_web.gif" alt="img" tabindex="0" loading="lazy"><figcaption>img</figcaption></figure>
+<p>El desarrollo web moderno es un campo en constante evolución que abarca la creación y mantenimiento de sitios web y aplicaciones que operan a través de Internet. En la actualidad, el desarrollo no solo se enfoca en la funcionalidad, sino también en cómo estas aplicaciones se pondrán a disposición de los usuarios, un proceso crucial conocido como <strong>despliegue</strong>. Este proceso es fundamental para la viabilidad de cualquier proyecto web, ya que permite que la aplicación pase del entorno de desarrollo a un entorno de producción, donde será accesible para los usuarios finales.</p>
+<p>Los principales objetivos del despliegue son garantizar la <strong>accesibilidad</strong>, la <strong>estabilidad</strong>, la <strong>escalabilidad</strong> y la <strong>seguridad</strong> de las aplicaciones. Un despliegue eficiente contribuye a una <strong>rapidez en el <em>Time-to-Market</em></strong>, lo que permite a las empresas lanzar productos más rápidamente. Facilita la <strong>iteración rápida</strong> y la entrega continua de nuevas funcionalidades y mejoras, esencial para adaptarse a las necesidades del mercado y de los usuarios. La <strong>automatización</strong> de los procesos de despliegue reduce los errores humanos y aumenta la eficiencia, liberando a los equipos de desarrollo para tareas más estratégicas. Un despliegue eficaz mejora la <strong>competitividad</strong> de una empresa al proporcionar un servicio fiable y de alta calidad. Además, la <strong>documentación</strong> de todos los procesos de despliegue es indispensable para asegurar que puedan ser replicados, para la resolución de problemas y para la formación de nuevos miembros del equipo.</p>
+<figure><img src="/images/dwes/type_url_in_a_browser.gif" alt="img" tabindex="0" loading="lazy"><figcaption>img</figcaption></figure>
 <p>En el mundo de la informática establecemos que una <em><strong>página web estática</strong></em> es aquella cuyo contenido no cambia en función de la interacción del usuario o del contexto. Estas páginas están compuestas principalmente por archivos HTML y CSS, que se almacenan en un servidor y se envían tal cual al navegador del usuario cuando éste las solicita. El servidor simplemente &quot;sirve&quot; estos archivos, sin realizar ningún procesamiento adicional.</p>
 <p>Este modelo es el más sencillo que se puede establecer para una página web. Sin embargo, las aplicaciones web modernas requieren una mayor interactividad y personalización, lo que nos lleva a la necesidad de páginas web dinámicas.<br>
 Estas páginas pueden cambiar su contenido en función de la interacción del usuario, datos de bases de datos o servicios externos.</p>
@@ -23,6 +29,7 @@ Estas páginas pueden cambiar su contenido en función de la interacción del us
 <li><strong>Consumo de servicios externos desde el cliente:</strong> El navegador ejecuta JavaScript para solicitar datos a servicios REST de terceros y actualizar la página dinámicamente, sin necesidad de recargarla por completo.</li>
 </ul>
 <h2 id="arquitectura-cliente-servidor" tabindex="-1"><a class="header-anchor" href="#arquitectura-cliente-servidor"><span>Arquitectura Cliente-Servidor</span></a></h2>
+<p>Las arquitecturas web son modelos que describen la forma en que los distintos elementos que participan en el intercambio y procesamiento de información a través de Internet se relacionan y funcionan. El modelo fundamental es la <strong>Arquitectura Cliente-Servidor</strong>, donde uno o varios clientes (navegadores web) solicitan servicios a un servidor.</p>
 <p>El modelo cliente-servidor es un modelo que reparte tareas entre los proveedores de un recurso o servicio, llamados <strong>servidores</strong>, y los solicitantes/consumidores del servicio, llamados <strong>clientes</strong>.</p>
 <p>Lo más frecuente es que los clientes y los servidores se comuniquen a través de una red de comunicaciones, pero ambos pueden residir en la misma máquina (normalmente en tareas de desarrollo).</p>
 <p>El esquema de funcionamiento más básico del modelo cliente-servidor para una arquitectura web está basado en uno o varios clientes que solicitan una página web a un servidor web:</p>
@@ -103,27 +110,138 @@ Realmente no podemos saber exactamente qué está sucediendo en el servidor dura
 <p>Una página web dinámica puede contener una parte estática, y además el contenido que se muestre dependerá del momento en el cual se realice la petición. Esto es debido a que el servidor conformará dicho contenido dependiendo de los datos de que se disponga en ese momento en un sistema de bases de datos. La comunicación entre el navegador web y el servidor será más compleja, ya que, además de consultar contenidos, se podrán realizar potencialmente operaciones de creación, modificación, y eliminación de datos.</p>
 <p>Una aplicación Web es una herramienta software, formada por páginas web dinámicas (aunque también puede contener documentos web estáticos), basada en tecnologías web que la dotan de un carácter dinámico (interactúan con un sistema remoto) haciendo uso de servicios web (basados en la arquitectura TCP/IP), y que proporcionan al usuario un servicio o conjunto de servicios. Sería lo más parecido a una aplicación nativa o de escritorio, pero ejecutada en un navegador web. El hecho de ejecutarse en un navegador web las independiza del sistema operativo en el que se ejecutan, pero también presentan determinadas limitaciones debido a esta independencia.</p>
 <p>En este caso, un navegador web NO es capaz de representar la página web en una máquina local sin un servidor web adicional y el resto de componentes que acompañan a esta arquitectura, como sí era el caso de una página web estática.</p>
-<h2 id="arquitecturas-web-capas-fisicas-y-logicas" tabindex="-1"><a class="header-anchor" href="#arquitecturas-web-capas-fisicas-y-logicas"><span>Arquitecturas Web: Capas Físicas y Lógicas</span></a></h2>
-<p>Las arquitecturas web no son tan sencillas como un simple servidor y una serie de clientes. Mediante una estructura de <strong>capas</strong> o <strong>layers</strong>, se intenta minorar la complejidad que una aplicación real tiene de forma que sean mantenibles, comprensibles por los desarrolladores y testeables.<br>
-En realidad, las aplicaciones web modernas suelen estar organizadas en <strong>capas físicas</strong> y <strong>lógicas</strong> que facilitan su desarrollo, mantenimiento y escalabilidad.</p>
-<h3 id="capas-fisicas-tiers" tabindex="-1"><a class="header-anchor" href="#capas-fisicas-tiers"><span>Capas Físicas (Tiers)</span></a></h3>
-<p>Una capa física o tier corresponde a un componente hardware separado dentro de la arquitectura. Por ejemplo, en una arquitectura de tres capas físicas (3-tier) se distinguen:</p>
+<h2 id="modelos-de-arquitectura-software-monolitica-de-capas-microservicios-y-serverless" tabindex="-1"><a class="header-anchor" href="#modelos-de-arquitectura-software-monolitica-de-capas-microservicios-y-serverless"><span>Modelos de Arquitectura Software: Monolítica, de Capas, Microservicios y Serverless</span></a></h2>
+<p>Una arquitectura de software se refiere a la estructura organizativa fundamental de un sistema de software. Define cómo se dividen, combinan y coordinan sus componentes para lograr los objetivos del sistema. En el desarrollo de aplicaciones web del lado del servidor (<em>backend</em>), existen varias arquitecturas principales.</p>
+<figure><img src="/images/dwes/arquitecturas.jpeg" alt="Arquitect" tabindex="0" loading="lazy"><figcaption>Arquitect</figcaption></figure>
+<ul>
+<li>
+<p><strong>Arquitectura Monolítica</strong>: Es un enfoque tradicional en el que todos los componentes de una aplicación web se agrupan en un solo bloque. La lógica de negocio, la interfaz de usuario y la capa de acceso a datos se encuentran dentro de la misma aplicación. Es fácil de desarrollar y desplegar inicialmente, pero puede volverse complejo y difícil de mantener a medida que la aplicación crece. Todos los componentes se ejecutan en el mismo proceso y comparten recursos. La escalabilidad puede ser un desafío, ya que la aplicación se ejecuta en una sola instancia. Los cambios en una parte de la aplicación pueden afectar a otras partes.</p>
+</li>
+<li>
+<p><strong>Arquitectura de Capas</strong>: Esta arquitectura divide la aplicación en diferentes capas lógicas, donde cada capa tiene una responsabilidad específica. Las capas típicas incluyen la capa de presentación, la capa de lógica de negocio y la capa de acceso a datos. Cada capa se comunica con la capa adyacente a través de interfaces bien definidas. Mejora la modularidad y la reutilización del código, permite cambios en una capa sin afectar a las demás y facilita la escalabilidad y el mantenimiento del sistema.</p>
+<ul>
+<li>
+<p>Capas Físicas (Tiers) Una capa física o tier corresponde a un componente hardware separado dentro de la arquitectura. Por ejemplo, en una arquitectura de tres capas físicas (3-tier) se distinguen:</p>
 <ul>
 <li>Servidor web</li>
 <li>Servidor de aplicaciones</li>
 <li>Servidor de base de datos</li>
 </ul>
-<p>En entornos modernos, es común utilizar clusters de servidores en una misma capa para lograr tolerancia a fallos y escalabilidad.</p>
-<h3 id="capas-logicas-layers" tabindex="-1"><a class="header-anchor" href="#capas-logicas-layers"><span>Capas Lógicas (Layers)</span></a></h3>
-<p>Las capas lógicas organizan el código según su función:</p>
+</li>
+<li>
+<p>Capas Lógicas (Layers): Las capas lógicas organizan el código según su función:</p>
 <ul>
 <li>Presentación: Interfaz de usuario.</li>
 <li>Negocio/Aplicación: Lógica de negocio y procesamiento.</li>
 <li>Datos/Persistencia: Gestión y almacenamiento de datos.</li>
 </ul>
+</li>
+</ul>
 <p>Cada capa puede implementarse con diferentes tecnologías y lenguajes, permitiendo flexibilidad y modularidad.</p>
+</li>
+<li>
+<p><strong>Arquitectura de Servicios Web</strong>: Esta arquitectura se basa en la comunicación entre diferentes servicios a través de protocolos web estándar, como HTTP. Cada servicio es una unidad independiente que se puede desarrollar, desplegar y escalar de forma independiente. Los servicios se comunican entre sí para cumplir con los requisitos de la aplicación. Favorece la modularidad y la independencia de los servicios, permite la integración de diferentes tecnologías y lenguajes de programación y facilita la escalabilidad horizontal.</p>
+</li>
+<li>
+<p><strong>Arquitectura Basada en Microservicios</strong>: Es una evolución de la arquitectura de servicios web, donde los servicios se dividen en componentes aún más pequeños y autónomos llamados microservicios. Cada microservicio se enfoca en una tarea específica y se comunica con otros microservicios a través de protocolos ligeros. Cada microservicio se puede desarrollar, desplegar y escalar de forma independiente. Mejora la flexibilidad y la agilidad del desarrollo y permite la adopción de diferentes tecnologías y enfoques dentro de cada microservicio. Un ejemplo notable es la arquitectura de <em>backend</em> de Netflix.</p>
+</li>
+</ul>
+<div class="hint-container info">
+<p class="hint-container-title">Información</p>
+<p>👻 Aunque la utilización de arquitecturas basadas en microservicios tuvieron un hype importante durante los últimos años, identificando estas prácticas como la panacea para todo tipo de proyectos, la realidad es que no son adecuadas para todos los casos. Su complejidad y coste de mantenimiento puede ser excesivo para proyectos pequeños o medianos, donde una arquitectura monolítica o en capas puede ser más adecuada.</p>
+<p>Actualmente, múltiples empresas están migrando sus arquitecturas de microservicios a arquitecturas monolíticas o en capas, buscando simplificar su mantenimiento y reducir costes, sobretodo en proyectos pequeños o medianos.</p>
+</div>
+<ul>
+<li><strong>Arquitectura Serverless</strong>: En este modelo, el proveedor de nube gestiona toda la infraestructura del servidor, y los desarrolladores solo se preocupan por escribir el código de la aplicación. Esto ofrece escalabilidad automática y pago por uso.</li>
+<li><strong>Service-Oriented Architecture (SOA)</strong>: Es un enfoque de diseño de software donde los componentes del sistema se organizan como servicios independientes que se comunican entre sí a través de interfaces bien definidas. Cada servicio es una unidad autónoma que realiza una función específica y puede ser reutilizado en diferentes aplicaciones. SOA promueve la interoperabilidad, la flexibilidad y la escalabilidad al permitir que los servicios se desarrollen, desplieguen y mantengan de forma independiente.</li>
+<li><strong>Event Driven Architecture (EDA)</strong>: En esta arquitectura, los componentes del sistema se comunican mediante eventos. Un componente emite un evento cuando ocurre una acción significativa, y otros componentes pueden suscribirse a estos eventos para reaccionar en consecuencia. Esto permite una mayor flexibilidad y desacoplamiento entre los componentes del sistema.</li>
+</ul>
+<figure><img src="/images/dwes/arquitecturas_web.gif" alt="img" tabindex="0" loading="lazy"><figcaption>img</figcaption></figure>
+<p><strong>Tabla Comparativa de Arquitecturas Software</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Característica</th>
+<th style="text-align:left"><strong>Monolítica</strong></th>
+<th style="text-align:left"><strong>De Capas</strong></th>
+<th style="text-align:left"><strong>Microservicios</strong></th>
+<th style="text-align:left"><strong>Serverless</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>Complejidad Inicial</strong></td>
+<td style="text-align:left">Baja (fácil desarrollo y despliegue)</td>
+<td style="text-align:left">Media (modular, pero aún una única aplicación)</td>
+<td style="text-align:left">Alta (gestión y despliegue complejos)</td>
+<td style="text-align:left">Media (abstracción, pero desafíos de monitoreo)</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Escalabilidad</strong></td>
+<td style="text-align:left">Difícil de escalar componentes individuales</td>
+<td style="text-align:left">Buena (facilita la escalabilidad y mantenimiento)</td>
+<td style="text-align:left">Independiente por servicio (alta)</td>
+<td style="text-align:left">Automática (muy alta)</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Resiliencia</strong></td>
+<td style="text-align:left">Un fallo puede afectar toda la aplicación</td>
+<td style="text-align:left">Un fallo en una capa afecta a su funcionalidad</td>
+<td style="text-align:left">Alta (fallo de un servicio no afecta al resto)</td>
+<td style="text-align:left">Alta (proveedor gestiona tolerancia a fallos)</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Mantenimiento</strong></td>
+<td style="text-align:left">Se vuelve complejo a medida que crece</td>
+<td style="text-align:left">Facilita el mantenimiento</td>
+<td style="text-align:left">Flexible y ágil, fácil de actualizar individualmente</td>
+<td style="text-align:left">Reducción de la administración del servidor</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Flexibilidad Tec.</strong></td>
+<td style="text-align:left">Baja (todo en una pila tecnológica)</td>
+<td style="text-align:left">Baja (puede permitir diferentes lenguajes por capa)</td>
+<td style="text-align:left">Alta (diferentes tecnologías por microservicio)</td>
+<td style="text-align:left">Muy alta (independencia tecnológica por función)</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Coste</strong></td>
+<td style="text-align:left">Puede ser bajo inicialmente</td>
+<td style="text-align:left">Moderado</td>
+<td style="text-align:left">Puede ser más alto por complejidad de infraestructura</td>
+<td style="text-align:left">Pago por uso (potencialmente bajo si el uso es esporádico)</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Tiempo de Desp.</strong></td>
+<td style="text-align:left">Largos ciclos de despliegue</td>
+<td style="text-align:left">Moderados</td>
+<td style="text-align:left">Agilidad en despliegue de pequeños cambios</td>
+<td style="text-align:left">Muy rápido para funciones individuales</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Comunicación</strong></td>
+<td style="text-align:left">En memoria (rápida)</td>
+<td style="text-align:left">En memoria o a través de interfaces bien definidas</td>
+<td style="text-align:left">Mayor sobrecarga entre servicios (red)</td>
+<td style="text-align:left">Vía eventos o API Gateway (latencia de &quot;arranque en frío&quot;)</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Ideal para</strong></td>
+<td style="text-align:left">Proyectos pequeños, MVPs</td>
+<td style="text-align:left">Aplicaciones empresariales con requisitos claros</td>
+<td style="text-align:left">Aplicaciones complejas, grandes empresas (ej. Netflix)</td>
+<td style="text-align:left">Funciones esporádicas, microservicios específicos</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Macroservicios vs. Microservicios vs. Serverless vs SOA vs EDA:</strong></p>
+<p>El término &quot;Macroservicios&quot; no es una arquitectura formal, pero a menudo se usa para describir aplicaciones que, aunque modularizadas, no alcanzan la granularidad y autonomía de los microservicios, o bien para referirse a arquitecturas monolíticas grandes.</p>
+<p>La tendencia hacia los <strong>Microservicios</strong> se debe a la necesidad de construir sistemas más <strong>flexibles, escalables y resilientes</strong> en un entorno de desarrollo ágil. Mientras que un monolito requiere escalar toda la aplicación incluso si solo una pequeña parte tiene alta demanda, los microservicios permiten escalar de forma independiente cada componente. Esto facilita que equipos pequeños trabajen de forma autónoma, elijan sus propias tecnologías y desplieguen con mayor frecuencia y menor riesgo. El fallo de un microservicio no afecta a toda la aplicación, mejorando la resiliencia. Sin embargo, esta flexibilidad viene con una <strong>mayor complejidad de gestión y despliegue</strong>.</p>
+<p><strong>Serverless</strong> va un paso más allá, eliminando la preocupación por los servidores. Aunque puede verse como una evolución de los microservicios, no todos los microservicios son Serverless. Serverless es ideal para funciones cortas y bajo demanda que pueden beneficiarse de la escalabilidad automática y el pago por uso, pero tiene limitaciones de tiempo de ejecución y posibles latencias de &quot;arranque en frío&quot;.</p>
+<p><strong>Service-Oriented Architecture (SOA)</strong> es un enfoque más amplio que puede incluir microservicios, pero se centra en la interoperabilidad y la reutilización de servicios a través de una arquitectura orientada a servicios. SOA puede ser más adecuado para organizaciones grandes con sistemas heredados que necesitan integrarse.</p>
+<p><strong>Event Driven Architecture (EDA)</strong> es un enfoque que puede complementar tanto a los microservicios como a las arquitecturas Serverless. En EDA, los componentes del sistema reaccionan a eventos, lo que permite una mayor flexibilidad y desacoplamiento. Esto es especialmente útil en sistemas distribuidos donde la comunicación asíncrona puede mejorar la escalabilidad y la resiliencia.</p>
 <h3 id="modelo-mvc-modelo-vista-controlador" tabindex="-1"><a class="header-anchor" href="#modelo-mvc-modelo-vista-controlador"><span>Modelo MVC (Modelo-Vista-Controlador)</span></a></h3>
-<p>El patrón MVC (Model-View-Controller) es una arquitectura que separa la lógica de negocio, la gestión de datos y la presentación visual:</p>
+<p>El patrón <strong>MVC (Model-View-Controller)</strong> es una arquitectura que separa la lógica de negocio, la gestión de datos y la presentación visual. Al separar los componentes en elementos conceptuales permite reutilizar el código y mejorar su organización y mantenimiento. Sus elementos son:</p>
 <ul>
 <li>
 <p><em><strong>Modelo:</strong></em> Gestiona los datos y su acceso, normalmente conectado a una base de datos.</p>
@@ -136,7 +254,12 @@ En realidad, las aplicaciones web modernas suelen estar organizadas en <strong>c
 </li>
 </ul>
 <p>Esta separación facilita la organización, el mantenimiento y la reutilización del código.</p>
+<p>En este modelo, es el servidor el que lleva el peso principal tanto del procesado de la información como de su representación. El cliente web se dedica a enviar las peticiones al servidor, recibir la respuesta y representarla en pantalla. La página web (código HTML, JavaScript, etc.) se predetermina en el lado del servidor. Con este modelo, cada petición del cliente al servidor implicará un refresco de la información que se visualiza en la pantalla, aunque su apariencia haya cambiado poco. Esto implica que se vuelvan a descargar todos los datos y ficheros que no se mantengan en la caché del navegador, con lo que los tiempos de respuesta serán mayores. El usuario final apreciará que, por un intervalo corto de tiempo, todos los elementos de la pantalla desaparecen y después se conforma de nuevo la interfaz de usuario. En este caso, se dice que la aplicación no es reactiva. Este modelo de programación MVC se ajustará al primer proyecto del curso.</p>
+<h3 id="ejemplo-de-arquitectura-netflix" tabindex="-1"><a class="header-anchor" href="#ejemplo-de-arquitectura-netflix"><span>Ejemplo de arquitectura: Netflix</span></a></h3>
+<p>La arquitectura de backend de Netflix es conocida por ser altamente escalable y resiliente, diseñada para manejar grandes volúmenes de tráfico y garantizar la disponibilidad y el rendimiento de sus servicios. Netflix adopta una arquitectura basada en microservicios, donde las diferentes funcionalidades se dividen en servicios independientes. Cada microservicio se enfoca en una tarea específica y se comunica con otros servicios a través de interfaces bien definidas. Esto permite una mayor flexibilidad, escalabilidad y mantenimiento de los servicios individuales.</p>
+<figure><img src="/images/dwes/netflix.gif" alt="netflix" tabindex="0" loading="lazy"><figcaption>netflix</figcaption></figure>
 <h2 id="patrones-y-tipos-de-arquitecturas-en-servidor" tabindex="-1"><a class="header-anchor" href="#patrones-y-tipos-de-arquitecturas-en-servidor"><span>Patrones y tipos de arquitecturas en Servidor.</span></a></h2>
+<p>Los patrones de diseño son soluciones generalmente aplicables a problemas comunes en el diseño de software. Proporcionan un enfoque probado y estructurado para resolver problemas recurrentes y mejorar la calidad y flexibilidad del código.</p>
 <h3 id="principios-solid" tabindex="-1"><a class="header-anchor" href="#principios-solid"><span>Principios SOLID</span></a></h3>
 <p>Los cinco principios SOLID son un conjunto de reglas y mejores prácticas para el diseño de software orientado a objetos.</p>
 <p><a href="https://www.youtube.com/watch?v=E_mSr-VFd3g" target="_blank" rel="noopener noreferrer">Video SOLID</a></p>
@@ -280,73 +403,6 @@ Robert C. Martin también publicó uno de los libros de cabecera que casi todo p
 <p class="hint-container-title"><strong>Para saber más..</strong></p>
 <p>Los patrones de diseño fueron popularizados por el libro &quot;Design Patterns: Elements of Reusable Object-Oriented Software&quot; publicado en 1994 por Erich Gamma, Richard Helm, Ralph Johnson y John Vlissides, conocidos como la &quot;Gang of Four&quot; (GoF).</p>
 </div>
-<h3 id="arquitecturas-software" tabindex="-1"><a class="header-anchor" href="#arquitecturas-software"><span>Arquitecturas Software</span></a></h3>
-<p>Una arquitectura de software se refiere a la estructura organizativa fundamental de un sistema de software. Define cómo se dividen, combinan y coordinan los componentes del software para lograr los objetivos del sistema. En el desarrollo de aplicaciones web del lado del servidor (backend), existen varias arquitecturas de software principales:</p>
-<figure><img src="/images/dwes/arquitecturas.jpeg" alt="Arquitect" tabindex="0" loading="lazy"><figcaption>Arquitect</figcaption></figure>
-<ol>
-<li>
-<p><strong>Arquitectura monolítica</strong>: Es un enfoque tradicional en el que todos los componentes de una aplicación web se agrupan en un solo bloque. La lógica de negocio, la interfaz de usuario y la capa de acceso a datos se encuentran dentro de la misma aplicación. Es fácil de desarrollar y desplegar, pero puede volverse complejo y difícil de mantener a medida que la aplicación crece. Características:</p>
-<ul>
-<li>Todos los componentes se ejecutan en el mismo proceso y comparten recursos.</li>
-<li>La escalabilidad puede ser un desafío, ya que la aplicación se ejecuta en una sola instancia.</li>
-<li>Los cambios en una parte de la aplicación pueden afectar a otras partes.</li>
-</ul>
-</li>
-<li>
-<p><strong>Arquitectura de capas</strong>: Esta arquitectura divide la aplicación en diferentes capas lógicas, donde cada capa tiene una responsabilidad específica. Las capas típicas incluyen la capa de presentación, la capa de lógica de negocio y la capa de acceso a datos. Cada capa se comunica con la capa adyacente a través de interfaces bien definidas. Características:</p>
-<ul>
-<li>Mejora la modularidad y la reutilización del código.</li>
-<li>Permite cambios en una capa sin afectar a las demás.</li>
-<li>Facilita la escalabilidad y el mantenimiento del sistema.</li>
-</ul>
-</li>
-<li>
-<p><strong>Arquitectura de servicios web</strong>: Esta arquitectura se basa en la comunicación entre diferentes servicios a través de protocolos web estándar, como HTTP. Cada servicio es una unidad independiente que se puede desarrollar, desplegar y escalar de forma independiente. Los servicios se comunican entre sí para cumplir con los requisitos de la aplicación. Características:</p>
-<ul>
-<li>Favorece la modularidad y la independencia de los servicios.</li>
-<li>Permite la integración de diferentes tecnologías y lenguajes de programación.</li>
-<li>Facilita la escalabilidad horizontal, ya que los servicios se pueden replicar y distribuir en múltiples servidores.</li>
-</ul>
-</li>
-<li>
-<p><strong>Arquitectura basada en microservicios</strong>: Es una evolución de la arquitectura de servicios web, donde los servicios se dividen en componentes aún más pequeños y autónomos llamados microservicios. Cada microservicio se enfoca en una tarea específica y se comunica con otros microservicios a través de protocolos ligeros. Características:</p>
-<ul>
-<li>Cada microservicio se puede desarrollar, desplegar y escalar de forma independiente.</li>
-<li>Mejora la flexibilidad y la agilidad del desarrollo.</li>
-<li>Permite la adopción de diferentes tecnologías y enfoques dentro de cada microservicio.</li>
-</ul>
-</li>
-</ol>
-<p>Estas son solo algunas de las arquitecturas de software más comunes en el desarrollo de aplicaciones web backend. Cada una tiene sus ventajas y desafíos, y la elección de la arquitectura adecuada depende de los requisitos y objetivos del proyecto.</p>
-<div class="hint-container info">
-<p class="hint-container-title">Información</p>
-<p>👻 Aunque la utilización de arquitecturas basadas en microservicios tuvieron un hype importante durante los últimos años, identificando estas prácticas como la panacea para todo tipo de proyectos, la realidad es que no son adecuadas para todos los casos. Su complejidad y coste de mantenimiento puede ser excesivo para proyectos pequeños o medianos, donde una arquitectura monolítica o en capas puede ser más adecuada.</p>
-<p>Actualmente, múltiples empresas están migrando sus arquitecturas de microservicios a arquitecturas monolíticas o en capas, buscando simplificar su mantenimiento y reducir costes, sobretodo en proyectos pequeños o medianos.</p>
-</div>
-<h3 id="ejemplo-de-arquitectura-netflix" tabindex="-1"><a class="header-anchor" href="#ejemplo-de-arquitectura-netflix"><span>Ejemplo de arquitectura: Netflix</span></a></h3>
-<p>La arquitectura de backend de Netflix es conocida por ser altamente escalable y resiliente, diseñada para manejar grandes volúmenes de tráfico y garantizar la disponibilidad y el rendimiento de sus servicios. Netflix adopta una arquitectura basada en microservicios, donde las diferentes funcionalidades se dividen en servicios independientes. Cada microservicio se enfoca en una tarea específica y se comunica con otros servicios a través de interfaces bien definidas. Esto permite una mayor flexibilidad, escalabilidad y mantenimiento de los servicios individuales.</p>
-<figure><img src="/images/dwes/netflix.gif" alt="netflix" tabindex="0" loading="lazy"><figcaption>netflix</figcaption></figure>
-<h3 id="api-web" tabindex="-1"><a class="header-anchor" href="#api-web"><span>API Web</span></a></h3>
-<p>Una API web (<em>Application Programming Interface</em>) es un conjunto de reglas y protocolos que permite a diferentes aplicaciones o sistemas comunicarse y compartir datos entre sí a través de la web. Proporciona un conjunto de funciones y métodos que permiten a los desarrolladores acceder y manipular los datos de una aplicación o servicio específico.</p>
-<p>En el contexto de las aplicaciones web, una API web permite que el backend de una aplicación exponga ciertas funcionalidades y datos a otras aplicaciones o servicios, como aplicaciones móviles, sitios web o sistemas externos. Esto permite la integración y la creación de aplicaciones más complejas y robustas.</p>
-<p>Las API web se basan en protocolos estándar de la web, como HTTP (Hypertext Transfer Protocol), y utilizan formatos de intercambio de datos como JSON (JavaScript Object Notation) o XML (eXtensible Markup Language) para enviar y recibir información.</p>
-<p>Algunos ejemplos comunes de API web incluyen:</p>
-<ol>
-<li>
-<p><strong>API RESTful:</strong> Es un estilo arquitectónico que utiliza los métodos HTTP (GET, POST, PUT, DELETE, etc.) para acceder y manipular recursos en un sistema. Se basa en la representación de recursos a través de URLs (Uniform Resource Locators) y utiliza formatos como JSON para el intercambio de datos.</p>
-</li>
-<li>
-<p><strong>API GraphQL:</strong> Es un lenguaje de consulta y una especificación para las APIs web. Permite a los clientes solicitar y recibir solo los datos necesarios, lo que mejora la eficiencia y reduce la cantidad de datos transferidos.</p>
-</li>
-<li>
-<p><strong>API Websocket:</strong> Utiliza el protocolo de comunicación de WebSockets para permitir una comunicación bidireccional y en tiempo real entre un cliente y un servidor a través de una conexión persistente. A diferencia de las API tradicionales basadas en HTTP, que siguen un modelo de solicitud-respuesta, las API con WebSockets establecen una conexión continua entre el cliente y el servidor, lo que permite una comunicación más eficiente y en tiempo real.</p>
-</li>
-</ol>
-<div class="hint-container important">
-<p class="hint-container-title">Importante</p>
-<p>Las API web son fundamentales en el desarrollo de aplicaciones modernas, ya que permiten la integración de diferentes servicios y la creación de aplicaciones más flexibles y escalables.</p>
-</div>
-<figure><img src="/images/dwes/apis.gif" alt="apis" tabindex="0" loading="lazy"><figcaption>apis</figcaption></figure>
 <h2 id="el-protocolo-http-y-https" tabindex="-1"><a class="header-anchor" href="#el-protocolo-http-y-https"><span>El Protocolo HTTP y HTTPS</span></a></h2>
 <h3 id="caracteristicas-y-ventajas-del-protocolo-http" tabindex="-1"><a class="header-anchor" href="#caracteristicas-y-ventajas-del-protocolo-http"><span>Características y Ventajas del Protocolo HTTP</span></a></h3>
 <p>El <strong>Protocolo HTTP (HyperText Transfer Protocol)</strong> es la base de la comunicación en la World Wide Web. Es un protocolo no orientado a la conexión, lo que significa que cada petición entre cliente y servidor es independiente y no requiere mantener una conexión continua.</p>
@@ -403,6 +459,27 @@ HTTP es fundamental en arquitecturas distribuidas como los microservicios y es l
 <p><strong>HTTPS</strong> (HyperText Transfer Protocol Secure) es la versión segura del protocolo HTTP, esencial para la transferencia confidencial y segura de información entre el cliente y el servidor. A diferencia de HTTP, que transmite datos en texto claro y vulnerable a la intercepción, HTTPS <strong>cifra</strong> la información, asegurando su privacidad.</p>
 <p>La seguridad en HTTPS se basa en el uso de <strong>certificados digitales</strong>. Estos documentos electrónicos vinculan una clave pública a la identidad de un propietario (servidor web). Son emitidos por <strong>Autoridades de Certificación (AC)</strong>, que son entidades de confianza que firman digitalmente los certificados para validar su autenticidad. Los navegadores web confían en estas AC y alertan al usuario si un certificado no es válido, está autofirmado o no coincide con el sitio, lo que puede generar advertencias de seguridad.</p>
 <p>El proceso de cifrado utiliza el <strong>cifrado de clave pública o asimétrico</strong>. El navegador cifra la información con la clave pública del servidor, y solo el servidor, con su clave privada correspondiente, puede descifrarla, garantizando así la confidencialidad. Los protocolos <strong>SSL/TLS</strong> (Secure Sockets Layer/Transport Layer Security) son los estándares criptográficos que hacen posibles estas conexiones seguras, proporcionando autenticación y privacidad. El cifrado requiere recursos computacionales, lo que puede tener un impacto mínimo en el rendimiento del servidor web. HTTP y HTTPS pueden convivir en un mismo dominio.</p>
+<h2 id="api-web" tabindex="-1"><a class="header-anchor" href="#api-web"><span>API Web</span></a></h2>
+<p>Una API web (<em>Application Programming Interface</em>) es un conjunto de reglas y protocolos que permite a diferentes aplicaciones o sistemas comunicarse y compartir datos entre sí a través de la web. Proporciona un conjunto de funciones y métodos que permiten a los desarrolladores acceder y manipular los datos de una aplicación o servicio específico.</p>
+<p>En el contexto de las aplicaciones web, una API web permite que el backend de una aplicación exponga ciertas funcionalidades y datos a otras aplicaciones o servicios, como aplicaciones móviles, sitios web o sistemas externos. Esto permite la integración y la creación de aplicaciones más complejas y robustas.</p>
+<p>Las API web se basan en protocolos estándar de la web, como HTTP (Hypertext Transfer Protocol), y utilizan formatos de intercambio de datos como JSON (JavaScript Object Notation) o XML (eXtensible Markup Language) para enviar y recibir información.</p>
+<p>Algunos ejemplos comunes de API web incluyen:</p>
+<ol>
+<li>
+<p><strong>API RESTful:</strong> Es un estilo arquitectónico que utiliza los métodos HTTP (GET, POST, PUT, DELETE, etc.) para acceder y manipular recursos en un sistema. Se basa en la representación de recursos a través de URLs (Uniform Resource Locators) y utiliza formatos como JSON para el intercambio de datos.</p>
+</li>
+<li>
+<p><strong>API GraphQL:</strong> Es un lenguaje de consulta y una especificación para las APIs web. Permite a los clientes solicitar y recibir solo los datos necesarios, lo que mejora la eficiencia y reduce la cantidad de datos transferidos.</p>
+</li>
+<li>
+<p><strong>API Websocket:</strong> Utiliza el protocolo de comunicación de WebSockets para permitir una comunicación bidireccional y en tiempo real entre un cliente y un servidor a través de una conexión persistente. A diferencia de las API tradicionales basadas en HTTP, que siguen un modelo de solicitud-respuesta, las API con WebSockets establecen una conexión continua entre el cliente y el servidor, lo que permite una comunicación más eficiente y en tiempo real.</p>
+</li>
+</ol>
+<div class="hint-container important">
+<p class="hint-container-title">Importante</p>
+<p>Las API web son fundamentales en el desarrollo de aplicaciones modernas, ya que permiten la integración de diferentes servicios y la creación de aplicaciones más flexibles y escalables.</p>
+</div>
+<figure><img src="/images/dwes/apis.gif" alt="apis" tabindex="0" loading="lazy"><figcaption>apis</figcaption></figure>
 </div></template>
 
 

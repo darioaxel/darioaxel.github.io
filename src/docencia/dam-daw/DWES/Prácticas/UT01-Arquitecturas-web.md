@@ -27,8 +27,6 @@ Con esta práctica se pretende que el alumnado se familiarice con:
 * El flujo de trabajo básico con GitHub (clonación, modificación, pull request).
 * La verificación de peticiones HTTP entre cliente y servidor.
 
----
-
 ## Enunciado de la práctica
 
 Se proporcionará al alumnado un repositorio de GitHub con un proyecto inicial. A partir de él deberán realizar las siguientes tareas:
@@ -90,8 +88,9 @@ Se proporcionará al alumnado un repositorio de GitHub con un proyecto inicial. 
 
 ## Entrega
 
-La entrega de la práctica consistirá en:
-
+La entrega de la práctica consistirá en un documento PDF, debidamente formateado, que se subirá al Moodle del centro donde se incluirá:
+  
+* Capturas del **proceso de modificación del html**.
 * La **captura de pantalla** donde se muestre la petición GET y la respuesta del servidor en `localhost`.
 * La **URL del pull request** realizado sobre el repositorio original.
 
