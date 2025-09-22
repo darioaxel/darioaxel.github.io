@@ -29,7 +29,6 @@ RA1</p>
 <li>El flujo de trabajo básico con GitHub (clonación, modificación, pull request).</li>
 <li>La verificación de peticiones HTTP entre cliente y servidor.</li>
 </ul>
-<hr>
 <h2 id="enunciado-de-la-practica" tabindex="-1"><a class="header-anchor" href="#enunciado-de-la-practica"><span>Enunciado de la práctica</span></a></h2>
 <p>Se proporcionará al alumnado un repositorio de GitHub con un proyecto inicial. A partir de él deberán realizar las siguientes tareas:</p>
 <ol>
@@ -119,8 +118,9 @@ RA1</p>
 </ol>
 <hr>
 <h2 id="entrega" tabindex="-1"><a class="header-anchor" href="#entrega"><span>Entrega</span></a></h2>
-<p>La entrega de la práctica consistirá en:</p>
+<p>La entrega de la práctica consistirá en un documento PDF, debidamente formateado, que se subirá al Moodle del centro donde se incluirá:</p>
 <ul>
+<li>Capturas del <strong>proceso de modificación del html</strong>.</li>
 <li>La <strong>captura de pantalla</strong> donde se muestre la petición GET y la respuesta del servidor en <code v-pre>localhost</code>.</li>
 <li>La <strong>URL del pull request</strong> realizado sobre el repositorio original.</li>
 </ul>
