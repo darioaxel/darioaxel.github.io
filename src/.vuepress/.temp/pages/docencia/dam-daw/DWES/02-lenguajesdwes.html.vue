@@ -75,6 +75,108 @@ Hoy coexisten: lenguajes interpretados (PHP, Python/Django), frameworks Java (Sp
 <p>Ese programa se ejecuta en el servidor, y el resultado de esa ejecución es lo que recibe el cliente, no el programa en sí.</p>
 <figure><img src="/images/dwes/02-servicio-www-2.jpg" alt="Petición web 2.0" tabindex="0" loading="lazy"><figcaption>Petición web 2.0</figcaption></figure>
 <p>Pues bien: si un sitio web funciona del primer modo, no es una aplicación web, sino una página web estática. Para que sea considerado una aplicación web, debe funcionar del segundo modo.</p>
+<h2 id="_2-lenguajes-y-frameworks-de-programacion-en-entorno-servidor" tabindex="-1"><a class="header-anchor" href="#_2-lenguajes-y-frameworks-de-programacion-en-entorno-servidor"><span>2. Lenguajes y Frameworks de Programación en Entorno Servidor</span></a></h2>
+<p>El desarrollo web en entorno servidor se apoya en distintos lenguajes y frameworks que permiten crear aplicaciones dinámicas, seguras y escalables. Cada tecnología aborda de forma distinta la ejecución del código, la integración con el servidor web y la gestión de datos.</p>
+<h3 id="_2-1-tipos-de-ejecucion-de-lenguajes-del-lado-del-servidor" tabindex="-1"><a class="header-anchor" href="#_2-1-tipos-de-ejecucion-de-lenguajes-del-lado-del-servidor"><span>2.1. Tipos de Ejecución de Lenguajes del Lado del Servidor</span></a></h3>
+<p>Los lenguajes de programación utilizados en el lado del servidor se ejecutan de diferentes maneras. Debemos distinguir tres grandes grupos:</p>
+<ul>
+<li><strong>Lenguajes de Guiones (Scripting)</strong>: Los programas se ejecutan directamente a partir de su código fuente. Un intérprete procesa el código línea por línea y genera la respuesta. Pertenecen a este grupo Perl, Python, PHP y ASP (el precursor de <a href="http://ASP.NET" target="_blank" rel="noopener noreferrer">ASP.NET</a>). Tienen la ventaja de que no es necesario traducir el código fuente para ser ejecutados, lo que aumenta su portabilidad, pero ofrecen un rendimiento inferior.</li>
+<li><strong>Lenguajes Compilados a Código Nativo</strong>: El código fuente se traduce completamente a código máquina antes de la ejecución. Los programas se almacenan en modo binario y se ejecutan directamente. Son los más rápidos, pero presentan problemas de integración con el servidor web, ya que no están pensados para ejecutarse en este entorno. No son portables entre distintas plataformas y no reutilizan procesos para atender a varias peticiones.</li>
+<li><strong>Lenguajes Compilados a Código Intermedio</strong>: El código fuente se compila a un formato intermedio que luego es ejecutado por una máquina virtual. Operan de esta forma Java EE (Servlets, JSP) y <a href="http://ASP.NET" target="_blank" rel="noopener noreferrer">ASP.NET</a>. Ofrecen un equilibrio entre buen rendimiento y portabilidad entre distintas plataformas en las que exista una implementación de la arquitectura (como un contenedor de <em>servlets</em> o un servidor de aplicaciones Java EE).</li>
+</ul>
+<h3 id="_2-2-plataformas-web-libres-y-propietarias" tabindex="-1"><a class="header-anchor" href="#_2-2-plataformas-web-libres-y-propietarias"><span>2.2. Plataformas Web Libres y Propietarias</span></a></h3>
+<p>Una plataforma web es el entorno de desarrollo de software empleado para diseñar y ejecutar un sitio web. Generalmente, se compone de cuatro elementos clave:</p>
+<ol>
+<li>El <strong>sistema operativo</strong>: Bajo el cual opera el equipo donde se hospedan las páginas web y que representa la base misma del funcionamiento del computador. En ocasiones limita la elección de otros componentes.</li>
+<li>El <strong>servidor web</strong>: Es el software que maneja las peticiones desde equipos remotos a través de Internet. En el caso de páginas estáticas, el servidor web simplemente provee el archivo solicitado, el cual se muestra en el navegador. En el caso de sitios dinámicos, el servidor web se encarga de pasar las solicitudes a otros programas que puedan gestionarlas adecuadamente.</li>
+<li>El <strong>gestor de bases de datos</strong>: Se encarga de almacenar sistemáticamente un conjunto de registros de datos relacionados para ser usados posteriormente.</li>
+<li>Un <strong>lenguaje de programación interpretado</strong>: Que controla las aplicaciones de software que corren en el sitio web.</li>
+</ol>
+<p>Algunas plataformas populares incluyen:</p>
+<ul>
+<li><strong>LAMP</strong>: Combina <strong>L</strong>inux, <strong>A</strong>pache, <strong>M</strong>ySQL (o MariaDB) y <strong>P</strong>HP/Perl/Python. Es una plataforma de código abierto muy difundida.</li>
+<li><strong>WISA</strong>: Integra <strong>W</strong>indows, <strong>I</strong>IS (Internet Information Services), <strong>S</strong>QL Server y <strong>A</strong>SP/ASP.NET. Es una plataforma propietaria de Microsoft.</li>
+<li><strong>WAMP</strong>: Consiste en <strong>W</strong>indows, <strong>A</strong>pache, <strong>M</strong>ySQL y <strong>P</strong>HP. Es una configuración común para entornos de desarrollo local, a menudo facilitada por paquetes como XAMPP.</li>
+<li><strong>WIMP</strong>: Otra combinación para Windows, con <strong>W</strong>indows, <strong>I</strong>IS, <strong>M</strong>ySQL y <strong>P</strong>HP.</li>
+</ul>
+<h3 id="_2-3-tecnologias-para-el-desarrollo-de-servicios" tabindex="-1"><a class="header-anchor" href="#_2-3-tecnologias-para-el-desarrollo-de-servicios"><span>2.3. Tecnologías para el Desarrollo de Servicios</span></a></h3>
+<p>El desarrollo de servicios se centra en la creación de APIs para que las aplicaciones se comuniquen. Las tecnologías varían según el lenguaje y el paradigma de la API.</p>
+<p><strong>Tabla Comparativa de Tecnologías para el Desarrollo de Servicios</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Tecnología</th>
+<th style="text-align:left">Lenguaje</th>
+<th style="text-align:left">Uso Principal</th>
+<th style="text-align:left">Ejemplos de Frameworks/Librerías</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>Java con Spring Boot</strong></td>
+<td style="text-align:left">Java</td>
+<td style="text-align:left">APIs RESTful, microservicios, aplicaciones web de alta escala, <em>enterprise</em>.</td>
+<td style="text-align:left">Spring MVC, Spring WebFlux, Spring Data REST, Hibernate.</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>C# con <a href="http://ASP.NET" target="_blank" rel="noopener noreferrer">ASP.NET</a> Core</strong></td>
+<td style="text-align:left">C#</td>
+<td style="text-align:left">APIs RESTful, microservicios, servicios en la nube, aplicaciones web empresariales.</td>
+<td style="text-align:left"><a href="http://ASP.NET" target="_blank" rel="noopener noreferrer">ASP.NET</a> Core Web API.</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>PHP con Laravel</strong></td>
+<td style="text-align:left">PHP</td>
+<td style="text-align:left">APIs RESTful, aplicaciones web con MVC, desarrollo rápido.</td>
+<td style="text-align:left">Laravel API Resources, Symfony.</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Node.js (JavaScript)</strong></td>
+<td style="text-align:left">JavaScript</td>
+<td style="text-align:left">APIs RESTful, microservicios, aplicaciones en tiempo real, <em>Full-stack</em> JavaScript.</td>
+<td style="text-align:left">Express.js, NestJS, Hapi.js, Meteor.js.</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Python con Django/Flask</strong></td>
+<td style="text-align:left">Python</td>
+<td style="text-align:left">APIs RESTful, aplicaciones web complejas, Machine Learning, backend de datos.</td>
+<td style="text-align:left">Django REST Framework, Flask-RESTful.</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Ruby con Rails</strong></td>
+<td style="text-align:left">Ruby</td>
+<td style="text-align:left">APIs RESTful, aplicaciones web con MVC, desarrollo rápido.</td>
+<td style="text-align:left">Ruby on Rails.</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>gRPC</strong></td>
+<td style="text-align:left">Varios</td>
+<td style="text-align:left">Comunicación de alto rendimiento entre microservicios, <em>backend-to-backend</em>.</td>
+<td style="text-align:left">Soporte nativo en Java, C#, Python, Go, Node.js, etc.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_2-4-integracion-del-codigo-con-lenguajes-de-marcas" tabindex="-1"><a class="header-anchor" href="#_2-4-integracion-del-codigo-con-lenguajes-de-marcas"><span>2.4. Integración del Código con Lenguajes de Marcas</span></a></h3>
+<p>Una técnica fundamental para crear páginas web dinámicas es integrar código de programación directamente dentro de lenguajes de marcado como HTML. Esto permite generar dinámicamente secciones de contenido HTML basándose en la lógica del programa.</p>
+<ul>
+<li>En el modelo <strong>MVC (Modelo-Vista-Controlador)</strong>, esta combinación se realiza en el <strong>lado del servidor</strong>. El lenguaje de programación (ej. PHP, Python) se incrusta en el HTML, y el documento web resultante se envía al cliente desde el servidor.</li>
+<li>En aplicaciones web basadas en <strong>servicios REST</strong>, la combinación se lleva a cabo en el <strong>lado del cliente</strong>. El lenguaje de programación (JavaScript o TypeScript) consume datos JSON del servidor y modifica el HTML de forma dinámica en el navegador del usuario.</li>
+</ul>
+<p>Por ejemplo, un bucle en PHP puede recorrer una lista de productos y crear un bloque HTML para cada uno. Los lenguajes de programación utilizan etiquetas especiales (como <code v-pre>&lt;?php ... ?&gt;</code> en PHP) para delimitar el código incrustado.</p>
+<p>Cuando hablamos de <em>“código embebido”</em> nos referimos a mezclar fragmentos de código de programación dentro de un documento escrito en un lenguaje de marcas (normalmente HTML).<br>
+Esto permite que el servidor procese instrucciones dinámicas antes de enviar el resultado al cliente.</p>
+<p>Ejemplo típico en PHP:</p>
+<div class="language-php line-numbers-mode" data-highlighter="shiki" data-ext="php" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code" v-pre=""><code class="language-php"><span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">&#x3C;</span><span style="--shiki-light:#986801;--shiki-dark:#ABB2BF">html</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">></span></span>
+<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">  &#x3C;</span><span style="--shiki-light:#986801;--shiki-dark:#ABB2BF">body</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">></span></span>
+<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">    &#x3C;</span><span style="--shiki-light:#986801;--shiki-dark:#ABB2BF">h1</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">></span><span style="--shiki-light:#986801;--shiki-dark:#ABB2BF">Bienvenido</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">&#x3C;/</span><span style="--shiki-light:#986801;--shiki-dark:#ABB2BF">h1</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">></span></span>
+<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">    &#x3C;</span><span style="--shiki-light:#986801;--shiki-dark:#ABB2BF">p</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">></span><span style="--shiki-light:#986801;--shiki-dark:#ABB2BF">Hoy</span><span style="--shiki-light:#986801;--shiki-dark:#ABB2BF"> es</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2"> &#x3C;</span><span style="--shiki-light:#383A42;--shiki-dark:#C678DD">?</span><span style="--shiki-light:#986801;--shiki-dark:#ABB2BF">php</span><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2"> echo</span><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2"> date</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"d/m/Y"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">); </span><span style="--shiki-light:#383A42;--shiki-dark:#C678DD">?</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">>&#x3C;/</span><span style="--shiki-light:#986801;--shiki-dark:#ABB2BF">p</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">></span></span>
+<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">  &#x3C;/</span><span style="--shiki-light:#986801;--shiki-dark:#ABB2BF">body</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">></span></span>
+<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">&#x3C;/</span><span style="--shiki-light:#986801;--shiki-dark:#ABB2BF">html</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">></span></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>El navegador solo recibe HTML ya procesado (con la fecha en texto plano) y el cliente no ve el código PHP porque se ejecuta en el servidor.</p>
+<p>Otros lenguajes permiten algo parecido:</p>
+<p><strong>JSP (Java Server Pages)</strong>: <code v-pre>&lt;% ... código Java ... %&gt;</code> dentro de HTML.</p>
+<p><strong>Plantillas Django (Python)</strong>: usan llaves {{ variable }} o bloques <code v-pre>{% instrucciones %}</code>.</p>
+<p>En general, los frameworks modernos intentan separar lo más posible la lógica del código de la estructura HTML, pero la idea inicial fue insertar código en las páginas, siendo este un mecanismo clave en la transición de páginas estáticas a dinámicas.</p>
 <h2 id="_3-php" tabindex="-1"><a class="header-anchor" href="#_3-php"><span>3. PHP</span></a></h2>
 <figure><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/PHP-logo.svg/711px-PHP-logo.svg.png" alt="Logo de PHP" tabindex="0" loading="lazy"><figcaption>Logo de PHP</figcaption></figure>
 <p>PHP es un acrónimo recursivo. Significa <strong>&quot;PHP Hypertext Preprocessor&quot;</strong>.</p>
@@ -338,10 +440,71 @@ Su filosofía de diseño (“<strong>There should be one– and preferably only 
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>Con esto, podemos instalar dependencias así:</p>
 <div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code" v-pre=""><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">poetry</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> install</span></span>
 <span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">poetry</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> add</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> django</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="_6-guias-de-desarrollo-para-los-distintos-lenguajes" tabindex="-1"><a class="header-anchor" href="#_6-guias-de-desarrollo-para-los-distintos-lenguajes"><span>6. Guías de desarrollo para los distintos lenguajes</span></a></h2>
-<h3 id="_6-1-guia-de-desarrollo-para-php" tabindex="-1"><a class="header-anchor" href="#_6-1-guia-de-desarrollo-para-php"><span>6.1. Guía de desarrollo para PHP</span></a></h3>
-<h3 id="_6-2-guia-de-desarrollo-para-java" tabindex="-1"><a class="header-anchor" href="#_6-2-guia-de-desarrollo-para-java"><span>6.2. Guía de desarrollo para Java</span></a></h3>
-<h3 id="_6-3-guia-de-desarrollo-para-python" tabindex="-1"><a class="header-anchor" href="#_6-3-guia-de-desarrollo-para-python"><span>6.3. Guía de desarrollo para Python</span></a></h3>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="_6-funcionamiento-y-configuracion-de-servidores-web-y-de-aplicaciones" tabindex="-1"><a class="header-anchor" href="#_6-funcionamiento-y-configuracion-de-servidores-web-y-de-aplicaciones"><span>6. Funcionamiento y Configuración de Servidores Web y de Aplicaciones</span></a></h2>
+<h3 id="_6-1-servidores-web-apache-y-nginx" tabindex="-1"><a class="header-anchor" href="#_6-1-servidores-web-apache-y-nginx"><span>6.1. Servidores Web: Apache y Nginx</span></a></h3>
+<p>Un <strong>servidor web</strong> es un programa que se ejecuta continuamente en un ordenador, esperando peticiones de un cliente (un navegador) y respondiendo con el recurso solicitado (páginas web, imágenes, etc.). Puede servir contenido estático o delegar la ejecución de aplicaciones para generar contenido dinámico.</p>
+<p><strong>Apache HTTP Server</strong> es uno de los servidores web más populares y utilizados, conocido por ser de código abierto y gratuito, disponible para Windows y GNU/Linux.</p>
+<ul>
+<li><strong>Características</strong>: Apache se caracteriza por su <strong>modularidad</strong>, lo que permite activar o desactivar módulos específicos (ej., para PHP, SSL, control de acceso) para extender su funcionalidad. El archivo principal de configuración suele ser <code v-pre>apache2.conf</code> o <code v-pre>httpd.conf</code>.</li>
+</ul>
+<h4 id="_6-1-1-instalacion-y-configuracion-basica-de-apache-linux" tabindex="-1"><a class="header-anchor" href="#_6-1-1-instalacion-y-configuracion-basica-de-apache-linux"><span>6.1.1. Instalación y Configuración Básica de Apache (Linux)</span></a></h4>
+<p>En sistemas Linux basados en Debian/Ubuntu, Apache se instala fácilmente. Una vez instalado, se verifica su funcionamiento accediendo a <code v-pre>http://localhost</code> o a la dirección IP del servidor.</p>
+<p>Apache sirve las páginas web desde el directorio especificado por la directiva <code v-pre>DocumentRoot</code>, que por defecto suele ser <code v-pre>/var/www/html/</code>.<br>
+Las <strong>directivas</strong> son reglas que controlan el comportamiento de Apache. Algunas directivas básicas incluyen:</p>
+<ul>
+<li><code v-pre>ServerRoot</code>: Define el directorio base de la configuración de Apache.</li>
+<li><code v-pre>ServerName</code>: Establece el nombre del servidor web (ej., <code v-pre>www.ejemplo.local</code>). Puede estar a nivel global o dentro de un VirtualHost.</li>
+<li><code v-pre>Listen</code>: Especifica el puerto (y opcionalmente la dirección IP) por el que Apache escuchará las peticiones (por defecto el puerto 80 para HTTP).</li>
+<li><code v-pre>ErrorLog</code>: Ubicación del archivo donde se registran los errores.</li>
+<li><code v-pre>KeepAlive</code>: Permite mantener conexiones persistentes para múltiples peticiones.</li>
+<li><code v-pre>Timeout</code>: Tiempo máximo que el servidor esperará antes de cerrar una conexión inactiva.<br>
+Apache solo aplica los cambios después de ser iniciado o reiniciado.</li>
+</ul>
+<h4 id="_6-1-2-arranque-y-detencion-del-servicio-apache" tabindex="-1"><a class="header-anchor" href="#_6-1-2-arranque-y-detencion-del-servicio-apache"><span>6.1.2. Arranque y Detención del Servicio Apache</span></a></h4>
+<p>En sistemas Linux, Apache se puede controlar (iniciar, detener, reiniciar) utilizando comandos como <code v-pre>sudo service apache2 start|stop|restart</code>. Es una buena práctica verificar la sintaxis de la configuración con <code v-pre>apache2ctl configtest</code> antes de reiniciar para evitar errores.</p>
+<h4 id="_6-1-3-configuracion-de-hosts-virtuales" tabindex="-1"><a class="header-anchor" href="#_6-1-3-configuracion-de-hosts-virtuales"><span>6.1.3. Configuración de Hosts Virtuales</span></a></h4>
+<p>Los <strong>Virtual Hosts</strong> son una funcionalidad clave que permite a un único servidor físico alojar múltiples sitios web o dominios independientes.</p>
+<ul>
+<li><strong>Virtual Hosts basados en nombre</strong>: Varios nombres de dominio (ej., <code v-pre>www.miejemplo.local</code>, <code v-pre>www.misitio.local</code>) apuntan a la misma dirección IP del servidor. <code v-pre>ServerName</code> define el nombre principal y <code v-pre>ServerAlias</code> permite nombres alternativos.</li>
+<li><strong>Virtual Hosts basados en IP</strong>: Cada Virtual Host se asocia a una dirección IP distinta del servidor.</li>
+<li><strong>Configuraciones mixtas</strong>: Es posible combinar Virtual Hosts basados en nombre y en IP.<br>
+En sistemas Debian/Ubuntu, los Virtual Hosts se configuran en archivos específicos (ej., <code v-pre>/etc/apache2/sites-available/*.conf</code>) y se habilitan o deshabilitan mediante enlaces simbólicos y comandos como <code v-pre>a2ensite</code> y <code v-pre>a2dissite</code>. Las directivas no especificadas explícitamente en un Virtual Host se heredan de la configuración principal de Apache.</li>
+</ul>
+<h3 id="_6-2-servidores-de-aplicaciones-para-jakarta-ee" tabindex="-1"><a class="header-anchor" href="#_6-2-servidores-de-aplicaciones-para-jakarta-ee"><span>6.2. Servidores de Aplicaciones para Jakarta EE</span></a></h3>
+<p>Un <strong>servidor de aplicaciones</strong> es un software que proporciona servicios adicionales a los de un servidor web. Se especializa en contenido dinámico, ofrece servicios adicionales como balanceo de carga o <em>clustering</em>, y se integra frecuentemente con bases de datos. Simplifican el desarrollo al permitir ensamblar aplicaciones a partir de componentes predefinidos.</p>
+<ul>
+<li>
+<p><strong>Apache Tomcat</strong> es un servidor de aplicaciones de código abierto desarrollado por la Apache Software Foundation. Es uno de los servidores de aplicaciones Java más utilizados y es compatible con una variedad de protocolos, incluido el protocolo HTTP y el protocolo de red privada virtual (VPN). Es un servidor ligero y simple, ideal para aplicaciones pequeñas o de desarrollo. Además Tomcat es fácil de configurar y escalar según las necesidades de la aplicación. El uso de Tomcat suele ser habitual en el desarrollo de sitios web y aplicaciones web personales o pequeñas empresas.</p>
+</li>
+<li>
+<p><strong>GlassFish</strong> es un servidor de aplicaciones Java de código abierto desarrollado por Oracle Corporation. Es una de las opciones más utilizadas para desarrollar y desplegar aplicaciones web basadas en JavaEE (Java Enterprise Edition) y cuenta con una serie de características avanzadas, como la escalabilidad y el soporte para clustering. Es utilizado para desarrollar y desplegar aplicaciones empresariales complejas como por ejemplo sistemas de gestión de recursos humanos y sistemas de gestión de inventario.</p>
+</li>
+<li>
+<p><strong>Payara</strong> es un servidor de aplicaciones Java de código abierto desarrollado por Payara Services Limited. Es una versión de código abierto de GlassFish y se basa en la misma arquitectura y código base, pero incluye un conjunto de mejoras y características adicionales en cuanto a la seguridad y la monitorización, y ofrece soporte comercial. Incluyen su uso en la industria financiera y en sistemas de gestión de recursos humanos.</p>
+</li>
+<li>
+<p><strong>WildFly</strong> es un servidor de aplicaciones Java de código abierto desarrollado por Red Hat. Es una de las opciones más utilizadas para desarrollar y desplegar aplicaciones web basadas en JavaEE. Se enfoca en la simplicidad y ofrece características avanzadas como escalabilidad, soporte para clustering y mecanismos de seguridad. Al igual que Glassfish y Payara, se usa principalmente para desarrollar y desplegar aplicaciones empresariales complejas.</p>
+</li>
+</ul>
+<p>Si tuviésemos que hacerte una recomendación entre uno u otro, te indicaríamos que dependerá de las necesidades de tu aplicación y del entorno en el que se desplegará.</p>
+<h4 id="_6-2-1-instalacion-y-configuracion-basica-de-tomcat-requisito-jdk" tabindex="-1"><a class="header-anchor" href="#_6-2-1-instalacion-y-configuracion-basica-de-tomcat-requisito-jdk"><span>6.2.1. Instalación y Configuración Básica de Tomcat (requisito JDK)</span></a></h4>
+<p>La instalación de cualquier versión de Tomcat requiere que el <strong>Kit de Desarrollo de Java (JDK)</strong> esté previamente instalado, ya que las peticiones a Apache a menudo se redirigen a Tomcat usando un conector Java. La gestión del servicio Tomcat se realiza mediante el <em>script</em> <code v-pre>catalina</code>, utilizando comandos como <code v-pre>start</code> y <code v-pre>stop</code>. Se puede verificar su funcionamiento accediendo a <code v-pre>http://127.0.0.1:8080</code> en un navegador.</p>
+<h3 id="_6-3-gestores-de-bases-de-datos" tabindex="-1"><a class="header-anchor" href="#_6-3-gestores-de-bases-de-datos"><span>6.3. Gestores de Bases de Datos</span></a></h3>
+<p>Los <strong>gestores de bases de datos</strong> son componentes fundamentales en cualquier plataforma web moderna. Son software encargados de almacenar, estructurar y recuperar grandes volúmenes de datos de manera eficiente.</p>
+<ul>
+<li><strong>MySQL / MariaDB</strong>: Son gestores de bases de datos relacionales de código abierto, muy populares por su eficiencia y velocidad, a menudo utilizados en combinación con PHP. MariaDB es un <em>fork</em> de MySQL completamente libre.</li>
+<li><strong>PostgreSQL</strong>: Otro potente gestor de bases de datos relacionales de código abierto, conocido por su robustez y cumplimiento de estándares.</li>
+<li><strong>SQL Server</strong>: Es el sistema gestor de bases de datos de Microsoft, típicamente empleado en plataformas WISA.</li>
+<li><strong>MongoDB</strong>: Es un gestor de bases de datos NoSQL orientado a documentos, ideal para aplicaciones que requieren alta escalabilidad y flexibilidad en el esquema de datos.</li>
+</ul>
+<h2 id="_7-despliegue-de-aplicaciones-web" tabindex="-1"><a class="header-anchor" href="#_7-despliegue-de-aplicaciones-web"><span>7. Despliegue de Aplicaciones Web</span></a></h2>
+<h3 id="_7-1-concepto-de-despliegue" tabindex="-1"><a class="header-anchor" href="#_7-1-concepto-de-despliegue"><span>7.1. Concepto de Despliegue</span></a></h3>
+<p>Para desplegar una aplicación web, se necesitan varios elementos:</p>
+<ul>
+<li><strong>Software</strong>: Los componentes básicos de una plataforma web: un sistema operativo, un servidor web (Apache, Nginx), un servidor de aplicaciones (Tomcat para Java), el <em>runtime</em> del lenguaje de programación (JDK para Java, entorno PHP, .NET runtime) y un gestor de bases de datos. Además, para entornos de desarrollo local, herramientas como Docker Desktop o XAMPP son esenciales.</li>
+<li><strong>Hardware</strong>: Un servidor con la capacidad adecuada de CPU, memoria RAM y almacenamiento para la aplicación y la carga de usuarios prevista. La <strong>escalabilidad</strong> del hardware es un factor crítico.</li>
+<li><strong>Dependencias</strong>: Incluye librerías específicas del <em>framework</em> o del proyecto (como archivos JAR para Java, paquetes NuGet para C# o paquetes Composer para PHP).</li>
+</ul>
 </div></template>
 
 
