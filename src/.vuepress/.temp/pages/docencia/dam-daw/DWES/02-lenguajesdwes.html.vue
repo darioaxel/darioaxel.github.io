@@ -505,6 +505,7 @@ En sistemas Debian/Ubuntu, los Virtual Hosts se configuran en archivos específi
 <li><strong>Hardware</strong>: Un servidor con la capacidad adecuada de CPU, memoria RAM y almacenamiento para la aplicación y la carga de usuarios prevista. La <strong>escalabilidad</strong> del hardware es un factor crítico.</li>
 <li><strong>Dependencias</strong>: Incluye librerías específicas del <em>framework</em> o del proyecto (como archivos JAR para Java, paquetes NuGet para C# o paquetes Composer para PHP).</li>
 </ul>
+<h2 id="creditos-y-reconocimientos" tabindex="-1"><a class="header-anchor" href="#creditos-y-reconocimientos"><span><RouteLink to="/docencia/dam-daw/DWES/98-creditos-reconocimientos.html">Créditos y reconocimientos</RouteLink></span></a></h2>
 </div></template>
 
 

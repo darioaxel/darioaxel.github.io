@@ -480,6 +480,7 @@ HTTP es fundamental en arquitecturas distribuidas como los microservicios y es l
 <p>Las API web son fundamentales en el desarrollo de aplicaciones modernas, ya que permiten la integración de diferentes servicios y la creación de aplicaciones más flexibles y escalables.</p>
 </div>
 <figure><img src="/images/dwes/apis.gif" alt="apis" tabindex="0" loading="lazy"><figcaption>apis</figcaption></figure>
+<h2 id="creditos-y-reconocimientos" tabindex="-1"><a class="header-anchor" href="#creditos-y-reconocimientos"><span><RouteLink to="/docencia/dam-daw/DWES/98-creditos-reconocimientos.html">Créditos y reconocimientos</RouteLink></span></a></h2>
 </div></template>
 
 

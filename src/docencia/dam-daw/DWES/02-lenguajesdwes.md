@@ -562,3 +562,4 @@ Para desplegar una aplicación web, se necesitan varios elementos:
  *   **Hardware**: Un servidor con la capacidad adecuada de CPU, memoria RAM y almacenamiento para la aplicación y la carga de usuarios prevista. La **escalabilidad** del hardware es un factor crítico.
  *   **Dependencias**: Incluye librerías específicas del *framework* o del proyecto (como archivos JAR para Java, paquetes NuGet para C# o paquetes Composer para PHP).
 
+## [Créditos y reconocimientos](/docencia/dam-daw/DWES/98-creditos-reconocimientos.md)
