@@ -478,3 +478,5 @@ Algunos ejemplos comunes de API web incluyen:
 Las API web son fundamentales en el desarrollo de aplicaciones modernas, ya que permiten la integración de diferentes servicios y la creación de aplicaciones más flexibles y escalables.
 :::
 ![apis](/images/dwes/apis.gif)
+
+## [Créditos y reconocimientos](/docencia/dam-daw/DWES/98-creditos-reconocimientos.md)
