@@ -5,8 +5,8 @@ icon: gear
 ---
 
 # UT03 MVC y otros patrones
-![En construcción](/images/under-construction.jpg)
-<!--
+<!-- ![En construcción](/images/under-construction.jpg) -->
+
 ## 1. Introducción
 
 En ingeniería del software, como en cualquier otra ingeniería, existen una serie de soluciones estandarizadas que se ajustan sorprendentemente bien a una enorme variedad de situaciones diferentes.
