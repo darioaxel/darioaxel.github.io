@@ -116,7 +116,6 @@ RA1</p>
 </ul>
 </li>
 </ol>
-<hr>
 <h2 id="entrega" tabindex="-1"><a class="header-anchor" href="#entrega"><span>Entrega</span></a></h2>
 <p>La entrega de la práctica consistirá en un documento PDF, debidamente formateado, que se subirá al Moodle del centro donde se incluirá:</p>
 <ul>
