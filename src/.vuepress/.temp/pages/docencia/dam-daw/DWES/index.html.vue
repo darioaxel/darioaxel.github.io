@@ -180,7 +180,7 @@
 <table>
 <thead>
 <tr>
-<th>Criterios de evaluación:RA4</th>
+<th><strong>RA4. Desarrolla aplicaciones Web embebidas en lenguajes de marcas analizando e incorporando funcionalidades según especificaciones.</strong></th>
 </tr>
 </thead>
 <tbody>
@@ -208,7 +208,7 @@
 <table>
 <thead>
 <tr>
-<th>Criterios de evaluación: RA5</th>
+<th><strong>RA5. Desarrolla aplicaciones Web identificando y aplicando mecanismos para separar el código de presentación de la lógica de negocio.</strong></th>
 </tr>
 </thead>
 <tbody>

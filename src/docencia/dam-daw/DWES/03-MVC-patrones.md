@@ -5,9 +5,15 @@ icon: gear
 ---
 
 # UT03 MVC y otros patrones
-<!-- ![En construcción](/images/under-construction.jpg) -->
+![En construcción](/images/under-construction.jpg)
+<!--  -->
+> **En este tema trabajaremos los siguientes RAs:**
+> - RA5. Desarrolla aplicaciones Web identificando y aplicando mecanismos para separar el código de presentación de la lógica de negocio.
 
 ## 1. Introducción
+::: info ¿Qué vamos a aprender en esta unidad?
+
+:::
 
 En ingeniería del software, como en cualquier otra ingeniería, existen una serie de soluciones estandarizadas que se ajustan sorprendentemente bien a una enorme variedad de situaciones diferentes.
 Estas soluciones se denominan **patrones de software**, y vamos a empezar este tema hablando de ellas.

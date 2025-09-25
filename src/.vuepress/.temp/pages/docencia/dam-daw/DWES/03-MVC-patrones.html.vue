@@ -1,6 +1,16 @@
 <template><div><h1 id="ut03-mvc-y-otros-patrones" tabindex="-1"><a class="header-anchor" href="#ut03-mvc-y-otros-patrones"><span>UT03 MVC y otros patrones</span></a></h1>
-<!-- ![En construcción](/images/under-construction.jpg) -->
+<figure><img src="/images/under-construction.jpg" alt="En construcción" tabindex="0" loading="lazy"><figcaption>En construcción</figcaption></figure>
+<!--  -->
+<blockquote>
+<p><strong>En este tema trabajaremos los siguientes RAs:</strong></p>
+<ul>
+<li>RA5. Desarrolla aplicaciones Web identificando y aplicando mecanismos para separar el código de presentación de la lógica de negocio.</li>
+</ul>
+</blockquote>
 <h2 id="_1-introduccion" tabindex="-1"><a class="header-anchor" href="#_1-introduccion"><span>1. Introducción</span></a></h2>
+<div class="hint-container info">
+<p class="hint-container-title">¿Qué vamos a aprender en esta unidad?</p>
+</div>
 <p>En ingeniería del software, como en cualquier otra ingeniería, existen una serie de soluciones estandarizadas que se ajustan sorprendentemente bien a una enorme variedad de situaciones diferentes.<br>
 Estas soluciones se denominan <strong>patrones de software</strong>, y vamos a empezar este tema hablando de ellas.</p>
 <p>Después nos centraremos en los <strong>patrones de arquitectura</strong>, y sobre todo en uno en concreto denominado <strong>MVC</strong> (<em>Modelo-Vista-Controlador</em>), que tiene una enorme importancia en el ámbito de las aplicaciones web.</p>

@@ -84,7 +84,6 @@ Se proporcionará al alumnado un repositorio de GitHub con un proyecto inicial. 
      ```
    * Accede a tu repositorio en GitHub y crea un **pull request** hacia el repositorio original para proponer tus cambios.
 
----
 
 ## Entrega
 

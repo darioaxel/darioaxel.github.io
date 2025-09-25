@@ -1,6 +1,19 @@
 <template><div><!-- ![banner](/images/dwes/banner02.webp)-->
-<h1 id="ut05-servicios-rest" tabindex="-1"><a class="header-anchor" href="#ut05-servicios-rest"><span>UT05 Servicios REST</span></a></h1>
+<h1 id="ut05-servicios-web-rest" tabindex="-1"><a class="header-anchor" href="#ut05-servicios-web-rest"><span>UT05 Servicios Web - REST</span></a></h1>
 <figure><img src="/images/under-construction.jpg" alt="En construcción" tabindex="0" loading="lazy"><figcaption>En construcción</figcaption></figure>
+<h2 id="_5-1-¿que-es-un-servicio-web" tabindex="-1"><a class="header-anchor" href="#_5-1-¿que-es-un-servicio-web"><span>5.1. ¿Qué es un servicio web?</span></a></h2>
+<h3 id="_5-1-1-una-definicion-de-servicio-web" tabindex="-1"><a class="header-anchor" href="#_5-1-1-una-definicion-de-servicio-web"><span>5.1.1. Una definición de servicio web</span></a></h3>
+<p>Un servicio web es una aplicación web capaz de comunicarse e intercambiar información con otra aplicación (que denominaremos cliente) independientemente de la plataforma en la que cada una se ejecute.</p>
+<p>Es decir, el servicio web puede estar programado en PHP y correr bajo un sistema operativo GNU/Linux y el cliente puede estar programado con C# y correr bajo un Windows, y deberían ser capaces de comunicarse y trabajar juntas. Pero es importante que quede claro que, en este caso, la aplicación web (servidor) y la aplicación cliente son dos aplicaciones diferentes.</p>
+<p>Los mensajes que las aplicaciones se intercambian generalmente tienen formato XML o JSON.</p>
+<p>Existen dos estándares principales en la industria para implementar servicios web, denominados SOAP y REST. A lo largo el tema, vamos a aprender cómo funciona cada uno de ellos.</p>
+<h3 id="_5-1-2-diferencias-entre-servicios-web-y-aplicaciones-web" tabindex="-1"><a class="header-anchor" href="#_5-1-2-diferencias-entre-servicios-web-y-aplicaciones-web"><span>5.1.2. Diferencias entre servicios web y aplicaciones web</span></a></h3>
+<p>Llegados a este punto, puede que estés pensando: “Vale, pero ¿en qué se diferencia todo esto de una aplicación web MVC? ¿No intercambian también el cliente y el servidor información independientemente de la plataforma en la que se ejecuta cada uno?”.</p>
+<p>Pues sí, pero hay algunas diferencias fundamentales entre un servicio web y una aplicación web:</p>
+<p>Una aplicación web está diseñada para que un ser humano interactúe con ella a través de un interfaz HTML. Un servicio web, en cambio, está pensado para que lo use otra aplicación informática (el cliente), no necesariamente un ser humano.<br>
+Por ese motivo, los servicios web suelen carecer de interfaz de usuario y no producen salidas HTML legibles. Es decir, un servicio web puro no suele tener vistas.</p>
+<p>En cambio, los servicios web suelen producir salidas XML o JSON, pensadas para que los clientes las procesen. Una aplicación web, en cambio, solo responde con XML o JSON cuando recibe una petición Ajax, algo que veremos en el tema siguiente.</p>
+<p>Por lo demás, un servicio web puede tener una arquitectura aproximadamente MVC, y digo aproximadamente porque el servicio web, como acabo de contarte, carece de vistas. Pero puede seguir conservando sus controladores y sus modelos. Los controladores se encargarán de convertir los datos de los modelos a JSON o XML y devolverlos al cliente.</p>
 <!--
 
 

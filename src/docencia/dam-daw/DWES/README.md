@@ -72,7 +72,7 @@ category:
 
 ---
 
-| Criterios de evaluación:RA4 |
+| **RA4. Desarrolla aplicaciones Web embebidas en lenguajes de marcas analizando e incorporando funcionalidades según especificaciones.**  |
 | --- |
 |a) Se han identificado los mecanismos disponibles para el mantenimiento de la información que concierne a un cliente web concreto y se han señalado sus ventajas.|
 |b) Se han utilizado mecanismos para mantener el estado de las aplicaciones Web.|
@@ -82,7 +82,7 @@ category:
 |f) Se han utilizado herramientas y entornos para facilitar la programación, prueba y depuración del código.|
 
 ---
-|Criterios de evaluación: RA5
+|**RA5. Desarrolla aplicaciones Web identificando y aplicando mecanismos para separar el código de presentación de la lógica de negocio.** |
 | --- |
 |a) Se han identificado las ventajas de separar la lógica de negocio de los aspectos de presentación de la aplicación.|
 |b) Se han analizado y utilizado mecanismos y frameworks que permiten realizar esta separación y sus características principales.|
