@@ -36,9 +36,9 @@ export default navbar([
     icon: "book",
     link: "/blog/",
   },   
-  {
+  /*{
     text: "Proyectos",
     icon: "book",
     link: "/proyectos/",
-  },
+  }, */
 ]);
