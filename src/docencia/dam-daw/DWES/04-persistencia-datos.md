@@ -1,7 +1,7 @@
 ---
 title: UT04 Persistencia de datos
-date: 2025-09-01    
-icon: gear
+date: 2025-09-29    
+icon: database
 ---
 
 <!-- ![banner](/images/dwes/banner02.webp)-->
