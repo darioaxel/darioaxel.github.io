@@ -1,4 +1,4 @@
-<template><div><h1 id="practica-ut002-1-lenguajes-de-programacion-web" tabindex="-1"><a class="header-anchor" href="#practica-ut002-1-lenguajes-de-programacion-web"><span>Práctica UT002.1 Lenguajes de Programacion Web</span></a></h1>
+<template><div><h1 id="practica-ut002-1-lenguajes-de-programacion-web-php" tabindex="-1"><a class="header-anchor" href="#practica-ut002-1-lenguajes-de-programacion-web-php"><span>Práctica UT002.1 Lenguajes de Programacion Web. PHP</span></a></h1>
 <table>
 <thead>
 <tr>

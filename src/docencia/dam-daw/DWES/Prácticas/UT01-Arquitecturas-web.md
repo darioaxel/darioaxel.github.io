@@ -83,7 +83,9 @@ Se proporcionará al alumnado un repositorio de GitHub con un proyecto inicial. 
      git push origin main
      ```
    * Accede a tu repositorio en GitHub y crea un **pull request** hacia el repositorio original para proponer tus cambios.
+![pull-request](/images/dwes/practicas/pullReq.jpg)
 
+![pull request](/images/dwes/practicas/pullRequest-1.png)
 
 ## Entrega
 
