@@ -16,8 +16,10 @@
 </table>
 <div class="hint-container info">
 <p class="hint-container-title">Información</p>
-<p><strong>Resultados de aprendizaje a trabajar</strong><br>
-RA1</p>
+<p><strong>Resultados de aprendizaje a trabajar</strong></p>
+<ul>
+<li>RA1. Selecciona las arquitecturas y tecnologías de programación Web en entorno servidor, analizando sus capacidades y características propias.</li>
+</ul>
 </div>
 <h2 id="objetivo" tabindex="-1"><a class="header-anchor" href="#objetivo"><span>Objetivo</span></a></h2>
 <p>Con esta práctica se pretende que el alumnado se familiarice con:</p>

@@ -13,7 +13,7 @@ icon: pen
 
 :::info
 **Resultados de aprendizaje a trabajar**
-RA1
+- RA1. Selecciona las arquitecturas y tecnologías de programación Web en entorno servidor, analizando sus capacidades y características propias.
 :::
 
 ## Objetivo

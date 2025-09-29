@@ -19,21 +19,77 @@
 <p><strong>Resultados de aprendizaje a trabajar</strong></p>
 <ul>
 <li>RA2: Escribe sentencias ejecutables por un servidor Web reconociendo y aplicando procedimientos de integración del código en lenguajes de marcas.</li>
-<li>RA3. Escribe bloques de sentencias embebidos en lenguajes de marcas, seleccionando y utilizando las estructuras de programación.<br>
-RA3:</li>
+<li>RA3. Escribe bloques de sentencias embebidos en lenguajes de marcas, seleccionando y utilizando las estructuras de programación.</li>
 </ul>
 </div>
 <h2 id="objetivo" tabindex="-1"><a class="header-anchor" href="#objetivo"><span>Objetivo</span></a></h2>
+<ul>
+<li>Trabajar con <strong>arrays en PHP</strong>.</li>
+<li>Utilizar <strong>bucles <code v-pre>foreach</code></strong> para recorrer estructuras de datos.</li>
+<li>Aplicar <strong>condicionales</strong> para resaltar visualmente información relevante.</li>
+<li>Generar <strong>tablas dinámicas en HTML</strong> con datos provenientes de PHP.</li>
+<li>Realizar <strong>operaciones de suma acumulativa</strong> para obtener un total.</li>
+</ul>
 <h2 id="enunciado-de-la-practica" tabindex="-1"><a class="header-anchor" href="#enunciado-de-la-practica"><span>Enunciado de la práctica</span></a></h2>
+<h3 id="pagos-de-un-socio-de-la-asociacion" tabindex="-1"><a class="header-anchor" href="#pagos-de-un-socio-de-la-asociacion"><span>Pagos de un socio de la asociación</span></a></h3>
+<p>En esta práctica vamos a ampliar el ejercicio que realizamos en clase, en el cual trabajamos con los datos de un usuario. Este usuario pertenece a una asociación y, ahora, además de la información del socio, se mostrarán los <strong>pagos de sus cuotas mensuales</strong> durante el año pasado.</p>
+<h3 id="📝-pasos-a-dar" tabindex="-1"><a class="header-anchor" href="#📝-pasos-a-dar"><span>📝 Pasos a dar:</span></a></h3>
+<ol>
+<li>
+<p>Crea un proyecto en tu cuenta de github denominado <code v-pre>DWES-UT02-Practica2.1</code> y utiliza ese repositorio como base para tu práctica.</p>
+</li>
+<li>
+<p>Crea un archivo PHP llamado <code v-pre>pagos.php</code>.</p>
+</li>
+<li>
+<p>En él deberás definir:</p>
+<ul>
+<li>
+<p>Un array con los datos del socio (nombre, apellidos, DNI, email, teléfono).</p>
+</li>
+<li>
+<p>Un array asociativo con los <strong>pagos mensuales del año pasado</strong>. Cada mes contendrá:</p>
+<ul>
+<li>Nombre del mes.</li>
+<li>Importe de la cuota.</li>
+<li>Estado del pago (Pagado / Pendiente).</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Dentro del código, y en forma de comentarios, incluye la documentación de php que explica cómo se crean los arrays de ambos tipos.</p>
+</li>
+<li>
+<p>Utiliza HTML + PHP para mostrar:</p>
+<ul>
+<li>Los <strong>datos del socio</strong>.</li>
+<li>Una tabla con los <strong>12 meses del año pasado</strong>, el importe y el estado del pago.</li>
+</ul>
+</li>
+<li>
+<p>Si el pago está pendiente, se deberá resaltar en la tabla con un color diferente (por ejemplo, fondo rojo claro).</p>
+</li>
+<li>
+<p>Al final de la tabla muestra el <strong>importe total abonado</strong> por el socio durante el año.</p>
+</li>
+</ol>
 <h2 id="entrega" tabindex="-1"><a class="header-anchor" href="#entrega"><span>Entrega</span></a></h2>
 <p>La entrega de la práctica consistirá en un documento PDF, debidamente formateado, que se subirá al Moodle del centro donde se incluirá:</p>
 <ul>
-<li>Capturas del <strong>proceso de modificación del html</strong>.</li>
-<li>La <strong>captura de pantalla</strong> donde se muestre la petición GET y la respuesta del servidor en <code v-pre>localhost</code>.</li>
-<li>La <strong>URL del pull request</strong> realizado sobre el repositorio original.</li>
+<li>Capturas del <strong>proceso de creación del fichero php y su contenido</strong>.</li>
+<li>La <strong>captura de pantalla</strong> donde se muestre la salida del programa.</li>
+<li>La <strong>URL del projecto github</strong> donde se realizado la práctica.</li>
 </ul>
-<hr>
 <h2 id="criterios-de-evaluacion" tabindex="-1"><a class="header-anchor" href="#criterios-de-evaluacion"><span>Criterios de evaluación</span></a></h2>
+<ul class="task-list-container">
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" id="task-item-0" disabled="disabled"><label class="task-list-item-label" for="task-item-0"> Se han integrado correctamente las sentencias de PHP dentro de código HTML, generando una página web ejecutable en el servidor.</label></li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" id="task-item-1" disabled="disabled"><label class="task-list-item-label" for="task-item-1"> Se han utilizado correctamente las estructuras de datos de PHP (arrays simples y asociativos) para representar la información del socio y los pagos.</label></li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" id="task-item-2" disabled="disabled"><label class="task-list-item-label" for="task-item-2"> Se ha documentado el código con comentarios explicativos, incluyendo referencias a la sintaxis de PHP (arrays, bucles y condicionales).</label></li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" id="task-item-3" disabled="disabled"><label class="task-list-item-label" for="task-item-3"> Se han utilizado correctamente los bucles foreach para recorrer el array de pagos y generar dinámicamente la tabla en HTML.</label></li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" id="task-item-4" disabled="disabled"><label class="task-list-item-label" for="task-item-4"> Se han empleado sentencias condicionales (if/else) para resaltar los pagos pendientes en la tabla.</label></li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" id="task-item-5" disabled="disabled"><label class="task-list-item-label" for="task-item-5"> Se ha calculado el importe total abonado, aplicando operaciones de suma acumulativa sobre el array de pagos.</label></li>
+</ul>
 </div></template>
 
 
