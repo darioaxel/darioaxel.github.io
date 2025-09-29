@@ -1,7 +1,7 @@
 ---
 title: UT06 Cookies y Seguridad en aplicaciones web
 date: 2025-09-01    
-icon: gear
+icon: fluent:cookies-16-filled
 ---
 
 # UT06 Cookies y Seguridad en aplicaciones web

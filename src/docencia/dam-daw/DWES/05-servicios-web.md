@@ -1,7 +1,7 @@
 ---
 title: UT05 Servicios Web - REST
-date: 2025-09-01    
-icon: gear
+date: 2025-09-29   
+icon: mynaui:api-solid
 ---
 
 <!-- ![banner](/images/dwes/banner02.webp)-->
