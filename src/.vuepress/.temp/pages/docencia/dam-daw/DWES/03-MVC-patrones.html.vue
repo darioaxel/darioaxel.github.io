@@ -1,6 +1,4 @@
 <template><div><h1 id="ut03-mvc-y-otros-patrones" tabindex="-1"><a class="header-anchor" href="#ut03-mvc-y-otros-patrones"><span>UT03 MVC y otros patrones</span></a></h1>
-<figure><img src="/images/under-construction.jpg" alt="En construcción" tabindex="0" loading="lazy"><figcaption>En construcción</figcaption></figure>
-<!--  -->
 <blockquote>
 <p><strong>En este tema trabajaremos los siguientes RAs:</strong></p>
 <ul>

@@ -1,12 +1,11 @@
 ---
 title: UT03 MVC y otros patrones
 date: 2025-09-01    
-icon: gear
+icon: diagram-project
 ---
 
 # UT03 MVC y otros patrones
-![En construcción](/images/under-construction.jpg)
-<!--  -->
+
 > **En este tema trabajaremos los siguientes RAs:**
 > - RA5. Desarrolla aplicaciones Web identificando y aplicando mecanismos para separar el código de presentación de la lógica de negocio.
 

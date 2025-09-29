@@ -111,11 +111,13 @@ RA1</p>
 <span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">git</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> push</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> origin</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> main</span></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></li>
 <li>
-<p>Accede a tu repositorio en GitHub y crea un <strong>pull request</strong> hacia el repositorio original para proponer tus cambios.</p>
+<p>Accede a tu repositorio en GitHub y crea un <strong>pull request</strong> hacia el repositorio original para proponer tus cambios.<br>
+<img src="/images/dwes/practicas/pullReq.jpg" alt="pull-request" loading="lazy"></p>
 </li>
 </ul>
 </li>
 </ol>
+<figure><img src="/images/dwes/practicas/pullRequest-1.png" alt="pull request" tabindex="0" loading="lazy"><figcaption>pull request</figcaption></figure>
 <h2 id="entrega" tabindex="-1"><a class="header-anchor" href="#entrega"><span>Entrega</span></a></h2>
 <p>La entrega de la práctica consistirá en un documento PDF, debidamente formateado, que se subirá al Moodle del centro donde se incluirá:</p>
 <ul>
