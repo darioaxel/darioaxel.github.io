@@ -1045,5 +1045,147 @@ Map<String, Object> cambios = new HashMap<>();
 cambios.put("titulo", "Título actualizado");
 articles.update(1, cambios);
 ```
- -->
+## 4. MVC con Django
+
+El patrón **MVT** es el enfoque de Django para organizar la base de código y el flujo de trabajo de una aplicación web. Los componentes que conforman esta arquitectura son el **Modelo**, la **Vista** y la **Plantilla**. Cada componente realiza funciones específicas y luego pasa el proceso a los otros componentes para que hagan las suyas.
+
+Veamos rápidamente los componentes con las funciones específicas que realizan:
+
+* **Modelo**: También conocido como la capa de datos, gestiona los datos e interactúa con la base de datos.
+* **Vista**: También conocida como la capa lógica, actúa como intermediaria, maneja la lógica y gestiona el flujo de datos.
+* **Plantilla**: También conocida como la capa de presentación, renderiza el contenido HTML en la interfaz de usuario.
+
+Ahora que tienes una idea sobre los componentes y sus roles en una aplicación Django, veremos en detalle cada componente y cómo interactúan en la arquitectura.
+
+### 4.1. El Componente Modelo
+
+Los **Modelos** gestionan la estructura e interacción de los datos dentro de una aplicación Django, convirtiéndose en la base de las aplicaciones debido al papel crítico que juegan los datos.
+
+Django utiliza una característica poderosa llamada **Mapeo Objeto-Relacional (ORM)**, que actúa como puente entre una base de datos relacional y el código en Python. Convierte los objetos de Python (clases) en tablas de base de datos, sus atributos en columnas, y las instancias en filas dentro de esas tablas.
+
+Una gran ventaja del ORM es que te permite interactuar con la base de datos usando objetos de Python en lugar de escribir consultas SQL. Piensa en él como un traductor que convierte un lenguaje en otro para que la audiencia lo entienda. En este caso, el ORM traduce código Python en comandos SQL que la base de datos puede ejecutar, y viceversa.
+
+Los modelos de Django encapsulan toda la lógica relacionada con la base de datos y definen la estructura de la misma, actuando como un plano de los datos que quieres almacenar.
+
+#### 4.1.1 Formato general de un Modelo en Django
+
+En Django, cada modelo sigue una forma particular de declaración. Aquí está la estructura básica:
+
+```python
+class <model_name>(models.Model):
+    <field_name> = models.<field_type>(<optional_field_characteristics>)
+```
+
+**Desglose:**
+
+* `class`: palabra clave usada para definir un modelo en Django.
+* `model_name`: nombre del modelo.
+* `models.Model`: clase base de la que hereda el modelo.
+* `field_name`: nombre de la columna en la base de datos.
+* `field_type`: tipo de datos que contiene el campo (ejemplo: `CharField`, `BooleanField`).
+* `optional_field_characteristics`: características adicionales como `max_length`, `default`, etc.
+
+#### 4.1.2. Ejemplo de Modelo
+
+Construyamos uno para una lista de tareas:
+
+```python
+class Task(models.Model):
+    title = models.CharField(max_length=100)
+    description = models.TextField()
+    completed = models.BooleanField(default=False)
+```
+
+En este modelo:
+
+* `Task` es el nombre del modelo.
+* Tiene tres campos:
+
+  * `title`: un `CharField` con máximo de 100 caracteres.
+  * `description`: un `TextField` para texto largo.
+  * `completed`: un `BooleanField` con valor por defecto `False`.
+
+---
+
+### 4.2. El Componente Vista
+
+Las **Vistas** en Django son responsables de procesar las solicitudes de usuario y devolver respuestas. Actúan como puente entre el Modelo y la Plantilla: recogen datos de los objetos del Modelo, ejecutan operaciones lógicas sobre ellos (como consultas con ciertos criterios), y luego pasan esos datos a la Plantilla para su visualización.
+
+Las vistas pueden escribirse como funciones o basadas en clases, dependiendo de la complejidad de la aplicación.
+
+#### 4.2.1. Formato general de una Vista en Django
+
+```python
+def <view_name>(request):
+    # Aquí va la lógica de la vista...
+    return render(request, <template>, <context>)
+```
+
+**Desglose:**
+
+* `view_name`: nombre de la función vista.
+* `request`: la solicitud HTTP enviada por el cliente al servidor Django.
+* `return render`: genera la respuesta HTML usando:
+
+  * `request`: el objeto de la solicitud.
+  * `template`: el archivo de plantilla a renderizar.
+  * `context`: variables que estarán disponibles en la plantilla (normalmente un diccionario).
+
+#### 4.2.2. Ejemplo de Vista
+
+```python
+def task_list(request):
+    # Aquí va la lógica...
+    return render(request, <template>, {'tasks': tasks})
+```
+
+### 4.3. El Componente Plantilla
+
+Las **Plantillas** son responsables de renderizar la salida final en HTML en el navegador. Definen cómo deben presentarse los datos, usando una combinación de HTML y el lenguaje de plantillas de Django.
+
+Este lenguaje usa **etiquetas** `{% %}` y **variables** `{{ }}` que permiten insertar lógica en la plantilla y acceder a variables pasadas desde la Vista.
+
+#### 4.3.1 Ejemplo de Plantilla
+
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tareas</title>
+</head>
+<body>
+    <h1>Lista de Tareas</h1>
+    <ul>
+        {% for task in tasks %}
+            <li>{{ task.title }} - {{ task.completed|yesno:"Hecha,Pendiente" }}</li>
+        {% empty %}
+            <p>No hay tareas disponibles.</p>
+        {% endfor %}
+    </ul>
+</body>
+</html>
+```
+
+### 4.4. Diagrama del Flujo MVT
+
+Este diagrama muestra cómo fluye la información dentro de la arquitectura MVT de Django:
+
+![Diagrama MVT](/images/dwes/mvc-django.png)
+
+
+#### 4.4.1. Analogía del Mundo Real
+
+Imagina que vas a un restaurante y pides tu plato favorito. El restaurante tiene un libro de recetas (Modelo), el chef prepara el plato siguiendo la receta (Vista), y finalmente el camarero te lo entrega en la mesa de manera presentable (Plantilla).
+
+
+### 4.5. Proyecto de Ejemplo Completo
+
+(Instalación de Python, configuración del proyecto, creación de `models.py`, `forms.py`, `views.py`, `templates/task_list.html`, estructura de carpetas, configuración de URLs y ejecución del servidor).
+
+![Ejemplo final](/images/dwes/mvc-django2.png)
+
+Al final tendrás una aplicación funcional con la arquitectura MVT en pleno funcionamiento.
+
 ## [Créditos y reconocimientos](/docencia/dam-daw/DWES/98-creditos-reconocimientos.md)
