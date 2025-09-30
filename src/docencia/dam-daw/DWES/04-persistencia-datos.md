@@ -24,16 +24,16 @@ Es una tarea crítica porque tratamos con principios y conceptos completamente d
 
 * Por otro lado, cuando observamos la base de datos, encontramos un mundo dominado por conceptos como **normalización, desnormalización, indexación y optimización de consultas**. Las bases de datos se centran en almacenar y recuperar datos de manera eficiente, a menudo con el rendimiento como máxima prioridad. La base de datos no comprende ni admite de forma inherente las características orientadas a objetos, lo que puede generar impedancias al intentar sincronizar estos dos mundos distintos.
 
----
 
-*Figura 1: El desajuste entre una base de datos y el lenguaje de programación Java*
-
----
+[El desajuste entre una base de datos y el lenguaje de programación Java]()
 
 Para salvar esta brecha y crear una conexión fluida entre aplicaciones y bases de datos, confiamos en diversos **patrones de diseño** y enfoques arquitectónicos. Estos patrones actúan como traductores, ayudando a reducir el impacto del desajuste de impedancia y a lograr que ambos mundos trabajen juntos de forma armoniosa.
 
 Estos patrones de diseño no reinventan la rueda. Son soluciones bien establecidas que han demostrado ser eficaces para mitigar el desajuste de impedancia entre los paradigmas de aplicación y base de datos. Entre ellos se incluyen el **Patrón Driver**, el **Patrón Mapper**, el **Patrón Active Record** y el **Patrón Repository**.
 
+### 1.2. Programación orientada a objetos (OOP) vs Programación orientada a datos (DOP)
+
+Dentro del desarrollo de aplicaciones y gestión de bases de datos existen dos paradigmas base que utilizamos para abordar la complejidad de la transformación del universo real hacia herramientas o programas para los usuarios. 
 
 En un extremo del espectro, tenemos el clásico paradigma de la **Programación Orientada a Objetos (OOP)**. Inspirada en los principios expuestos en libros como *“Clean Code”* de Robert Martin, la OOP pone un fuerte énfasis en los siguientes aspectos clave:
 
@@ -48,17 +48,15 @@ En el otro extremo, adoptamos los principios de la **Programación Orientada a D
 * **Tratar los datos como inmutables**: la inmutabilidad de los datos es un concepto clave en DOP. Los datos inmutables aseguran que los cambios en los datos sean controlados y predecibles, lo que los hace adecuados para el procesamiento concurrente.
 * **Separar el esquema de datos de la representación de los datos**: la DOP fomenta separar la estructura de los datos (esquema) de la forma en que se representan. Esto habilita flexibilidad y adaptabilidad en la gestión de datos.
 
----
+Encontrar el equilibrio adecuado entre la programación orientada a objetos y la programación orientada a datos es un esfuerzo continuo. Exploraremos en este tema varios patrones de diseño, incluyendo el Patrón Driver, Data Mapper, DAO, Active Record y Repository, para comprender cómo encajan en estos paradigmas y cómo ayudan a salvar la brecha entre la lógica de la aplicación y las interacciones con la base de datos.
 
-¿Quieres que te prepare también una **tabla comparativa en español** entre OOP y DOP para usar como recurso visual en el tema de persistencia de datos?
+A través de esta exploración, nuestro objetivo es optimizar el rendimiento, la mantenibilidad y la escalabilidad de la arquitectura de software, reconociendo que el proceso está en constante evolución.
 
 ## 2. Patrones de diseño de persistencia
 
 Al explorar los patrones de diseño de persistencia, comenzaremos nuestro recorrido en el núcleo, cerca de la propia base de datos, y avanzaremos gradualmente hacia el lado de la programación orientada a objetos. 
 
 Este enfoque nos permite primero adentrarnos en patrones que interactúan directamente con la base de datos, enfatizando principios orientados a los datos y manejando información en bruto. A medida que avanzamos, nos centraremos en la programación orientada a objetos, donde los datos se transforman en entidades específicas de la aplicación. Pasando de patrones cercanos a la base de datos a aquellos alineados con los paradigmas orientados a objetos, entendemos cómo salvar la brecha entre la gestión de datos y la lógica de la aplicación, creando aplicaciones Java robustas y eficientes. 
-
-Descubramos los patrones que conectan sin problemas estos dos aspectos fundamentales del desarrollo de software. 
 
 
 ### 2.1. Patrón Driver
