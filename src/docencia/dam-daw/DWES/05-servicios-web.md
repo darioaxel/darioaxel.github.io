@@ -9,8 +9,8 @@ icon: mynaui:api-solid
 # UT05 Servicios Web - REST
 ![En construcción](/images/under-construction.jpg)
 
-## 5.1. ¿Qué es un servicio web?
-### 5.1.1. Una definición de servicio web
+## 1.1. ¿Qué es un servicio web?
+### 1.1.1. Una definición de servicio web
 Un servicio web es una aplicación web capaz de comunicarse e intercambiar información con otra aplicación (que denominaremos cliente) independientemente de la plataforma en la que cada una se ejecute.  
 
 Es decir, el servicio web puede estar programado en PHP y correr bajo un sistema operativo GNU/Linux y el cliente puede estar programado con C# y correr bajo un Windows, y deberían ser capaces de comunicarse y trabajar juntas. Pero es importante que quede claro que, en este caso, la aplicación web (servidor) y la aplicación cliente son dos aplicaciones diferentes.  
@@ -19,7 +19,7 @@ Los mensajes que las aplicaciones se intercambian generalmente tienen formato XM
 
 Existen dos estándares principales en la industria para implementar servicios web, denominados SOAP y REST. A lo largo el tema, vamos a aprender cómo funciona cada uno de ellos.  
 
-### 5.1.2. Diferencias entre servicios web y aplicaciones web
+### 1.1.2. Diferencias entre servicios web y aplicaciones web
 Llegados a este punto, puede que estés pensando: “Vale, pero ¿en qué se diferencia todo esto de una aplicación web MVC? ¿No intercambian también el cliente y el servidor información independientemente de la plataforma en la que se ejecuta cada uno?”.
 
 Pues sí, pero hay algunas diferencias fundamentales entre un servicio web y una aplicación web:
@@ -30,13 +30,11 @@ Por ese motivo, los servicios web suelen carecer de interfaz de usuario y no pro
 En cambio, los servicios web suelen producir salidas XML o JSON, pensadas para que los clientes las procesen. Una aplicación web, en cambio, solo responde con XML o JSON cuando recibe una petición Ajax, algo que veremos en el tema siguiente.  
 
 Por lo demás, un servicio web puede tener una arquitectura aproximadamente MVC, y digo aproximadamente porque el servicio web, como acabo de contarte, carece de vistas. Pero puede seguir conservando sus controladores y sus modelos. Los controladores se encargarán de convertir los datos de los modelos a JSON o XML y devolverlos al cliente.  
-<!--
 
-
-
+## 2. Servicios REST
 REST, que significa Representational State Transfer, es un estilo de arquitectura para sistemas de software que se utiliza principalmente en el desarrollo de servicios web. Los servicios web que siguen los principios de REST se denominan servicios web RESTful.
 
-## Características 
+### 2.1. Características 
 
 1. **Protocolo Cliente-Servidor:** En un servicio REST, la interacción entre el cliente y el servidor se realiza a través de solicitudes y respuestas. El cliente envía una solicitud al servidor, y el servidor procesa la solicitud y envía una respuesta al cliente.
 
@@ -48,7 +46,7 @@ REST, que significa Representational State Transfer, es un estilo de arquitectur
 
 5. **Interfaz uniforme:** Los servicios REST utilizan un conjunto limitado de métodos bien definidos para interactuar con los recursos. Los recursos se identifican por sus URIs (Uniform Resource Identifiers), y se pueden manipular utilizando representaciones estándar.
 
-## Componentes
+### 2.2. Componentes
 
 - **Request:** Una solicitud REST se compone de un método HTTP, una URI, una serie de headers y, opcionalmente, un body. Los métodos HTTP más comunes utilizados en los servicios REST son GET (para recuperar información), POST (para enviar nueva información), PUT (para actualizar información existente) y DELETE (para eliminar información).
 
@@ -56,7 +54,7 @@ REST, que significa Representational State Transfer, es un estilo de arquitectur
 
 - **Response:** Una respuesta REST incluye un código de estado HTTP, un header y, a menudo, un body con la representación del recurso solicitado. Los códigos de estado HTTP indican el resultado de la solicitud, por ejemplo, si fue exitosa, si hubo un error del cliente o del servidor, etc.
 
-## Ventajas y Desventajas
+### 2.3. Ventajas y Desventajas
 
 **Ventajas de los servicios REST**
 
@@ -71,7 +69,7 @@ REST, que significa Representational State Transfer, es un estilo de arquitectur
 - La seguridad puede ser más desafiante debido a la falta de un estándar de seguridad integrado.
 - No son la mejor opción para operaciones que requieren el mantenimiento de un estado de conexión.
 
-# API REST (RestFul)
+## 3. API REST (RestFul)
 Una API REST (Representational State Transfer) es un estilo de arquitectura de software que se utiliza en el desarrollo de aplicaciones web. REST se basa en principios y estándares que permiten construir interfaces de programación de aplicaciones (API) de una manera coherente y predecible.
 
 La API REST utiliza métodos HTTP estándar, como GET, POST, DELETE y PUT, para realizar operaciones en los recursos. Los recursos, que son cualquier tipo de objeto, dato o servicio que se quiera proporcionar a través de la API, se identifican a través de URLs.

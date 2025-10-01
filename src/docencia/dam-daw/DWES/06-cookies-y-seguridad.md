@@ -1,13 +1,13 @@
 ---
 title: UT06 Cookies y Seguridad en aplicaciones web
-date: 2025-09-01    
+date: 2025-10-01    
 icon: fluent:cookies-16-filled
 ---
 
 # UT06 Cookies y Seguridad en aplicaciones web
 ![En construcción](/images/under-construction.jpg)
 
-<!--
+<!--  -->
 En este capítulo vamos a profundizar en varios aspectos de vital importancia para las aplicaciones web.
 
 Por un lado, tenemos las cookies y las sesiones, dos mecanismos que permiten a la aplicación mantener vivas algunas variables de forma indefinida.
@@ -17,26 +17,26 @@ Después estudiaremos un problema endémico a las aplicaciones web: la seguridad
 Por último, nos centraremos en algo muy relacionado con la seguridad: la autenticación de usuarios para acceder a la aplicación. La mayor parte de las aplicaciones web necesitan un mecanismo seguro de autenticación. Veremos en qué consisten las listas de control de acceso y plantearemos una implementación muy completa en la que pondremos en práctica todo lo que hemos aprendido hasta ahora e incluso iremos un paso más allá al introducir la arquitectura MVC, que veremos en el siguiente tema.
 
 
-## Seguridad en aplicaciones de servidor
+## 2. Seguridad en aplicaciones de servidor
 
-### Autenticación y Autorización
+### 2.1. Autenticación y Autorización
 La autenticación y la autorización son dos aspectos fundamentales en las aplicaciones en red. A continuación, te explico la importancia de cada uno de ellos:
 
-1. Autenticación:
+1. **Autenticación:**
 La autenticación se refiere al proceso de verificar la identidad de un usuario o entidad que intenta acceder a un sistema. Es esencial para garantizar que solo los usuarios legítimos tengan acceso a los recursos y funcionalidades de una aplicación. Al autenticar a los usuarios, se asegura que sean quienes dicen ser, generalmente mediante la verificación de credenciales, como un nombre de usuario y una contraseña. La autenticación es crucial para prevenir el acceso no autorizado y proteger la información sensible.
 
-2. Autorización:
+2. **Autorización:**
 La autorización se ocupa de determinar qué acciones o recursos están permitidos para un usuario autenticado en una aplicación. Después de que un usuario se autentica, la autorización establece los permisos y los niveles de acceso que se le otorgan. Esto se logra mediante la asignación de roles, privilegios o permisos específicos a los usuarios. La autorización garantiza que los usuarios solo puedan acceder a los recursos y realizar acciones para los que tienen permiso, evitando así posibles abusos o violaciones de seguridad.
 
 La importancia de la sesión en la autenticación y autorización radica en mantener el estado y la continuidad de la identidad del usuario durante su interacción con la aplicación. Una sesión representa la conexión entre el usuario y la aplicación, y permite mantener información relevante y contextual sobre el usuario autenticado. Algunos aspectos clave son:
 
-- Gestión de sesiones: La aplicación debe establecer y gestionar correctamente las sesiones para cada usuario autenticado. Esto implica asignar un identificador único a cada sesión y mantener un registro de las sesiones activas.
+- **Gestión de sesiones**: La aplicación debe establecer y gestionar correctamente las sesiones para cada usuario autenticado. Esto implica asignar un identificador único a cada sesión y mantener un registro de las sesiones activas.
 
-- Almacenamiento de información de sesión: Durante una sesión, se pueden almacenar datos relevantes, como la identificación del usuario, los roles asignados, las preferencias o cualquier otra información necesaria para personalizar la experiencia del usuario o aplicar reglas de autorización.
+- **Almacenamiento de información de sesión**: Durante una sesión, se pueden almacenar datos relevantes, como la identificación del usuario, los roles asignados, las preferencias o cualquier otra información necesaria para personalizar la experiencia del usuario o aplicar reglas de autorización.
 
-- Control de acceso basado en sesiones: La información de sesión se utiliza para verificar la autorización de cada solicitud o acción realizada por el usuario. Se pueden aplicar controles de acceso a nivel de sesión para garantizar que el usuario tenga los permisos adecuados para llevar a cabo una determinada acción.
+- **Control de acceso basado en sesiones**: La información de sesión se utiliza para verificar la autorización de cada solicitud o acción realizada por el usuario. Se pueden aplicar controles de acceso a nivel de sesión para garantizar que el usuario tenga los permisos adecuados para llevar a cabo una determinada acción.
 
-- Caducidad y cierre de sesiones: Es importante establecer políticas de caducidad de sesiones para proteger la seguridad de la aplicación. Las sesiones deben cerrarse automáticamente después de un período de inactividad o cuando el usuario cierra explícitamente la sesión.
+- **Caducidad y cierre de sesiones**: Es importante establecer políticas de caducidad de sesiones para proteger la seguridad de la aplicación. Las sesiones deben cerrarse automáticamente después de un período de inactividad o cuando el usuario cierra explícitamente la sesión.
 
 En resumen, la autenticación y la autorización son fundamentales para garantizar la seguridad y el control de acceso en las aplicaciones en red. La sesión desempeña un papel crucial en la gestión de la identidad del usuario y en la aplicación de políticas de autorización, permitiendo una interacción segura y personalizada entre el usuario y la aplicación.
 
@@ -46,10 +46,10 @@ En resumen, la autenticación y la autorización son fundamentales para garantiz
 
 Aquí está cómo se relacionan los conceptos de autenticación, autorización y JWT:
 
-1. Autenticación:
+1. **Autenticación**:
 JWT se utiliza para autenticar a los usuarios mediante la generación de un token JWT firmado digitalmente. Cuando un usuario se autentica en una aplicación, se genera un JWT que contiene información sobre la identidad del usuario, como su ID de usuario o su nombre de usuario. Este token se devuelve al cliente y se almacena en el lado del cliente (por ejemplo, en las cookies o en el almacenamiento local del navegador) para su uso posterior en las solicitudes posteriores.
 
-2. Autorización:
+2. **Autorización:**
 Una vez que un usuario se ha autenticado y posee un JWT válido, la aplicación puede utilizar la información contenida en el token para autorizar las solicitudes del usuario. El JWT puede contener información adicional, como los roles o permisos del usuario. La aplicación puede verificar y decodificar el JWT para obtener esta información y tomar decisiones sobre qué recursos o funcionalidades se le permiten al usuario acceder.
 
 Implementación de JWT:
@@ -249,4 +249,3 @@ public class SSLClient {
 
 Asegúrate de reemplazar los valores de `keystorePath`, `keystorePassword`, `truststorePath` y `truststorePassword` con la ubicación y contraseña correctas de tus archivos de certificado.
 
--->
