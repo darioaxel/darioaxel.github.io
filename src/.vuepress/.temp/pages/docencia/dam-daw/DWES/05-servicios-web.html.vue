@@ -1,73 +1,75 @@
 <template><div><!-- ![banner](/images/dwes/banner02.webp)-->
 <h1 id="ut05-servicios-web-rest" tabindex="-1"><a class="header-anchor" href="#ut05-servicios-web-rest"><span>UT05 Servicios Web - REST</span></a></h1>
 <figure><img src="/images/under-construction.jpg" alt="En construcción" tabindex="0" loading="lazy"><figcaption>En construcción</figcaption></figure>
-<h2 id="_5-1-¿que-es-un-servicio-web" tabindex="-1"><a class="header-anchor" href="#_5-1-¿que-es-un-servicio-web"><span>5.1. ¿Qué es un servicio web?</span></a></h2>
-<h3 id="_5-1-1-una-definicion-de-servicio-web" tabindex="-1"><a class="header-anchor" href="#_5-1-1-una-definicion-de-servicio-web"><span>5.1.1. Una definición de servicio web</span></a></h3>
+<h2 id="_1-1-¿que-es-un-servicio-web" tabindex="-1"><a class="header-anchor" href="#_1-1-¿que-es-un-servicio-web"><span>1.1. ¿Qué es un servicio web?</span></a></h2>
+<h3 id="_1-1-1-una-definicion-de-servicio-web" tabindex="-1"><a class="header-anchor" href="#_1-1-1-una-definicion-de-servicio-web"><span>1.1.1. Una definición de servicio web</span></a></h3>
 <p>Un servicio web es una aplicación web capaz de comunicarse e intercambiar información con otra aplicación (que denominaremos cliente) independientemente de la plataforma en la que cada una se ejecute.</p>
 <p>Es decir, el servicio web puede estar programado en PHP y correr bajo un sistema operativo GNU/Linux y el cliente puede estar programado con C# y correr bajo un Windows, y deberían ser capaces de comunicarse y trabajar juntas. Pero es importante que quede claro que, en este caso, la aplicación web (servidor) y la aplicación cliente son dos aplicaciones diferentes.</p>
 <p>Los mensajes que las aplicaciones se intercambian generalmente tienen formato XML o JSON.</p>
 <p>Existen dos estándares principales en la industria para implementar servicios web, denominados SOAP y REST. A lo largo el tema, vamos a aprender cómo funciona cada uno de ellos.</p>
-<h3 id="_5-1-2-diferencias-entre-servicios-web-y-aplicaciones-web" tabindex="-1"><a class="header-anchor" href="#_5-1-2-diferencias-entre-servicios-web-y-aplicaciones-web"><span>5.1.2. Diferencias entre servicios web y aplicaciones web</span></a></h3>
+<h3 id="_1-1-2-diferencias-entre-servicios-web-y-aplicaciones-web" tabindex="-1"><a class="header-anchor" href="#_1-1-2-diferencias-entre-servicios-web-y-aplicaciones-web"><span>1.1.2. Diferencias entre servicios web y aplicaciones web</span></a></h3>
 <p>Llegados a este punto, puede que estés pensando: “Vale, pero ¿en qué se diferencia todo esto de una aplicación web MVC? ¿No intercambian también el cliente y el servidor información independientemente de la plataforma en la que se ejecuta cada uno?”.</p>
 <p>Pues sí, pero hay algunas diferencias fundamentales entre un servicio web y una aplicación web:</p>
 <p>Una aplicación web está diseñada para que un ser humano interactúe con ella a través de un interfaz HTML. Un servicio web, en cambio, está pensado para que lo use otra aplicación informática (el cliente), no necesariamente un ser humano.<br>
 Por ese motivo, los servicios web suelen carecer de interfaz de usuario y no producen salidas HTML legibles. Es decir, un servicio web puro no suele tener vistas.</p>
 <p>En cambio, los servicios web suelen producir salidas XML o JSON, pensadas para que los clientes las procesen. Una aplicación web, en cambio, solo responde con XML o JSON cuando recibe una petición Ajax, algo que veremos en el tema siguiente.</p>
 <p>Por lo demás, un servicio web puede tener una arquitectura aproximadamente MVC, y digo aproximadamente porque el servicio web, como acabo de contarte, carece de vistas. Pero puede seguir conservando sus controladores y sus modelos. Los controladores se encargarán de convertir los datos de los modelos a JSON o XML y devolverlos al cliente.</p>
-<!--
-
-
-
-REST, que significa Representational State Transfer, es un estilo de arquitectura para sistemas de software que se utiliza principalmente en el desarrollo de servicios web. Los servicios web que siguen los principios de REST se denominan servicios web RESTful.
-
-## Características 
-
-1. **Protocolo Cliente-Servidor:** En un servicio REST, la interacción entre el cliente y el servidor se realiza a través de solicitudes y respuestas. El cliente envía una solicitud al servidor, y el servidor procesa la solicitud y envía una respuesta al cliente.
-
-2. **Sin estado:** Cada solicitud del cliente al servidor debe contener toda la información necesaria para comprender y procesar la solicitud. El servidor no almacena ninguna información sobre el estado del cliente entre solicitudes.
-
-3. **Cacheable:** Las respuestas del servidor pueden ser almacenadas en cache por el cliente. Esto puede mejorar la eficiencia y la escalabilidad del servicio al reducir la necesidad de solicitudes repetitivas de la misma información.
-
-4. **Sistema en capas:** Un servicio REST puede estar compuesto por varias capas de servidores. Cada capa tiene una responsabilidad específica y puede interactuar solo con la capa inmediatamente anterior o siguiente.
-
-5. **Interfaz uniforme:** Los servicios REST utilizan un conjunto limitado de métodos bien definidos para interactuar con los recursos. Los recursos se identifican por sus URIs (Uniform Resource Identifiers), y se pueden manipular utilizando representaciones estándar.
-
-## Componentes
-
-- **Request:** Una solicitud REST se compone de un método HTTP, una URI, una serie de headers y, opcionalmente, un body. Los métodos HTTP más comunes utilizados en los servicios REST son GET (para recuperar información), POST (para enviar nueva información), PUT (para actualizar información existente) y DELETE (para eliminar información).
-
-- **Header:** El header de una solicitud REST contiene metadatos sobre la solicitud, como el tipo de contenido, la autenticación, la información de la cache, etc.
-
-- **Response:** Una respuesta REST incluye un código de estado HTTP, un header y, a menudo, un body con la representación del recurso solicitado. Los códigos de estado HTTP indican el resultado de la solicitud, por ejemplo, si fue exitosa, si hubo un error del cliente o del servidor, etc.
-
-## Ventajas y Desventajas
-
-**Ventajas de los servicios REST**
-
-- Son fáciles de entender y utilizar.
-- Son altamente escalables debido a su naturaleza sin estado.
-- Permiten una gran flexibilidad en el tipo de datos que pueden ser transferidos.
-- Son compatibles con la mayoría de los lenguajes y plataformas.
-
-**Desventajas de los servicios REST**
-
-- No son adecuados para operaciones en tiempo real o para la transmisión de datos en tiempo real.
-- La seguridad puede ser más desafiante debido a la falta de un estándar de seguridad integrado.
-- No son la mejor opción para operaciones que requieren el mantenimiento de un estado de conexión.
-
-# API REST (RestFul)
-Una API REST (Representational State Transfer) es un estilo de arquitectura de software que se utiliza en el desarrollo de aplicaciones web. REST se basa en principios y estándares que permiten construir interfaces de programación de aplicaciones (API) de una manera coherente y predecible.
-
-La API REST utiliza métodos HTTP estándar, como GET, POST, DELETE y PUT, para realizar operaciones en los recursos. Los recursos, que son cualquier tipo de objeto, dato o servicio que se quiera proporcionar a través de la API, se identifican a través de URLs.
-
-El formato de una API RESTful tiene tres componentes principales: URL endpoint; Verbo HTTP; y Cuerpo.
-
-- **URL endpoint**. Es un enlace URL que representa los recursos a los que queremos acceder. Los recursos pueden ser texto, imágenes, documentos o cualquier entrada de datos. Por ejemplo, example.com/surveys nos permite ver o crear plantillas de encuestas y example.com/surveys/123/responses nos permite hacer lo mismo para todas las respuestas de la encuesta 123.
-- **Verbo HTTP**. Dice al servidor qué queremos hacer con el recurso del URL endpoint. Por ejemplo, una solicitud POST significa que queremos crear una nueva plantilla de encuesta y una solicitud GET significa que queremos ver una plantilla de encuesta existente.
-- **Mensaje del cuerpo**. Es una carga útil personalizada opcional que contiene un mensaje con las propiedades y valores que queremos usar para crear o actualizar un recurso dado.
-
-Las API RESTful son muy populares porque son fáciles de entender y usar. Además, son altamente escalables y flexibles, y son compatibles con la mayoría de los lenguajes y plataformas.
-
+<h2 id="_2-servicios-rest" tabindex="-1"><a class="header-anchor" href="#_2-servicios-rest"><span>2. Servicios REST</span></a></h2>
+<p>REST, que significa Representational State Transfer, es un estilo de arquitectura para sistemas de software que se utiliza principalmente en el desarrollo de servicios web. Los servicios web que siguen los principios de REST se denominan servicios web RESTful.</p>
+<h3 id="_2-1-caracteristicas" tabindex="-1"><a class="header-anchor" href="#_2-1-caracteristicas"><span>2.1. Características</span></a></h3>
+<ol>
+<li>
+<p><strong>Protocolo Cliente-Servidor:</strong> En un servicio REST, la interacción entre el cliente y el servidor se realiza a través de solicitudes y respuestas. El cliente envía una solicitud al servidor, y el servidor procesa la solicitud y envía una respuesta al cliente.</p>
+</li>
+<li>
+<p><strong>Sin estado:</strong> Cada solicitud del cliente al servidor debe contener toda la información necesaria para comprender y procesar la solicitud. El servidor no almacena ninguna información sobre el estado del cliente entre solicitudes.</p>
+</li>
+<li>
+<p><strong>Cacheable:</strong> Las respuestas del servidor pueden ser almacenadas en cache por el cliente. Esto puede mejorar la eficiencia y la escalabilidad del servicio al reducir la necesidad de solicitudes repetitivas de la misma información.</p>
+</li>
+<li>
+<p><strong>Sistema en capas:</strong> Un servicio REST puede estar compuesto por varias capas de servidores. Cada capa tiene una responsabilidad específica y puede interactuar solo con la capa inmediatamente anterior o siguiente.</p>
+</li>
+<li>
+<p><strong>Interfaz uniforme:</strong> Los servicios REST utilizan un conjunto limitado de métodos bien definidos para interactuar con los recursos. Los recursos se identifican por sus URIs (Uniform Resource Identifiers), y se pueden manipular utilizando representaciones estándar.</p>
+</li>
+</ol>
+<h3 id="_2-2-componentes" tabindex="-1"><a class="header-anchor" href="#_2-2-componentes"><span>2.2. Componentes</span></a></h3>
+<ul>
+<li>
+<p><strong>Request:</strong> Una solicitud REST se compone de un método HTTP, una URI, una serie de headers y, opcionalmente, un body. Los métodos HTTP más comunes utilizados en los servicios REST son GET (para recuperar información), POST (para enviar nueva información), PUT (para actualizar información existente) y DELETE (para eliminar información).</p>
+</li>
+<li>
+<p><strong>Header:</strong> El header de una solicitud REST contiene metadatos sobre la solicitud, como el tipo de contenido, la autenticación, la información de la cache, etc.</p>
+</li>
+<li>
+<p><strong>Response:</strong> Una respuesta REST incluye un código de estado HTTP, un header y, a menudo, un body con la representación del recurso solicitado. Los códigos de estado HTTP indican el resultado de la solicitud, por ejemplo, si fue exitosa, si hubo un error del cliente o del servidor, etc.</p>
+</li>
+</ul>
+<h3 id="_2-3-ventajas-y-desventajas" tabindex="-1"><a class="header-anchor" href="#_2-3-ventajas-y-desventajas"><span>2.3. Ventajas y Desventajas</span></a></h3>
+<p><strong>Ventajas de los servicios REST</strong></p>
+<ul>
+<li>Son fáciles de entender y utilizar.</li>
+<li>Son altamente escalables debido a su naturaleza sin estado.</li>
+<li>Permiten una gran flexibilidad en el tipo de datos que pueden ser transferidos.</li>
+<li>Son compatibles con la mayoría de los lenguajes y plataformas.</li>
+</ul>
+<p><strong>Desventajas de los servicios REST</strong></p>
+<ul>
+<li>No son adecuados para operaciones en tiempo real o para la transmisión de datos en tiempo real.</li>
+<li>La seguridad puede ser más desafiante debido a la falta de un estándar de seguridad integrado.</li>
+<li>No son la mejor opción para operaciones que requieren el mantenimiento de un estado de conexión.</li>
+</ul>
+<h2 id="_3-api-rest-restful" tabindex="-1"><a class="header-anchor" href="#_3-api-rest-restful"><span>3. API REST (RestFul)</span></a></h2>
+<p>Una API REST (Representational State Transfer) es un estilo de arquitectura de software que se utiliza en el desarrollo de aplicaciones web. REST se basa en principios y estándares que permiten construir interfaces de programación de aplicaciones (API) de una manera coherente y predecible.</p>
+<p>La API REST utiliza métodos HTTP estándar, como GET, POST, DELETE y PUT, para realizar operaciones en los recursos. Los recursos, que son cualquier tipo de objeto, dato o servicio que se quiera proporcionar a través de la API, se identifican a través de URLs.</p>
+<p>El formato de una API RESTful tiene tres componentes principales: URL endpoint; Verbo HTTP; y Cuerpo.</p>
+<ul>
+<li><strong>URL endpoint</strong>. Es un enlace URL que representa los recursos a los que queremos acceder. Los recursos pueden ser texto, imágenes, documentos o cualquier entrada de datos. Por ejemplo, <a href="http://example.com/surveys" target="_blank" rel="noopener noreferrer">example.com/surveys</a> nos permite ver o crear plantillas de encuestas y <a href="http://example.com/surveys/123/responses" target="_blank" rel="noopener noreferrer">example.com/surveys/123/responses</a> nos permite hacer lo mismo para todas las respuestas de la encuesta 123.</li>
+<li><strong>Verbo HTTP</strong>. Dice al servidor qué queremos hacer con el recurso del URL endpoint. Por ejemplo, una solicitud POST significa que queremos crear una nueva plantilla de encuesta y una solicitud GET significa que queremos ver una plantilla de encuesta existente.</li>
+<li><strong>Mensaje del cuerpo</strong>. Es una carga útil personalizada opcional que contiene un mensaje con las propiedades y valores que queremos usar para crear o actualizar un recurso dado.</li>
+</ul>
+<p>Las API RESTful son muy populares porque son fáciles de entender y usar. Además, son altamente escalables y flexibles, y son compatibles con la mayoría de los lenguajes y plataformas.</p>
 <!-- ![rest](/images/dwes/rest.webp) 
 
 ## Recursos y Endpoints
