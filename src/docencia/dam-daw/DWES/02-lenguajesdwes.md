@@ -10,7 +10,9 @@ icon: computer
 # UT02 Lenguajes de programación en entorno servidor
 
 ::: info ¿Qué vamos a aprender en esta unidad?
-   //ToDo
+   En esta unidad vamos a conocer los distintos lenguajes de programación del lado servidor más importantes y aquellos frameworks que se utilizarán durante el curso. 
+
+   El objetivo es abordar una introducción a los lenguajes, y familiarizarnos con la ejecución de programas en múltiples lenguajes para identificar similitudes y diferencias. De esta forma se perderá el miedo al cambio de lenguaje de desarrollo.
 :::
 
 ## 1. Introducción
