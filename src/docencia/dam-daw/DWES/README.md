@@ -94,7 +94,7 @@ category:
 |h) Se ha probado y documentado el código.|
 
 ---
-| Criterios de evaluación: RA6 |
+| **RA6. Desarrolla aplicaciones de acceso a almacenes de datos, aplicando medidas para mantener la seguridad y la integridad de la información.** |
 | --- |
 |a) Se han analizado las tecnologías que permiten el acceso mediante programación a la información disponible en almacenes de datos.|
 |b) Se han creado aplicaciones que establezcan conexiones con bases de datos.|
@@ -106,7 +106,7 @@ category:
 |h) Se han probado y documentado las aplicaciones.|
 
 ---
-| Criterios de evaluación: RA7 |
+| **RA7. Desarrolla servicios Web reutilizables y accesibles mediante protocolos Web, verificando su funcionamiento.**|
 | --- |
 |a) Se han reconocido las características propias y el ámbito de aplicación de los servicios Web.|
 |b) Se han reconocido las ventajas de utilizar servicios Web para proporcionar acceso a funcionalidades incorporadas a la lógica de negocio de una aplicación.|
@@ -118,7 +118,7 @@ category:
 |h) Se ha documentado un servicio Web.|
 
 ---
-| Criterios de evaluación: RA8 |
+| **RA8. Genera páginas Web dinámicas analizando y utilizando tecnologías y frameworks del servidor Web que añadan código al lenguaje de marcas.** |
 | --- |
 |a) Se han identificado las diferencias entre la ejecución de código en el servidor y en el cliente Web.|
 |b) Se han reconocido las ventajas de unir ambas tecnologías en el proceso de desarrollo de programas.|
@@ -129,7 +129,7 @@ category:
 |g) Se han aplicado estas tecnologías y frameworks en la programación de aplicaciones Web.|
 
 ---
-| Criterios de evaluación: RA9 |
+| **RA9. Desarrolla aplicaciones Web híbridas seleccionando y utilizando tecnologías, frameworks servidor y repositorios heterogéneos de información.** |
 | --- |
 |a) Se han reconocido las ventajas que proporciona la reutilización de código y el provechamiento de información ya existente.|
 |b) Se han identificado tecnologías y frameworks aplicables en la creación de aplicaciones web híbridas.|
@@ -165,6 +165,7 @@ Cuidado! Esta distribución es una aproximación y puede variar según las neces
 | UT02 | 16/10/2025 al 5/11/2025 | 3 |
 | UT03 | 6/11/2025 al 26/11/2025 |3 |
 | UT04 | 27/11/2025 al 19/12/2025 y 7/1/2026 al 23/2/2026 | 6 |
+| --- |  CUATRIMESTRE II | --- |
 | UT05 | 11/2/202 al -/-/- |X |
 | UT06 | 1/10/2025 al 15/10/2025 |X |
 | UT07 | 1/10/2025 al 15/10/2025 |X |

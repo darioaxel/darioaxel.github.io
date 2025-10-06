@@ -8,7 +8,8 @@
 <h1 id="ut02-lenguajes-de-programacion-en-entorno-servidor" tabindex="-1"><a class="header-anchor" href="#ut02-lenguajes-de-programacion-en-entorno-servidor"><span>UT02 Lenguajes de programación en entorno servidor</span></a></h1>
 <div class="hint-container info">
 <p class="hint-container-title">¿Qué vamos a aprender en esta unidad?</p>
-<p>//ToDo</p>
+<p>En esta unidad vamos a conocer los distintos lenguajes de programación del lado servidor más importantes y aquellos frameworks que se utilizarán durante el curso.</p>
+<p>El objetivo es abordar una introducción a los lenguajes, y familiarizarnos con la ejecución de programas en múltiples lenguajes para identificar similitudes y diferencias. De esta forma se perderá el miedo al cambio de lenguaje de desarrollo.</p>
 </div>
 <h2 id="_1-introduccion" tabindex="-1"><a class="header-anchor" href="#_1-introduccion"><span>1. Introducción</span></a></h2>
 <p>En los primeros tiempos de Internet, no se ejecutaban programas en el servidor. Solo se pedían páginas estáticas (escritas en HTML) más o menos elaboradas que había sido guardadas en el servidor por un administrador de sistemas. A esto se le denominó <strong>web 1.0.</strong></p>

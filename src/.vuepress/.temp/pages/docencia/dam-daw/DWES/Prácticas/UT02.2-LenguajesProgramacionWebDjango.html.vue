@@ -23,22 +23,26 @@
 </ul>
 </div>
 <h2 id="objetivo" tabindex="-1"><a class="header-anchor" href="#objetivo"><span>Objetivo</span></a></h2>
+<ul>
+<li>Utilizar bucles, diccionarios y objetos con formato json en Python y Django.</li>
+</ul>
 <h2 id="enunciado-de-la-practica" tabindex="-1"><a class="header-anchor" href="#enunciado-de-la-practica"><span>Enunciado de la práctica</span></a></h2>
 <ul>
-<li>Para poder realizar esta práctica, primero has de crear el proyecto en el cual deberás trabajar. Este paso se deberá hacer desde la terminal dentro de VSCode donde, una vez situado el path en la carpeta <code v-pre>dwes-UT02/03-django</code> dentro proyetos, deberéis ejecutar el siguiente comando de <code v-pre>Django</code>.</li>
+<li>Para poder realizar esta práctica, primero has de crear el proyecto en el cual deberás trabajar. Lo más sencillo, por ahora es que realices una copia del <code v-pre>ejercicio01</code> y lo tomes como base.</li>
+<li>Comprueba que todo funciona mediante el comando de ejecución del proyecto, lanzando el comando <code v-pre>python3 manage.py runserver</code> en la carpeta base del proyecto.</li>
+<li>Accede al fichero <code v-pre>usuarios -&gt; views.py</code> y adapta tanto el contenido de &quot;dato&quot; como del html que se va a mostrar utilizando el contenido del ejercicio 02.</li>
+<li>Ejecuta el nuevo código y muestra la lista completa de pagos mensuales así como lo datos del usuario.</li>
 </ul>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code" v-pre=""><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">django-admin</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> startproject</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> ejercicio3-apellidos-nombre</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><ul>
-<li>Una vez creado el proyecto, y dentro de él, tendréis que generar una <code v-pre>app</code> llamada <code v-pre>usuarios</code> y darla de alta en el archivo</li>
-</ul>
+<p>OPCIONAL: Si quieres subir un poco el nivel, puedes incluir css y hacer que la edad del usuario cambie de color en función de si es mayor de 18 año o no.</p>
 <h2 id="entrega" tabindex="-1"><a class="header-anchor" href="#entrega"><span>Entrega</span></a></h2>
 <p>La entrega de la práctica consistirá en un documento PDF, debidamente formateado, que se subirá al Moodle del centro donde se incluirá:</p>
 <ul>
-<li>Capturas del <strong>proceso de modificación del html</strong>.</li>
-<li>La <strong>captura de pantalla</strong> donde se muestre la petición GET y la respuesta del servidor en <code v-pre>localhost</code>.</li>
-<li>La <strong>URL del pull request</strong> realizado sobre el repositorio original.</li>
+<li></li>
 </ul>
-<hr>
+<div class="hint-container warning">
+<p class="hint-container-title">Aviso</p>
+<p>La entrega final de los 3 apartados de la práctica (2.1, 2.2 y 2.3) se realizará en el mismo PDF.</p>
+</div>
 <h2 id="criterios-de-evaluacion" tabindex="-1"><a class="header-anchor" href="#criterios-de-evaluacion"><span>Criterios de evaluación</span></a></h2>
 </div></template>
 

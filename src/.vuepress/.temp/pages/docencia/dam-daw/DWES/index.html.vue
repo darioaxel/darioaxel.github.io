@@ -242,7 +242,7 @@
 <table>
 <thead>
 <tr>
-<th>Criterios de evaluación: RA6</th>
+<th><strong>RA6. Desarrolla aplicaciones de acceso a almacenes de datos, aplicando medidas para mantener la seguridad y la integridad de la información.</strong></th>
 </tr>
 </thead>
 <tbody>
@@ -276,7 +276,7 @@
 <table>
 <thead>
 <tr>
-<th>Criterios de evaluación: RA7</th>
+<th><strong>RA7. Desarrolla servicios Web reutilizables y accesibles mediante protocolos Web, verificando su funcionamiento.</strong></th>
 </tr>
 </thead>
 <tbody>
@@ -310,7 +310,7 @@
 <table>
 <thead>
 <tr>
-<th>Criterios de evaluación: RA8</th>
+<th><strong>RA8. Genera páginas Web dinámicas analizando y utilizando tecnologías y frameworks del servidor Web que añadan código al lenguaje de marcas.</strong></th>
 </tr>
 </thead>
 <tbody>
@@ -341,7 +341,7 @@
 <table>
 <thead>
 <tr>
-<th>Criterios de evaluación: RA9</th>
+<th><strong>RA9. Desarrolla aplicaciones Web híbridas seleccionando y utilizando tecnologías, frameworks servidor y repositorios heterogéneos de información.</strong></th>
 </tr>
 </thead>
 <tbody>
@@ -457,6 +457,11 @@
 <td>UT04</td>
 <td>27/11/2025 al 19/12/2025 y 7/1/2026 al 23/2/2026</td>
 <td>6</td>
+</tr>
+<tr>
+<td>---</td>
+<td>CUATRIMESTRE II</td>
+<td>---</td>
 </tr>
 <tr>
 <td>UT05</td>

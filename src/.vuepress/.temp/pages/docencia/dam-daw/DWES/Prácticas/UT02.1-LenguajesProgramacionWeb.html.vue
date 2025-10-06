@@ -34,53 +34,86 @@
 <h3 id="pagos-de-un-socio-de-la-asociacion" tabindex="-1"><a class="header-anchor" href="#pagos-de-un-socio-de-la-asociacion"><span>Pagos de un socio de la asociación</span></a></h3>
 <p>En esta práctica vamos a ampliar el ejercicio que realizamos en clase, en el cual trabajamos con los datos de un usuario. Este usuario pertenece a una asociación y, ahora, además de la información del socio, se mostrarán los <strong>pagos de sus cuotas mensuales</strong> durante el año pasado.</p>
 <h3 id="📝-pasos-a-dar" tabindex="-1"><a class="header-anchor" href="#📝-pasos-a-dar"><span>📝 Pasos a dar:</span></a></h3>
+<p>Aquí tienes el enunciado <strong>actualizado</strong> para que encaje con la resolución que hemos preparado antes (socio con sus datos, array asociativo de pagos y tabla HTML con colores según estado):</p>
+<hr>
+<h3 id="enunciado-actualizado-de-la-practica" tabindex="-1"><a class="header-anchor" href="#enunciado-actualizado-de-la-practica"><span>Enunciado actualizado de la práctica</span></a></h3>
 <ol>
 <li>
-<p>Crea un proyecto en tu cuenta de github denominado <code v-pre>DWES-UT02-Practica2.1</code> y utiliza ese repositorio como base para tu práctica.</p>
+<p>Crea un proyecto en tu cuenta de GitHub denominado <strong><code v-pre>DWES-UT02-Practica2</code></strong> y utiliza ese repositorio como base para tu práctica.<br>
+Para que no se mezcle este proyecto con las siguientes prácticas, incluye la carpeta <strong><code v-pre>ejercicio1-php</code></strong> y trabaja el resto de contenidos en ella.</p>
 </li>
 <li>
-<p>Crea un archivo PHP llamado <code v-pre>pagos.php</code>.</p>
+<p>Crea un archivo PHP llamado <strong><code v-pre>pagos.php</code></strong>.</p>
 </li>
 <li>
 <p>En él deberás definir:</p>
+</li>
+</ol>
 <ul>
 <li>
-<p>Un array con los datos del socio (nombre, apellidos, DNI, email, teléfono).</p>
+<p>Un <strong>array asociativo multidimensional</strong> que contendrá la información de <strong>varios socios</strong>.</p>
+<ul>
+<li>Cada socio será un elemento del array y estará identificado por un <code v-pre>id</code> único.</li>
+<li>Dentro de cada socio se almacenarán sus datos personales: <strong>id, nombre, apellidos, DNI, email y teléfono</strong></li>
+</ul>
 </li>
 <li>
-<p>Un array asociativo con los <strong>pagos mensuales del año pasado</strong>. Cada mes contendrá:</p>
+<p>Dentro de cada socio habrá un <strong>array asociativo con los pagos mensuales del año en curso</strong>.</p>
+<ul>
+<li>
+<p>La clave de cada mes tendrá el formato <code v-pre>&quot;AAAA-MM&quot;</code>.</p>
+</li>
+<li>
+<p>Cada mes contendrá:</p>
 <ul>
 <li>Nombre del mes.</li>
 <li>Importe de la cuota.</li>
-<li>Estado del pago (Pagado / Pendiente).</li>
+<li>Estado del pago (<strong>Pagado</strong> / <strong>Pendiente</strong>).</li>
+<li>Fecha de pago (o <code v-pre>null</code> si está pendiente).</li>
 </ul>
 </li>
 </ul>
 </li>
+</ul>
+<ol>
 <li>
-<p>Dentro del código, y en forma de comentarios, incluye la documentación de php que explica cómo se crean los arrays de ambos tipos.</p>
+<p>Dentro del código, y en forma de <strong>comentarios</strong>, incluye la documentación de PHP que explique cómo se crean arrays indexados, asociativos y multidimensionales.</p>
 </li>
 <li>
-<p>Utiliza HTML + PHP para mostrar:</p>
+<p>Utiliza <strong>HTML + PHP</strong> para mostrar en el navegador:</p>
 <ul>
-<li>Los <strong>datos del socio</strong>.</li>
-<li>Una tabla con los <strong>12 meses del año pasado</strong>, el importe y el estado del pago.</li>
+<li>
+<p>Los <strong>datos de un socio</strong> (nombre, DNI, dirección, teléfono, email).</p>
+</li>
+<li>
+<p>Una <strong>tabla con los pagos de los 12 meses del año en curso</strong>, donde se muestre:</p>
+<ul>
+<li>Mes</li>
+<li>Importe</li>
+<li>Estado (Pagado / Pendiente)</li>
+<li>Fecha de pago (o guion si no se ha pagado).</li>
+</ul>
+</li>
 </ul>
 </li>
 <li>
-<p>Si el pago está pendiente, se deberá resaltar en la tabla con un color diferente (por ejemplo, fondo rojo claro).</p>
+<p>Si el pago está <strong>Pendiente</strong>, se deberá resaltar en la tabla con un color o estilo diferente (por ejemplo, fondo rojo claro o texto en rojo).</p>
 </li>
 <li>
-<p>Al final de la tabla muestra el <strong>importe total abonado</strong> por el socio durante el año.</p>
+<p>Al final de la tabla se deberá mostrar el <strong>importe total abonado</strong> por el socio durante el año.</p>
 </li>
 </ol>
 <h2 id="entrega" tabindex="-1"><a class="header-anchor" href="#entrega"><span>Entrega</span></a></h2>
-<p>La entrega de la práctica consistirá en un documento PDF, debidamente formateado, que se subirá al Moodle del centro donde se incluirá:</p>
+<p>La entrega de la práctica FINAL consistirá en un documento PDF, debidamente formateado, que se subirá al Moodle del centro donde se incluirá:</p>
 <ul>
 <li>Capturas del <strong>proceso de creación del fichero php y su contenido</strong>.</li>
 <li>La <strong>captura de pantalla</strong> donde se muestre la salida del programa.</li>
 <li>La <strong>URL del projecto github</strong> donde se realizado la práctica.</li>
 </ul>
+<div class="hint-container warning">
+<p class="hint-container-title">Aviso</p>
+<p>La entrega final de los 3 apartados de la práctica (2.1, 2.2 y 2.3) se realizará en el mismo PDF.</p>
+</div>
 <h2 id="criterios-de-evaluacion" tabindex="-1"><a class="header-anchor" href="#criterios-de-evaluacion"><span>Criterios de evaluación</span></a></h2>
 <ul class="task-list-container">
 <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" id="task-item-0" disabled="disabled"><label class="task-list-item-label" for="task-item-0"> Se han integrado correctamente las sentencias de PHP dentro de código HTML, generando una página web ejecutable en el servidor.</label></li>
@@ -90,6 +123,8 @@
 <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" id="task-item-4" disabled="disabled"><label class="task-list-item-label" for="task-item-4"> Se han empleado sentencias condicionales (if/else) para resaltar los pagos pendientes en la tabla.</label></li>
 <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" id="task-item-5" disabled="disabled"><label class="task-list-item-label" for="task-item-5"> Se ha calculado el importe total abonado, aplicando operaciones de suma acumulativa sobre el array de pagos.</label></li>
 </ul>
+<h2 id="materiales-de-apoyo" tabindex="-1"><a class="header-anchor" href="#materiales-de-apoyo"><span>Materiales de apoyo</span></a></h2>
+<p><a href="https://www.cursosdesarrolloweb.es/blog/arrays-multidimensionales-en-php" target="_blank" rel="noopener noreferrer">Artículos sobre arrays multidimensionales</a></p>
 </div></template>
 
 

@@ -23,15 +23,62 @@
 </ul>
 </div>
 <figure><img src="/images/under-construction.jpg" alt="En construcción" tabindex="0" loading="lazy"><figcaption>En construcción</figcaption></figure>
-<h2 id="objetivo" tabindex="-1"><a class="header-anchor" href="#objetivo"><span>Objetivo</span></a></h2>
-<h2 id="enunciado-de-la-practica" tabindex="-1"><a class="header-anchor" href="#enunciado-de-la-practica"><span>Enunciado de la práctica</span></a></h2>
+<h2 id="🎯-objetivos" tabindex="-1"><a class="header-anchor" href="#🎯-objetivos"><span>🎯 Objetivos</span></a></h2>
 <ul>
-<li>Para poder realizar esta práctica, primero has de crear el proyecto en el cual deberás trabajar. Este paso se deberá hacer desde la terminal dentro de VSCode donde, una vez situado el path en la carpeta <code v-pre>dwes-UT02/03-django</code> dentro proyetos, deberéis ejecutar el siguiente comando de <code v-pre>Django</code>.</li>
+<li>Ampliar el uso de <strong>beans en JSF</strong> para manejar listas de objetos complejos.</li>
+<li>Utilizar <strong>bucles (<code v-pre>ui:repeat</code> / <code v-pre>h:dataTable</code>)</strong> para recorrer colecciones de usuarios.</li>
+<li>Introducir un <strong>mapa de pagos mensuales</strong> asociado a cada usuario.</li>
+<li>Mostrar información dinámica en una <strong>tabla HTML</strong> generada desde la vista JSF.</li>
+<li>Emplear <strong>condicionales</strong> para resaltar meses no pagados.</li>
 </ul>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code" v-pre=""><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">django-admin</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> startproject</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> ejercicio3-apellidos-nombre</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><ul>
-<li>Una vez creado el proyecto, y dentro de él, tendréis que generar una <code v-pre>app</code> llamada <code v-pre>usuarios</code> y darla de alta en el archivo</li>
+<h2 id="📝-enunciado-de-la-practica" tabindex="-1"><a class="header-anchor" href="#📝-enunciado-de-la-practica"><span>📝 Enunciado de la práctica</span></a></h2>
+<p>Se parte del bean <strong>HelloBean</strong> y la página <strong>index.xhtml</strong> del ejercicio02.</p>
+<ol>
+<li>
+<p><strong>Modificar el bean</strong> para que, en lugar de contener un único usuario, gestione un <strong>array/lista de varios usuarios</strong>.</p>
+<ul>
+<li>
+<p>Cada usuario tendrá los atributos:</p>
+<ul>
+<li><code v-pre>nombre</code></li>
+<li><code v-pre>apellidos</code></li>
+<li><code v-pre>dni</code></li>
+<li><code v-pre>email</code></li>
+<li><code v-pre>edad</code></li>
+<li><code v-pre>Map&lt;String, Double&gt; pagos</code> → donde la clave es el nombre del mes y el valor es la cantidad abonada (o <code v-pre>null</code> si no ha pagado).</li>
 </ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Ampliar el <code v-pre>index.xhtml</code></strong> para que:</p>
+<ul>
+<li>
+<p>Recorra con un <strong>bucle</strong> (<code v-pre>ui:repeat</code> o <code v-pre>h:dataTable</code>) la lista de usuarios.</p>
+</li>
+<li>
+<p>Muestre en una tabla los <strong>datos personales</strong> de cada usuario.</p>
+</li>
+<li>
+<p>Liste los <strong>pagos mensuales</strong>:</p>
+<ul>
+<li>Si el mes está pagado, se mostrará el importe.</li>
+<li>Si el mes no está pagado, se resaltará con un estilo en rojo el texto <strong>&quot;NO PAGADO&quot;</strong>.</li>
+</ul>
+</li>
+<li>
+<p>Al final de cada tabla, debe aparecer el <strong>total anual de pagos</strong> del usuario.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Añadir un <strong>condicional</strong> para mostrar un mensaje:</p>
+<ul>
+<li>Si el total de pagos es inferior a 100 €, mostrar en rojo <strong>&quot;El usuario no está al día con la cuota&quot;</strong>.</li>
+<li>En caso contrario, mostrar en verde <strong>&quot;El usuario está al corriente de pagos&quot;</strong>.</li>
+</ul>
+</li>
+</ol>
 <h2 id="entrega" tabindex="-1"><a class="header-anchor" href="#entrega"><span>Entrega</span></a></h2>
 <p>La entrega de la práctica consistirá en un documento PDF, debidamente formateado, que se subirá al Moodle del centro donde se incluirá:</p>
 <ul>
