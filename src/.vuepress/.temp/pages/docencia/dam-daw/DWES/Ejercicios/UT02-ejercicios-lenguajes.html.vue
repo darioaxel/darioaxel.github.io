@@ -1,4 +1,8 @@
-<template><div><figure><img src="/images/under-construction.jpg" alt="En construcción" tabindex="0" loading="lazy"><figcaption>En construcción</figcaption></figure>
+<template><div><div class="hint-container info">
+<p class="hint-container-title">Información</p>
+<p>Este ejercicio se trabajará en las videotutorías, por lo cual el contenido final no estará disponible hasta la segunda semana.</p>
+</div>
+<figure><img src="/images/under-construction.jpg" alt="En construcción" tabindex="0" loading="lazy"><figcaption>En construcción</figcaption></figure>
 <h1 id="ejercicios-ut02-lenguajes-de-desarrollo-web-en-servidor" tabindex="-1"><a class="header-anchor" href="#ejercicios-ut02-lenguajes-de-desarrollo-web-en-servidor"><span>Ejercicios UT02. Lenguajes de desarrollo web en servidor.</span></a></h1>
 <h2 id="ejercicio-ut02-1-el-lenguaje-php" tabindex="-1"><a class="header-anchor" href="#ejercicio-ut02-1-el-lenguaje-php"><span>Ejercicio UT02-1 El lenguaje PHP</span></a></h2>
 <p>En este ejercicio vamos a aprender a publicar un fichero <code v-pre>.php</code> en nuestra web local que sirve Apache2.</p>

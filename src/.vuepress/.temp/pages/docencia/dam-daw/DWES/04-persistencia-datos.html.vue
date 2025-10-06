@@ -196,6 +196,8 @@ En la forma más simple de ORM, una clase se mapea a una tabla en una base de da
 <li><strong>Entidad</strong> es un tipo de dato que se persiste. Las clases de modelo en el diseño MVC son a menudo entidades.<br>
 Ejemplo: <em>Question</em> y <em>Choice</em> en <strong>KU Polls</strong> son entidades.</li>
 <li>No todos los modelos son entidades; por ejemplo, una clase <em>Credit Card Validator</em> es parte de un modelo de dominio de comercio electrónico, pero puede no contener datos que persistir: es solo un servicio.</li>
+<li>Las <strong>Migraciones</strong> son un mecanismo que permite mantener sincronizado el modelo de datos definido en el código (las clases o entidades) con la estructura de la base de datos real (tablas, columnas, relaciones, etc.).<br>
+Son, en esencia, scripts o versiones del esquema de base de datos que el ORM genera y aplica automáticamente para reflejar los cambios en las entidades sin tener que escribir SQL manualmente.</li>
 </ul>
 <p>Un programador puede escribir comandos SQL (de bajo nivel) en el código para guardar valores en una base de datos. Esto suele ser una mala idea. No solo es redundante, sino que es una fuente frecuente de problemas de seguridad como la <strong>inyección SQL</strong>.</p>
 <p>En lugar de escribir el código de bajo nivel para enviar comandos SQL a la base de datos, se debe usar un framework que realice el <strong>mapeo objeto-relacional</strong>. Este mapea objetos a filas en una base de datos relacional.</p>
