@@ -9,6 +9,13 @@ icon: database
 # UT04 Persistencia de datos
 ![En construcción](/images/under-construction.jpg)
 
+> **En este tema trabajaremos los siguientes RAs:**
+> - RA2. Escribe sentencias ejecutables por un servidor web reconociendo y aplicando procedimientos de integración del código en lenguajes de marcas.
+> - RA3. Escribe bloques de sentencias embebidos en lenguajes de marcas, seleccionando y utilizando las estructuras de programación.
+> - RA4. Desarrolla aplicaciones web que acceden a bases de datos utilizando lenguajes, librerías y patrones adecuados.
+> - RA5. Utiliza frameworks y componentes que simplifican el acceso a los datos y la persistencia de la información.
+
+
 ## 1. La capa de persistencia de datos
 
 La **capa de persistencia** en una aplicación sirve de puente entre la compleja lógica de negocio de una aplicación y el almacén de datos subyacente, que a menudo es una base de datos relacional. Las decisiones que se tomen en esta capa repercuten a lo largo de toda la vida útil del software, influyendo en su rendimiento, mantenibilidad y adaptabilidad. Para abordar este desafío, debemos navegar entre los dos paradigmas principales en la persistencia.

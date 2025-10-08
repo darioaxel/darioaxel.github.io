@@ -1,6 +1,15 @@
 <template><div><!-- ![banner](/images/dwes/banner02.webp)-->
 <h1 id="ut04-persistencia-de-datos" tabindex="-1"><a class="header-anchor" href="#ut04-persistencia-de-datos"><span>UT04 Persistencia de datos</span></a></h1>
 <figure><img src="/images/under-construction.jpg" alt="En construcción" tabindex="0" loading="lazy"><figcaption>En construcción</figcaption></figure>
+<blockquote>
+<p><strong>En este tema trabajaremos los siguientes RAs:</strong></p>
+<ul>
+<li>RA2. Escribe sentencias ejecutables por un servidor web reconociendo y aplicando procedimientos de integración del código en lenguajes de marcas.</li>
+<li>RA3. Escribe bloques de sentencias embebidos en lenguajes de marcas, seleccionando y utilizando las estructuras de programación.</li>
+<li>RA4. Desarrolla aplicaciones web que acceden a bases de datos utilizando lenguajes, librerías y patrones adecuados.</li>
+<li>RA5. Utiliza frameworks y componentes que simplifican el acceso a los datos y la persistencia de la información.</li>
+</ul>
+</blockquote>
 <h2 id="_1-la-capa-de-persistencia-de-datos" tabindex="-1"><a class="header-anchor" href="#_1-la-capa-de-persistencia-de-datos"><span>1. La capa de persistencia de datos</span></a></h2>
 <p>La <strong>capa de persistencia</strong> en una aplicación sirve de puente entre la compleja lógica de negocio de una aplicación y el almacén de datos subyacente, que a menudo es una base de datos relacional. Las decisiones que se tomen en esta capa repercuten a lo largo de toda la vida útil del software, influyendo en su rendimiento, mantenibilidad y adaptabilidad. Para abordar este desafío, debemos navegar entre los dos paradigmas principales en la persistencia.</p>
 <h3 id="_1-1-orientado-a-objetos-y-orientado-a-datos-tratando-con-los-desajustes-de-impedancia" tabindex="-1"><a class="header-anchor" href="#_1-1-orientado-a-objetos-y-orientado-a-datos-tratando-con-los-desajustes-de-impedancia"><span>1.1. Orientado a objetos y orientado a datos: tratando con los desajustes de impedancia</span></a></h3>

@@ -2,12 +2,21 @@
 <blockquote>
 <p><strong>En este tema trabajaremos los siguientes RAs:</strong></p>
 <ul>
+<li>RA2. Escribe sentencias ejecutables por un servidor web reconociendo y aplicando procedimientos de integración del código en lenguajes de marcas.</li>
+<li>RA3. Escribe bloques de sentencias embebidos en lenguajes de marcas, seleccionando y utilizando las estructuras de programación.</li>
 <li>RA5. Desarrolla aplicaciones Web identificando y aplicando mecanismos para separar el código de presentación de la lógica de negocio.</li>
 </ul>
 </blockquote>
 <h2 id="_1-introduccion" tabindex="-1"><a class="header-anchor" href="#_1-introduccion"><span>1. Introducción</span></a></h2>
 <div class="hint-container info">
 <p class="hint-container-title">¿Qué vamos a aprender en esta unidad?</p>
+<p>En esta unidad estudiaremos cómo estructurar aplicaciones web siguiendo el patrón <strong>Modelo-Vista-Controlador (MVC)</strong> y otros patrones de diseño fundamentales. Además:</p>
+<ul>
+<li>Aprenderás a <strong>separar la lógica de negocio, la presentación y el acceso a datos</strong>, mejorando la mantenibilidad del código.</li>
+<li>Analizaremos las <strong>diferencias entre arquitecturas físicas y lógicas</strong>, y cómo se implementan las aplicaciones multicapa.</li>
+<li>Implementaremos un ejemplo completo de <strong>aplicación web en Jakarta EE</strong> siguiendo el patrón MVC paso a paso.</li>
+<li>Finalmente, veremos cómo <strong>Django aplica el mismo principio mediante su arquitectura MVT (Modelo-Vista-Plantilla)</strong>.</li>
+</ul>
 </div>
 <p>En ingeniería del software, como en cualquier otra ingeniería, existen una serie de soluciones estandarizadas que se ajustan sorprendentemente bien a una enorme variedad de situaciones diferentes.<br>
 Estas soluciones se denominan <strong>patrones de software</strong>, y vamos a empezar este tema hablando de ellas.</p>
