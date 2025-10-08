@@ -1,11 +1,10 @@
-<template><div><h1 id="instalacion-de-payara-en-vscode" tabindex="-1"><a class="header-anchor" href="#instalacion-de-payara-en-vscode"><span>Instalación de Payara en VSCode</span></a></h1>
-<p>En este artículo voy a documentar los distintos pasos que he ido dando para poder instalar y utilizar <a href="www.payara.fish">Payara Server</a> en mi equipo.</p>
-<h2 id="_1-verificacion-de-la-version-del-jdk-de-java" tabindex="-1"><a class="header-anchor" href="#_1-verificacion-de-la-version-del-jdk-de-java"><span>1. Verificación de la version del JDK de Java</span></a></h2>
-<p>Para poder instalar Payara, necesitamos tener al menos la versión 11 de Java JDK. Esto es sencillamente verificable mediante el comando:</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code" v-pre=""><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">java</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -version</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h2 id="_2-descarga-y-descompresion-del-servidor" tabindex="-1"><a class="header-anchor" href="#_2-descarga-y-descompresion-del-servidor"><span>2. Descarga y descompresión del servidor</span></a></h2>
-<p>Desde la web del proveedor, descargamos la versión Community Edition de Payara Server y procedemos a descomprimir el fichero <code v-pre>zip</code> descargado en el directorio que deseemos.</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code" v-pre=""><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">unzip</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> Descargas/payara-6.2025.zip</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> /opt/</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div></div></template>
+<template><div><h1 id="mi-primer-articulo" tabindex="-1"><a class="header-anchor" href="#mi-primer-articulo"><span>Mi primer artículo!!</span></a></h1>
+<p>¡Hola, mundo! Este es mi primer artículo en VuePress con Theme Hope 😃<br>
+Para comenzar, voy a explicar todos los pasos que he ido dando para crear esta web y como configurarla.</p>
+<h2 id="instalacion-de-vuepress-con-theme-hope" tabindex="-1"><a class="header-anchor" href="#instalacion-de-vuepress-con-theme-hope"><span>Instalación de VuePress con Theme Hope</span></a></h2>
+<h2 id="estructura-del-proyecto" tabindex="-1"><a class="header-anchor" href="#estructura-del-proyecto"><span>Estructura del Proyecto</span></a></h2>
+<h2 id="modificaciones-en-el-theme" tabindex="-1"><a class="header-anchor" href="#modificaciones-en-el-theme"><span>Modificaciones en el Theme</span></a></h2>
+<h2 id="publicacion-del-sitio-en-vercel" tabindex="-1"><a class="header-anchor" href="#publicacion-del-sitio-en-vercel"><span>Publicación del Sitio en Vercel</span></a></h2>
+</div></template>
 
 
