@@ -7,12 +7,19 @@ icon: diagram-project
 # UT03 MVC y otros patrones
 
 > **En este tema trabajaremos los siguientes RAs:**
+> - RA2. Escribe sentencias ejecutables por un servidor web reconociendo y aplicando procedimientos de integración del código en lenguajes de marcas.
+> - RA3. Escribe bloques de sentencias embebidos en lenguajes de marcas, seleccionando y utilizando las estructuras de programación.
 > - RA5. Desarrolla aplicaciones Web identificando y aplicando mecanismos para separar el código de presentación de la lógica de negocio.
 
 ## 1. Introducción
 ::: info ¿Qué vamos a aprender en esta unidad?
-
+En esta unidad estudiaremos cómo estructurar aplicaciones web siguiendo el patrón **Modelo-Vista-Controlador (MVC)** y otros patrones de diseño fundamentales. Además:
+* Aprenderás a **separar la lógica de negocio, la presentación y el acceso a datos**, mejorando la mantenibilidad del código.
+* Analizaremos las **diferencias entre arquitecturas físicas y lógicas**, y cómo se implementan las aplicaciones multicapa.
+* Implementaremos un ejemplo completo de **aplicación web en Jakarta EE** siguiendo el patrón MVC paso a paso.
+* Finalmente, veremos cómo **Django aplica el mismo principio mediante su arquitectura MVT (Modelo-Vista-Plantilla)**.
 :::
+
 
 En ingeniería del software, como en cualquier otra ingeniería, existen una serie de soluciones estandarizadas que se ajustan sorprendentemente bien a una enorme variedad de situaciones diferentes.
 Estas soluciones se denominan **patrones de software**, y vamos a empezar este tema hablando de ellas.
