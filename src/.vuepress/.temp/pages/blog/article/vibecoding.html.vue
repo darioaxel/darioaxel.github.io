@@ -90,6 +90,7 @@ Porque cuando la <em>vibe</em> se acabe, <strong>seguirás necesitando verdadera
 <li>Seguir <strong>aprendiendo los fundamentos de la programación</strong>: La IA puede acelerar el desarrollo, pero no reemplaza el pensamiento lógico, la resolución de problemas ni el conocimiento de arquitectura de software.</li>
 </ul>
 <h2 id="enlaces" tabindex="-1"><a class="header-anchor" href="#enlaces"><span>Enlaces</span></a></h2>
+<p><a href="https://stackoverflow.blog/2025/08/07/a-new-worst-coder-has-entered-the-chat-vibe-coding-without-code-knowledge/" target="_blank" rel="noopener noreferrer">Stackoverflow Blog</a></p>
 </div></template>
 
 
