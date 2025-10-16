@@ -16,7 +16,7 @@ La solución a este problema son los **entornos virtuales**: se trata de un árb
 De esta forma, diferentes aplicaciones pueden utilizar diferentes entornos virtuales, dependiendo de la versión, tanto de Python, como de los paquetes adicionales para que la aplicación funcione correctamente.
 
 La siguiente imagen ilustra un mismo equipo en el que existen diferentes entornos virtuales, con diferentes versiones de Python, para proyectos diferentes:
-
+<!--
 ![ToDo - incluir imagen](#)
 
 ### Creación de un entorno virtual
@@ -172,7 +172,7 @@ python manage.py runserver
 
 El servidor se lanza por defecto en el **puerto 8000**, y al acceder desde el navegador veremos la página de bienvenida de Django.
 
-<!--
+
 
 ## Portfolio con Django
 
