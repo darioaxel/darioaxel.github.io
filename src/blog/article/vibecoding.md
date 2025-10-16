@@ -119,3 +119,5 @@ Para que el “vibe coding” sea una herramienta verdaderamente útil y no un r
 * Seguir **aprendiendo los fundamentos de la programación**: La IA puede acelerar el desarrollo, pero no reemplaza el pensamiento lógico, la resolución de problemas ni el conocimiento de arquitectura de software.
 
 ## Enlaces
+
+[Stackoverflow Blog](https://stackoverflow.blog/2025/08/07/a-new-worst-coder-has-entered-the-chat-vibe-coding-without-code-knowledge/)
