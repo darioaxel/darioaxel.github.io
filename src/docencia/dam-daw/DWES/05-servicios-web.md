@@ -9,6 +9,11 @@ icon: mynaui:api-solid
 # UT05 Servicios Web - REST
 ![En construcción](/images/under-construction.jpg)
 
+> **En este tema trabajaremos los siguientes RAs:**
+> - RA4. Desarrolla aplicaciones web que acceden a bases de datos utilizando lenguajes, librerías y patrones adecuados.
+> - RA5. Utiliza frameworks y componentes que simplifican el acceso a los datos y la persistencia de la información.
+> - RA7. Desarrolla servicios Web reutilizables y accesibles mediante protocolos Web, verificando su funcionamiento.
+
 ## 1.1. ¿Qué es un servicio web?
 ### 1.1.1. Una definición de servicio web
 Un servicio web es una aplicación web capaz de comunicarse e intercambiar información con otra aplicación (que denominaremos cliente) independientemente de la plataforma en la que cada una se ejecute.  

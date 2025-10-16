@@ -1,6 +1,14 @@
 <template><div><!-- ![banner](/images/dwes/banner02.webp)-->
 <h1 id="ut05-servicios-web-rest" tabindex="-1"><a class="header-anchor" href="#ut05-servicios-web-rest"><span>UT05 Servicios Web - REST</span></a></h1>
 <figure><img src="/images/under-construction.jpg" alt="En construcción" tabindex="0" loading="lazy"><figcaption>En construcción</figcaption></figure>
+<blockquote>
+<p><strong>En este tema trabajaremos los siguientes RAs:</strong></p>
+<ul>
+<li>RA4. Desarrolla aplicaciones web que acceden a bases de datos utilizando lenguajes, librerías y patrones adecuados.</li>
+<li>RA5. Utiliza frameworks y componentes que simplifican el acceso a los datos y la persistencia de la información.</li>
+<li>RA7. Desarrolla servicios Web reutilizables y accesibles mediante protocolos Web, verificando su funcionamiento.</li>
+</ul>
+</blockquote>
 <h2 id="_1-1-¿que-es-un-servicio-web" tabindex="-1"><a class="header-anchor" href="#_1-1-¿que-es-un-servicio-web"><span>1.1. ¿Qué es un servicio web?</span></a></h2>
 <h3 id="_1-1-1-una-definicion-de-servicio-web" tabindex="-1"><a class="header-anchor" href="#_1-1-1-una-definicion-de-servicio-web"><span>1.1.1. Una definición de servicio web</span></a></h3>
 <p>Un servicio web es una aplicación web capaz de comunicarse e intercambiar información con otra aplicación (que denominaremos cliente) independientemente de la plataforma en la que cada una se ejecute.</p>

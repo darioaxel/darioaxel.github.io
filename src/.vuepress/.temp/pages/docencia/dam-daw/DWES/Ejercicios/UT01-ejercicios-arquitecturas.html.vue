@@ -1,56 +1,93 @@
 <template><div><h1 id="ejercicios-ut01-introduccion" tabindex="-1"><a class="header-anchor" href="#ejercicios-ut01-introduccion"><span>Ejercicios UT01. Introducción.</span></a></h1>
+<div class="hint-container caution">
+<p class="hint-container-title">Advertencia</p>
+<p>La clave de la máquina virtual dentro del VDI para DWES es <strong>pirineus</strong></p>
+</div>
 <div class="hint-container info">
 <p class="hint-container-title">Información</p>
 <p>Este ejercicio se trabajará en las videotutorías, por lo cual el contenido final no estará disponible hasta la segunda semana.</p>
 </div>
-<h2 id="🧩-ejercicio-1-consulta-de-datos-meteorologicos-con-curl-y-la-api-de-aemet" tabindex="-1"><a class="header-anchor" href="#🧩-ejercicio-1-consulta-de-datos-meteorologicos-con-curl-y-la-api-de-aemet"><span>🧩 Ejercicio 1: Consulta de datos meteorológicos con <code v-pre>curl</code> y la API de AEMET</span></a></h2>
+<h2 id="🧩-ejercicio-1-consulta-de-personajes-con-curl-y-la-api-de-rick-and-morty" tabindex="-1"><a class="header-anchor" href="#🧩-ejercicio-1-consulta-de-personajes-con-curl-y-la-api-de-rick-and-morty"><span>🧩 Ejercicio 1: Consulta de personajes con <code v-pre>curl</code> y la API de Rick and Morty</span></a></h2>
 <h3 id="📘-objetivo" tabindex="-1"><a class="header-anchor" href="#📘-objetivo"><span>📘 Objetivo</span></a></h3>
 <p>Aprender a realizar peticiones HTTP desde la línea de comandos utilizando <code v-pre>curl</code>, analizando las <strong>cabeceras</strong> de respuesta y el <strong>contenido JSON</strong> devuelto por un servicio web público.</p>
 <h3 id="🧠-contexto" tabindex="-1"><a class="header-anchor" href="#🧠-contexto"><span>🧠 Contexto</span></a></h3>
-<p>La <strong>AEMET (Agencia Estatal de Meteorología)</strong> dispone de una API REST que ofrece datos meteorológicos de toda España.<br>
-El acceso es libre, pero requiere un <strong>token de autenticación</strong> que puedes solicitar gratuitamente en su <a href="https://opendata.aemet.es/centrodedescargas/inicio" target="_blank" rel="noopener noreferrer">portal de datos abiertos</a>.</p>
+<p>La <strong><a href="https://rickandmortyapi.com/" target="_blank" rel="noopener noreferrer">Rick and Morty API</a></strong> es una API REST pública y gratuita que ofrece información sobre personajes, ubicaciones y episodios de la serie <em>Rick and Morty</em>.</p>
 <h3 id="📁-pasos-a-seguir" tabindex="-1"><a class="header-anchor" href="#📁-pasos-a-seguir"><span>📁 Pasos a seguir</span></a></h3>
 <ol>
 <li>
-<p><strong>Guarda tu token de AEMET</strong> (reemplaza el valor del ejemplo por el tuyo real):</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code" v-pre=""><code class="language-bash"><span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">TOKEN</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"tu_token_de_aemet_aquí"</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div></li>
-<li>
-<p><strong>Realiza una petición a la API</strong> para obtener la predicción general de España:</p>
+<p><strong>Realiza una petición a la API</strong> para obtener la lista de personajes:</p>
 <div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code" v-pre=""><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">curl</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -i</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -H</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> "accept: application/json"</span><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2"> \</span></span>
-<span class="line"><span style="--shiki-light:#986801;--shiki-dark:#D19A66">     -H</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> "api_key: </span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">$TOKEN</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"</span><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2"> \</span></span>
-<span class="line"><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">     "https://opendata.aemet.es/opendata/api/prediccion/nacional/hoy"</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><blockquote>
+<span class="line"><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">     "https://rickandmortyapi.com/api/character"</span></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div></div></div><blockquote>
 <p>🔍 La opción <code v-pre>-i</code> muestra las <strong>cabeceras HTTP</strong> junto con la respuesta.</p>
 </blockquote>
 </li>
 <li>
 <p><strong>Analiza la cabecera de la respuesta</strong>, donde encontrarás información como:</p>
 <div class="language- line-numbers-mode" data-highlighter="shiki" data-ext="" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code" v-pre=""><code class="language-"><span class="line"><span>HTTP/1.1 200 OK</span></span>
-<span class="line"><span>Content-Type: application/json;charset=UTF-8</span></span>
-<span class="line"><span>Date: Tue, 10 Oct 2025 09:12:47 GMT</span></span>
-<span class="line"><span>Server: nginx</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>✳️ Preguntas de reflexión:</p>
+<span class="line"><span>Content-Type: application/json; charset=utf-8</span></span>
+<span class="line"><span>Date: Tue, 16 Oct 2025 09:12:47 GMT</span></span>
+<span class="line"><span>Server: cloudflare</span></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>✳️ <strong>Preguntas de reflexión:</strong></p>
 <ul>
 <li>¿Qué indica el código de estado <code v-pre>200 OK</code>?</li>
 <li>¿Qué tipo de contenido devuelve la API?</li>
 <li>¿Qué función cumple el campo <code v-pre>Date</code>?</li>
+<li>¿Qué servidor gestiona la API?</li>
 </ul>
 </li>
 <li>
-<p><strong>Observa el contenido JSON devuelto</strong>, por ejemplo:</p>
+<p><strong>Observa el contenido JSON devuelto</strong>, por ejemplo (fragmento):</p>
 <div class="language-json line-numbers-mode" data-highlighter="shiki" data-ext="json" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code" v-pre=""><code class="language-json"><span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">{</span></span>
-<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">  "descripcion"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"exito"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">,</span></span>
-<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">  "estado"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#986801;--shiki-dark:#D19A66">200</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">,</span></span>
-<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">  "datos"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"https://opendata.aemet.es/opendata/sh/xxxxxx"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">,</span></span>
-<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">  "metadatos"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"https://opendata.aemet.es/opendata/sh/yyyyyy"</span></span>
+<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">  "info"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">: {</span></span>
+<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">    "count"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#986801;--shiki-dark:#D19A66">826</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">,</span></span>
+<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">    "pages"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#986801;--shiki-dark:#D19A66">42</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">,</span></span>
+<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">    "next"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"https://rickandmortyapi.com/api/character?page=2"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">,</span></span>
+<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">    "prev"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#0184BC;--shiki-dark:#D19A66">null</span></span>
+<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">  },</span></span>
+<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">  "results"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">: [</span></span>
+<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">    {</span></span>
+<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">      "id"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#986801;--shiki-dark:#D19A66">1</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">,</span></span>
+<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">      "name"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"Rick Sanchez"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">,</span></span>
+<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">      "status"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"Alive"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">,</span></span>
+<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">      "species"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"Human"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">,</span></span>
+<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">      "type"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">""</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">,</span></span>
+<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">      "gender"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"Male"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">,</span></span>
+<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">      "origin"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">: {</span></span>
+<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">        "name"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"Earth (C-137)"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">,</span></span>
+<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">        "url"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"https://rickandmortyapi.com/api/location/1"</span></span>
+<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">      },</span></span>
+<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">      "location"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">: {</span></span>
+<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">        "name"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"Citadel of Ricks"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">,</span></span>
+<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">        "url"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"https://rickandmortyapi.com/api/location/3"</span></span>
+<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">      },</span></span>
+<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">      "image"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"https://rickandmortyapi.com/api/character/avatar/1.jpeg"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">,</span></span>
+<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">      "episode"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">: [</span></span>
+<span class="line"><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">        "https://rickandmortyapi.com/api/episode/1"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">,</span></span>
+<span class="line"><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">        "https://rickandmortyapi.com/api/episode/2"</span></span>
+<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">      ]</span></span>
+<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">    }</span></span>
+<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">  ]</span></span>
 <span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">}</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>Este primer JSON <strong>no contiene directamente los datos</strong>, sino <strong>la URL donde se encuentran</strong>.<br>
-Accede a esa dirección con <code v-pre>curl</code> para ver los datos reales:</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code" v-pre=""><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">curl</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -s</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> "https://opendata.aemet.es/opendata/sh/xxxxxx"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> | </span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">jq</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> .</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p>(si tienes <code v-pre>jq</code> instalado, mostrará el JSON formateado)</p>
-</li>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></li>
+<li>
+<p><strong>Filtra y muestra el JSON formateado</strong> usando <code v-pre>jq</code> (si lo tienes instalado):</p>
+<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code" v-pre=""><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">curl</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -s</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> "https://rickandmortyapi.com/api/character"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> | </span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">jq</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> .</span></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p>También puedes buscar directamente un personaje por nombre, por ejemplo <strong>Morty Smith</strong>:</p>
+<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code" v-pre=""><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">curl</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -s</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> "https://rickandmortyapi.com/api/character/?name=Morty"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> | </span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">jq</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> .</span></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div></li>
 </ol>
+<h3 id="🧩-opcional" tabindex="-1"><a class="header-anchor" href="#🧩-opcional"><span>🧩 Opcional</span></a></h3>
+<ul>
+<li>
+<p>Prueba a consultar un <strong>episodio concreto</strong>:</p>
+<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code" v-pre=""><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">curl</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -s</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> "https://rickandmortyapi.com/api/episode/10"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> | </span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">jq</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> .</span></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div></li>
+<li>
+<p>Y una <strong>localización</strong>:</p>
+<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code" v-pre=""><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">curl</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -s</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> "https://rickandmortyapi.com/api/location/1"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> | </span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">jq</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> .</span></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div></li>
+</ul>
 <h2 id="🧩-ejercicio-2-sistema-de-emergencias-con-el-patron-observador-python" tabindex="-1"><a class="header-anchor" href="#🧩-ejercicio-2-sistema-de-emergencias-con-el-patron-observador-python"><span>🧩 Ejercicio 2: Sistema de emergencias con el patrón Observador (Python)</span></a></h2>
 <h3 id="📘-objetivo-1" tabindex="-1"><a class="header-anchor" href="#📘-objetivo-1"><span>📘 Objetivo</span></a></h3>
 <p>Implementar el <strong>patrón de diseño Observador</strong> para modelar un <strong>sistema de emergencias</strong> en el que distintas unidades (Policía, Bomberos, Ambulancia) reciben notificaciones según el tipo de emergencia.</p>

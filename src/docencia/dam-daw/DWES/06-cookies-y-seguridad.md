@@ -7,7 +7,11 @@ icon: fluent:cookies-16-filled
 # UT06 Cookies y Seguridad en aplicaciones web
 ![En construcción](/images/under-construction.jpg)
 
-<!--  -->
+> **En este tema trabajaremos los siguientes RAs:**
+> - RA5. Utiliza frameworks y componentes que simplifican el acceso a los datos y la persistencia de la información.
+> - RA6. Desarrolla aplicaciones de acceso a almacenes de datos, aplicando medidas para mantener la seguridad y la integridad de la información.
+
+## 1. Introducción
 En este capítulo vamos a profundizar en varios aspectos de vital importancia para las aplicaciones web.
 
 Por un lado, tenemos las cookies y las sesiones, dos mecanismos que permiten a la aplicación mantener vivas algunas variables de forma indefinida.
