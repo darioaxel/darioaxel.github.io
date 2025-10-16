@@ -167,6 +167,6 @@ Cuidado! Esta distribución es una aproximación y puede variar según las neces
 | UT04 | 27/11/2025 al 19/12/2025 y 7/1/2026 al 23/1/2026 | 6 |
 | --- |  CUATRIMESTRE II | --- |
 | UT05 | 11/2/202 al -/-/- | 2 |
-| UT06 | 1/10/2025 al 15/10/2025 | 2 |
+| UT06 | 1/10/2025 al 15/10/2025 | 3 |
 | UT07 | 1/10/2025 al 15/10/2025 | 2 |
-| UT08 | 1/10/2025 al 15/10/2025 | 4 |
+| UT08 | 1/10/2025 al 15/10/2025 | 3 |
