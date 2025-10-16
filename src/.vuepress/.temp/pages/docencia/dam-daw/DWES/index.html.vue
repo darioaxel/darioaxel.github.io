@@ -395,17 +395,17 @@
 <tr>
 <td>3. MVC y otros patrones de arquitectura</td>
 <td>ToDo h</td>
-<td>RA1</td>
+<td>RA2, RA3, RA5</td>
 </tr>
 <tr>
 <td>4. Persistencia de datos</td>
 <td>ToDo h</td>
-<td>RA1</td>
+<td>RA2, RA3, RA4, RA5</td>
 </tr>
 <tr>
 <td>5. Servicios Web</td>
 <td>ToDo h</td>
-<td>RA1</td>
+<td>RA1, RA5, RA7</td>
 </tr>
 <tr>
 <td>6. Sesiones, cookies y Seguridad</td>
@@ -455,7 +455,7 @@
 </tr>
 <tr>
 <td>UT04</td>
-<td>27/11/2025 al 19/12/2025 y 7/1/2026 al 23/2/2026</td>
+<td>27/11/2025 al 19/12/2025 y 7/1/2026 al 23/1/2026</td>
 <td>6</td>
 </tr>
 <tr>

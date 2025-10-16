@@ -1,6 +1,13 @@
 <template><div><h1 id="ut06-cookies-y-seguridad-en-aplicaciones-web" tabindex="-1"><a class="header-anchor" href="#ut06-cookies-y-seguridad-en-aplicaciones-web"><span>UT06 Cookies y Seguridad en aplicaciones web</span></a></h1>
 <figure><img src="/images/under-construction.jpg" alt="En construcción" tabindex="0" loading="lazy"><figcaption>En construcción</figcaption></figure>
-<!--  -->
+<blockquote>
+<p><strong>En este tema trabajaremos los siguientes RAs:</strong></p>
+<ul>
+<li>RA5. Utiliza frameworks y componentes que simplifican el acceso a los datos y la persistencia de la información.</li>
+<li>RA6. Desarrolla aplicaciones de acceso a almacenes de datos, aplicando medidas para mantener la seguridad y la integridad de la información.</li>
+</ul>
+</blockquote>
+<h2 id="_1-introduccion" tabindex="-1"><a class="header-anchor" href="#_1-introduccion"><span>1. Introducción</span></a></h2>
 <p>En este capítulo vamos a profundizar en varios aspectos de vital importancia para las aplicaciones web.</p>
 <p>Por un lado, tenemos las cookies y las sesiones, dos mecanismos que permiten a la aplicación mantener vivas algunas variables de forma indefinida.</p>
 <p>Después estudiaremos un problema endémico a las aplicaciones web: la seguridad. En efecto, al tratarse de aplicaciones que, por definición, están permanentemente conectadas a la red, son susceptibles de recibir ataques de manera continua e indiscriminada. Y, de hecho, lo hacen. Veremos cuáles son los tipos de ataque más frecuente y cómo podemos proteger nuestra aplicación contra ellos, algo en lo que juegan un papel importante las cookies y las variables de sesión.</p>

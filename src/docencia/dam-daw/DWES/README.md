@@ -147,9 +147,9 @@ category:
 | --- | --- | --- | 
 | 1. Arquitecturas Web | ToDo h | RA1 |
 | 2. Lenguajes de programación en entorno servidor |ToDo h |RA2, RA3 |
-| 3. MVC y otros patrones de arquitectura | ToDo h |RA1 |
-| 4. Persistencia de datos | ToDo h |RA1 |
-| 5. Servicios Web | ToDo h |RA1 |
+| 3. MVC y otros patrones de arquitectura | ToDo h |RA2, RA3, RA5 |
+| 4. Persistencia de datos | ToDo h |RA2, RA3, RA4, RA5 |
+| 5. Servicios Web | ToDo h |RA1, RA5, RA7 |
 | 6. Sesiones, cookies y Seguridad | ToDo h |RA1 |
 | 7. Apliaciones web dinámicas | ToDo h |RA1 |
 | 8. Apliaciones web híbridas: Nuxt | ToDo h |RA9 |
@@ -164,7 +164,7 @@ Cuidado! Esta distribución es una aproximación y puede variar según las neces
 | UT01 | 1/10/2025 al 15/10/2025 | 2 |
 | UT02 | 16/10/2025 al 5/11/2025 | 3 |
 | UT03 | 6/11/2025 al 26/11/2025 |3 |
-| UT04 | 27/11/2025 al 19/12/2025 y 7/1/2026 al 23/2/2026 | 6 |
+| UT04 | 27/11/2025 al 19/12/2025 y 7/1/2026 al 23/1/2026 | 6 |
 | --- |  CUATRIMESTRE II | --- |
 | UT05 | 11/2/202 al -/-/- |X |
 | UT06 | 1/10/2025 al 15/10/2025 |X |
