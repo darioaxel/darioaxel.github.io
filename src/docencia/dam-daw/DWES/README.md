@@ -150,8 +150,8 @@ category:
 | 3. MVC y otros patrones de arquitectura | ToDo h |RA2, RA3, RA5 |
 | 4. Persistencia de datos | ToDo h |RA2, RA3, RA4, RA5 |
 | 5. Servicios Web | ToDo h |RA1, RA5, RA7 |
-| 6. Sesiones, cookies y Seguridad | ToDo h |RA1 |
-| 7. Apliaciones web dinámicas | ToDo h |RA1 |
+| 6. Sesiones, cookies y Seguridad | ToDo h |RA5, RA6 |
+| 7. Apliaciones web dinámicas | ToDo h |RA8 |
 | 8. Apliaciones web híbridas: Nuxt | ToDo h |RA9 |
 
 ### 2.2. Distribución de las unidades por semanas
@@ -166,7 +166,7 @@ Cuidado! Esta distribución es una aproximación y puede variar según las neces
 | UT03 | 6/11/2025 al 26/11/2025 |3 |
 | UT04 | 27/11/2025 al 19/12/2025 y 7/1/2026 al 23/1/2026 | 6 |
 | --- |  CUATRIMESTRE II | --- |
-| UT05 | 11/2/202 al -/-/- |X |
-| UT06 | 1/10/2025 al 15/10/2025 |X |
-| UT07 | 1/10/2025 al 15/10/2025 |X |
-| UT08 | 1/10/2025 al 15/10/2025 |X |
+| UT05 | 11/2/202 al -/-/- | 2 |
+| UT06 | 1/10/2025 al 15/10/2025 | 2 |
+| UT07 | 1/10/2025 al 15/10/2025 | 2 |
+| UT08 | 1/10/2025 al 15/10/2025 | 4 |
