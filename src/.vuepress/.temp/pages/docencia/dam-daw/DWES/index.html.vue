@@ -410,12 +410,12 @@
 <tr>
 <td>6. Sesiones, cookies y Seguridad</td>
 <td>ToDo h</td>
-<td>RA1</td>
+<td>RA5, RA6</td>
 </tr>
 <tr>
 <td>7. Apliaciones web dinámicas</td>
 <td>ToDo h</td>
-<td>RA1</td>
+<td>RA8</td>
 </tr>
 <tr>
 <td>8. Apliaciones web híbridas: Nuxt</td>
@@ -466,22 +466,22 @@
 <tr>
 <td>UT05</td>
 <td>11/2/202 al -/-/-</td>
-<td>X</td>
+<td>2</td>
 </tr>
 <tr>
 <td>UT06</td>
 <td>1/10/2025 al 15/10/2025</td>
-<td>X</td>
+<td>3</td>
 </tr>
 <tr>
 <td>UT07</td>
 <td>1/10/2025 al 15/10/2025</td>
-<td>X</td>
+<td>2</td>
 </tr>
 <tr>
 <td>UT08</td>
 <td>1/10/2025 al 15/10/2025</td>
-<td>X</td>
+<td>3</td>
 </tr>
 </tbody>
 </table>
