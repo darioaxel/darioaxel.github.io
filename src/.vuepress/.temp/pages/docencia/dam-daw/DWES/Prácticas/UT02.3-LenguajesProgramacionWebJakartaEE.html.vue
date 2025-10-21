@@ -22,7 +22,6 @@
 <li>RA3. Escribe bloques de sentencias embebidos en lenguajes de marcas, seleccionando y utilizando las estructuras de programación.</li>
 </ul>
 </div>
-<figure><img src="/images/under-construction.jpg" alt="En construcción" tabindex="0" loading="lazy"><figcaption>En construcción</figcaption></figure>
 <h2 id="🎯-objetivos" tabindex="-1"><a class="header-anchor" href="#🎯-objetivos"><span>🎯 Objetivos</span></a></h2>
 <ul>
 <li>Ampliar el uso de <strong>beans en JSF</strong> para manejar listas de objetos complejos.</li>

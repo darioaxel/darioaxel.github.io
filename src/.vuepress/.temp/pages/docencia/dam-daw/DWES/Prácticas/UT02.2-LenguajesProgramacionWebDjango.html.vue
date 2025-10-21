@@ -30,7 +30,11 @@
 <ul>
 <li>Para poder realizar esta práctica, primero has de crear el proyecto en el cual deberás trabajar. Lo más sencillo, por ahora es que realices una copia del <code v-pre>ejercicio01</code> y lo tomes como base.</li>
 <li>Comprueba que todo funciona mediante el comando de ejecución del proyecto, lanzando el comando <code v-pre>python3 manage.py runserver</code> en la carpeta base del proyecto.</li>
-<li>Accede al fichero <code v-pre>usuarios -&gt; views.py</code> y adapta tanto el contenido de &quot;dato&quot; como del html que se va a mostrar utilizando el contenido del ejercicio 02.</li>
+<li>Accede al fichero <code v-pre>usuarios -&gt; views.py</code> y adapta tanto el contenido de &quot;dato&quot; como del html que se va a mostrar utilizando el contenido del ejercicio 02.<div class="hint-container note">
+<p class="hint-container-title">Nota</p>
+<p>Enlace al contenido de <a href="https://github.com/darioaxel/DWES-Ejercicios-2025-2026/blob/main/dwes-UT02/03-django/ejercicio02/usuarios.py" target="_blank" rel="noopener noreferrer">ejercicio 02</a></p>
+</div>
+</li>
 <li>Ejecuta el nuevo código y muestra la lista completa de pagos mensuales así como lo datos del usuario.</li>
 </ul>
 <p>OPCIONAL: Si quieres subir un poco el nivel, puedes incluir css y hacer que la edad del usuario cambie de color en función de si es mayor de 18 año o no.</p>

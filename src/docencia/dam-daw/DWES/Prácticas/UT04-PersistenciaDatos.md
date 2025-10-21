@@ -1,10 +1,10 @@
 ---
-title: Práctica UT03 MVC y ...
-date: 2025-20-10
+title: Práctica UT04 Persistencia de datos
+date: 2025-21-10
 icon: pen
 ---
 
-# Práctica UT03 MVC y otros patrones
+# Práctica UT04 Persistencia de datos
 
 | Módulo y curso |
 | --- |
