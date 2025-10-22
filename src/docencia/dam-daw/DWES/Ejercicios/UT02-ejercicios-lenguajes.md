@@ -6,8 +6,6 @@ icon: pen
 Este ejercicio se trabajará en las videotutorías, por lo cual el contenido final no estará disponible hasta la segunda semana.
 :::
 
-![En construcción](/images/under-construction.jpg)
-
 # Ejercicios UT02. Lenguajes de desarrollo web en servidor.
 
 ## Ejercicio UT02-1 El lenguaje PHP
@@ -18,7 +16,60 @@ En este ejercicio vamos a aprender a publicar un fichero `.php` en nuestra web l
 
 ## Ejercicio UT02-3 Python y DJango
 
-### Ejercicio 01: Creación de una aplicación Djando desde 0
+### Ejercicio 1: Duración de un álbum
+ * Dado un json como el siguiente, crea un programa python que calcule la duración completa del disco.
+  
+```json
+{
+  "album": "Songs of a Lost World",
+  "artist": "The Cure",
+  "year": 2024,
+  "tracks": [
+    {
+      "title": "Alone",
+      "duration": "6:48"
+    },
+    {
+      "title": "And Nothing Is Forever",
+      "duration": "6:53"
+    },
+    {
+      "title": "A Fragile Thing",
+      "duration": "4:43"
+    },
+    {
+      "title": "Warsong",
+      "duration": "4:17"
+    },
+    {
+      "title": "Drone:Nodrone",
+      "duration": "4:45"
+    },
+    {
+      "title": "I Can Never Say Goodbye",
+      "duration": "6:03"
+    },
+    {
+      "title": "All I Ever Am",
+      "duration": "5:21"
+    },
+    {
+      "title": "Endsong",
+      "duration": "10:23"
+    }
+  ]
+}
+```
+
+
+### Ejercicio 2: 
+
+
+
+
+
+---
+### Ejercicio 0X: Creación de una aplicación Djando desde 0
 
 A continuación vamos a crear la estructura básica de un proyecto en Djando para que podamos compartir en un servidor, el contenido de nuestros datos.
 
