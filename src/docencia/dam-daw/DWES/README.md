@@ -147,11 +147,11 @@ category:
 | --- | --- | --- | 
 | 1. Arquitecturas Web | ToDo h | RA1 |
 | 2. Lenguajes de programación en entorno servidor |ToDo h |RA2, RA3 |
-| 3. MVC y otros patrones de arquitectura | ToDo h |RA2, RA3, RA5 |
-| 4. Persistencia de datos | ToDo h |RA2, RA3, RA4, RA5 |
-| 5. Servicios Web | ToDo h |RA1, RA5, RA7 |
-| 6. Sesiones, cookies y Seguridad | ToDo h |RA5, RA6 |
-| 7. Apliaciones web dinámicas | ToDo h |RA8 |
+| 3. MVC y otros patrones de arquitectura | ToDo h | RA5 |
+| 4. Persistencia de datos | ToDo h | RA6 |
+| 5. Servicios Web | ToDo h | RA7 |
+| 6. Sesiones, cookies y Seguridad | ToDo h | RA4 |
+| 7. Apliaciones web dinámicas | ToDo h | RA8 |
 | 8. Apliaciones web híbridas: Nuxt | ToDo h |RA9 |
 
 ### 2.2. Distribución de las unidades por semanas
