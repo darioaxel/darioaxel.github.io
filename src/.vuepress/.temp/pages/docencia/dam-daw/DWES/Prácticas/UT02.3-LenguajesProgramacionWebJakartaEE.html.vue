@@ -85,8 +85,12 @@
 <li>La <strong>captura de pantalla</strong> donde se muestre la petición GET y la respuesta del servidor en <code v-pre>localhost</code>.</li>
 <li>La <strong>URL del pull request</strong> realizado sobre el repositorio original.</li>
 </ul>
-<hr>
 <h2 id="criterios-de-evaluacion" tabindex="-1"><a class="header-anchor" href="#criterios-de-evaluacion"><span>Criterios de evaluación</span></a></h2>
+<h2 id="materiales-de-apoyo" tabindex="-1"><a class="header-anchor" href="#materiales-de-apoyo"><span>Materiales de apoyo</span></a></h2>
+<p><a href="https://jarroba.com/map-en-java-con-ejemplos/" target="_blank" rel="noopener noreferrer">Maps en Java</a><br>
+<a href="https://www.baeldung.com/java-iterate-map" target="_blank" rel="noopener noreferrer">Iterar sobe un Map en Java</a></p>
+<p><a href="https://expertojavaua.github.io/www.jtech.ua.es/j2ee/publico/jsf-2012-13/sesion01-apuntes.html" target="_blank" rel="noopener noreferrer">Java Server Faces y XHTML</a><br>
+<a href="https://javajhon.blogspot.com/2020/06/jsf-el.html" target="_blank" rel="noopener noreferrer">Ejemplos de JSF y Map </a></p>
 </div></template>
 
 
