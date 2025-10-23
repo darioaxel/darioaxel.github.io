@@ -395,22 +395,22 @@
 <tr>
 <td>3. MVC y otros patrones de arquitectura</td>
 <td>ToDo h</td>
-<td>RA2, RA3, RA5</td>
+<td>RA5</td>
 </tr>
 <tr>
 <td>4. Persistencia de datos</td>
 <td>ToDo h</td>
-<td>RA2, RA3, RA4, RA5</td>
+<td>RA6</td>
 </tr>
 <tr>
 <td>5. Servicios Web</td>
 <td>ToDo h</td>
-<td>RA1, RA5, RA7</td>
+<td>RA7</td>
 </tr>
 <tr>
 <td>6. Sesiones, cookies y Seguridad</td>
 <td>ToDo h</td>
-<td>RA5, RA6</td>
+<td>RA4</td>
 </tr>
 <tr>
 <td>7. Apliaciones web dinámicas</td>
