@@ -82,7 +82,7 @@ Dentro del `xhtml` utilizamos etiquetas propias que, junto con el identificador 
 ![Mapeo entre Bean y XHtml](/images/dwes/ejercicios/jakartaEE-8.png)
 
 
-## Ejercicio UT02-3 Python y DJango
+## Ejercicio UT02-3 Python y Django
 
 ### Ejercicio UT02-3.1: Estructura de directorios de una aplicación Django
 
