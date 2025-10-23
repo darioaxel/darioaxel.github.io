@@ -79,12 +79,22 @@ El proceso de compilación y el servidor de aplicaciones, permiten realizar un m
 
 Dentro del `xhtml` utilizamos etiquetas propias que, junto con el identificador del bean y el uso de las funciones que ese objeto nos proporciona, permiten mostrar los datos al cliente.
 
-![Mapeo entre Beam y XHtml](/images/dwes/ejercicios/jakartaEE-8.png)
+![Mapeo entre Bean y XHtml](/images/dwes/ejercicios/jakartaEE-8.png)
 
 
 ## Ejercicio UT02-3 Python y DJango
 
-### Ejercicio 1: Duración de un álbum
+### Ejercicio UT02-3.1: Estructura de directorios de una aplicación Django
+
+![Estructura](/images/dwes/ejercicios/django1.png)
+
+![Ejecución del servidor django](/images/dwes/ejercicios/django2.png)
+
+![Url del servidor](/images/dwes/ejercicios/django3.png)
+
+![Mapeo del contenido del controlador en el html](/images/dwes/ejercicios/django4.png)
+
+#### Duración de un álbum
  * Dado un `json` como el siguiente, crea un programa python que calcule la duración completa del disco.
   
 ```json
