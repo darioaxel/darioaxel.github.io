@@ -46,9 +46,14 @@
 <p>El proceso de compilación y el servidor de aplicaciones, permiten realizar un mapeo del contenido de nuestro bean en el xhtml que es leído y mostrado por el navegador.</p>
 <figure><img src="/images/dwes/ejercicios/jakartaEE-7.png" alt="Código xhtml" tabindex="0" loading="lazy"><figcaption>Código xhtml</figcaption></figure>
 <p>Dentro del <code v-pre>xhtml</code> utilizamos etiquetas propias que, junto con el identificador del bean y el uso de las funciones que ese objeto nos proporciona, permiten mostrar los datos al cliente.</p>
-<figure><img src="/images/dwes/ejercicios/jakartaEE-8.png" alt="Mapeo entre Beam y XHtml" tabindex="0" loading="lazy"><figcaption>Mapeo entre Beam y XHtml</figcaption></figure>
+<figure><img src="/images/dwes/ejercicios/jakartaEE-8.png" alt="Mapeo entre Bean y XHtml" tabindex="0" loading="lazy"><figcaption>Mapeo entre Bean y XHtml</figcaption></figure>
 <h2 id="ejercicio-ut02-3-python-y-django" tabindex="-1"><a class="header-anchor" href="#ejercicio-ut02-3-python-y-django"><span>Ejercicio UT02-3 Python y DJango</span></a></h2>
-<h3 id="ejercicio-1-duracion-de-un-album" tabindex="-1"><a class="header-anchor" href="#ejercicio-1-duracion-de-un-album"><span>Ejercicio 1: Duración de un álbum</span></a></h3>
+<h3 id="ejercicio-ut02-3-1-estructura-de-directorios-de-una-aplicacion-django" tabindex="-1"><a class="header-anchor" href="#ejercicio-ut02-3-1-estructura-de-directorios-de-una-aplicacion-django"><span>Ejercicio UT02-3.1: Estructura de directorios de una aplicación Django</span></a></h3>
+<figure><img src="/images/dwes/ejercicios/django1.png" alt="Estructura" tabindex="0" loading="lazy"><figcaption>Estructura</figcaption></figure>
+<figure><img src="/images/dwes/ejercicios/django2.png" alt="Ejecución del servidor django" tabindex="0" loading="lazy"><figcaption>Ejecución del servidor django</figcaption></figure>
+<figure><img src="/images/dwes/ejercicios/django3.png" alt="Url del servidor" tabindex="0" loading="lazy"><figcaption>Url del servidor</figcaption></figure>
+<figure><img src="/images/dwes/ejercicios/django4.png" alt="Mapeo del contenido del controlador en el html" tabindex="0" loading="lazy"><figcaption>Mapeo del contenido del controlador en el html</figcaption></figure>
+<h4 id="duracion-de-un-album" tabindex="-1"><a class="header-anchor" href="#duracion-de-un-album"><span>Duración de un álbum</span></a></h4>
 <ul>
 <li>Dado un <code v-pre>json</code> como el siguiente, crea un programa python que calcule la duración completa del disco.</li>
 </ul>
