@@ -94,7 +94,8 @@ Dentro del `xhtml` utilizamos etiquetas propias que, junto con el identificador 
 
 ![Mapeo del contenido del controlador en el html](/images/dwes/ejercicios/django4.png)
 
-#### Duración de un álbum
+### Ejercicio UT02-3.2: Duración de un álbum
+
  * Dado un `json` como el siguiente, crea un programa python que calcule la duración completa del disco.
   
 ```json
@@ -140,13 +141,9 @@ Dentro del `xhtml` utilizamos etiquetas propias que, junto con el identificador 
 ```
 
 
-### Ejercicio 2: 
 
 
-
-
-
----
+<!--
 ### Ejercicio 0X: Creación de una aplicación Djando desde 0
 
 A continuación vamos a crear la estructura básica de un proyecto en Djando para que podamos compartir en un servidor, el contenido de nuestros datos.
@@ -207,3 +204,4 @@ urlpatterns = [
     path('usuario/', usuario_view),
 ]
 ```
+-->
