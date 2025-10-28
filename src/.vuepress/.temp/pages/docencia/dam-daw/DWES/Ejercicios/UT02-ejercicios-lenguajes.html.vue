@@ -53,7 +53,7 @@
 <figure><img src="/images/dwes/ejercicios/django2.png" alt="Ejecución del servidor django" tabindex="0" loading="lazy"><figcaption>Ejecución del servidor django</figcaption></figure>
 <figure><img src="/images/dwes/ejercicios/django3.png" alt="Url del servidor" tabindex="0" loading="lazy"><figcaption>Url del servidor</figcaption></figure>
 <figure><img src="/images/dwes/ejercicios/django4.png" alt="Mapeo del contenido del controlador en el html" tabindex="0" loading="lazy"><figcaption>Mapeo del contenido del controlador en el html</figcaption></figure>
-<h4 id="duracion-de-un-album" tabindex="-1"><a class="header-anchor" href="#duracion-de-un-album"><span>Duración de un álbum</span></a></h4>
+<h3 id="ejercicio-ut02-3-2-duracion-de-un-album" tabindex="-1"><a class="header-anchor" href="#ejercicio-ut02-3-2-duracion-de-un-album"><span>Ejercicio UT02-3.2: Duración de un álbum</span></a></h3>
 <ul>
 <li>Dado un <code v-pre>json</code> como el siguiente, crea un programa python que calcule la duración completa del disco.</li>
 </ul>
@@ -96,60 +96,67 @@
 <span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">    }</span></span>
 <span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">  ]</span></span>
 <span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">}</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="ejercicio-2" tabindex="-1"><a class="header-anchor" href="#ejercicio-2"><span>Ejercicio 2:</span></a></h3>
-<hr>
-<h3 id="ejercicio-0x-creacion-de-una-aplicacion-djando-desde-0" tabindex="-1"><a class="header-anchor" href="#ejercicio-0x-creacion-de-una-aplicacion-djando-desde-0"><span>Ejercicio 0X: Creación de una aplicación Djando desde 0</span></a></h3>
-<p>A continuación vamos a crear la estructura básica de un proyecto en Djando para que podamos compartir en un servidor, el contenido de nuestros datos.</p>
-<p><a href="https://github.com/darioaxel/DWES-Ejercicios-2025-2026/blob/main/dwes-UT02/03-django/ejercicio01" target="_blank" rel="noopener noreferrer">Enlace al proyecto</a></p>
-<p>Veamos como hemos llegado hasta este punto:</p>
-<ol>
-<li>Desde un directorio de nuestro sistema ejecutamos:</li>
-</ol>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code" v-pre=""><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">mkdir</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> ejercicio01</span></span>
-<span class="line"><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">cd</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> ejercicio01</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># Aunque no es obligatorio, si muy recomendable, utilizar entornos virtuales</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">python3</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -m</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> venv</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> venv</span></span>
-<span class="line"><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">source</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> venv/bin/activate</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># Si ya hemos instalado antes django, podemos saltar el siguiente paso</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">pip</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> install</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> django</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ol start="2">
-<li>Creamos la estructura básica automáticamente:</li>
-</ol>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code" v-pre=""><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">django-admin</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> startproject</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> ejercicio01</span></span>
-<span class="line"><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">cd</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> ejercicio01</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div></div></div><p>Esto crea la estructura básica que contendrá el script <code v-pre>manage.py</code></p>
-<ol start="3">
-<li>Ahora vamos a crear una app llamada <code v-pre>usuarios</code> dentro del proyecto.</li>
-</ol>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code" v-pre=""><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">python3</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> manage.py</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> startapp</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> usuarios</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><ol start="4">
-<li>Para que la aplicación se cargue, hemos de instanciarla dentro. Activamos la app en <code v-pre>ejercicio01/settings.py</code>, dentro del array <code v-pre>INSTALLED_APPS</code>:</li>
-</ol>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code" v-pre=""><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">INSTALLED_APPS</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> =</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> [</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">    'django.contrib.admin'</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">,</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">    'django.contrib.auth'</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">,</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">    'django.contrib.contenttypes'</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">,</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">    'django.contrib.sessions'</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">,</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">    'django.contrib.messages'</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">,</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">    'django.contrib.staticfiles'</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">,</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">    'usuarios'</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">,</span><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">   # &#x3C;-- añadida</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">]</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ol start="5">
-<li>
-<p>A continuación, accedemos al fichero <code v-pre>views.py</code> dentro de nuestra app <code v-pre>usuarios/views.py</code> para codificar el html a mostrar.</p>
-</li>
-<li>
-<p>Para que el servidor sepa donde &quot;servir&quot; nuestra vista, hemos de indicarlo dentro del vector que contiene las rutas (paths) del proyecto <code v-pre>ejercicio01/urls.py</code>:</p>
-</li>
-</ol>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code" v-pre=""><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">from</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> usuarios.views</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> import</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> usuario_view</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">urlpatterns</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> =</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> [</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">    path(</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">'admin/'</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">,</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> admin.site.urls</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">),</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">    path(</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">'usuario/'</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">,</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> usuario_view</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">),</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">]</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></div></template>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><!--
+### Ejercicio 0X: Creación de una aplicación Djando desde 0
+
+A continuación vamos a crear la estructura básica de un proyecto en Djando para que podamos compartir en un servidor, el contenido de nuestros datos.
+
+[Enlace al proyecto](https://github.com/darioaxel/DWES-Ejercicios-2025-2026/blob/main/dwes-UT02/03-django/ejercicio01)
+
+Veamos como hemos llegado hasta este punto:
+
+1. Desde un directorio de nuestro sistema ejecutamos:
+```bash
+mkdir ejercicio01
+cd ejercicio01
+
+# Aunque no es obligatorio, si muy recomendable, utilizar entornos virtuales
+python3 -m venv venv
+source venv/bin/activate
+
+# Si ya hemos instalado antes django, podemos saltar el siguiente paso
+pip install django
+```
+
+2. Creamos la estructura básica automáticamente:
+
+```bash
+django-admin startproject ejercicio01
+cd ejercicio01
+```
+Esto crea la estructura básica que contendrá el script `manage.py`
+
+3. Ahora vamos a crear una app llamada `usuarios` dentro del proyecto.
+
+```bash
+python3 manage.py startapp usuarios
+```
+
+4. Para que la aplicación se cargue, hemos de instanciarla dentro. Activamos la app en `ejercicio01/settings.py`, dentro del array `INSTALLED_APPS`:
+
+```bash
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'usuarios',   # <-- añadida
+]
+```
+5. A continuación, accedemos al fichero `views.py` dentro de nuestra app `usuarios/views.py` para codificar el html a mostrar.
+
+6. Para que el servidor sepa donde "servir" nuestra vista, hemos de indicarlo dentro del vector que contiene las rutas (paths) del proyecto `ejercicio01/urls.py`:
+
+```bash
+from usuarios.views import usuario_view
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('usuario/', usuario_view),
+]
+```
+--></div></template>
 
 

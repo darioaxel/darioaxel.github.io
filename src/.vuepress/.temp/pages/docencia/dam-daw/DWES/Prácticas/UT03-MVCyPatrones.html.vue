@@ -21,8 +21,202 @@
 <li>RA5. Desarrolla aplicaciones Web identificando y aplicando mecanismos para separar el código de presentación de la lógica de negocio.</li>
 </ul>
 </div>
-<h2 id="objetivo" tabindex="-1"><a class="header-anchor" href="#objetivo"><span>Objetivo</span></a></h2>
-<h2 id="enunciado-de-la-practica" tabindex="-1"><a class="header-anchor" href="#enunciado-de-la-practica"><span>Enunciado de la práctica</span></a></h2>
+<h2 id="objetivos-de-la-practica" tabindex="-1"><a class="header-anchor" href="#objetivos-de-la-practica"><span>Objetivos de la práctica</span></a></h2>
+<ul>
+<li>Comprender la arquitectura <strong>Modelo–Vista–Controlador (MVC)</strong> aplicada a Django (Modelo–Vista–Template).</li>
+<li>Aprender a <strong>crear, estructurar y ejecutar un proyecto Django desde cero</strong>.</li>
+<li>Diseñar una <strong>aplicación web funcional</strong> que permita <strong>crear, listar, editar y eliminar tareas</strong>.</li>
+<li>Utilizar <strong>patrones de diseño</strong> y buenas prácticas de organización del código.</li>
+</ul>
+<h2 id="parte-1-—-creacion-del-proyecto-django" tabindex="-1"><a class="header-anchor" href="#parte-1-—-creacion-del-proyecto-django"><span>Parte 1 — Creación del proyecto Django</span></a></h2>
+<h3 id="_1-1-estructura-basica" tabindex="-1"><a class="header-anchor" href="#_1-1-estructura-basica"><span>1.1. Estructura básica</span></a></h3>
+<ol>
+<li>
+<p>Crear un nuevo proyecto Django:</p>
+<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code" v-pre=""><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">django-admin</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> startproject</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> tareas_dwes</span></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div></li>
+<li>
+<p>Acceder al directorio del proyecto:</p>
+<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code" v-pre=""><code class="language-bash"><span class="line"><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">cd</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> tareas_project</span></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div></li>
+<li>
+<p>Crear la aplicación principal:</p>
+<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code" v-pre=""><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">python</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> manage.py</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> startapp</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> tareas</span></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div></li>
+<li>
+<p>Registrar la app <code v-pre>tareas</code> en <code v-pre>settings.py</code> dentro de <code v-pre>INSTALLED_APPS</code>.</p>
+</li>
+<li>
+<p>Ejecutar las migraciones iniciales:</p>
+<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code" v-pre=""><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">python</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> manage.py</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> migrate</span></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div></li>
+<li>
+<p>Verificar el funcionamiento:</p>
+<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code" v-pre=""><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">python</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> manage.py</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> runserver</span></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div></li>
+</ol>
+<div class="hint-container important">
+<p class="hint-container-title">💡 El servidor debe ejecutarse correctamente y mostrar la página por defecto de Django.</p>
+</div>
+<div class="hint-container important">
+<p class="hint-container-title">Importante</p>
+<p>Una vez llegados a este punto y con todo funcionado, debes crear un <strong>commit</strong> con el texto <code v-pre>Estructura básica funcionando</code></p>
+</div>
+<h2 id="parte-2-—-desarrollo-de-la-aplicacion-tareas" tabindex="-1"><a class="header-anchor" href="#parte-2-—-desarrollo-de-la-aplicacion-tareas"><span>Parte 2 — Desarrollo de la aplicación “Tareas”</span></a></h2>
+<h3 id="_2-1-modelo-m" tabindex="-1"><a class="header-anchor" href="#_2-1-modelo-m"><span>2.1. Modelo (M)</span></a></h3>
+<p>En <code v-pre>tareas/models.py</code>, crear un modelo <code v-pre>Tarea</code> con los siguientes campos:</p>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Tipo</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code v-pre>id</code></td>
+<td>UUIDField (primary key)</td>
+<td>Identificador único</td>
+</tr>
+<tr>
+<td><code v-pre>titulo</code></td>
+<td>CharField</td>
+<td>Nombre o título de la tarea</td>
+</tr>
+<tr>
+<td><code v-pre>descripcion</code></td>
+<td>TextField</td>
+<td>Descripción detallada</td>
+</tr>
+<tr>
+<td><code v-pre>completada</code></td>
+<td>BooleanField (por defecto <code v-pre>False</code>)</td>
+<td>Estado de la tarea</td>
+</tr>
+<tr>
+<td><code v-pre>fecha_creacion</code></td>
+<td>DateTimeField (auto_now_add=True)</td>
+<td>Fecha de creación</td>
+</tr>
+<tr>
+<td><code v-pre>fecha_recordatorio</code></td>
+<td>DateTimeField</td>
+<td>Fecha recordatorio</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>💡 Añade el método <code v-pre>__str__()</code> para mostrar el título de la tarea en el panel de administración.</p>
+</blockquote>
+<div class="hint-container important">
+<p class="hint-container-title">Importante</p>
+<p>Para realizar este apartado, utiliza como base el modelo que hemos creado en el ejercicio de videotutoría.</p>
+<p>Cuando tengas el modelo creado correctamente (la aplicación se puede correr sin problemas) debes crear un <strong>commit</strong> con el texto <code v-pre>Modelo funcionando</code></p>
+</div>
+<h3 id="_2-2-vistas-v" tabindex="-1"><a class="header-anchor" href="#_2-2-vistas-v"><span>2.2. Vistas (V)</span></a></h3>
+<p>En <code v-pre>tareas/views.py</code>, implementar las siguientes vistas (funciones que realizan las tareas):</p>
+<table>
+<thead>
+<tr>
+<th>Nombre</th>
+<th>Tipo</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code v-pre>lista_tareas</code></td>
+<td><code v-pre>ListView</code></td>
+<td>Muestra todas las tareas</td>
+</tr>
+<tr>
+<td><code v-pre>detalle_tarea</code></td>
+<td><code v-pre>DetailView</code></td>
+<td>Muestra el detalle de una tarea</td>
+</tr>
+<tr>
+<td><code v-pre>crear_tarea</code></td>
+<td><code v-pre>CreateView</code></td>
+<td>Permite crear una nueva tarea</td>
+</tr>
+<tr>
+<td><code v-pre>editar_tarea</code></td>
+<td><code v-pre>UpdateView</code></td>
+<td>Permite modificar una tarea existente o borrarla</td>
+</tr>
+<tr>
+<td><code v-pre>borrar_tarea</code></td>
+<td><code v-pre>DeleteView</code></td>
+<td>Permite borrar la tarea</td>
+</tr>
+</tbody>
+</table>
+<div class="hint-container important">
+<p class="hint-container-title">Importante</p>
+<p>Cuando tengas las vistas creadas correctamente (la aplicación se puede correr sin problemas) debes crear un <strong>commit</strong> con el texto <code v-pre>Vistas funcionando</code></p>
+<p>No es necesario que todas tengan una implementación completa, puedes ir haciendo más commits una vez creado el primero con las vistas base, para ir ampliándolas.</p>
+</div>
+<h3 id="_2-3-urls-c" tabindex="-1"><a class="header-anchor" href="#_2-3-urls-c"><span>2.3. URLs (C)</span></a></h3>
+<p>En <code v-pre>tareas/urls.py</code>:</p>
+<ul>
+<li>Crear las rutas correspondientes a cada vista.</li>
+<li>Incluir el fichero <code v-pre>tareas/urls.py</code> en el <code v-pre>urls.py</code> principal del proyecto.</li>
+</ul>
+<div class="hint-container important">
+<p class="hint-container-title">Importante</p>
+<p>Cuando tengas las vistas creadas correctamente (la aplicación se puede correr sin problemas) debes crear un <strong>commit</strong> con el texto <code v-pre>Vistas funcionando</code></p>
+</div>
+<h3 id="_2-4-templates-t" tabindex="-1"><a class="header-anchor" href="#_2-4-templates-t"><span>2.4. Templates (T)</span></a></h3>
+<p>Crear una carpeta <code v-pre>templates/tareas</code> con los siguientes archivos:</p>
+<table>
+<thead>
+<tr>
+<th>Archivo</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code v-pre>base.html</code></td>
+<td>Plantilla base con encabezado y menú</td>
+</tr>
+<tr>
+<td><code v-pre>lista_tareas.html</code></td>
+<td>Lista de tareas con enlaces a detalle/editar/eliminar</td>
+</tr>
+<tr>
+<td><code v-pre>detalle_tarea.html</code></td>
+<td>Muestra información detallada de la tarea</td>
+</tr>
+<tr>
+<td><code v-pre>form_tarea.html</code></td>
+<td>Formulario común para crear y editar</td>
+</tr>
+<tr>
+<td><code v-pre>confirmar_eliminar.html</code></td>
+<td>Confirmación antes de eliminar</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>💡 Utiliza herencia de plantillas (<code v-pre>{% extends &quot;base.html&quot; %}</code>) y bloques (<code v-pre>{% block content %}</code>).</p>
+</blockquote>
+<h2 id="🚀-entrega" tabindex="-1"><a class="header-anchor" href="#🚀-entrega"><span>🚀 Entrega</span></a></h2>
+<ol>
+<li>
+<p>Subir el proyecto completo a GitHub con el nombre:</p>
+<div class="language- line-numbers-mode" data-highlighter="shiki" data-ext="" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code" v-pre=""><code class="language-"><span class="line"><span>DWES-UT03-Practica-2025-2026</span></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div></li>
+<li>
+<p>Asegurarse de incluir:</p>
+<ul>
+<li>Carpeta del proyecto Django (<code v-pre>tareas_dwes/</code>)</li>
+<li>PDF con las capturas de la ejecución de los pasos más importantes y del proyecto final.</li>
+<li>Archivo <code v-pre>.gitignore</code> (puedes generar uno para Django desde <a href="https://www.toptal.com/developers/gitignore" target="_blank" rel="noopener noreferrer">gitignore.io</a>)</li>
+</ul>
+</li>
+</ol>
 </div></template>
 
 
