@@ -5,7 +5,7 @@ icon: diagram-project
 order: -1
 ---
 # 🐍 Anexo I: Entornos Virtuales en Python
-
+![En construcción](/images/under-construction.jpg)
 ## 1. Entornos Virtuales en Python
 
 En las aplicaciones basadas en Python es frecuente utilizar paquetes y módulos que no forman parte de la librería estándar. Muchas veces, determinadas aplicaciones necesitan de d0 versiones concretas de librerías específicas, y esto implica que la instalación local de Python puede no llegar a cumplir las especificaciones de todas las aplicaciones. 
