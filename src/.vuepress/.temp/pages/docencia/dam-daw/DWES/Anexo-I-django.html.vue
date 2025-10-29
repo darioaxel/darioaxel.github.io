@@ -1,7 +1,6 @@
 <template><div><h1 id="🐍-anexo-i-entornos-virtuales-en-python" tabindex="-1"><a class="header-anchor" href="#🐍-anexo-i-entornos-virtuales-en-python"><span>🐍 Anexo I: Entornos Virtuales en Python</span></a></h1>
 <h2 id="_1-entornos-virtuales-en-python" tabindex="-1"><a class="header-anchor" href="#_1-entornos-virtuales-en-python"><span>1. Entornos Virtuales en Python</span></a></h2>
-<p>En las aplicaciones basadas en Python es frecuente utilizar paquetes y módulos que no forman parte de la librería estándar.<br>
-Muchas veces, determinadas aplicaciones necesitan de determinadas versiones de librerías específicas, y esto implica que la instalación local de Python puede no llegar a cumplir las especificaciones de todas las aplicaciones.</p>
+<p>En las aplicaciones basadas en Python es frecuente utilizar paquetes y módulos que no forman parte de la librería estándar. Muchas veces, determinadas aplicaciones necesitan de d0 versiones concretas de librerías específicas, y esto implica que la instalación local de Python puede no llegar a cumplir las especificaciones de todas las aplicaciones.</p>
 <p>La solución a este problema son los <strong>entornos virtuales</strong>: se trata de un árbol “autónomo” de directorios que contiene una instalación de Python, para una determinada versión y con una serie de paquetes adicionales.</p>
 <p>De esta forma, diferentes aplicaciones pueden utilizar diferentes entornos virtuales, dependiendo de la versión, tanto de Python, como de los paquetes adicionales para que la aplicación funcione correctamente.</p>
 <p>La siguiente imagen ilustra un mismo equipo en el que existen diferentes entornos virtuales, con diferentes versiones de Python, para proyectos diferentes:</p>

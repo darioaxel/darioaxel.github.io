@@ -8,8 +8,9 @@ order: -1
 
 ## 1. Entornos Virtuales en Python
 
-En las aplicaciones basadas en Python es frecuente utilizar paquetes y módulos que no forman parte de la librería estándar.
-Muchas veces, determinadas aplicaciones necesitan de determinadas versiones de librerías específicas, y esto implica que la instalación local de Python puede no llegar a cumplir las especificaciones de todas las aplicaciones.
+En las aplicaciones basadas en Python es frecuente utilizar paquetes y módulos que no forman parte de la librería estándar. Muchas veces, determinadas aplicaciones necesitan de d0 versiones concretas de librerías específicas, y esto implica que la instalación local de Python puede no llegar a cumplir las especificaciones de todas las aplicaciones. 
+
+
 
 La solución a este problema son los **entornos virtuales**: se trata de un árbol “autónomo” de directorios que contiene una instalación de Python, para una determinada versión y con una serie de paquetes adicionales.
 
