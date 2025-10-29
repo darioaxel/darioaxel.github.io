@@ -1,8 +1,8 @@
 import { defineClientConfig } from "vuepress/client";
-
+import Mermaid from "/home/darioaxel/Proyectos/darioaxel.github.io/node_modules/.pnpm/@vuepress+plugin-markdown-chart@2.0.0-rc.112_markdown-it@14.1.0_mermaid@11.12.1_vuepres_e873593bdd2af657f72d1ecb178870d1/node_modules/@vuepress/plugin-markdown-chart/lib/client/components/Mermaid.js";
 
 export default defineClientConfig({
   enhance: ({ app }) => {
-
+    app.component("Mermaid", Mermaid);
   },
 });

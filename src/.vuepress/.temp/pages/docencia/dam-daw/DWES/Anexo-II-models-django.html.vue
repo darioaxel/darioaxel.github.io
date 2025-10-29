@@ -10,8 +10,9 @@ Un modelo define la <strong>estructura de los datos</strong> que se almacenan en
 </div>
 <h3 id="_2-1-¿que-hace-un-modelo" tabindex="-1"><a class="header-anchor" href="#_2-1-¿que-hace-un-modelo"><span>2.1. ¿Qué hace un modelo?</span></a></h3>
 <p>Un modelo de Django describe los datos y su comportamiento <strong>sin depender de la base de datos</strong>.<br>
-Django se encarga de traducir el modelo a tablas SQL, gestionar consultas, inserciones, relaciones, y más.</p>
-<p>Por ejemplo, el modelo <code v-pre>Socio</code> podría representarse así:</p>
+Django se encarga de traducir el modelo a tablas SQL, gestionar consultas, inserciones, relaciones, y más.<br>
+En este ejemplo vamos a crear una estructura de tipo <code v-pre>Socio-Direccion</code> donde un socio de una organización puede tener una única dirección (por ahora 😉 ) El diseño lo realizamos usando <code v-pre>mermaidjs</code>y se vería así:</p>
+<Mermaid code="eJx1kr1uQyEMhff7FChrlaFrx/aqUucqM3LASSyBjfjpUvXdexPahBs5LCB/4HNs4wKUMhMcM8TJLOsSMDNldI6Ezfclel5PbyfI74TBGwchoAa4RcyikURFjUs6y2BRZah58CoRT0exSUqFoMpl+SJ2BCoE6no/01DzpyxOxnp3u4+5P2iNVBueyTLpnZC4zyqBhCGQl6HkGSp2eEB3AsvgKBJyHVr2KhIQuF/DYiOy5Eemaqs67LYe86u5+ysreXCYKlgvkRwFWtwKa9loD0N8lSLBMr+agcsBM64ndd8OCLXTv3n1SW2eN2a77fvtv74Y/3+epl9NztZI"></Mermaid><p>Por ejemplo, el modelo <code v-pre>Socio</code> podría representarse así:</p>
 <div class="language-python line-numbers-mode" data-highlighter="shiki" data-ext="python" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code" v-pre=""><code class="language-python"><span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">from</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> django.db </span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">import</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> models</span></span>
 <span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">import</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> uuid</span></span>
 <span class="line"></span>

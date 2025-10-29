@@ -23,6 +23,40 @@ Un modelo define la **estructura de los datos** que se almacenan en la base de d
 
 Un modelo de Django describe los datos y su comportamiento **sin depender de la base de datos**.
 Django se encarga de traducir el modelo a tablas SQL, gestionar consultas, inserciones, relaciones, y más.
+En este ejemplo vamos a crear una estructura de tipo `Socio-Direccion` donde un socio de una organización puede tener una única dirección (por ahora ;-) ) El diseño lo realizamos usando `mermaidjs`y se vería así:
+
+```mermaid
+classDiagram
+    class Direccion {
+        +CharField calle
+        +CharField numero
+        +CharField piso
+        +CharField opciones
+        +CharField ciudad
+        +CharField codigo_postal
+        +CharField provincia
+        +CharField pais
+    }
+
+    class Socio {
+        +UUIDField uuid
+        +CharField dni_nie
+        +CharField nombre
+        +CharField apellidos
+        +DateField fecha_nacimiento
+        +BooleanField es_menor
+        +CharField dni_tutor
+        +CharField nombre_tutor
+        +CharField apellidos_tutor
+        +BooleanField acepta_domiciliacion
+        +CharField iban
+        +BooleanField pago_transferencia
+        +DateField fecha_alta
+    }
+
+    Socio "1" --o "1" Direccion : direccion
+
+```
 
 Por ejemplo, el modelo `Socio` podría representarse así:
 
