@@ -85,6 +85,9 @@ Dentro del `xhtml` utilizamos etiquetas propias que, junto con el identificador 
 ## Ejercicio UT02-3 Python y Django
 
 ### Ejercicio UT02-3.1: Estructura de directorios de una aplicación Django
+::: note
+El ejercicio llevado a cabo en videotutoría se ha añadido como parte del [Anexo I](/src/docencia/dam-daw/DWES/Anexo-I-django.md)
+:::
 
 ![Estructura](/images/dwes/ejercicios/django1.png)
 
