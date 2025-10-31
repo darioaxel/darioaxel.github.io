@@ -1,10 +1,10 @@
 ---
-title: Anexo III. Vistas en Django
+title: Anexo VI. Vistas en Django
 date: 2025-10-25    
 icon: diagram-project 
 order: -1
 ---
-# 🐍 Anexo III: Vistas en Django para la aplicación *myOng*
+# 🐍 Anexo VI: Vistas en Django para la aplicación *myOng*
 ![En construcción](/images/under-construction.jpg)
 ## 1. Introducción
 

@@ -1,0 +1,220 @@
+<template><div><h1 id="🐍-anexo-iii-modelos-en-django" tabindex="-1"><a class="header-anchor" href="#🐍-anexo-iii-modelos-en-django"><span>🐍 Anexo III: Modelos en Django</span></a></h1>
+<h2 id="_1-introduccion" tabindex="-1"><a class="header-anchor" href="#_1-introduccion"><span>1. Introducción</span></a></h2>
+<p>Las aplicaciones web de Django acceden y administran los datos a través de objetos de Python a los que se hace referencia como modelos. Los modelos definen la estructura de los datos almacenados, incluidos los tipos de campo y los atributos de cada campo, como su tamaño máximo, valores predeterminados, lista de selección de opciones, texto de ayuda para la documentación, texto de etiqueta para formularios, etc. La definición del modelo es independiente de la base de datos subyacente. puede elegir una de entre varias como parte de la configuración de su proyecto. Una vez que haya elegido la base de datos que desea usar, no necesita hablar directamente con ella. Simplemente escriba la estructura de su modelo y algo de código, y Django se encargará de todo el trabajo sucio, al comunicarse con la base de datos por usted.</p>
+<h2 id="_2-modelos-en-django-ejemplo-aplicacion-myong" tabindex="-1"><a class="header-anchor" href="#_2-modelos-en-django-ejemplo-aplicacion-myong"><span>2. Modelos en Django (Ejemplo: aplicación <em>myOng</em>)</span></a></h2>
+<p>Las aplicaciones web de <strong><a href="https://docs.djangoproject.com/es/stable/" target="_blank" rel="noopener noreferrer">Django</a></strong> acceden y administran los datos a través de <strong>objetos de Python</strong> llamados <strong>modelos</strong>.<br>
+Un modelo define la <strong>estructura de los datos</strong> que se almacenan en la base de datos: qué campos tiene, sus tipos de datos, valores por defecto, etiquetas, texto de ayuda, relaciones con otros modelos, etc.</p>
+<div class="hint-container note">
+<p class="hint-container-title">Nota</p>
+<p>En nuestra aplicación <strong>myOng</strong>, usaremos modelos como <code v-pre>Socio</code>, <code v-pre>Direccion</code> o <code v-pre>Ciudad</code>.</p>
+</div>
+<h3 id="_2-1-¿que-hace-un-modelo" tabindex="-1"><a class="header-anchor" href="#_2-1-¿que-hace-un-modelo"><span>2.1. ¿Qué hace un modelo?</span></a></h3>
+<p>Un modelo de Django describe los datos y su comportamiento <strong>sin depender de la base de datos</strong>.<br>
+Django se encarga de traducir el modelo a tablas SQL, gestionar consultas, inserciones, relaciones, y más.<br>
+En este ejemplo vamos a crear una estructura de tipo <code v-pre>Socio-Direccion</code> donde un socio de una organización puede tener una única dirección (por ahora 😉 ) El diseño lo realizamos usando <code v-pre>mermaidjs</code>y se vería así:</p>
+<Mermaid code="eJx1kr1uQyEMhff7FChrlaFrx/aqUucqM3LASSyBjfjpUvXdexPahBs5LCB/4HNs4wKUMhMcM8TJLOsSMDNldI6Ezfclel5PbyfI74TBGwchoAa4RcyikURFjUs6y2BRZah58CoRT0exSUqFoMpl+SJ2BCoE6no/01DzpyxOxnp3u4+5P2iNVBueyTLpnZC4zyqBhCGQl6HkGSp2eEB3AsvgKBJyHVr2KhIQuF/DYiOy5Eemaqs67LYe86u5+ysreXCYKlgvkRwFWtwKa9loD0N8lSLBMr+agcsBM64ndd8OCLXTv3n1SW2eN2a77fvtv74Y/3+epl9NztZI"></Mermaid><p>Por ejemplo, el modelo <code v-pre>Socio</code> podría representarse así:</p>
+<div class="language-python line-numbers-mode" data-highlighter="shiki" data-ext="python" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code" v-pre=""><code class="language-python"><span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">from</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> django.db </span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">import</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> models</span></span>
+<span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">import</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> uuid</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">class</span><span style="--shiki-light:#C18401;--shiki-dark:#E5C07B"> Socio</span><span style="--shiki-light:#C18401;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#C18401;--shiki-dark:#E5C07B">models</span><span style="--shiki-light:#C18401;--shiki-dark:#ABB2BF">.</span><span style="--shiki-light:#C18401;--shiki-dark:#E5C07B">Model</span><span style="--shiki-light:#C18401;--shiki-dark:#ABB2BF">)</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">:</span></span>
+<span class="line"><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">    id</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2"> =</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> models.</span><span style="--shiki-light:#383A42;--shiki-dark:#61AFEF">UUIDField</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#986801;--shiki-light-font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic">primary_key</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66">True</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">, </span><span style="--shiki-light:#986801;--shiki-light-font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic">default</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">uuid.uuid4, </span><span style="--shiki-light:#986801;--shiki-light-font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic">editable</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66">False</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">)</span></span>
+<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">    dni </span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> models.</span><span style="--shiki-light:#383A42;--shiki-dark:#61AFEF">CharField</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#986801;--shiki-light-font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic">max_length</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66">15</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">, </span><span style="--shiki-light:#986801;--shiki-light-font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic">unique</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66">True</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">, </span><span style="--shiki-light:#986801;--shiki-light-font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic">help_text</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"DNI o NIE del socio"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">)</span></span>
+<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">    nombre </span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> models.</span><span style="--shiki-light:#383A42;--shiki-dark:#61AFEF">CharField</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#986801;--shiki-light-font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic">max_length</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66">50</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">)</span></span>
+<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">    apellidos </span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> models.</span><span style="--shiki-light:#383A42;--shiki-dark:#61AFEF">CharField</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#986801;--shiki-light-font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic">max_length</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66">100</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">)</span></span>
+<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">    fecha_nacimiento </span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> models.</span><span style="--shiki-light:#383A42;--shiki-dark:#61AFEF">DateField</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">()</span></span>
+<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">    acepta_domiciliacion </span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> models.</span><span style="--shiki-light:#383A42;--shiki-dark:#61AFEF">BooleanField</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#986801;--shiki-light-font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic">default</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66">False</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">)</span></span>
+<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">    iban </span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> models.</span><span style="--shiki-light:#383A42;--shiki-dark:#61AFEF">CharField</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#986801;--shiki-light-font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic">max_length</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66">34</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">, </span><span style="--shiki-light:#986801;--shiki-light-font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic">blank</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66">True</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">, </span><span style="--shiki-light:#986801;--shiki-light-font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic">null</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66">True</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">, </span><span style="--shiki-light:#986801;--shiki-light-font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic">help_text</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"IBAN para domiciliación (opcional)"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">)</span></span>
+<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">    fecha_alta </span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> models.</span><span style="--shiki-light:#383A42;--shiki-dark:#61AFEF">DateField</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#986801;--shiki-light-font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic">auto_now_add</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66">True</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">)</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">    def</span><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2"> __str__</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#986801;--shiki-light-font-style:inherit;--shiki-dark:#E5C07B;--shiki-dark-font-style:italic">self</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">):</span></span>
+<span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">        return</span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD"> f</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66">{</span><span style="--shiki-light:#E45649;--shiki-dark:#E5C07B">self</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">.nombre</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66">}</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> {</span><span style="--shiki-light:#E45649;--shiki-dark:#E5C07B">self</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">.apellidos</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66">}</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"</span></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_2-2-estructura-de-los-modelos" tabindex="-1"><a class="header-anchor" href="#_2-2-estructura-de-los-modelos"><span>2.2. Estructura de los modelos</span></a></h3>
+<p>Los modelos se definen en el archivo <code v-pre>models.py</code> de cada aplicación y heredan de <code v-pre>django.db.models.Model</code>.</p>
+<p>Ejemplo simplificado de un modelo <code v-pre>Direccion</code> relacionado con <code v-pre>Socio</code>:</p>
+<div class="language-python line-numbers-mode" data-highlighter="shiki" data-ext="python" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code" v-pre=""><code class="language-python"><span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">class</span><span style="--shiki-light:#C18401;--shiki-dark:#E5C07B"> Direccion</span><span style="--shiki-light:#C18401;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#C18401;--shiki-dark:#E5C07B">models</span><span style="--shiki-light:#C18401;--shiki-dark:#ABB2BF">.</span><span style="--shiki-light:#C18401;--shiki-dark:#E5C07B">Model</span><span style="--shiki-light:#C18401;--shiki-dark:#ABB2BF">)</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">:</span></span>
+<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">    calle </span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> models.</span><span style="--shiki-light:#383A42;--shiki-dark:#61AFEF">CharField</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#986801;--shiki-light-font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic">max_length</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66">100</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">)</span></span>
+<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">    numero </span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> models.</span><span style="--shiki-light:#383A42;--shiki-dark:#61AFEF">CharField</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#986801;--shiki-light-font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic">max_length</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66">10</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">)</span></span>
+<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">    piso </span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> models.</span><span style="--shiki-light:#383A42;--shiki-dark:#61AFEF">CharField</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#986801;--shiki-light-font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic">max_length</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66">10</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">, </span><span style="--shiki-light:#986801;--shiki-light-font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic">blank</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66">True</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">)</span></span>
+<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">    otras_opciones </span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> models.</span><span style="--shiki-light:#383A42;--shiki-dark:#61AFEF">CharField</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#986801;--shiki-light-font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic">max_length</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66">50</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">, </span><span style="--shiki-light:#986801;--shiki-light-font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic">blank</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66">True</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">, </span><span style="--shiki-light:#986801;--shiki-light-font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic">help_text</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"Escalera, bis, etc."</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">)</span></span>
+<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">    ciudad </span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> models.</span><span style="--shiki-light:#383A42;--shiki-dark:#61AFEF">ForeignKey</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"Ciudad"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">, </span><span style="--shiki-light:#986801;--shiki-light-font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic">on_delete</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">models.</span><span style="--shiki-light:#383A42;--shiki-dark:#D19A66">CASCADE</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">)</span></span>
+<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">    socio </span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> models.</span><span style="--shiki-light:#383A42;--shiki-dark:#61AFEF">OneToOneField</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"Socio"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">, </span><span style="--shiki-light:#986801;--shiki-light-font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic">on_delete</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">models.</span><span style="--shiki-light:#383A42;--shiki-dark:#D19A66">CASCADE</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">)</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">    def</span><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2"> __str__</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#986801;--shiki-light-font-style:inherit;--shiki-dark:#E5C07B;--shiki-dark-font-style:italic">self</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">):</span></span>
+<span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">        return</span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD"> f</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66">{</span><span style="--shiki-light:#E45649;--shiki-dark:#E5C07B">self</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">.calle</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66">}</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">, </span><span style="--shiki-light:#986801;--shiki-dark:#D19A66">{</span><span style="--shiki-light:#E45649;--shiki-dark:#E5C07B">self</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">.numero</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66">}</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> (</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66">{</span><span style="--shiki-light:#E45649;--shiki-dark:#E5C07B">self</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">.ciudad</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66">}</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">)"</span></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_2-3-tipos-de-campos-mas-comunes" tabindex="-1"><a class="header-anchor" href="#_2-3-tipos-de-campos-mas-comunes"><span>2.3. Tipos de campos más comunes</span></a></h3>
+<p>Cada campo del modelo define una <strong>columna</strong> en la base de datos y tiene un <strong>tipo de dato</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>Tipo de campo</th>
+<th>Uso en myOng</th>
+<th>Enlace</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code v-pre>CharField</code></td>
+<td>Para nombres, apellidos, DNI, calle, etc.</td>
+<td><a href="https://docs.djangoproject.com/es/stable/ref/models/fields/#charfield" target="_blank" rel="noopener noreferrer">CharField</a></td>
+</tr>
+<tr>
+<td><code v-pre>TextField</code></td>
+<td>Para textos largos (comentarios, observaciones).</td>
+<td><a href="https://docs.djangoproject.com/es/stable/ref/models/fields/#textfield" target="_blank" rel="noopener noreferrer">TextField</a></td>
+</tr>
+<tr>
+<td><code v-pre>IntegerField</code></td>
+<td>Para números enteros (edad, número de puerta).</td>
+<td><a href="https://docs.djangoproject.com/es/stable/ref/models/fields/#integerfield" target="_blank" rel="noopener noreferrer">IntegerField</a></td>
+</tr>
+<tr>
+<td><code v-pre>DateField</code></td>
+<td>Para fechas (<code v-pre>fecha_nacimiento</code>, <code v-pre>fecha_alta</code>).</td>
+<td><a href="https://docs.djangoproject.com/es/stable/ref/models/fields/#datefield" target="_blank" rel="noopener noreferrer">DateField</a></td>
+</tr>
+<tr>
+<td><code v-pre>BooleanField</code></td>
+<td>Para opciones sí/no (<code v-pre>acepta_domiciliacion</code>).</td>
+<td><a href="https://docs.djangoproject.com/es/stable/ref/models/fields/#booleanfield" target="_blank" rel="noopener noreferrer">BooleanField</a></td>
+</tr>
+<tr>
+<td><code v-pre>UUIDField</code></td>
+<td>Identificador único de cada socio.</td>
+<td><a href="https://docs.djangoproject.com/es/stable/ref/models/fields/#uuidfield" target="_blank" rel="noopener noreferrer">UUIDField</a></td>
+</tr>
+<tr>
+<td><code v-pre>ForeignKey</code></td>
+<td>Relación muchos-a-uno (una ciudad puede tener varios socios).</td>
+<td><a href="https://docs.djangoproject.com/es/stable/ref/models/fields/#foreignkey" target="_blank" rel="noopener noreferrer">ForeignKey</a></td>
+</tr>
+<tr>
+<td><code v-pre>OneToOneField</code></td>
+<td>Relación uno-a-uno (un socio tiene una dirección).</td>
+<td><a href="https://docs.djangoproject.com/es/stable/ref/models/fields/#onetoonefield" target="_blank" rel="noopener noreferrer">OneToOneField</a></td>
+</tr>
+<tr>
+<td><code v-pre>ManyToManyField</code></td>
+<td>Si en el futuro un socio pertenece a varios grupos.</td>
+<td><a href="https://docs.djangoproject.com/es/stable/ref/models/fields/#manytomanyfield" target="_blank" rel="noopener noreferrer">ManyToManyField</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="_2-4-argumentos-comunes-de-los-campos" tabindex="-1"><a class="header-anchor" href="#_2-4-argumentos-comunes-de-los-campos"><span>2.4. Argumentos comunes de los campos</span></a></h3>
+<p>Ejemplo dentro del modelo <code v-pre>Ciudad</code>:</p>
+<div class="language-python line-numbers-mode" data-highlighter="shiki" data-ext="python" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code" v-pre=""><code class="language-python"><span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">class</span><span style="--shiki-light:#C18401;--shiki-dark:#E5C07B"> Ciudad</span><span style="--shiki-light:#C18401;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#C18401;--shiki-dark:#E5C07B">models</span><span style="--shiki-light:#C18401;--shiki-dark:#ABB2BF">.</span><span style="--shiki-light:#C18401;--shiki-dark:#E5C07B">Model</span><span style="--shiki-light:#C18401;--shiki-dark:#ABB2BF">)</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">:</span></span>
+<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">    nombre </span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> models.</span><span style="--shiki-light:#383A42;--shiki-dark:#61AFEF">CharField</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#986801;--shiki-light-font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic">max_length</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66">100</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">, </span><span style="--shiki-light:#986801;--shiki-light-font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic">verbose_name</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"Ciudad"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">)</span></span>
+<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">    codigo_postal </span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> models.</span><span style="--shiki-light:#383A42;--shiki-dark:#61AFEF">CharField</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#986801;--shiki-light-font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic">max_length</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66">10</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">)</span></span>
+<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">    provincia </span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> models.</span><span style="--shiki-light:#383A42;--shiki-dark:#61AFEF">CharField</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#986801;--shiki-light-font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic">max_length</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66">100</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">)</span></span>
+<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">    pais </span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> models.</span><span style="--shiki-light:#383A42;--shiki-dark:#61AFEF">CharField</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#986801;--shiki-light-font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic">max_length</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66">100</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">, </span><span style="--shiki-light:#986801;--shiki-light-font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic">default</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"España"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">)</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">    class</span><span style="--shiki-light:#C18401;--shiki-dark:#E5C07B"> Meta</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">:</span></span>
+<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">        ordering </span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> [</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"nombre"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">]</span></span>
+<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">        verbose_name_plural </span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> "Ciudades"</span></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><table>
+<thead>
+<tr>
+<th>Argumento</th>
+<th>Descripción</th>
+<th>Enlace</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code v-pre>max_length</code></td>
+<td>Longitud máxima (para <code v-pre>CharField</code>).</td>
+<td><a href="https://docs.djangoproject.com/es/stable/ref/models/fields/#max-length" target="_blank" rel="noopener noreferrer">max_length</a></td>
+</tr>
+<tr>
+<td><code v-pre>help_text</code></td>
+<td>Texto de ayuda en formularios.</td>
+<td><a href="https://docs.djangoproject.com/es/stable/ref/models/fields/#help-text" target="_blank" rel="noopener noreferrer">help_text</a></td>
+</tr>
+<tr>
+<td><code v-pre>verbose_name</code></td>
+<td>Nombre legible del campo.</td>
+<td><a href="https://docs.djangoproject.com/es/stable/ref/models/fields/#verbose-name" target="_blank" rel="noopener noreferrer">verbose_name</a></td>
+</tr>
+<tr>
+<td><code v-pre>default</code></td>
+<td>Valor por defecto.</td>
+<td><a href="https://docs.djangoproject.com/es/stable/ref/models/fields/#default" target="_blank" rel="noopener noreferrer">default</a></td>
+</tr>
+<tr>
+<td><code v-pre>blank</code> / <code v-pre>null</code></td>
+<td>Permiten valores vacíos o nulos.</td>
+<td><a href="https://docs.djangoproject.com/es/stable/ref/models/fields/#blank" target="_blank" rel="noopener noreferrer">blank</a></td>
+</tr>
+<tr>
+<td><code v-pre>choices</code></td>
+<td>Lista de opciones predefinidas.</td>
+<td><a href="https://docs.djangoproject.com/es/stable/ref/models/fields/#choices" target="_blank" rel="noopener noreferrer">choices</a></td>
+</tr>
+<tr>
+<td><code v-pre>primary_key</code></td>
+<td>Clave primaria del modelo.</td>
+<td><a href="https://docs.djangoproject.com/es/stable/ref/models/fields/#primary-key" target="_blank" rel="noopener noreferrer">primary_key</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="_2-5-relaciones-entre-modelos" tabindex="-1"><a class="header-anchor" href="#_2-5-relaciones-entre-modelos"><span>2.5. Relaciones entre modelos</span></a></h3>
+<p>En <strong>myOng</strong>, hay varios tipos de relaciones:</p>
+<table>
+<thead>
+<tr>
+<th>Tipo de relación</th>
+<th>Ejemplo</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Uno a uno (<code v-pre>OneToOneField</code>)</strong></td>
+<td>Un socio → una dirección</td>
+<td>Cada socio tiene una única dirección asociada.</td>
+</tr>
+<tr>
+<td><strong>Uno a muchos (<code v-pre>ForeignKey</code>)</strong></td>
+<td>Una ciudad → muchos socios</td>
+<td>Varios socios pueden vivir en la misma ciudad.</td>
+</tr>
+<tr>
+<td><strong>Muchos a muchos (<code v-pre>ManyToManyField</code>)</strong></td>
+<td>Un socio ↔ varios grupos</td>
+<td>En el futuro, un socio puede pertenecer a varios grupos.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_2-6-metadatos-del-modelo" tabindex="-1"><a class="header-anchor" href="#_2-6-metadatos-del-modelo"><span>2.6. Metadatos del modelo</span></a></h3>
+<p>Los metadatos se declaran dentro de la clase interna <code v-pre>Meta</code>.<br>
+Sirven para definir comportamientos del modelo, como el <strong>orden por defecto</strong> o el <strong>nombre en el admin</strong>.</p>
+<div class="language-python line-numbers-mode" data-highlighter="shiki" data-ext="python" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code" v-pre=""><code class="language-python"><span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">class</span><span style="--shiki-light:#C18401;--shiki-dark:#E5C07B"> Socio</span><span style="--shiki-light:#C18401;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#C18401;--shiki-dark:#E5C07B">models</span><span style="--shiki-light:#C18401;--shiki-dark:#ABB2BF">.</span><span style="--shiki-light:#C18401;--shiki-dark:#E5C07B">Model</span><span style="--shiki-light:#C18401;--shiki-dark:#ABB2BF">)</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">:</span></span>
+<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#D19A66">    ...</span></span>
+<span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">    class</span><span style="--shiki-light:#C18401;--shiki-dark:#E5C07B"> Meta</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">:</span></span>
+<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">        ordering </span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> [</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"apellidos"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">, </span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"nombre"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">]</span></span>
+<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">        verbose_name_plural </span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> "Socios"</span></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_2-7-metodos-del-modelo" tabindex="-1"><a class="header-anchor" href="#_2-7-metodos-del-modelo"><span>2.7. Métodos del modelo</span></a></h3>
+<p>Los modelos pueden incluir métodos personalizados.<br>
+Los dos más habituales son:</p>
+<h4 id="_2-7-1-str" tabindex="-1"><a class="header-anchor" href="#_2-7-1-str"><span>2.7.1. <code v-pre>__str__()</code></span></a></h4>
+<p>Representa el objeto en texto legible (por ejemplo, en el panel de administración):</p>
+<div class="language-python line-numbers-mode" data-highlighter="shiki" data-ext="python" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code" v-pre=""><code class="language-python"><span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">def</span><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2"> __str__</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#986801;--shiki-light-font-style:inherit;--shiki-dark:#E5C07B;--shiki-dark-font-style:italic">self</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">):</span></span>
+<span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">    return</span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD"> f</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66">{</span><span style="--shiki-light:#E45649;--shiki-dark:#E5C07B">self</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">.nombre</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66">}</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> {</span><span style="--shiki-light:#E45649;--shiki-dark:#E5C07B">self</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">.apellidos</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66">}</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"</span></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="_2-7-2-get-absolute-url" tabindex="-1"><a class="header-anchor" href="#_2-7-2-get-absolute-url"><span>2.7.2. <code v-pre>get_absolute_url()</code></span></a></h4>
+<p>Devuelve la URL para acceder al detalle del objeto en el sitio web.</p>
+<div class="language-python line-numbers-mode" data-highlighter="shiki" data-ext="python" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code" v-pre=""><code class="language-python"><span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">from</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> django.urls </span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">import</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> reverse</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">def</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> get_absolute_url</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#986801;--shiki-light-font-style:inherit;--shiki-dark:#E5C07B;--shiki-dark-font-style:italic">self</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">):</span></span>
+<span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">    return</span><span style="--shiki-light:#383A42;--shiki-dark:#61AFEF"> reverse</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">'socio-detail'</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">, </span><span style="--shiki-light:#986801;--shiki-light-font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic">args</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">[</span><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">str</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#E45649;--shiki-dark:#E5C07B">self</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">.id)])</span></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="_3-bibliografia-y-mas-informacion" tabindex="-1"><a class="header-anchor" href="#_3-bibliografia-y-mas-informacion"><span>3. Bibliografía y más información</span></a></h2>
+<ul>
+<li><a href="https://docs.djangoproject.com/es/stable/topics/db/models/" target="_blank" rel="noopener noreferrer">Modelos en Django</a></li>
+<li><a href="https://docs.djangoproject.com/es/stable/ref/models/" target="_blank" rel="noopener noreferrer">API de modelos</a></li>
+<li><a href="https://docs.djangoproject.com/es/stable/topics/db/models/#model-definition" target="_blank" rel="noopener noreferrer">Definición de modelos</a></li>
+<li><a href="https://docs.djangoproject.com/es/stable/topics/db/models/#relationships" target="_blank" rel="noopener noreferrer">Relaciones en modelos</a></li>
+<li><a href="https://docs.djangoproject.com/es/stable/ref/models/options/" target="_blank" rel="noopener noreferrer">Metadatos del modelo (class Meta)</a></li>
+<li><a href="https://docs.djangoproject.com/es/stable/topics/db/models/#model-methods" target="_blank" rel="noopener noreferrer">Métodos de modelo</a></li>
+<li><a href="https://docs.djangoproject.com/es/stable/ref/urlresolvers/#reverse" target="_blank" rel="noopener noreferrer">reverse()</a></li>
+</ul>
+</div></template>
+
+
