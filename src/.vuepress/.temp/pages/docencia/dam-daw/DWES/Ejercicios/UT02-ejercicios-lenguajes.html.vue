@@ -49,6 +49,10 @@
 <figure><img src="/images/dwes/ejercicios/jakartaEE-8.png" alt="Mapeo entre Bean y XHtml" tabindex="0" loading="lazy"><figcaption>Mapeo entre Bean y XHtml</figcaption></figure>
 <h2 id="ejercicio-ut02-3-python-y-django" tabindex="-1"><a class="header-anchor" href="#ejercicio-ut02-3-python-y-django"><span>Ejercicio UT02-3 Python y Django</span></a></h2>
 <h3 id="ejercicio-ut02-3-1-estructura-de-directorios-de-una-aplicacion-django" tabindex="-1"><a class="header-anchor" href="#ejercicio-ut02-3-1-estructura-de-directorios-de-una-aplicacion-django"><span>Ejercicio UT02-3.1: Estructura de directorios de una aplicación Django</span></a></h3>
+<div class="hint-container note">
+<p class="hint-container-title">Nota</p>
+<p>El ejercicio llevado a cabo en videotutoría se ha añadido como parte del <RouteLink to="/src/docencia/dam-daw/DWES/Anexo-I-django.html">Anexo I</RouteLink></p>
+</div>
 <figure><img src="/images/dwes/ejercicios/django1.png" alt="Estructura" tabindex="0" loading="lazy"><figcaption>Estructura</figcaption></figure>
 <figure><img src="/images/dwes/ejercicios/django2.png" alt="Ejecución del servidor django" tabindex="0" loading="lazy"><figcaption>Ejecución del servidor django</figcaption></figure>
 <figure><img src="/images/dwes/ejercicios/django3.png" alt="Url del servidor" tabindex="0" loading="lazy"><figcaption>Url del servidor</figcaption></figure>
