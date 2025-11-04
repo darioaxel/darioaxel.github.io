@@ -13,7 +13,7 @@ order: 1
 | 2 | 15/10/2025 | Uso de git básico. Web estática en Apache. `Python`: Uso del patrón observador y debug de su ejecución |
 | 3 | 22/10/2025 | Php ejecución básica en servidor. Jakarta EE arquitectura y uso de `jsf` |
 | 4 | 29/10/2025 | Django. Introducción y ***Hello World*** |
-| 5 | 5/11/2025 | -- |
+| 5 | 5/11/2025 | Dudas prácticas: ejemplo de ciclo de desarrollo en Jakarta y recomendaciones para solventar problemas. |
 | 6 | 12/11/2025 | -- |
 | 7 | 19/11/2025 | -- |
 | 8 | 26/11/2025 | -- |

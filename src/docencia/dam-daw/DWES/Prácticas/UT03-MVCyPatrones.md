@@ -68,6 +68,7 @@ icon: pen
 Una vez llegados a este punto y con todo funcionado, debes crear un **commit** con el texto `Estructura básica funcionando`
 :::
 
+<!--
 ## Parte 2 — Desarrollo de la aplicación “Tareas”
 
 ### 2.1. Modelo (M)
@@ -133,6 +134,7 @@ Crear una carpeta `templates/tareas` con los siguientes archivos:
 
 > 💡 Utiliza herencia de plantillas (`{% extends "base.html" %}`) y bloques (`{% block content %}`).
 
+-->
 
 ## 🚀 Entrega
 

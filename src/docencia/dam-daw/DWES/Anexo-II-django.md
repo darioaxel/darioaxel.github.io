@@ -6,3 +6,4 @@ order: -1
 ---
 # 🐍 Anexo II: Django Básico 2
 
+En la anterior videotutoría - anexo, nos quedamos ejecutando nuestro proyecto `Django`, que contiene una aplicación `socios`. 
