@@ -68,8 +68,10 @@ icon: pen
 Una vez llegados a este punto y con todo funcionado, debes crear un **commit** con el texto `Estructura básica funcionando`
 :::
 
-<!--
-## Parte 2 — Desarrollo de la aplicación “Tareas”
+
+## Parte 2 — Desarrollo del modelo “Tareas”
+
+Una vez llegado a este punto, deberás crear un modelo para las tareas:
 
 ### 2.1. Modelo (M)
 
@@ -92,49 +94,39 @@ Para realizar este apartado, utiliza como base el modelo que hemos creado en el 
 Cuando tengas el modelo creado correctamente (la aplicación se puede correr sin problemas) debes crear un **commit** con el texto `Modelo funcionando`
 :::
 
-### 2.2. Vistas (V)
+## Parte 3 - Creación de la vista y la template para mostrar una Tarea
 
-En `tareas/views.py`, implementar las siguientes vistas (funciones que realizan las tareas):
+En `tareas/views.py`, implementar las siguiente vista (funciones que realizan las tareas):
 
 | Nombre           | Tipo         | Descripción                           |
 | ---------------- | ------------ | ------------------------------------- |
-| `lista_tareas`   | `ListView`   | Muestra todas las tareas              |
 | `detalle_tarea`  | `DetailView` | Muestra el detalle de una tarea       |
-| `crear_tarea`    | `CreateView` | Permite crear una nueva tarea         |
-| `editar_tarea`   | `UpdateView` | Permite modificar una tarea existente o borrarla |
-| `borrar_tarea`   | `DeleteView` | Permite borrar la tarea|
+
 
 ::: important
-Cuando tengas las vistas creadas correctamente (la aplicación se puede correr sin problemas) debes crear un **commit** con el texto `Vistas funcionando`
-
-No es necesario que todas tengan una implementación completa, puedes ir haciendo más commits una vez creado el primero con las vistas base, para ir ampliándolas.
+Cuando tengas las vistas creadas correctamente (la aplicación se puede correr sin problemas) debes crear un **commit** con el texto `Vista funcionando`
 :::
+
+## Parte 4 - Creación de la url para mostrar la tarea y el template que la muestre.
+
 ### 2.3. URLs (C)
 
 En `tareas/urls.py`:
 
-* Crear las rutas correspondientes a cada vista.
+* Crear la ruta correspondientes a la vista.
 * Incluir el fichero `tareas/urls.py` en el `urls.py` principal del proyecto.
-
-::: important
-Cuando tengas las vistas creadas correctamente (la aplicación se puede correr sin problemas) debes crear un **commit** con el texto `Vistas funcionando`
-:::
 
 ### 2.4. Templates (T)
 
-Crear una carpeta `templates/tareas` con los siguientes archivos:
+Crear una carpeta `templates/tareas` con el siguiente archivo:
 
 | Archivo                   | Descripción                                           |
 | ------------------------- | ----------------------------------------------------- |
-| `base.html`               | Plantilla base con encabezado y menú                  |
-| `lista_tareas.html`       | Lista de tareas con enlaces a detalle/editar/eliminar |
 | `detalle_tarea.html`      | Muestra información detallada de la tarea             |
-| `form_tarea.html`         | Formulario común para crear y editar                  |
-| `confirmar_eliminar.html` | Confirmación antes de eliminar                        |
 
-> 💡 Utiliza herencia de plantillas (`{% extends "base.html" %}`) y bloques (`{% block content %}`).
-
--->
+::: important
+Cuando tengas la vista creada correctamente (la aplicación se puede correr sin problemas) debes crear un **commit** con el texto `Vistas funcionando`
+:::
 
 ## 🚀 Entrega
 
