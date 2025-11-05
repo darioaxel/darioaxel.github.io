@@ -1,6 +1,6 @@
 ---
 title: UT04 Persistencia de datos
-date: 2025-09-29    
+date: 2025-11-05    
 icon: database
 ---
 

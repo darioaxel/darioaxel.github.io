@@ -62,73 +62,108 @@
 <p class="hint-container-title">Importante</p>
 <p>Una vez llegados a este punto y con todo funcionado, debes crear un <strong>commit</strong> con el texto <code v-pre>Estructura básica funcionando</code></p>
 </div>
-<!--
-## Parte 2 — Desarrollo de la aplicación “Tareas”
-
-### 2.1. Modelo (M)
-
-En `tareas/models.py`, crear un modelo `Tarea` con los siguientes campos:
-
-| Campo                 | Tipo                               | Descripción                 |
-| ----------------      | ---------------------------------- | --------------------------- |
-| `id`                  | UUIDField (primary key)            | Identificador único         |
-| `titulo`              | CharField                          | Nombre o título de la tarea |
-| `descripcion`         | TextField                          | Descripción detallada       |
-| `completada`          | BooleanField (por defecto `False`) | Estado de la tarea          |
-| `fecha_creacion`      | DateTimeField (auto_now_add=True)  | Fecha de creación           |
-| `fecha_recordatorio`  | DateTimeField                      | Fecha recordatorio          |
-
-> 💡 Añade el método `__str__()` para mostrar el título de la tarea en el panel de administración.
-
-::: important
-Para realizar este apartado, utiliza como base el modelo que hemos creado en el ejercicio de videotutoría. 
-
-Cuando tengas el modelo creado correctamente (la aplicación se puede correr sin problemas) debes crear un **commit** con el texto `Modelo funcionando`
-:::
-
-### 2.2. Vistas (V)
-
-En `tareas/views.py`, implementar las siguientes vistas (funciones que realizan las tareas):
-
-| Nombre           | Tipo         | Descripción                           |
-| ---------------- | ------------ | ------------------------------------- |
-| `lista_tareas`   | `ListView`   | Muestra todas las tareas              |
-| `detalle_tarea`  | `DetailView` | Muestra el detalle de una tarea       |
-| `crear_tarea`    | `CreateView` | Permite crear una nueva tarea         |
-| `editar_tarea`   | `UpdateView` | Permite modificar una tarea existente o borrarla |
-| `borrar_tarea`   | `DeleteView` | Permite borrar la tarea|
-
-::: important
-Cuando tengas las vistas creadas correctamente (la aplicación se puede correr sin problemas) debes crear un **commit** con el texto `Vistas funcionando`
-
-No es necesario que todas tengan una implementación completa, puedes ir haciendo más commits una vez creado el primero con las vistas base, para ir ampliándolas.
-:::
-### 2.3. URLs (C)
-
-En `tareas/urls.py`:
-
-* Crear las rutas correspondientes a cada vista.
-* Incluir el fichero `tareas/urls.py` en el `urls.py` principal del proyecto.
-
-::: important
-Cuando tengas las vistas creadas correctamente (la aplicación se puede correr sin problemas) debes crear un **commit** con el texto `Vistas funcionando`
-:::
-
-### 2.4. Templates (T)
-
-Crear una carpeta `templates/tareas` con los siguientes archivos:
-
-| Archivo                   | Descripción                                           |
-| ------------------------- | ----------------------------------------------------- |
-| `base.html`               | Plantilla base con encabezado y menú                  |
-| `lista_tareas.html`       | Lista de tareas con enlaces a detalle/editar/eliminar |
-| `detalle_tarea.html`      | Muestra información detallada de la tarea             |
-| `form_tarea.html`         | Formulario común para crear y editar                  |
-| `confirmar_eliminar.html` | Confirmación antes de eliminar                        |
-
-> 💡 Utiliza herencia de plantillas (`{% extends "base.html" %}`) y bloques (`{% block content %}`).
-
--->
+<h2 id="parte-2-—-desarrollo-del-modelo-tareas" tabindex="-1"><a class="header-anchor" href="#parte-2-—-desarrollo-del-modelo-tareas"><span>Parte 2 — Desarrollo del modelo “Tareas”</span></a></h2>
+<p>Una vez llegado a este punto, deberás crear un modelo para las tareas:</p>
+<h3 id="_2-1-modelo-m" tabindex="-1"><a class="header-anchor" href="#_2-1-modelo-m"><span>2.1. Modelo (M)</span></a></h3>
+<p>En <code v-pre>tareas/models.py</code>, crear un modelo <code v-pre>Tarea</code> con los siguientes campos:</p>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Tipo</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code v-pre>id</code></td>
+<td>UUIDField (primary key)</td>
+<td>Identificador único</td>
+</tr>
+<tr>
+<td><code v-pre>titulo</code></td>
+<td>CharField</td>
+<td>Nombre o título de la tarea</td>
+</tr>
+<tr>
+<td><code v-pre>descripcion</code></td>
+<td>TextField</td>
+<td>Descripción detallada</td>
+</tr>
+<tr>
+<td><code v-pre>completada</code></td>
+<td>BooleanField (por defecto <code v-pre>False</code>)</td>
+<td>Estado de la tarea</td>
+</tr>
+<tr>
+<td><code v-pre>fecha_creacion</code></td>
+<td>DateTimeField (auto_now_add=True)</td>
+<td>Fecha de creación</td>
+</tr>
+<tr>
+<td><code v-pre>fecha_recordatorio</code></td>
+<td>DateTimeField</td>
+<td>Fecha recordatorio</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>💡 Añade el método <code v-pre>__str__()</code> para mostrar el título de la tarea en el panel de administración.</p>
+</blockquote>
+<div class="hint-container important">
+<p class="hint-container-title">Importante</p>
+<p>Para realizar este apartado, utiliza como base el modelo que hemos creado en el ejercicio de videotutoría.</p>
+<p>Cuando tengas el modelo creado correctamente (la aplicación se puede correr sin problemas) debes crear un <strong>commit</strong> con el texto <code v-pre>Modelo funcionando</code></p>
+</div>
+<h2 id="parte-3-creacion-de-la-vista-y-la-template-para-mostrar-una-tarea" tabindex="-1"><a class="header-anchor" href="#parte-3-creacion-de-la-vista-y-la-template-para-mostrar-una-tarea"><span>Parte 3 - Creación de la vista y la template para mostrar una Tarea</span></a></h2>
+<p>En <code v-pre>tareas/views.py</code>, implementar las siguiente vista (funciones que realizan las tareas):</p>
+<table>
+<thead>
+<tr>
+<th>Nombre</th>
+<th>Tipo</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code v-pre>detalle_tarea</code></td>
+<td><code v-pre>DetailView</code></td>
+<td>Muestra el detalle de una tarea</td>
+</tr>
+</tbody>
+</table>
+<div class="hint-container important">
+<p class="hint-container-title">Importante</p>
+<p>Cuando tengas las vistas creadas correctamente (la aplicación se puede correr sin problemas) debes crear un <strong>commit</strong> con el texto <code v-pre>Vista funcionando</code></p>
+</div>
+<h2 id="parte-4-creacion-de-la-url-para-mostrar-la-tarea-y-el-template-que-la-muestre" tabindex="-1"><a class="header-anchor" href="#parte-4-creacion-de-la-url-para-mostrar-la-tarea-y-el-template-que-la-muestre"><span>Parte 4 - Creación de la url para mostrar la tarea y el template que la muestre.</span></a></h2>
+<h3 id="_2-3-urls-c" tabindex="-1"><a class="header-anchor" href="#_2-3-urls-c"><span>2.3. URLs (C)</span></a></h3>
+<p>En <code v-pre>tareas/urls.py</code>:</p>
+<ul>
+<li>Crear la ruta correspondientes a la vista.</li>
+<li>Incluir el fichero <code v-pre>tareas/urls.py</code> en el <code v-pre>urls.py</code> principal del proyecto.</li>
+</ul>
+<h3 id="_2-4-templates-t" tabindex="-1"><a class="header-anchor" href="#_2-4-templates-t"><span>2.4. Templates (T)</span></a></h3>
+<p>Crear una carpeta <code v-pre>templates/tareas</code> con el siguiente archivo:</p>
+<table>
+<thead>
+<tr>
+<th>Archivo</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code v-pre>detalle_tarea.html</code></td>
+<td>Muestra información detallada de la tarea</td>
+</tr>
+</tbody>
+</table>
+<div class="hint-container important">
+<p class="hint-container-title">Importante</p>
+<p>Cuando tengas la vista creada correctamente (la aplicación se puede correr sin problemas) debes crear un <strong>commit</strong> con el texto <code v-pre>Vistas funcionando</code></p>
+</div>
 <h2 id="🚀-entrega" tabindex="-1"><a class="header-anchor" href="#🚀-entrega"><span>🚀 Entrega</span></a></h2>
 <ol>
 <li>
