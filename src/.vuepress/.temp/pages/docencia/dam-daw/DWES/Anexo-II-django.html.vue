@@ -154,7 +154,8 @@ Podemos colocar esta lógica en la vista:</p>
 <li>La <strong>vista (<a href="http://views.py" target="_blank" rel="noopener noreferrer">views.py</a>)</strong> decide qué datos se calculan o se muestran.</li>
 <li>La <strong>plantilla (detalle.html)</strong> se limita a presentarlos, sin lógica de negocio.</li>
 </ul>
-<h2 id="_7-lecturas-recomendadas" tabindex="-1"><a class="header-anchor" href="#_7-lecturas-recomendadas"><span>7. Lecturas recomendadas:</span></a></h2>
+<h2 id="_7-diagrama" tabindex="-1"><a class="header-anchor" href="#_7-diagrama"><span>7. Diagrama</span></a></h2>
+<Mermaid code="eJyN0U9v0zAUAPD7PsVTp2mXlKZbu9KAJq1J/yAhOlXlVFXIdezWwrMj22mZtCPiBAIBF7jsgoQ478J932RfgH0E7KSpUtik5RDJz36/9+xHuVzhBVIGxtEO2O9kcnv5/hOcEsMwu74SMBiPT5/O1PHCmCSo1bjEiC+kNsFj3/drZ+dSzKdQrR5DZ3Lz/duf3x9BE2OYmOtHyblLHA2H41cvR8/D4YveNKvRcecvKs9EzDACwuHs+ipOuYREMYFZgjjEBGyKrlxAaBv68hayQrVUccfmTJgznVRbBUuXGhP7s6QAezJBxhAlHBJNKreXXz+Uo+7QFlrJ1ShXw7KHpYB9LTGTurZvuW7e0zqy1VT34U317m5qW1131cvZUWocZPsxCsXIIn3bys9fRdKSkVXx7jfvPgNNbWk3RQmYI03cuy6ZNihX+9ngBu42P2BEdJISu5eN3J5cpoTblZ2GQEsyR7FU050sb28PutowOzGLpYhnQVdAR4QCZZy4Hw92iU9bFHnaKPmaBLu+32ofzdbL6orFZhHUkzcellwqt92IG/6TbS1REhOt1yA9JE3a3IBHqD5rF/7/4GHdbh/8AxIRJ3YuphApbePGRqQz7B/E94q02aL1VkmEkw1Yjna80OtmL1GORl7P6xc3Km8MSshfE5E3sA=="></Mermaid><h2 id="_8-lecturas-recomendadas" tabindex="-1"><a class="header-anchor" href="#_8-lecturas-recomendadas"><span>8. Lecturas recomendadas:</span></a></h2>
 <ul>
 <li><a href="https://docs.djangoproject.com/es/5.2/topics/http/urls/" target="_blank" rel="noopener noreferrer">Documentación oficial de Django: URL Dispatcher</a></li>
 <li><a href="https://docs.djangoproject.com/es/5.2/topics/http/views/" target="_blank" rel="noopener noreferrer">Documentación sobre vistas en Django</a></li>
