@@ -2,7 +2,7 @@
 title: Anexo II. Django Básico 2
 date: 2025-10-15    
 icon: diagram-project 
-order: -1
+order: -4
 ---
 # 🐍 Anexo II: Django Básico 2 (URLs, Vistas y Separación de Lógica en Django)
 
@@ -205,7 +205,29 @@ De esta forma:
 * La **vista (views.py)** decide qué datos se calculan o se muestran.
 * La **plantilla (detalle.html)** se limita a presentarlos, sin lógica de negocio.
 
-## 7. Lecturas recomendadas:
+
+## 7. Diagrama 
+```mermaid
+flowchart TD
+    A[🌐 Petición HTTP<br>http://localhost:8000/myong] --> B[⚙️ settings.py<br>ROOT_URLCONF]
+    B -->|"Indica el módulo principal de URLs"| C[📄 myong/urls.py]
+    C -->|"Busca coincidencia en urlpatterns"| D["🔍 urlpatterns en myong/urls.py"]
+    D -->|"Coincidencia con 'socios/'"| E[📄 socios/urls.py]
+    E -->|"Busca coincidencia en urlpatterns"| F["🔍 urlpatterns en socios/urls.py"]
+    F -->|"Ruta encontrada"| G[🧩 socios/views.py<br>→ función o clase de vista]
+    G --> H[📤 Respuesta HTTP devuelta al navegador]
+
+    %% Estilo visual
+    classDef file fill:#e0f7fa,stroke:#00796b,stroke-width:1px,color:#004d40;
+    classDef process fill:#f3e5f5,stroke:#6a1b9a,stroke-width:1px,color:#311b92;
+    classDef endpoint fill:#fff9c4,stroke:#fbc02d,stroke-width:1px,color:#f57f17;
+    class A endpoint;
+    class B,C,E file;
+    class D,F,G process;
+    class H endpoint;
+```
+
+## 8. Lecturas recomendadas:
 
 * [Documentación oficial de Django: URL Dispatcher](https://docs.djangoproject.com/es/5.2/topics/http/urls/)
 * [Documentación sobre vistas en Django](https://docs.djangoproject.com/es/5.2/topics/http/views/)
