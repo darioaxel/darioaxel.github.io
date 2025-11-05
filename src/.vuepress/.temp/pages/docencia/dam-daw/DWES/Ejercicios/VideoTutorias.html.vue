@@ -31,7 +31,7 @@
 <tr>
 <td>5</td>
 <td>5/11/2025</td>
-<td>--</td>
+<td>Dudas prácticas: ejemplo de ciclo de desarrollo en Jakarta y recomendaciones para solventar problemas.</td>
 </tr>
 <tr>
 <td>6</td>
