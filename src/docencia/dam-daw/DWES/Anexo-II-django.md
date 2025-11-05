@@ -2,7 +2,7 @@
 title: Anexo II. Django Básico 2
 date: 2025-10-15    
 icon: diagram-project 
-order: -4
+order: -2
 ---
 # 🐍 Anexo II: Django Básico 2 (URLs, Vistas y Separación de Lógica en Django)
 

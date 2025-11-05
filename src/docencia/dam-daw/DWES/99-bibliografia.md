@@ -1,7 +1,7 @@
 ---
 title: Bibliografía
 icon: material-symbols:local-library-outline
-order: -3
+order: -100
 ---
 # Bibliografía
 **DAVENPORT, T.; PRUSAK, L. (1998)**. *Working knowledge: How organizations manage

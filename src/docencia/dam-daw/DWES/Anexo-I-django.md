@@ -2,7 +2,7 @@
 title: Anexo I. Django Básico
 date: 2025-10-15    
 icon: diagram-project 
-order: -4
+order: -1
 ---
 # 🐍 Anexo I: Entornos Virtuales en Python
 
