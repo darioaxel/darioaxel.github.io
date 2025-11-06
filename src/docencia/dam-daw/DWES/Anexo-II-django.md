@@ -2,7 +2,7 @@
 title: Anexo II. Django Básico 2
 date: 2025-10-15    
 icon: diagram-project 
-order: -2
+order: -14
 ---
 # 🐍 Anexo II: Django Básico 2 (URLs, Vistas y Separación de Lógica en Django)
 
@@ -55,11 +55,10 @@ El contenido de este archivo definirá las rutas específicas de la aplicación:
 
 ```python
 from django.urls import path
-from . import views
 
 urlpatterns = [
-    path('', views.index, name='index'),  # Página principal de socios
-    path('detalle/', views.detalle_socio, name='detalle_socio'),  # Detalle del socio
+    path('', index, name='index'),  # Página principal de socios
+    path('detalle/', detalle_socio, name='detalle_socio'),  # Detalle del socio
 ]
 ```
 
