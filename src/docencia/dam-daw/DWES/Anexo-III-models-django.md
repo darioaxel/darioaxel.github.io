@@ -2,7 +2,7 @@
 title: Anexo III. Modelos en Django
 date: 2025-10-25    
 icon: diagram-project 
-order: -3
+order: -13
 ---
 # 🐍 Anexo III: Modelos en Django
 
