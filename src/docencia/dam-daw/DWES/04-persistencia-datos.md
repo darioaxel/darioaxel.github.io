@@ -208,8 +208,6 @@ person = Person.findById(personId);
 
 Aquí, la entidad *Person* hereda de *PanacheEntity* y obtiene métodos como `persist()`, `listAll()` y `findById()`.
 
----
-
 ### 2.5. Patrón Repository
 
 Por último, el patrón **Repository** representa un cambio significativo hacia un enfoque más centrado en el dominio. Media entre el dominio y las capas de mapeo de datos, introduciendo una colección en memoria de objetos de dominio que se alinea con el lenguaje ubicuo de la aplicación.
@@ -255,21 +253,176 @@ public interface Garage {
 }
 ```
 
-Aquí tienes la **traducción exacta** del texto solicitado, manteniendo la terminología técnica y el estilo original:
-
----
-
 ## 3. Objeto de Transferencia de Datos (DTO)
 
 Avanzando, encontramos un patrón ampliamente utilizado y versátil llamado **Data Transfer Object (DTO)**. Este patrón cumple varios propósitos, incluyendo el movimiento fluido de datos a través de diferentes capas o niveles, como cuando se extraen datos para su representación en JSON en una API RESTful. Además, los DTO pueden aislar la entidad del esquema de la base de datos, permitiendo una relación transparente entre la entidad y varios modelos de base de datos.
 
 Esta adaptabilidad permite que la aplicación trabaje con múltiples bases de datos como posibles destinos sin afectar la estructura central de la entidad. Estos son solo dos de los muchos casos de uso de los DTO que demuestran su flexibilidad.
 
-*Figura 4: Dos ejemplos de uso del DTO en aplicaciones Java*
+A continuación hay dos ejemplos de uso del DTO en aplicaciones Java
+
+**Ejemplo 1. DTO para aislar la entidad de la base de datos (Jakarta EE)**
+
+En este ejemplo, se define una entidad JPA (`Producto`), un DTO (`ProductoDTO`) y una conversión entre ambos dentro de un servicio.
+El objetivo es **evitar exponer directamente la entidad JPA** cuando se devuelven datos a la capa de presentación.
+
+```java
+// Entidad Producto.java
+package com.ejemplo.entidades;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity
+public class Producto {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+
+    private String nombre;
+    private double precio;
+
+    // Getters y setters
+    public Long getId() { return id; }
+    public void setId(Long id) { this.id = id; }
+
+    public String getNombre() { return nombre; }
+    public void setNombre(String nombre) { this.nombre = nombre; }
+
+    public double getPrecio() { return precio; }
+    public void setPrecio(double precio) { this.precio = precio; }
+}
+```
+
+```java
+// DTO ProductoDTO.java
+package com.ejemplo.dto;
+
+public class ProductoDTO {
+
+    private String nombre;
+    private double precio;
+
+    public ProductoDTO() {}
+
+    public ProductoDTO(String nombre, double precio) {
+        this.nombre = nombre;
+        this.precio = precio;
+    }
+
+    // Getters y setters
+    public String getNombre() { return nombre; }
+    public void setNombre(String nombre) { this.nombre = nombre; }
+
+    public double getPrecio() { return precio; }
+    public void setPrecio(double precio) { this.precio = precio; }
+}
+```
+
+```java
+// Servicio ProductoService.java
+package com.ejemplo.servicio;
+
+import com.ejemplo.entidades.Producto;
+import com.ejemplo.dto.ProductoDTO;
+import jakarta.ejb.Stateless;
+import java.util.List;
+import java.util.stream.Collectors;
+
+@Stateless
+public class ProductoService {
+
+    public List<ProductoDTO> convertirADTO(List<Producto> productos) {
+        return productos.stream()
+                .map(p -> new ProductoDTO(p.getNombre(), p.getPrecio()))
+                .collect(Collectors.toList());
+    }
+}
+```
+
+🔹 **Ventaja:** la vista o la API nunca acceden directamente a la entidad `Producto`, sino al objeto `ProductoDTO`, más simple y seguro.
+
+**Ejemplo 2. DTO en una API REST con Jakarta RESTful Web Services (JAX-RS)**
+
+En este segundo ejemplo, el DTO se usa para **intercambiar datos entre el cliente y el servidor** a través de una API REST.
+Aquí se observa cómo el DTO permite mantener la independencia entre la estructura interna del modelo y el formato JSON que se devuelve.
+
+```java
+// DTO UsuarioDTO.java
+package com.ejemplo.dto;
+
+public class UsuarioDTO {
+    private String nombre;
+    private String email;
+
+    public UsuarioDTO() {}
+    public UsuarioDTO(String nombre, String email) {
+        this.nombre = nombre;
+        this.email = email;
+    }
+
+    // Getters y setters
+    public String getNombre() { return nombre; }
+    public void setNombre(String nombre) { this.nombre = nombre; }
+
+    public String getEmail() { return email; }
+    public void setEmail(String email) { this.email = email; }
+}
+```
+
+```java
+// Controlador REST UsuarioResource.java
+package com.ejemplo.api;
+
+import com.ejemplo.dto.UsuarioDTO;
+import jakarta.ws.rs.GET;
+import jakarta.ws.rs.Path;
+import jakarta.ws.rs.Produces;
+import jakarta.ws.rs.core.MediaType;
+import java.util.Arrays;
+import java.util.List;
+
+@Path("/usuarios")
+public class UsuarioResource {
+
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<UsuarioDTO> listarUsuarios() {
+        // Simulación de datos (normalmente se obtendrían del servicio o la base de datos)
+        UsuarioDTO u1 = new UsuarioDTO("Ana", "ana@example.com");
+        UsuarioDTO u2 = new UsuarioDTO("Luis", "luis@example.com");
+        return Arrays.asList(u1, u2);
+    }
+}
+```
+
+Al realizar una petición GET a `/api/usuarios`, la respuesta sería:
+
+```json
+[
+  {"nombre": "Ana", "email": "ana@example.com"},
+  {"nombre": "Luis", "email": "luis@example.com"}
+]
+```
+
+🔹 **Ventaja:** el cliente obtiene una estructura limpia y controlada; si cambia la entidad `Usuario`, el DTO puede mantenerse igual sin afectar la API.
 
 Sin embargo, es esencial recordar que, aunque los DTO ofrecen numerosos beneficios, requieren una gestión cuidadosa de la conversión de datos para garantizar el aislamiento correcto entre capas. El uso de DTO trae consigo el desafío de mantener la consistencia y la coherencia en las diferentes partes de la aplicación, lo cual es un aspecto crucial para su implementación exitosa.
+::: tip
+Django ya implementa internamente el patrón DAO dentro de su arquitectura del ORM (Object-Relational Mapper).
+Es decir, no necesitas crear tus propios DAO, porque Django proporciona todas las funcionalidades que dicho patrón cubre. En detalle: 
+ * Cada modelo en Django actúa como una representación de la entidad (como una clase JPA en Java).
+ * Y el ORM provee una interfaz de acceso a los datos que encapsula las operaciones CRUD, actuando como DAO.
 
+Por tanto, solo tendría sentido crear una capa DAO adicional si:
 
+* Quieres desacoplar completamente el ORM del modelo de dominio (por ejemplo, si planeas sustituir la base de datos por otra tecnología como NoSQL).
+* Deseas controlar o auditar las operaciones de acceso a datos de manera personalizada.
+* Buscas aplicar patrones arquitectónicos más estrictos, como Clean Architecture o Hexagonal Architecture, donde los modelos de dominio no deben depender del ORM.
+:::
 ## 4. Segregación de Responsabilidades de Comando y Consulta (CQRS)
 
 A medida que hemos explorado la importancia de las capas y de los Objetos de Transferencia de Datos (DTO) en este recorrido, ahora llegamos al patrón **Command and Query Responsibility Segregation (CQRS)**. CQRS es una poderosa estrategia arquitectónica que separa las operaciones de lectura y actualización dentro de un almacén de datos. Es importante señalar que la aplicación de CQRS puede complementar significativamente el uso de DTO en tu arquitectura.
