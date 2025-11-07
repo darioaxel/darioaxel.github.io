@@ -6,6 +6,7 @@ export default sidebar({
   "/docencia/dam-daw/DWES": "structure",
   "/docencia/asir/admonsgbd": "structure",
   "/blog/article/": "structure",
+  "/proyectos/": "structure",
   "/": [
     "",
     "portfolio",
