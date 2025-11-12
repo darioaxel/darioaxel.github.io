@@ -20,7 +20,15 @@ Después estudiaremos un problema endémico a las aplicaciones web: la seguridad
 
 Por último, nos centraremos en algo muy relacionado con la seguridad: la autenticación de usuarios para acceder a la aplicación. La mayor parte de las aplicaciones web necesitan un mecanismo seguro de autenticación. Veremos en qué consisten las listas de control de acceso y plantearemos una implementación muy completa en la que pondremos en práctica todo lo que hemos aprendido hasta ahora e incluso iremos un paso más allá al introducir la arquitectura MVC, que veremos en el siguiente tema.
 
+## 2. Cookies
+### 2.1. ¿Qué son las cookies?
+### 2.2. Manejando cookies con Django
+En esta sección vamos a ver qué son las cookies y cómo podemos acceder a ellas para crearlas o manipularlas desde PHP.
 
+3.1.1. ¿Qué son las cookies?
+Las cookies son pequeños archivos de texto enviados desde el servidor que se almacenan en el lado del cliente. Es decir, en el navegador.
+
+Permiten guardar información de forma persistente, de manera que se mantenga entre una petición al servidor y otra. Una cookie puede estar viva durante minutos, horas, días o incluso indefinidamente.
 ## 2. Seguridad en aplicaciones de servidor
 
 ### 2.1. Autenticación y Autorización
@@ -253,3 +261,7 @@ public class SSLClient {
 
 Asegúrate de reemplazar los valores de `keystorePath`, `keystorePassword`, `truststorePath` y `truststorePassword` con la ubicación y contraseña correctas de tus archivos de certificado.
 
+::: note
+Contenido recuperado de [IES Celia Vivas](https://iescelia.org/docs/dwes/_site/cookies-sesiones-seguridad/)
+
+:::
