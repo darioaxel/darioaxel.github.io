@@ -7,7 +7,6 @@ icon: database
 <!-- ![banner](/images/dwes/banner02.webp)-->
 
 # UT04 Persistencia de datos
-![En construcción](/images/under-construction.jpg)
 
 > **En este tema trabajaremos los siguientes RAs:**
 > - RA2. Escribe sentencias ejecutables por un servidor web reconociendo y aplicando procedimientos de integración del código en lenguajes de marcas.
