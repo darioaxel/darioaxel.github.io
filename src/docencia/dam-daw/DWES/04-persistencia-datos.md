@@ -9,10 +9,7 @@ icon: database
 # UT04 Persistencia de datos
 
 > **En este tema trabajaremos los siguientes RAs:**
-> - RA2. Escribe sentencias ejecutables por un servidor web reconociendo y aplicando procedimientos de integración del código en lenguajes de marcas.
-> - RA3. Escribe bloques de sentencias embebidos en lenguajes de marcas, seleccionando y utilizando las estructuras de programación.
-> - RA4. Desarrolla aplicaciones web que acceden a bases de datos utilizando lenguajes, librerías y patrones adecuados.
-> - RA5. Utiliza frameworks y componentes que simplifican el acceso a los datos y la persistencia de la información.
+> - RA6. Desarrolla aplicaciones de acceso a almacenes de datos, aplicando medidas para mantener la seguridad y la integridad de la información.
 
 
 ## 1. La capa de persistencia de datos
