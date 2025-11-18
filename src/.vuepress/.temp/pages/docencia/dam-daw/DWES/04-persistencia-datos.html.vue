@@ -1,13 +1,9 @@
 <template><div><!-- ![banner](/images/dwes/banner02.webp)-->
 <h1 id="ut04-persistencia-de-datos" tabindex="-1"><a class="header-anchor" href="#ut04-persistencia-de-datos"><span>UT04 Persistencia de datos</span></a></h1>
-<figure><img src="/images/under-construction.jpg" alt="En construcción" tabindex="0" loading="lazy"><figcaption>En construcción</figcaption></figure>
 <blockquote>
 <p><strong>En este tema trabajaremos los siguientes RAs:</strong></p>
 <ul>
-<li>RA2. Escribe sentencias ejecutables por un servidor web reconociendo y aplicando procedimientos de integración del código en lenguajes de marcas.</li>
-<li>RA3. Escribe bloques de sentencias embebidos en lenguajes de marcas, seleccionando y utilizando las estructuras de programación.</li>
-<li>RA4. Desarrolla aplicaciones web que acceden a bases de datos utilizando lenguajes, librerías y patrones adecuados.</li>
-<li>RA5. Utiliza frameworks y componentes que simplifican el acceso a los datos y la persistencia de la información.</li>
+<li>RA6. Desarrolla aplicaciones de acceso a almacenes de datos, aplicando medidas para mantener la seguridad y la integridad de la información.</li>
 </ul>
 </blockquote>
 <h2 id="_1-la-capa-de-persistencia-de-datos" tabindex="-1"><a class="header-anchor" href="#_1-la-capa-de-persistencia-de-datos"><span>1. La capa de persistencia de datos</span></a></h2>
