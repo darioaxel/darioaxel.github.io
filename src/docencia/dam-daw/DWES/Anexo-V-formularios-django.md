@@ -48,18 +48,19 @@ graph TD
     A[Usuario accede a /registro] --> B[Servidor genera HTML vacío]
     B --> C[Navegador renderiza formulario]
     C --> D[Usuario completa campos]
-    D --> E[Usuario pulsa "Enviar"]
+    D --> E[Usuario pulsa 'Enviar']
     E --> F{Navegador valida HTML5?}
     F -->|Sí| G[Peticíon POST al servidor]
     F -->|No| H[Muestra errores nativos]
-    G --> I{Servidor recibe request.POST}
-    I --> J[Validación backend (CRÍTICO)]
+    G --> I{Servidor recibe 'request.POST'}
+    I --> J[Validación backend CRÍTICO]
     J --> K{¿Es válido?}
     K -->|No| L[Re-renderiza con errores]
     L --> M[Usuario ve errores y corrige]
-    K -->|Sí| N[Procesa datos (DB, email...)]
-    N --> O[Redirige (POST-Redirect-GET)]
+    K -->|Sí| N[Procesa datos DB, email]
+    N --> O[Redirige POST-Redirect-GET]
 ```
+
 ::: caution
 **Regla de Oro**: **NUNCA** confíes solo en la validación del navegador. Siempre valida en el backend.
 :::

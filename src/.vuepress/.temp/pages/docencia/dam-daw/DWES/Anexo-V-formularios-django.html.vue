@@ -56,7 +56,7 @@
 </tbody>
 </table>
 <h3 id="_2-2-ciclo-de-vida-de-un-formulario-web" tabindex="-1"><a class="header-anchor" href="#_2-2-ciclo-de-vida-de-un-formulario-web"><span>2.2 Ciclo de Vida de un Formulario Web</span></a></h3>
-<Mermaid code="eJxFkElOwzAUhvec4qmrIpGyYguibTpPagObqItX5xEs0ji8DBK0HIFDcICuOAASuRiOHVJvLEuf/ylkTJ7B61+APvf+Q5ojSwUoBAUECNdMoUwzVltwnFvo+hviQgaKIaSYGGHkzWdQoChPamtEugbs+QssKMSKZIoDYvmO8KR4n0eVg2V7hu03tkLtk4gyBIH7RKUW6hvIbaAkj1KElhsXErllGdcwg8PZtMBIBjbezd2HgQYVdNyUpyMM/RVlsgodw2q58QAjSOtmVtHCC3WEkT/PSU+AQMyKKYUYM1n8xxsa6/GhGYZJyB3p67X61qnkrf/YkBP/0UQTsvyOYYfiRc8D7d66/PTGveWlVZ0Ydnr4/XFTKMov/UPVNaZNspm/Jue8rtBl6ohWZGZE5s1yBTUV3jTNLEOypNU00yz8FStBeuIAM5VCu9+9AtqjjDqdTp1uYYSX2j6QlQi0q5aOeZLInKHrafIPNH7Ahg=="></Mermaid><div class="hint-container caution">
+<Mermaid code="eJxFkDtOw0AQhntOMZ0bDBUtiNjOO06UGBorxWQ9mBW214wfEiQcgUNwgFQcAAlfDHs3ONut9M3/ihnzZwjcC2jfffhQVMhSAQpBEQHCNVMsi5LVFmz7FgbhhriWkWKIKSNGGAeLOdQomqPaapGBBp3Qx5pi7EimLCKW7whPitMq6RwM62jW7W2FSvOESgSBaa4KA7ka8noor5ICwfKyWiJbhvE0M9yfTWtMZGTi3dx9aGjYQYdNczzAKFxRKbvQGayWmwAwgeLUzCga2FcHGIeLitoJEIhZMRWQYSnr/3gjbT3Z98MwCbkjsJheu7urTt8yCSaanYaPOpyQzXcGOxQv7UDgrJvPYOIsjepUk7P9749XQN18tbw61Zj1yebhmuzzuqItc4poROZaZNEvV1Nf4a2lmWVMhjSaeho/XLES1E4cYakKcAeXQCnKxJC+1ly2zpHs7vV8tv6RKO2RF2wv/gAPC79h"></Mermaid><div class="hint-container caution">
 <p class="hint-container-title">Advertencia</p>
 <p><strong>Regla de Oro</strong>: <strong>NUNCA</strong> confíes solo en la validación del navegador. Siempre valida en el backend.</p>
 </div>
