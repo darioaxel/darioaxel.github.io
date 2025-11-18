@@ -36,22 +36,22 @@
 <tr>
 <td>6</td>
 <td>12/11/2025</td>
-<td>--</td>
+<td>MVC. Separación de capas. Django: Vistas y creación de templates.</td>
 </tr>
 <tr>
 <td>7</td>
 <td>19/11/2025</td>
-<td>--</td>
+<td>Herencia y polimorfismo (qué era esto y para qué servía? 😃. Modelos en Django</td>
 </tr>
 <tr>
 <td>8</td>
 <td>26/11/2025</td>
-<td>--</td>
+<td>Configuración de Postgres con Django. Formularios I</td>
 </tr>
 <tr>
 <td>9</td>
 <td>3/12/2025</td>
-<td>--</td>
+<td>Formularios y vistas avanzados</td>
 </tr>
 <tr>
 <td>10</td>
@@ -61,11 +61,16 @@
 <tr>
 <td>11</td>
 <td>17/12/2025</td>
-<td>--</td>
+<td>Dudas de desarrollo de la práctica UT04</td>
 </tr>
 <tr>
 <td>12</td>
-<td>8/1/2026</td>
+<td>7/1/2026</td>
+<td>Revisión de práctica UT04.</td>
+</tr>
+<tr>
+<td>13</td>
+<td>14/1/2026</td>
 <td>--</td>
 </tr>
 </tbody>
