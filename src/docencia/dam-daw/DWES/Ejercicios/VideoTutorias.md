@@ -14,10 +14,11 @@ order: 1
 | 3 | 22/10/2025 | Php ejecución básica en servidor. Jakarta EE arquitectura y uso de `jsf` |
 | 4 | 29/10/2025 | Django. Introducción y ***Hello World*** |
 | 5 | 5/11/2025 | Dudas prácticas: ejemplo de ciclo de desarrollo en Jakarta y recomendaciones para solventar problemas. |
-| 6 | 12/11/2025 | -- |
-| 7 | 19/11/2025 | -- |
-| 8 | 26/11/2025 | -- |
-| 9 | 3/12/2025 | -- |
-| 10 | 10/12/2025 | -- |
-| 11 | 17/12/2025 | -- |
-| 12 | 8/1/2026 | -- |
+| 6 | 12/11/2025 | MVC. Separación de capas. Django: Vistas y creación de templates. |
+| 7 | 19/11/2025 | Herencia y polimorfismo (qué era esto y para qué servía? :-). Modelos en Django  |
+| 8 | 26/11/2025 | Configuración de Postgres con Django. Formularios I |
+| 9 | 3/12/2025 | Formularios y vistas avanzados |
+| 10 | 10/12/2025 | --  |
+| 11 | 17/12/2025 | Dudas de desarrollo de la práctica UT04  |
+| 12 | 7/1/2026 | Revisión de práctica UT04. |
+| 13 | 14/1/2026 | -- |
