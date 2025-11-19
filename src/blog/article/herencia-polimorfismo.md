@@ -117,8 +117,10 @@ for (Proyecto p : proyectos) {
 
 ## Enfoque en Django: modelos, herencia ORM y flexibilidad dinámica
 
-Django se basa en el principio de **"los modelos son tus datos"**:
-cada clase en `models.py` representa una tabla en la base de datos.
+::: important
+Django se basa en el principio de **"los modelos son tus datos"**: cada clase en `models.py` representa una tabla en la base de datos.
+:::
+
 La herencia de modelos proporciona tres patrones equivalentes a los del mundo Java.
 
 ### 1. Modelo base abstracto
@@ -227,7 +229,4 @@ Ambas estrategias convergen en un mismo principio:
 6. *RealPython – Django ORM Best Practices*. Real Python, 2023.
 7. *Baeldung – Inheritance in Java*. Baeldung, 2023.
 
----
 
-¿Quieres que ahora te genere una **versión extendida con diagramas UML (en Mermaid)** para ilustrar la herencia en ambos enfoques (Java y Django)?
-Sería ideal para complementar el artículo visualmente.

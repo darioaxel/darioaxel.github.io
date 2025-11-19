@@ -85,9 +85,11 @@ Un modelo típico para nuestros proyectos podría estructurarse así:</p>
 <li>Añadir un nuevo tipo implica crear una nueva clase y ajustar el mapeo ORM.</li>
 </ul>
 <h2 id="enfoque-en-django-modelos-herencia-orm-y-flexibilidad-dinamica" tabindex="-1"><a class="header-anchor" href="#enfoque-en-django-modelos-herencia-orm-y-flexibilidad-dinamica"><span>Enfoque en Django: modelos, herencia ORM y flexibilidad dinámica</span></a></h2>
-<p>Django se basa en el principio de <strong>&quot;los modelos son tus datos&quot;</strong>:<br>
-cada clase en <code v-pre>models.py</code> representa una tabla en la base de datos.<br>
-La herencia de modelos proporciona tres patrones equivalentes a los del mundo Java.</p>
+<div class="hint-container important">
+<p class="hint-container-title">Importante</p>
+<p>Django se basa en el principio de <strong>&quot;los modelos son tus datos&quot;</strong>: cada clase en <code v-pre>models.py</code> representa una tabla en la base de datos.</p>
+</div>
+<p>La herencia de modelos proporciona tres patrones equivalentes a los del mundo Java.</p>
 <h3 id="_1-modelo-base-abstracto" tabindex="-1"><a class="header-anchor" href="#_1-modelo-base-abstracto"><span>1. Modelo base abstracto</span></a></h3>
 <p>Primero, definimos una clase <code v-pre>ProyectoBase</code> común:</p>
 <div class="language-python line-numbers-mode" data-highlighter="shiki" data-ext="python" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code" v-pre=""><code class="language-python"><span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># proyectos/models/base.py</span></span>
@@ -229,9 +231,6 @@ En cambio, Java brilla cuando se necesita <strong>consistencia contractual</stro
 <li><em>RealPython – Django ORM Best Practices</em>. Real Python, 2023.</li>
 <li><em>Baeldung – Inheritance in Java</em>. Baeldung, 2023.</li>
 </ol>
-<hr>
-<p>¿Quieres que ahora te genere una <strong>versión extendida con diagramas UML (en Mermaid)</strong> para ilustrar la herencia en ambos enfoques (Java y Django)?<br>
-Sería ideal para complementar el artículo visualmente.</p>
 </div></template>
 
 
