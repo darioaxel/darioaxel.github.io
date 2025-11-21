@@ -127,7 +127,9 @@ def registro_manual(request):
     return render(request, 'registro.html')
 ```
 
+::: danger
 **Problemas**: Repetitivo, no reutilizable, fácil olvidar validaciones, inseguro.
+:::
 
 ### 3.2 Enfoque 2: `django.forms.Form` (Formularios Personalizados)
 
@@ -180,7 +182,8 @@ class ContactoForm(forms.Form):
             self.add_error('mensaje', 'Mensaje muy breve para soporte')
             
         return cleaned_data
-
+```
+```python
 # views.py
 from django.shortcuts import render, redirect
 from .forms import ContactoForm
@@ -202,7 +205,8 @@ def contacto(request):
     
     # Renderiza form vacío O con errores
     return render(request, 'contacto.html', {'form': form})
-
+```
+```html
 # template contacto.html
 <form method="post" novalidate>
     {% csrf_token %}
@@ -239,7 +243,8 @@ class Estudiante(models.Model):
     
     def __str__(self):
         return self.nombre
-
+```
+```python
 # forms.py
 from django import forms
 from .models import Estudiante
@@ -285,7 +290,8 @@ class EstudianteForm(forms.ModelForm):
         if email != confirmar:
             raise forms.ValidationError("Los emails no coinciden")
         return confirmar
-
+```
+```python
 # views.py
 def crear_estudiante(request):
     form = EstudianteForm(request.POST or None)
