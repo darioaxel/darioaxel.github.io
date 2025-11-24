@@ -18,11 +18,148 @@
 <p class="hint-container-title">Información</p>
 <p><strong>Resultados de aprendizaje a trabajar</strong></p>
 <ul>
-<li>RA5. Desarrolla aplicaciones Web identificando y aplicando mecanismos para separar el código de presentación de la lógica de negocio.</li>
+<li>RA6. Desarrolla aplicaciones de acceso a almacenes de datos, aplicando medidas para mantener la seguridad y la integridad de la información.</li>
 </ul>
 </div>
 <h2 id="objetivo" tabindex="-1"><a class="header-anchor" href="#objetivo"><span>Objetivo</span></a></h2>
+<ul>
+<li><strong>Objetivo principal:</strong>
+<ul>
+<li><strong>Creación de una aplicación para la gestión de tareas de una clase.</strong></li>
+</ul>
+</li>
+<li><strong>Objetivos secundarios</strong>
+<ul>
+<li>Modelar datos complejos con relaciones avanzadas en Django ORM</li>
+<li>Manejar formularios avanzados con validaciones customizadas</li>
+<li>Configurar y optimizar PostgreSQL en Django</li>
+<li>Aplicar migraciones con datos iniciales</li>
+</ul>
+</li>
+</ul>
 <h2 id="enunciado-de-la-practica" tabindex="-1"><a class="header-anchor" href="#enunciado-de-la-practica"><span>Enunciado de la práctica</span></a></h2>
+<p>En esta práctica deberas desarrollar una aplicación web para la gestión de tareas en un entorno educativo que permita a profesores crear y administrar diferentes tipos de tareas, y a alumnos visualizarlas y completarlas.</p>
+<ul>
+<li>
+<p>El sistema distinguirá entre tres tipos de tareas: individuales, grupales y evaluables,</p>
+</li>
+<li>
+<p>Las tareas tendrán con diferentes fórmulas para completarse según el rol de usuario: alumno o profesor.</p>
+</li>
+<li>
+<p>Como alumno podré crear tareas de los distintos tipos existentes.</p>
+</li>
+<li>
+<p>Como alumno podré validar la finalización de una tarea, que no requiera evaluación del profesor.</p>
+</li>
+<li>
+<p>Como profesor podré validar la finalización de tareas que lo requieran.</p>
+</li>
+</ul>
+<h3 id="listado-de-elementos-a-implementar" tabindex="-1"><a class="header-anchor" href="#listado-de-elementos-a-implementar"><span>Listado de elementos a implementar</span></a></h3>
+<ul>
+<li>
+<p><strong>Vistas</strong></p>
+<ul>
+<li>Vista en la que un alumno/profesor pueda ver sus datos.</li>
+<li>Vista con el listado de todo el alumnado/profesorado.</li>
+<li>Vista en la que un alumno puede ver todas las tareas que ha creado o colabora.</li>
+<li>Vista en la que un profesor puede ver todas las tareas que requieren su validación.</li>
+</ul>
+</li>
+<li>
+<p><strong>Formularios</strong></p>
+<ul>
+<li>Formulario para el alta del alumnado/profesorado.</li>
+<li>Formulario de creación de una tarea individual (puede necesitar o no evaluación de un profesor)</li>
+<li>Formulario de creación de una tarea grupal (puede necesitar o no evaluación de un profesor)</li>
+</ul>
+</li>
+</ul>
+<h2 id="entrega" tabindex="-1"><a class="header-anchor" href="#entrega"><span>Entrega</span></a></h2>
+<p>Documento pdf con los siguientes elementos:</p>
+<ul>
+<li>Explicación de las decisiones tomadas (puede ser un copy/paste del <a href="http://README.md" target="_blank" rel="noopener noreferrer">README.md</a>).</li>
+<li>Diagrama de tablas con sus relaciones (puede desarrollarse automáticamente usando los módelos y mermaidjs u otras herramientas).</li>
+<li>Enlace al proyecto Github en el que se ha desarrollado la tarea. (Debe de tener los commits necesarios para validar que el proyecto se ha realizado siguiendo buenas prácticas de dearrollo)</li>
+</ul>
+<h2 id="aclaraciones" tabindex="-1"><a class="header-anchor" href="#aclaraciones"><span>Aclaraciones</span></a></h2>
+<div class="hint-container important">
+<p class="hint-container-title">Importante</p>
+<p>La entrega de esta prácticas es <strong>OBLIGATORIA</strong> para poder acceder al examen parcial de Febrero.</p>
+</div>
+<ul>
+<li>La valoración de la práctica será APTO/NO APTO en función de que se alcancen los mínimos: creación de usuarios, creación de tareas, etc.</li>
+<li>Cada alumn@ deberá valorar el nivel de complejidad que crea necesario para la práctica.</li>
+<li>No es obligatorio crear un frontend más allá de los formulario y vistas.</li>
+<li>Es MUY IMPORTANTE que se vayan realizando commits y mantengan las buenas prácticas. Una práctica con un solo commit o varios, que no demuestren un trabajo continuo (todo hecho en 4 min con un copy/paste) se valorarán como NO APTAS.</li>
+<li>No es obligatorio montar sistema de validación de roles. Esa parte se trabajará más adelante.</li>
+<li>Los datos deben almacenarse en un esquema de Posgres.</li>
+<li>La valoración de la práctica también tendrá en cuenta aquellas tareas/elementos que sin ser plenamente funcionales (por errores) siempre que se incluya una explicación de posibles causas del error o pruebas para su subsanación intentadas.</li>
+</ul>
+<h2 id="rubrica-de-evaluacion" tabindex="-1"><a class="header-anchor" href="#rubrica-de-evaluacion"><span>Rúbrica de evaluación</span></a></h2>
+<ol>
+<li>Errores críticos (provocan NO APTO):</li>
+</ol>
+<ul>
+<li>No compila/se levanta el servidor.</li>
+<li>No funciona la creación de usuarios o tareas.</li>
+<li>Base de datos no configurada o migraciones fallidas.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Criterio</th>
+<th>Mínimo para ALCANZA</th>
+<th>Evaluación</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1</strong></td>
+<td><strong>Modelado de Datos</strong></td>
+<td>User extendido (<code v-pre>AbstractUser</code> o <code v-pre>OneToOneField</code>). Modelos para <strong>3 tipos de tareas</strong> (individual, grupal, evaluable) con relaciones correctas (FK, M2M). Mínimo 3 modelos principales con migraciones funcionales.</td>
+<td>ALCANZA / NO ALCANZA</td>
+</tr>
+<tr>
+<td><strong>2</strong></td>
+<td><strong>Formularios y Validaciones</strong></td>
+<td>Formularios funcionales para: <strong>creación de usuario</strong> y <strong>creación de tarea</strong> (al menos 1 tipo completo). Validaciones básicas implementadas (ej: fecha entrega &gt; creación). Sin errores 500 al guardar.</td>
+<td>ALCANZA / NO ALCANZA</td>
+</tr>
+<tr>
+<td><strong>3</strong></td>
+<td><strong>Vistas y Lógica</strong></td>
+<td><strong>2 vistas mínimas</strong> funcionales: (1) &quot;Mis tareas&quot; (alumno/profesor) y (2) Listado de usuarios. Sin errores al acceder o enviar datos.</td>
+<td>ALCANZA / NO ALCANZA</td>
+</tr>
+<tr>
+<td><strong>4</strong></td>
+<td><strong>Configuración PostgreSQL</strong></td>
+<td><code v-pre>settings.py</code> con <code v-pre>ENGINE='django.db.backends.postgresql'</code>, NAME, USER, PASSWORD definidos. <code v-pre>psycopg2</code> en requirements. Conexión funcional verificable.</td>
+<td>ALCANZA / NO ALCANZA</td>
+</tr>
+<tr>
+<td><strong>5</strong></td>
+<td><strong>Migraciones y Datos</strong></td>
+<td>Comando <code v-pre>migrate</code> ejecuta sin errores. Fixtures o datos iniciales creados (superuser + datos de prueba documentados). No se permite base de datos vacía sin instrucciones.</td>
+<td>ALCANZA / NO ALCANZA</td>
+</tr>
+<tr>
+<td><strong>6</strong></td>
+<td><strong>Buenas Prácticas Git</strong></td>
+<td>Commits distribuidos en <strong>diferentes días</strong> (evidencia de trabajo continuo). Mensajes descriptivos. <code v-pre>.gitignore</code> presente. <strong>Commits masivos último día → NO APTO</strong> automático si no hay trabajo previo.</td>
+<td>ALCANZA / NO ALCANZA</td>
+</tr>
+<tr>
+<td><strong>7</strong></td>
+<td><strong>Documentación y Entrega</strong></td>
+<td>PDF con: explicación de decisiones, <strong>diagrama ER</strong> (mermaid o screenshot), enlace GitHub funcional. Documenta errores conocidos si existen.</td>
+<td>ALCANZA / NO ALCANZA</td>
+</tr>
+</tbody>
+</table>
 </div></template>
 
 
