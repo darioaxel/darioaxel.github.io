@@ -1,0 +1,16 @@
+import comp from "/home/darioaxel/Proyectos/darioaxel.github.io/src/.vuepress/.temp/pages/blog/article/django-org.html.vue"
+const data = JSON.parse("{\"path\":\"/blog/article/django-org.html\",\"title\":\"Guía Básica del ORM de Django\",\"lang\":\"es-ES\",\"frontmatter\":{\"title\":\"Guía Básica del ORM de Django\",\"date\":\"2025-11-26T00:00:00.000Z\",\"category\":[\"Blog\"],\"tag\":[\"Django\",\"ORM\"],\"type\":\"article\",\"description\":\"Guía Básica del ORM de Django: Recuperación de Datos Te muestro cómo usar el ORM con tus modelos Socio, Direccion y Tutor. 1. Setup para probar consultas Abre el shell interacti...\",\"head\":[[\"script\",{\"type\":\"application/ld+json\"},\"{\\\"@context\\\":\\\"https://schema.org\\\",\\\"@type\\\":\\\"Article\\\",\\\"headline\\\":\\\"Guía Básica del ORM de Django\\\",\\\"image\\\":[\\\"\\\"],\\\"datePublished\\\":\\\"2025-11-26T00:00:00.000Z\\\",\\\"dateModified\\\":null,\\\"author\\\":[{\\\"@type\\\":\\\"Person\\\",\\\"name\\\":\\\"darioaxel\\\",\\\"url\\\":\\\"darioaxel.dev\\\"}]}\"],[\"meta\",{\"property\":\"og:url\",\"content\":\"https://vuepress-theme-hope-docs-demo.netlify.app/blog/article/django-org.html\"}],[\"meta\",{\"property\":\"og:site_name\",\"content\":\"darioaxel\"}],[\"meta\",{\"property\":\"og:title\",\"content\":\"Guía Básica del ORM de Django\"}],[\"meta\",{\"property\":\"og:description\",\"content\":\"Guía Básica del ORM de Django: Recuperación de Datos Te muestro cómo usar el ORM con tus modelos Socio, Direccion y Tutor. 1. Setup para probar consultas Abre el shell interacti...\"}],[\"meta\",{\"property\":\"og:type\",\"content\":\"article\"}],[\"meta\",{\"property\":\"og:locale\",\"content\":\"es-ES\"}],[\"meta\",{\"property\":\"article:tag\",\"content\":\"ORM\"}],[\"meta\",{\"property\":\"article:tag\",\"content\":\"Django\"}],[\"meta\",{\"property\":\"article:published_time\",\"content\":\"2025-11-26T00:00:00.000Z\"}]]},\"readingTime\":{\"minutes\":2.07,\"words\":620},\"filePathRelative\":\"blog/article/django-org.md\",\"excerpt\":\"\\n<p>Te muestro cómo usar el ORM con tus modelos <code>Socio</code>, <code>Direccion</code> y <code>Tutor</code>.</p>\\n<h2>1. Setup para probar consultas</h2>\\n<p>Abre el shell interactivo de Django:</p>\\n<div class=\\\"language-bash line-numbers-mode\\\" data-highlighter=\\\"shiki\\\" data-ext=\\\"bash\\\" style=\\\"--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34\\\"><pre class=\\\"shiki shiki-themes one-light one-dark-pro vp-code\\\"><code class=\\\"language-bash\\\"><span class=\\\"line\\\"><span style=\\\"--shiki-light:#4078F2;--shiki-dark:#61AFEF\\\">python</span><span style=\\\"--shiki-light:#50A14F;--shiki-dark:#98C379\\\"> manage.py</span><span style=\\\"--shiki-light:#50A14F;--shiki-dark:#98C379\\\"> shell</span></span></code></pre>\\n<div class=\\\"line-numbers\\\" aria-hidden=\\\"true\\\" style=\\\"counter-reset:line-number 0\\\"><div class=\\\"line-number\\\"></div></div></div>\",\"autoDesc\":true}")
+export { comp, data }
+
+if (import.meta.webpackHot) {
+  import.meta.webpackHot.accept()
+  if (__VUE_HMR_RUNTIME__.updatePageData) {
+    __VUE_HMR_RUNTIME__.updatePageData(data)
+  }
+}
+
+if (import.meta.hot) {
+  import.meta.hot.accept(({ data }) => {
+    __VUE_HMR_RUNTIME__.updatePageData(data)
+  })
+}
