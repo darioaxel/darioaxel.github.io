@@ -67,15 +67,19 @@ graph TD
 
 ### 2.3 Validaciones: Multiples Capas de Defensa
 
-```python
+```html
 # 1. Validación HTML5 (navegador)
 <input type="email" required maxlength="50">
+```
 
+```javascript
 # 2. Validación JavaScript (UX mejorado)
 if (!email.includes('@')) {
     mostrarError("Email inválido");
 }
+```
 
+```python
 # 3. Validación Backend (OBLIGATORIA)
 # Django Forms hace esto automáticamente
 def clean_email(self):
@@ -480,7 +484,8 @@ class EstudianteCrispyForm(forms.ModelForm):
             ),
             Submit('submit', 'Guardar Estudiante', css_class='btn-primary')
         )
-
+```
+```python
 # views.py - No cambia nada en la lógica
 def crear_estudiante_crispy(request):
     form = EstudianteCrispyForm(request.POST or None)
@@ -488,7 +493,9 @@ def crear_estudiante_crispy(request):
         form.save()
         return redirect('lista_estudiantes')
     return render(request, 'form_crispy.html', {'form': form})
+```
 
+```html
 # template form_crispy.html
 {% extends 'base.html' %}
 {% load crispy_forms_tags %}
