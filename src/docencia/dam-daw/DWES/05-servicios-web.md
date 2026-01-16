@@ -20,9 +20,9 @@ Un servicio web es una aplicación web capaz de comunicarse e intercambiar infor
 
 Es decir, el servicio web puede estar programado en PHP y correr bajo un sistema operativo GNU/Linux y el cliente puede estar programado con C# y correr bajo un Windows, y deberían ser capaces de comunicarse y trabajar juntas. Pero es importante que quede claro que, en este caso, la aplicación web (servidor) y la aplicación cliente son dos aplicaciones diferentes.  
 
-Los mensajes que las aplicaciones se intercambian generalmente tienen formato XML o JSON.  
+Los mensajes que las aplicaciones se intercambian generalmente tienen formato **XML** o **JSON**.  
 
-Existen dos estándares principales en la industria para implementar servicios web, denominados SOAP y REST. A lo largo el tema, vamos a aprender cómo funciona cada uno de ellos.  
+Existen dos estándares principales en la industria para implementar servicios web, denominados **SOAP** y **REST**. A lo largo el tema, vamos a aprender cómo funciona cada uno de ellos.  
 
 ### 1.1.2. Diferencias entre servicios web y aplicaciones web
 Llegados a este punto, puede que estés pensando: “Vale, pero ¿en qué se diferencia todo esto de una aplicación web MVC? ¿No intercambian también el cliente y el servidor información independientemente de la plataforma en la que se ejecuta cada uno?”.
@@ -35,6 +35,49 @@ Por ese motivo, los servicios web suelen carecer de interfaz de usuario y no pro
 En cambio, los servicios web suelen producir salidas XML o JSON, pensadas para que los clientes las procesen. Una aplicación web, en cambio, solo responde con XML o JSON cuando recibe una petición Ajax, algo que veremos en el tema siguiente.  
 
 Por lo demás, un servicio web puede tener una arquitectura aproximadamente MVC, y digo aproximadamente porque el servicio web, como acabo de contarte, carece de vistas. Pero puede seguir conservando sus controladores y sus modelos. Los controladores se encargarán de convertir los datos de los modelos a JSON o XML y devolverlos al cliente.  
+
+## 2. SOAP
+**SOAP** (Single Object Access Protocol) es un mecanismo estandarizado para la implementación, descripción y publicación de servicios en red.
+
+SOAP establece el modo en el que deben comportarse el cliente y el servidor para hablar entre sí, así como la forma en la que el servidor debe dar a conocer sus servicios.
+
+### 2.1. La pila de protocolos de SOAP
+El estándar SOAP define una serie de protocolos de niveles de abstracción crecientes. Esta colección de protocolos suele denominarse **pila de protocolos SOAP**, y son los siguientes:
+
+| Nivel de abstracción |	Protocolo |
+| --- | --- |
+| Nivel de descubrimiento|	UDDI|
+| Nivel de publicación|	UDDI|
+| Nivel de descripción|	WSDL|
+| Nivel de mensajería|	SOAP|
+| Nivel de red|	TCP, SMTP, FTP, etc|
+
+Como ves, SOAP solo es uno de los protocolos de la pila, aunque todo el tinglado recibe el nombre “SOAP” por extensión.
+
+Vamos a explicar brevemente en qué consiste cada protocolo de la pila, y lo vamos a hacer, como en otras ocasiones, por medio de unos ejemplos en lugar de perdernos en largas y farragosas explicaciones.
+
+### 2.2. Los protocolos SOAP y WSDL
+Para entender cómo funciona el protocolo SOAP (el más importante de la pila, como ya te habrás imaginado por su nombre) y, en menor medida, el protocolo WSDL, vamos a implementar tres ejemplos de servicios web muy sencillos:
+
+* En el primero veremos cómo construir un servidor que devuelva colecciones de datos en forma de array.
+* En el segundo veremos cómo puede un servidor devolver datos con estructura más compleja formateados con JSON.
+* En el tercero montaremos un pequeño servidor con WSDL.
+  
+#### Ejemplo 1: Consulta de una BD de marcas y modelos de coches
+
+Vamos a programar un servicio web muy simple capaz de servir a los clientes que nos lo pidan un listado de las marcas de coches que existen y otro con los modelos registrados que pertenecen a una marca en concreto.
+
+El servidor, por lo tanto, necesita dos funciones:
+* obtenerMarcas
+* obtenerModelos($idMarca)
+ 
+:::important
+Aquí ya se ve la primera diferencia con REST: ni los nombres de los métodos están estandarizados, ni hay una colección de métodos predefinidos para cada tipo de recurso. Cuando veamos REST en el siguiente apartado, entenderás mejor qué significa esta afirmación.
+:::
+
+El cliente, como es lógico, debe conocer cómo utilizar el servidor. Esto puede hacerse mediante el protocolo WSDL (que ya veremos un poco después) o por otras vías más tradicionales: documentación de la API, guía del desarrollador, manual de usuario…
+
+EN EL LADO DEL SERVIDOR necesitaremos crear un objeto de tipo SoapServer y definir los métodos a los que el servidor va a responder. 
 
 ## 2. Servicios REST
 REST, que significa Representational State Transfer, es un estilo de arquitectura para sistemas de software que se utiliza principalmente en el desarrollo de servicios web. Los servicios web que siguen los principios de REST se denominan servicios web RESTful.

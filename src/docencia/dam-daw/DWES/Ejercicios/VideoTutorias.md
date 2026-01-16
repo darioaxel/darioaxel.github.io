@@ -18,7 +18,7 @@ order: 1
 | 7 | 19/11/2025 | Herencia y polimorfismo (qué era esto y para qué servía? :-). Modelos en Django  |
 | 8 | 26/11/2025 | Configuración de Postgres con Django. Formularios I |
 | 9 | 3/12/2025 | Formularios y vistas avanzados |
-| 10 | 10/12/2025 | --  |
-| 11 | 17/12/2025 | Dudas de desarrollo de la práctica UT04  |
+| 10 | 10/12/2025 | ---  |
+| 11 | 17/12/2025 | ---  |
 | 12 | 7/1/2026 | Revisión de práctica UT04. |
 | 13 | 14/1/2026 | -- |
