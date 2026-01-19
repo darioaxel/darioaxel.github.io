@@ -17,22 +17,23 @@ icon: mynaui:api-solid
 ## 1.1. ¿Qué es un servicio web?
 ### 1.1.1. Una definición de servicio web
 Un servicio web es una aplicación web capaz de comunicarse e intercambiar información con otra aplicación (que denominaremos cliente) independientemente de la plataforma en la que cada una se ejecute.  
-
+![Rest API](/images/dwes/Rest-API.png)
 Es decir, el servicio web puede estar programado en PHP y correr bajo un sistema operativo GNU/Linux y el cliente puede estar programado con C# y correr bajo un Windows, y deberían ser capaces de comunicarse y trabajar juntas. Pero es importante que quede claro que, en este caso, la aplicación web (servidor) y la aplicación cliente son dos aplicaciones diferentes.  
-
+![soap diagram](/images/dwes/soap-diagram.png)
 Los mensajes que las aplicaciones se intercambian generalmente tienen formato **XML** o **JSON**.  
 
-Existen dos estándares principales en la industria para implementar servicios web, denominados **SOAP** y **REST**. A lo largo el tema, vamos a aprender cómo funciona cada uno de ellos.  
+Existen dos estándares principales en la industria para implementar servicios web, denominados **SOAP** y **REST**. Siendo el primero más antiguo y a día de hoy, con mucho menos uso que REST. A lo largo el tema, vamos a aprender cómo funciona cada uno de ellos.  
 
 ### 1.1.2. Diferencias entre servicios web y aplicaciones web
-Llegados a este punto, puede que estés pensando: “Vale, pero ¿en qué se diferencia todo esto de una aplicación web MVC? ¿No intercambian también el cliente y el servidor información independientemente de la plataforma en la que se ejecuta cada uno?”.
+Llegados a este punto, puede que estés pensando:
+> “Vale, pero ¿en qué se diferencia todo esto de una aplicación web MVC? ¿No intercambian también el cliente y el servidor información independientemente de la plataforma en la que se ejecuta cada uno?”.
 
 Pues sí, pero hay algunas diferencias fundamentales entre un servicio web y una aplicación web:
 
-Una aplicación web está diseñada para que un ser humano interactúe con ella a través de un interfaz HTML. Un servicio web, en cambio, está pensado para que lo use otra aplicación informática (el cliente), no necesariamente un ser humano.  
-Por ese motivo, los servicios web suelen carecer de interfaz de usuario y no producen salidas HTML legibles. Es decir, un servicio web puro no suele tener vistas.  
+* Una aplicación web está diseñada para que un ser humano interactúe con ella a través de un interfaz HTML. 
+* Un servicio web, en cambio, está pensado para que lo use otra aplicación informática (el cliente), no necesariamente un ser humano. Por ese motivo, los servicios web suelen carecer de interfaz de usuario y no producen salidas HTML legibles. Es decir, un servicio web puro no suele tener vistas.  
 
-En cambio, los servicios web suelen producir salidas XML o JSON, pensadas para que los clientes las procesen. Una aplicación web, en cambio, solo responde con XML o JSON cuando recibe una petición Ajax, algo que veremos en el tema siguiente.  
+En cambio, los servicios web suelen producir salidas **XML** o **JSON**, pensadas para que los clientes las procesen. Una aplicación web, en cambio, solo responde con XML o JSON cuando recibe una petición Ajax, algo que veremos próximos temas.  
 
 Por lo demás, un servicio web puede tener una arquitectura aproximadamente MVC, y digo aproximadamente porque el servicio web, como acabo de contarte, carece de vistas. Pero puede seguir conservando sus controladores y sus modelos. Los controladores se encargarán de convertir los datos de los modelos a JSON o XML y devolverlos al cliente.  
 
@@ -41,6 +42,8 @@ Por lo demás, un servicio web puede tener una arquitectura aproximadamente MVC,
 
 SOAP establece el modo en el que deben comportarse el cliente y el servidor para hablar entre sí, así como la forma en la que el servidor debe dar a conocer sus servicios.
 
+SOAP se define por primera vez en 1998 (derivado de XML‑RPC) y su versión 1.1 se publica en el año 2000; en 2003 se estandariza SOAP 1.2 como recomendación del W3C. Hoy no está exactamente “muerto”, pero en muchos entornos se ha dejado de usar en favor de APIs HTTP+JSON de estilo REST por su complejidad y rigidez.
+​
 ### 2.1. La pila de protocolos de SOAP
 El estándar SOAP define una serie de protocolos de niveles de abstracción crecientes. Esta colección de protocolos suele denominarse **pila de protocolos SOAP**, y son los siguientes:
 
@@ -68,16 +71,237 @@ Para entender cómo funciona el protocolo SOAP (el más importante de la pila, c
 Vamos a programar un servicio web muy simple capaz de servir a los clientes que nos lo pidan un listado de las marcas de coches que existen y otro con los modelos registrados que pertenecen a una marca en concreto.
 
 El servidor, por lo tanto, necesita dos funciones:
-* obtenerMarcas
-* obtenerModelos($idMarca)
- 
+ * obtenerMarcas
+ * obtenerModelos($idMarca)
+
 :::important
 Aquí ya se ve la primera diferencia con REST: ni los nombres de los métodos están estandarizados, ni hay una colección de métodos predefinidos para cada tipo de recurso. Cuando veamos REST en el siguiente apartado, entenderás mejor qué significa esta afirmación.
 :::
 
 El cliente, como es lógico, debe conocer cómo utilizar el servidor. Esto puede hacerse mediante el protocolo WSDL (que ya veremos un poco después) o por otras vías más tradicionales: documentación de la API, guía del desarrollador, manual de usuario…
 
-EN EL LADO DEL SERVIDOR necesitaremos crear un objeto de tipo SoapServer y definir los métodos a los que el servidor va a responder. 
+1. pom.xml (packaging jar, dependencias provided)
+```xml
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                             https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.ejemplo</groupId>
+  <artifactId>payara-coches</artifactId>
+  <version>1.0</version>
+  <packaging>jar</packaging>
+
+  <properties>
+    <maven.compiler.source>11</maven.compiler.source>
+    <maven.compiler.target>11</maven.compiler.target>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <payara.version>6.2023.10</payara.version>   <!-- o la última -->
+  </properties>
+
+  <dependencies>
+    <!-- API JAX-WS ya incluida en Payara -->
+    <dependency>
+      <groupId>jakarta.xml.ws</groupId>
+      <artifactId>jakarta.xml.ws-api</artifactId>
+      <version>4.0.0</version>
+      <scope>provided</scope>
+    </dependency>
+    <!-- Para anotar la clase -->
+    <dependency>
+      <groupId>jakarta.jws</groupId>
+      <artifactId>jakarta.jws-api</artifactId>
+      <version>3.0.0</version>
+      <scope>provided</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.10.1</version>
+      </plugin>
+      <!-- plugin de Payara para arrancar rápido -->
+      <plugin>
+        <groupId>fish.payara.maven.plugins</groupId>
+        <artifactId>payara-micro-maven-plugin</artifactId>
+        <version>2.2</version>
+        <configuration>
+          <payaraVersion>${payara.version}</payaraVersion>
+          <deployWar>false</deployWar>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
+```
+
+2. Interfaz del servicio
+```java
+package org.ejemplo.service;
+
+import jakarta.jws.WebMethod;
+import jakarta.jws.WebParam;
+import jakarta.jws.WebService;
+import java.util.List;
+
+@WebService
+public interface CochesService {
+    @WebMethod
+    List<String> obtenerMarcas();
+
+    @WebMethod
+    List<String> obtenerModelos(@WebParam(name = "idMarca") int idMarca);
+}
+```
+
+3. Implementación (sin web.xml)
+```java
+package org.ejemplo.service;
+
+import jakarta.jws.WebService;
+import java.util.List;
+import java.util.Map;
+
+import static java.util.Map.entry;
+
+@WebService(endpointInterface = "org.ejemplo.service.CochesService")
+public class CochesServiceImpl implements CochesService {
+
+    private static final Map<Integer, List<String>> BD = Map.ofEntries(
+        entry(1, List.of("Arona", "Ibiza", "Leon")),
+        entry(2, List.of("Golf", "T-Roc", "Passat")),
+        entry(3, List.of("C3", "C4", "C5"))
+    );
+
+    @Override
+    public List<String> obtenerMarcas() {
+        return List.of("Seat", "Volkswagen", "Citroën");
+    }
+
+    @Override
+    public List<String> obtenerModelos(int idMarca) {
+        return BD.getOrDefault(idMarca, List.of());
+    }
+}
+```
+4. WSDL que deberemos de usar
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+  WSDL generado por Payara 6 / Metro 4.0  
+  Servicio: CochesServiceImplService  
+  Namespace: http://service.ejemplo.org/
+-->
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/"
+             xmlns:tns="http://service.ejemplo.org/"
+             xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+             xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+             xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata"
+             targetNamespace="http://service.ejemplo.org/"
+             name="CochesServiceImplService">
+
+  <types>
+    <xsd:schema targetNamespace="http://service.ejemplo.org/">
+      <!-- obtenerMarcas -->
+      <xsd:element name="obtenerMarcas" type="tns:obtenerMarcas"/>
+      <xsd:element name="obtenerMarcasResponse" type="tns:obtenerMarcasResponse"/>
+      <xsd:complexType name="obtenerMarcas">
+        <xsd:sequence/>
+      </xsd:complexType>
+      <xsd:complexType name="obtenerMarcasResponse">
+        <xsd:sequence>
+          <xsd:element name="return" type="xsd:string" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:complexType>
+
+      <!-- obtenerModelos -->
+      <xsd:element name="obtenerModelos" type="tns:obtenerModelos"/>
+      <xsd:element name="obtenerModelosResponse" type="tns:obtenerModelosResponse"/>
+      <xsd:complexType name="obtenerModelos">
+        <xsd:sequence>
+          <xsd:element name="idMarca" type="xsd:int"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="obtenerModelosResponse">
+        <xsd:sequence>
+          <xsd:element name="return" type="xsd:string" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+  </types>
+
+  <message name="obtenerMarcas">
+    <part name="parameters" element="tns:obtenerMarcas"/>
+  </message>
+  <message name="obtenerMarcasResponse">
+    <part name="parameters" element="tns:obtenerMarcasResponse"/>
+  </message>
+
+  <message name="obtenerModelos">
+    <part name="parameters" element="tns:obtenerModelos"/>
+  </message>
+  <message name="obtenerModelosResponse">
+    <part name="parameters" element="tns:obtenerModelosResponse"/>
+  </message>
+
+  <portType name="CochesServiceImpl">
+    <operation name="obtenerMarcas">
+      <input message="tns:obtenerMarcars"/>
+      <output message="tns:obtenerMarcasResponse"/>
+    </operation>
+    <operation name="obtenerModelos">
+      <input message="tns:obtenerModelos"/>
+      <output message="tns:obtenerModelosResponse"/>
+    </operation>
+  </portType>
+
+  <binding name="CochesServiceImplPortBinding" type="tns:CochesServiceImpl">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <operation name="obtenerMarcas">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="obtenerModelos">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+
+  <service name="CochesServiceImplService">
+    <port name="CochesServiceImplPort" binding="tns:CochesServiceImplPortBinding">
+      <soap:address location="http://localhost:8080/CochesServiceImplService"/>
+    </port>
+  </service>
+</definitions>
+```
+
+5. Cliente 
+```java
+URL wsdl = new URL("http://localhost:8080/CochesServiceImplService?wsdl");
+QName  qn  = new QName("http://service.ejemplo.org/","CochesServiceImplService");
+Service service = Service.create(wsdl, qn);
+CochesService port = service.getPort(CochesService.class);
+System.out.println(port.obtenerMarcas());
+```
+
+### 2.3. SOAP en la actualidad
+Actualmente SOAP no es un protocolo que plantee para nuevas implementaciones a no ser que sea una exigencia por el sofware con el que se va trabajar. Las principales razones por las que se deja de usar tanto son
+ * Es un protocolo complejo: especificación grande, WSDL, pila WS-* (WS-Security, WS-Addressing, etc.), lo que hace costoso aprenderlo, configurarlo y mantenerlo.
+​
+ * Requiere herramientas y frameworks pesados; el código y configuración generados suelen ser difíciles de depurar y de mantener a lo largo del tiempo.
 
 ## 2. Servicios REST
 REST, que significa Representational State Transfer, es un estilo de arquitectura para sistemas de software que se utiliza principalmente en el desarrollo de servicios web. Los servicios web que siguen los principios de REST se denominan servicios web RESTful.
