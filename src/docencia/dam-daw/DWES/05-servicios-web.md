@@ -342,17 +342,38 @@ REST, que significa Representational State Transfer, es un estilo de arquitectur
 - No son la mejor opción para operaciones que requieren el mantenimiento de un estado de conexión.
 
 ## 3. API REST (RestFul)
-Una API REST (Representational State Transfer) es un estilo de arquitectura de software que se utiliza en el desarrollo de aplicaciones web. REST se basa en principios y estándares que permiten construir interfaces de programación de aplicaciones (API) de una manera coherente y predecible.
 
-La API REST utiliza métodos HTTP estándar, como GET, POST, DELETE y PUT, para realizar operaciones en los recursos. Los recursos, que son cualquier tipo de objeto, dato o servicio que se quiera proporcionar a través de la API, se identifican a través de URLs.
+Una API es RESTful cuando respeta de forma consistente los principios REST en su diseño y comportamiento.
+:::tip
+REST es la teoría. RESTful es la aplicación práctica, con todas sus implicaciones.
+:::
 
-El formato de una API RESTful tiene tres componentes principales: URL endpoint; Verbo HTTP; y Cuerpo.
+### 3.1. REST vs RESTful 
+| Aspecto	| REST (teoría)	| RESTful	| REST-like habitual |
+| --- | --- | ---| --- |
+|Modelo|	Estilo arquitectónico	|Implementación coherente|	Convención informal|
+|Recursos|	Obligatorios	|Bien definidos	|Mezcla recursos y acciones|
+|Métodos HTTP	|Semánticos	|Usados correctamente	|POST para todo|
+|Estado	|Stateless	|Stateless real	|Estado implícito|
 
-- **URL endpoint**. Es un enlace URL que representa los recursos a los que queremos acceder. Los recursos pueden ser texto, imágenes, documentos o cualquier entrada de datos. Por ejemplo, example.com/surveys nos permite ver o crear plantillas de encuestas y example.com/surveys/123/responses nos permite hacer lo mismo para todas las respuestas de la encuesta 123.
-- **Verbo HTTP**. Dice al servidor qué queremos hacer con el recurso del URL endpoint. Por ejemplo, una solicitud POST significa que queremos crear una nueva plantilla de encuesta y una solicitud GET significa que queremos ver una plantilla de encuesta existente.
-- **Mensaje del cuerpo**. Es una carga útil personalizada opcional que contiene un mensaje con las propiedades y valores que queremos usar para crear o actualizar un recurso dado.
 
-Las API RESTful son muy populares porque son fáciles de entender y usar. Además, son altamente escalables y flexibles, y son compatibles con la mayoría de los lenguajes y plataformas.
+### Cuándo importa ser “RESTful”… y cuándo no
+
+* Cuándo ***SI*** importa (mucho)
+  * APIs públicas o con múltiples clientes (web, móvil, terceros): coherencia y predictibilidad reducen fricción.
+  * Integraciones a largo plazo: cuanto más dura un contrato, más duele romperlo.
+  * Ecosistemas con muchos equipos: RESTful actúa como “idioma común” para evitar APIs caóticas.
+  * Necesidad de caché y escalado de lecturas: REST facilita cacheabilidad cuando se diseña bien.
+
+* Cuándo ***NO*** es crítico ser “REST puro”
+  * APIs internas de bajo impacto con un solo cliente controlado (por ejemplo, un BFF simple).
+  * Sistemas orientados a eventos donde el flujo principal no es request/response.
+  * Casos con alta complejidad de consulta donde GraphQL puede encajar mejor.
+  * Operaciones muy específicas (RPC real) donde la semántica de “recursos” no encaja sin forzar el diseño.
+
+::: tip
+El **criterio Gondor** aquí es simple: no conviertas REST en religión. Si el coste de “ser RESTful” supera el beneficio, aplica REST-like coherente y documentado.
+:::
 
 
 ### 3.2. Ejemplo 1: Consulta de una BD de marcas y modelos de coches
@@ -454,12 +475,13 @@ curl http://localhost:8000/marcas/2/modelos
 
 Documentación generada de forma automática: `http://localhost:8000/docs` (Swagger UI)
 
-<!-- ![rest](/images/dwes/rest.webp) 
+## 4. Buenas prácticas creando una API RestFull
 
-## Recursos y Endpoints
-Diseñar una API REST (Representational State Transfer) para gestionar un recurso implica seguir ciertas convenciones y principios fundamentales. 
+Diseñar una API REST (Representational State Transfer) para gestionar un recurso implica seguir ciertas **convenciones y principios fundamentales**. 
 
 En primer lugar, debes entender qué es un **recurso** en el contexto de una API REST. Un recurso es cualquier objeto que queremos gestionar y puede ser accedido a través de una URL única. Por ejemplo, si estás construyendo una API para un blog, tus recursos podrían ser "usuarios", "posts" y "comentarios".
+
+### 4.1. Recursos y Endpoints
 
 Las URL de los **endpoints** en una API REST deben ser diseñadas de tal manera que representen los recursos. Aquí hay algunas convenciones comunes:
 
@@ -469,7 +491,7 @@ Las URL de los **endpoints** en una API REST deben ser diseñadas de tal manera 
 
 Ten en cuenta que una URL debe identificar un recurso específico, y no una acción. Por ejemplo, `/users/123` es una URL válida, pero `/users/create` no lo es.
 
-## Métodos HTTP
+### 4.2. Métodos HTTP
 Los métodos HTTP representan las acciones que se pueden realizar sobre un recurso. Los más comunes son:
 
 1. **GET**: Este método se utiliza para obtener información de un recurso en particular. Cuando se realiza una solicitud GET a un servidor, este devuelve los datos solicitados del recurso especificado. Por ejemplo, si tienes un servicio web que proporciona información sobre libros, una solicitud GET a "/books/1" podría devolver los detalles del libro con el ID 1.
@@ -484,41 +506,40 @@ Los métodos HTTP representan las acciones que se pueden realizar sobre un recur
 
 Estos métodos son fundamentales para el diseño de APIs RESTful, que se basan en los principios de los sistemas de representación de estado transferible (REST) para permitir la creación de servicios web que pueden ser utilizados por múltiples clientes, incluyendo navegadores web, aplicaciones móviles, y otros servidores.
 
-## Respuestas
+### 4.3 Respuestas
 Los códigos de estado HTTP son una parte integral de cómo funcionan los servicios web y la arquitectura REST. Estos códigos son la manera en que un servidor informa al cliente sobre el resultado de su solicitud, y pueden tener un contenido asociado. Por ejemplo, si realizas una solicitud GET a un servidor y el recurso solicitado se encuentra, el servidor devolverá un código 200 OK junto con el recurso solicitado en el cuerpo de la respuesta. Algunos de lo que más usarás son:
 
-- 200 OK: Este es el código de estado más comúnmente recibido. Significa que la solicitud ha sido procesada con éxito y la respuesta es apropiada a la petición.
+- **200 OK**: Este es el código de estado más comúnmente recibido. Significa que la solicitud ha sido procesada con éxito y la respuesta es apropiada a la petición.
 
-- 201 Created: Este código de estado se utiliza para indicar que la solicitud ha sido cumplida y ha resultado en la creación de un nuevo recurso. Por ejemplo, si se realiza una solicitud POST para crear un nuevo usuario en una base de datos y la operación es exitosa, el servidor puede devolver un código 201. El cuerpo de la respuesta puede incluir una URL que apunte al nuevo recurso, así como los datos del nuevo recurso.
+- **201 Created**: Este código de estado se utiliza para indicar que la solicitud ha sido cumplida y ha resultado en la creación de un nuevo recurso. Por ejemplo, si se realiza una solicitud POST para crear un nuevo usuario en una base de datos y la operación es exitosa, el servidor puede devolver un código 201. El cuerpo de la respuesta puede incluir una URL que apunte al nuevo recurso, así como los datos del nuevo recurso.
 
-- 204 No Content: Este código indica que la solicitud se ha completado con éxito, pero no hay contenido para enviar de vuelta. Esto es común en situaciones donde sólo necesitas realizar una acción, como eliminar un recurso, pero no necesitas una respuesta.
+- **204 No Content**: Este código indica que la solicitud se ha completado con éxito, pero no hay contenido para enviar de vuelta. Esto es común en situaciones donde sólo necesitas realizar una acción, como eliminar un recurso, pero no necesitas una respuesta.
 
-- 400 Bad Request: Este código indica que el servidor no pudo entender la solicitud debido a una sintaxis inválida. Por ejemplo, si envías datos JSON mal formados en una solicitud POST, puedes recibir un código 400.
+- **400 Bad Request**: Este código indica que el servidor no pudo entender la solicitud debido a una sintaxis inválida. Por ejemplo, si envías datos JSON mal formados en una solicitud POST, puedes recibir un código 400.
 
-- 401 Unauthorized: Este código de estado indica que la solicitud requiere autenticación de usuario. Si intentas acceder a un recurso que requiere autenticación sin proporcionar las credenciales correctas, recibirás un código 401.
+- **401 Unauthorized**: Este código de estado indica que la solicitud requiere autenticación de usuario. Si intentas acceder a un recurso que requiere autenticación sin proporcionar las credenciales correctas, recibirás un código 401.
 
-- 403 Forbidden: A diferencia del 401, este código indica que la autenticación ha sido procesada pero el cliente no tiene permisos para acceder al recurso. Por ejemplo, si un usuario intenta modificar datos a los que no tiene acceso, recibirá un código 403.
+- **403 Forbidden**: A diferencia del 401, este código indica que la autenticación ha sido procesada pero el cliente no tiene permisos para acceder al recurso. Por ejemplo, si un usuario intenta modificar datos a los que no tiene acceso, recibirá un código 403.
 
-- 404 Not Found: Este código indica que el recurso solicitado no pudo ser encontrado en el servidor. Por ejemplo, si intentas acceder a una URL que no existe, recibirás un código 404.
+- **404 Not Found**: Este código indica que el recurso solicitado no pudo ser encontrado en el servidor. Por ejemplo, si intentas acceder a una URL que no existe, recibirás un código 404.
 
-- 405 Method Not Allowed: Este código indica que el método de solicitud (GET, POST, PUT, DELETE, etc.) no es compatible con el recurso solicitado. Por ejemplo, si intentas realizar una solicitud PUT en una URL que sólo admite GET, recibirás un código 405.
+- **405 Method Not Allowed**: Este código indica que el método de solicitud (GET, POST, PUT, DELETE, etc.) no es compatible con el recurso solicitado. Por ejemplo, si intentas realizar una solicitud PUT en una URL que sólo admite GET, recibirás un código 405.
 
-- 406 Not Acceptable: Este código se utiliza para indicar que el recurso solicitado es incapaz de generar contenido que cumpla con los encabezados de aceptación enviados en la solicitud. Por ejemplo, si solicitas un tipo de contenido que el servidor no puede proporcionar, recibirás un código 406, o si pasas un tipo de contenido que el servidor no puede aceptar, recibirás un código 415.
+- **406 Not Acceptable**: Este código se utiliza para indicar que el recurso solicitado es incapaz de generar contenido que cumpla con los encabezados de aceptación enviados en la solicitud. Por ejemplo, si solicitas un tipo de contenido que el servidor no puede proporcionar, recibirás un código 406, o si pasas un tipo de contenido que el servidor no puede aceptar, recibirás un código 415.
 
-- 408 Request Timeout: Este código indica que el servidor cerró la conexión inactiva porque la solicitud del cliente tardó demasiado tiempo. Por ejemplo, si el servidor tiene un tiempo de espera configurado y tu solicitud no se completa en ese tiempo, recibirás un código 408.
+- **408 Request Timeout**: Este código indica que el servidor cerró la conexión inactiva porque la solicitud del cliente tardó demasiado tiempo. Por ejemplo, si el servidor tiene un tiempo de espera configurado y tu solicitud no se completa en ese tiempo, recibirás un código 408.
 
-- 500 Internal Server Error: Este código indica que el servidor encontró una condición inesperada que le impidió cumplir con la solicitud. Por ejemplo, si el servidor encuentra un error al procesar una solicitud, puede devolver un código 500.
+- **500 Internal Server Error**: Este código indica que el servidor encontró una condición inesperada que le impidió cumplir con la solicitud. Por ejemplo, si el servidor encuentra un error al procesar una solicitud, puede devolver un código 500.
 
 Además, las respuestas deberían incluir el recurso o los recursos solicitados en el cuerpo de la respuesta en un formato como JSON.
 
-## Error Handling
+### 4.4 Error Handling
 Es importante manejar los errores de manera adecuada en tu API REST. Esto significa proporcionar mensajes de error claros y útiles, así como códigos de estado HTTP adecuados.
 
-## 6. Versionado
+### 4.5. Versionado
 Es aconsejable versionar tu API para que puedas hacer cambios y mejoras sin romper las aplicaciones existentes que utilizan tu API. Una forma común de hacer esto es incluir el número de versión en la URL, como en `/v1/users`.
 
-
-## Ejemplo de diseño de acceso de un recurso
+### 4.6 Ejemplo de diseño de acceso de un recurso
 
 | Endpoint | Petición HTTP | Body | Response Code | Response Body | Posibles Errores |
 |----------|---------------|------|---------------|---------------|------------------|
@@ -528,5 +549,3 @@ Es aconsejable versionar tu API para que puedas hacer cambios y mejoras sin romp
 | /productos/{id} | PUT | `{ "nombre": "Producto Actualizado", "precio": 12.99 }` | 200 (OK) | `{ "id": 1, "nombre": "Producto Actualizado", "precio": 12.99 }` | 400 (Solicitud incorrecta), 404 (No encontrado) |
 | /productos/{id} | PATCH | `{ "precio": 12.99 }` | 200 (OK) | `{ "id": 1, "nombre": "Producto Actualizado", "precio": 12.99 }` | 400 (Solicitud incorrecta), 404 (No encontrado) |
 | /productos/{id} | DELETE | N/A | 204 (No Content) | N/A | 404 (No encontrado) |
-
--->
