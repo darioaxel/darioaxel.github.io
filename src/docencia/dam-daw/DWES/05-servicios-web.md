@@ -354,6 +354,106 @@ El formato de una API RESTful tiene tres componentes principales: URL endpoint; 
 
 Las API RESTful son muy populares porque son fáciles de entender y usar. Además, son altamente escalables y flexibles, y son compatibles con la mayoría de los lenguajes y plataformas.
 
+
+### 3.2. Ejemplo 1: Consulta de una BD de marcas y modelos de coches
+
+Ahora vamos a implementar el mismo ejemplo que hicimos con SOAP mediante un servicio REST utilizando [FastAPI](https://fastapi.tiangolo.com/). 
+
+Servicio que expone exactamente las mismas dos funciones que el SOAP anterior:
+
+1. `GET /marcas` → devuelve la lista de marcas  
+2. `GET /marcas/{id_marca}/modelos` → devuelve los modelos de esa marca
+
+**Estructura:**
+```
+fastapi-coches/
+├── main.py
+└── requirements.txt
+```
+
+**requirements.txt**
+```
+fastapi==0.110.0
+uvicorn[standard]==0.27.1
+```
+
+```python
+# main.py
+from fastapi import FastAPI, HTTPException
+from pydantic import BaseModel
+from typing import List
+
+app = FastAPI(title="CochesAPI", version="1.0.0")
+
+# ---- esquemas ----
+class MarcaOut(BaseModel):
+    id: int
+    nombre: str
+
+class ModeloOut(BaseModel):
+    id_marca: int
+    modelos: List[str]
+
+# ---- datos mock ----
+MARCAS = {1: "Seat", 2: "Volkswagen", 3: "Citroën"}
+MODELOS = {1: ["Arona", "Ibiza", "León"],
+           2: ["Golf", "T-Roc", "Passat"],
+           3: ["C3", "C4", "C5"]}
+
+# ---- endpoints ----
+@app.get("/marcas", response_model=List[MarcaOut])
+def obtener_marcas():
+    """Lista de marcas en formato JSON completo."""
+    return [{"id": i, "nombre": m} for i, m in MARCAS.items()]
+
+@app.get("/marcas/{id_marca}/modelos", response_model=ModeloOut)
+def obtener_modelos(id_marca: int):
+    """Modelos de la marca solicitada."""
+    if id_marca not in MODELOS:
+        raise HTTPException(status_code=404, detail="Marca no encontrada")
+    return ModeloOut(id_marca=id_marca, modelos=MODELOS[id_marca])
+```
+
+Para levantar la apliación haremos (ya lo veremos en prácticas más detalladamente)
+```bash
+uvicorn main:app --reload --host 0.0.0.0 --port 8000
+```
+
+Podemos probar nuestra api usando **curl** como sigue:
+
+`GET /marcas`
+```bash
+# marcas
+curl http://localhost:8000/marcas
+# ["Seat","Volkswagen","Citroën"]
+```
+
+```json
+[
+  {"id": 1, "nombre": "Seat"},
+  {"id": 2, "nombre": "Volkswagen"},
+  {"id": 3, "nombre": "Citroën"}
+]
+```
+
+`GET /marcas/2/modelos`
+```bash
+curl http://localhost:8000/marcas/2/modelos
+# ["Golf","T-Roc","Passat"]
+```
+
+```json
+{
+  "id_marca": 2,
+  "modelos": ["Golf", "T-Roc", "Passat"]
+}
+```
+
+
+
+
+Documentación generada de forma automática: `http://localhost:8000/docs` (Swagger UI)
+
 <!-- ![rest](/images/dwes/rest.webp) 
 
 ## Recursos y Endpoints
