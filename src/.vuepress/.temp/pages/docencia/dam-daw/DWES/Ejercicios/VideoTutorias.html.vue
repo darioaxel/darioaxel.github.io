@@ -56,12 +56,12 @@
 <tr>
 <td>10</td>
 <td>10/12/2025</td>
-<td>--</td>
+<td>---</td>
 </tr>
 <tr>
 <td>11</td>
 <td>17/12/2025</td>
-<td>Dudas de desarrollo de la práctica UT04</td>
+<td>---</td>
 </tr>
 <tr>
 <td>12</td>
