@@ -193,24 +193,24 @@ En Nuxt 4, este proceso está completamente automatizado mediante el Nitro Engin
 <div class="language-vue line-numbers-mode" data-highlighter="shiki" data-ext="vue" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code" v-pre=""><code class="language-vue"><span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">&#x3C;</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">template</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">></span></span>
 <span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">  &#x3C;</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">div</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> class</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">=</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"login-container"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">></span></span>
 <span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">    &#x3C;</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">h1</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">>Login Alumnado&#x3C;/</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">h1</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">></span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">    &#x3C;</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">form</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> @submit.prevent</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">=</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"handleLogin"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">></span></span>
+<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">    &#x3C;</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">form</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> @</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66">submit</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">.</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66">prevent</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">=</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">"</span><span style="--shiki-light:#383A42;--shiki-dark:#E06C75">handleLogin</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">></span></span>
 <span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">      &#x3C;</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">input</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> </span></span>
-<span class="line"><span style="--shiki-light:#986801;--shiki-dark:#D19A66">        v-model</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">=</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"email"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> </span></span>
+<span class="line"><span style="--shiki-light:#986801;--shiki-dark:#D19A66">        v-model</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">=</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">"</span><span style="--shiki-light:#383A42;--shiki-dark:#E06C75">email</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> </span></span>
 <span class="line"><span style="--shiki-light:#986801;--shiki-dark:#D19A66">        type</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">=</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"email"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> </span></span>
 <span class="line"><span style="--shiki-light:#986801;--shiki-dark:#D19A66">        placeholder</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">=</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"email@cesur.com"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> </span></span>
 <span class="line"><span style="--shiki-light:#986801;--shiki-dark:#D19A66">        required</span></span>
 <span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">      ></span></span>
 <span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">      &#x3C;</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">input</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> </span></span>
-<span class="line"><span style="--shiki-light:#986801;--shiki-dark:#D19A66">        v-model</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">=</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"password"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> </span></span>
+<span class="line"><span style="--shiki-light:#986801;--shiki-dark:#D19A66">        v-model</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">=</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">"</span><span style="--shiki-light:#383A42;--shiki-dark:#E06C75">password</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> </span></span>
 <span class="line"><span style="--shiki-light:#986801;--shiki-dark:#D19A66">        type</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">=</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"password"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> </span></span>
 <span class="line"><span style="--shiki-light:#986801;--shiki-dark:#D19A66">        placeholder</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">=</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"Contraseña"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> </span></span>
 <span class="line"><span style="--shiki-light:#986801;--shiki-dark:#D19A66">        required</span></span>
 <span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">      ></span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">      &#x3C;</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">button</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> type</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">=</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"submit"</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> :disabled</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">=</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"loading"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">></span></span>
+<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">      &#x3C;</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">button</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> type</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">=</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"submit"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> :</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66">disabled</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">=</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">"</span><span style="--shiki-light:#383A42;--shiki-dark:#E06C75">loading</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">></span></span>
 <span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">        {{ loading ? 'Cargando...' : 'Entrar' }}</span></span>
 <span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">      &#x3C;/</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">button</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">></span></span>
 <span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">    &#x3C;/</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">form</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">></span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">    &#x3C;</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">p</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> v-if</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">=</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"error"</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> class</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">=</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"error"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">>{{ error }}&#x3C;/</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">p</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">></span></span>
+<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">    &#x3C;</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">p</span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD"> v-if</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">=</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">"</span><span style="--shiki-light:#383A42;--shiki-dark:#E06C75">error</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">"</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> class</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">=</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"error"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">>{{ error }}&#x3C;/</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">p</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">></span></span>
 <span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">  &#x3C;/</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">div</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">></span></span>
 <span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">&#x3C;/</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">template</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">></span></span>
 <span class="line"></span>
@@ -274,13 +274,13 @@ En Nuxt 4, este proceso está completamente automatizado mediante el Nitro Engin
 <span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">    &#x3C;</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">p</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">>Email: {{ user?.email }}&#x3C;/</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">p</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">></span></span>
 <span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">    </span></span>
 <span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">    &#x3C;</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">h2</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">>Mis cursos&#x3C;/</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">h2</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">></span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">    &#x3C;</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">ul</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> v-if</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">=</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"cursos.length"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">></span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">      &#x3C;</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">li</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> v-for</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">=</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"curso in cursos"</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> :key</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">=</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"curso.id"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">></span></span>
+<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">    &#x3C;</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">ul</span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD"> v-if</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">=</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">"</span><span style="--shiki-light:#383A42;--shiki-dark:#E5C07B">cursos</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">.</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">length</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">></span></span>
+<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">      &#x3C;</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">li</span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD"> v-for</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">=</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">"</span><span style="--shiki-light:#383A42;--shiki-dark:#E06C75">curso</span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD"> in</span><span style="--shiki-light:#383A42;--shiki-dark:#E06C75"> cursos</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> :</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66">key</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">=</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">"</span><span style="--shiki-light:#383A42;--shiki-dark:#E5C07B">curso</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">.</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">id</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">></span></span>
 <span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">        {{ curso.nombre }} - Nota: {{ curso.nota }}</span></span>
 <span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">      &#x3C;/</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">li</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">></span></span>
 <span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">    &#x3C;/</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">ul</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">></span></span>
 <span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">    </span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">    &#x3C;</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">button</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> @click</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">=</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"logout"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">>Cerrar sesión&#x3C;/</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">button</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">></span></span>
+<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">    &#x3C;</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">button</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> @</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66">click</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">=</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">"</span><span style="--shiki-light:#383A42;--shiki-dark:#E06C75">logout</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">>Cerrar sesión&#x3C;/</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">button</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">></span></span>
 <span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">  &#x3C;/</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">div</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">></span></span>
 <span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">&#x3C;/</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">template</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">></span></span>
 <span class="line"></span>
@@ -489,7 +489,6 @@ En Nuxt 4, este proceso está completamente automatizado mediante el Nitro Engin
 <li><strong>Nuxt DevTools</strong>: <a href="https://devtools.nuxt.com/" target="_blank" rel="noopener noreferrer">https://devtools.nuxt.com/</a></li>
 <li><strong>Módulo de Nuxt para JWT</strong>: <a href="https://github.com/sidebase/nuxt-auth" target="_blank" rel="noopener noreferrer">https://github.com/sidebase/nuxt-auth</a></li>
 </ul>
-<hr>
 <div class="hint-container note">
 <p class="hint-container-title">Nota</p>
 <p><strong>Para producción con múltiples backends:</strong></p>
@@ -499,6 +498,138 @@ En Nuxt 4, este proceso está completamente automatizado mediante el Nitro Engin
 <li>Considera NuxtHub para despliegue sin configuración en Vercel o Cloudflare Pages</li>
 </ul>
 </div>
+<h2 id="_9-glosario-de-terminos-de-desarrollo-web-avanzado" tabindex="-1"><a class="header-anchor" href="#_9-glosario-de-terminos-de-desarrollo-web-avanzado"><span>9. Glosario de términos de desarrollo web avanzado</span></a></h2>
+<table>
+<thead>
+<tr>
+<th>Término</th>
+<th>Definición</th>
+<th>Uso práctico en el proyecto</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>API Gateway</strong></td>
+<td>Patrón de arquitectura que actúa como único punto de entrada para múltiples microservicios, gestionando autenticación, rate limiting y enrutado.</td>
+<td>Centraliza el acceso a Django API, FastAPI y Supabase desde Nuxt.</td>
+</tr>
+<tr>
+<td><strong>Buildtime</strong></td>
+<td>Momento en que el código se compila y optimiza (contrasta con Runtime). Las decisiones tomadas aquí no se pueden cambiar sin recompilar.</td>
+<td>Configuración de Nuxt en <code v-pre>nuxt.config.ts</code>, generación de rutas estáticas.</td>
+</tr>
+<tr>
+<td><strong>Bundle</strong></td>
+<td>Archivo único generado al compilar el frontend que contiene todo el JavaScript, CSS y assets.</td>
+<td><code v-pre>dist/_nuxt/</code> en Nuxt, optimizado por Vite/Rollup.</td>
+</tr>
+<tr>
+<td><strong>Cache-busting</strong></td>
+<td>Técnica para invalidar caché del navegador añadiendo hash al nombre de archivos (ej: <code v-pre>app.a1b2c3.js</code>).</td>
+<td>Nuxt lo hace automáticamente en producción.</td>
+</tr>
+<tr>
+<td><strong>CORS</strong> (Cross-Origin Resource Sharing)</td>
+<td>Mecanismo de seguridad que permite o deniega peticiones de otros dominios. Configurar en backend Django con <code v-pre>corsheaders</code>.</td>
+<td><code v-pre>CORS_ALLOWED_ORIGINS = ['http://localhost:3000']</code> para Nuxt.</td>
+</tr>
+<tr>
+<td><strong>Composable</strong></td>
+<td>Función reutilizable en Vue 3/Nuxt que encapsula lógica con estado reactivo (ej: <code v-pre>useAuth()</code>, <code v-pre>useFetch()</code>).</td>
+<td><code v-pre>composables/useAuth.ts</code> para gestionar JWT.</td>
+</tr>
+<tr>
+<td><strong>CSRF</strong> (Cross-Site Request Forgery)</td>
+<td>Ataque que fuerza al usuario autenticado a ejecutar acciones no deseadas en otro sitio.</td>
+<td>Protegido con <code v-pre>samesite='Lax'</code> en cookies y tokens CSRF en Django.</td>
+</tr>
+<tr>
+<td><strong>CSR</strong> (Client-Side Rendering)</td>
+<td>Renderizado en el navegador. El servidor envía HTML vacío y JavaScript construye la página.</td>
+<td>SPA tradicional, sin SEO.</td>
+</tr>
+<tr>
+<td><strong>Hydration</strong> (Hidratación)</td>
+<td>Proceso por el que el framework (Vue) &quot;activa&quot; el HTML estático generado por el servidor, añadiendo interactividad y estado.</td>
+<td>Nuxt transforma HTML estático en SPA automáticamente tras la carga inicial.</td>
+</tr>
+<tr>
+<td><strong>Hook</strong></td>
+<td>Función de ciclo de vida que se ejecuta en momentos específicos (ej: <code v-pre>onMounted</code>, <code v-pre>definePageMeta</code>).</td>
+<td><code v-pre>onMounted</code> para cargar datos tras la hidratación.</td>
+</tr>
+<tr>
+<td><strong>Isomorphic / Universal</strong></td>
+<td>Código que se ejecuta tanto en servidor como en cliente (ej: validaciones, utilidades).</td>
+<td>Validación de formularios en <code v-pre>composables/</code> compartidos.</td>
+</tr>
+<tr>
+<td><strong>JWT</strong> (JSON Web Token)</td>
+<td>Token firmado que contiene información del usuario, usado para autenticación sin estado.</td>
+<td><code v-pre>access_token</code> y <code v-pre>refresh_token</code> entre Nuxt y Django.</td>
+</tr>
+<tr>
+<td><strong>Lazy-loading</strong></td>
+<td>Cargar recursos solo cuando se necesitan (imágenes, componentes, rutas).</td>
+<td><code v-pre>defineAsyncComponent</code> en Vue o imágenes con <code v-pre>loading=&quot;lazy&quot;</code>.</td>
+</tr>
+<tr>
+<td><strong>Middleware</strong></td>
+<td>Función que se ejecuta antes de renderizar una ruta o petición (en Nuxt o Django).</td>
+<td>Protección de rutas <code v-pre>/panel</code> en <code v-pre>middleware/auth.ts</code>.</td>
+</tr>
+<tr>
+<td><strong>Prefetching</strong></td>
+<td>Cargar recursos antes de que el usuario los necesite (hover sobre links).</td>
+<td>Nuxt lo hace automáticamente en enlaces <code v-pre>&lt;NuxtLink&gt;</code>.</td>
+</tr>
+<tr>
+<td><strong>Props</strong></td>
+<td>Propiedades pasadas de padre a hijo en componentes Vue.</td>
+<td><code v-pre>:user=&quot;user&quot;</code> en componentes de panel.</td>
+</tr>
+<tr>
+<td><strong>Rate Limiting</strong></td>
+<td>Limitar el número de peticiones por IP/usuario para evitar abusos.</td>
+<td><code v-pre>django-ratelimit</code> en login, <code v-pre>rate-limit</code> en Nuxt server API.</td>
+</tr>
+<tr>
+<td><strong>Runtime</strong></td>
+<td>Momento de ejecución del código. Las decisiones aquí son dinámicas.</td>
+<td>Validar JWT en cada petición, cambiar tema oscuro/claro.</td>
+</tr>
+<tr>
+<td><strong>SPA</strong> (Single Page Application)</td>
+<td>Aplicación que carga una vez y navega sin recargar la página completa.</td>
+<td>Interacción post-login en <code v-pre>/panel</code>.</td>
+</tr>
+<tr>
+<td><strong>SSG</strong> (Static Site Generation)</td>
+<td>Generar páginas HTML estáticas en buildtime. Ideal para contenido que no cambia.</td>
+<td>Blog institucional, landing page de la FP.</td>
+</tr>
+<tr>
+<td><strong>SSR</strong> (Server-Side Rendering)</td>
+<td>Renderizar HTML en el servidor para cada petición. Mejora SEO y velocidad inicial.</td>
+<td>Página de login y panel de Nuxt con <code v-pre>ssr: true</code>.</td>
+</tr>
+<tr>
+<td><strong>State</strong></td>
+<td>Datos reactivos que definen el estado de la aplicación.</td>
+<td><code v-pre>const user = useState('user', () =&gt; null)</code></td>
+</tr>
+<tr>
+<td><strong>Store</strong> (Pinia/Vuex)</td>
+<td>Gestor centralizado de estado para toda la aplicación.</td>
+<td><code v-pre>stores/auth.ts</code> con Pinia en proyectos complejos.</td>
+</tr>
+<tr>
+<td><strong>Tree-shaking</strong></td>
+<td>Eliminar código muerto no utilizado del bundle final.</td>
+<td>Nuxt + Vite eliminan automáticamente componentes y funciones no usados.</td>
+</tr>
+</tbody>
+</table>
 </div></template>
 
 
