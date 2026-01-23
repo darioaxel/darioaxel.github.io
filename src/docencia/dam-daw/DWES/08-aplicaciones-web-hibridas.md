@@ -536,7 +536,6 @@ const apiKey = config.public.analyticsApiKey
 - **Nuxt DevTools**: https://devtools.nuxt.com/
 - **Módulo de Nuxt para JWT**: https://github.com/sidebase/nuxt-auth
 
----
 
 ::: note
 **Para producción con múltiples backends:**
@@ -544,3 +543,32 @@ const apiKey = config.public.analyticsApiKey
 - Implementa un API Gateway si tienes más de 3 backends para centralizar autenticación
 - Considera NuxtHub para despliegue sin configuración en Vercel o Cloudflare Pages
 :::
+
+## 9. Glosario de términos de desarrollo web avanzado
+
+| Término | Definición | Uso práctico en el proyecto |
+| --------- | ------------ |---------------------------- |
+| **API Gateway** | Patrón de arquitectura que actúa como único punto de entrada para múltiples microservicios, gestionando autenticación, rate limiting y enrutado. | Centraliza el acceso a Django API, FastAPI y Supabase desde Nuxt. |
+| **Buildtime** | Momento en que el código se compila y optimiza (contrasta con Runtime). Las decisiones tomadas aquí no se pueden cambiar sin recompilar. | Configuración de Nuxt en `nuxt.config.ts`, generación de rutas estáticas. |
+| **Bundle** | Archivo único generado al compilar el frontend que contiene todo el JavaScript, CSS y assets. | `dist/_nuxt/` en Nuxt, optimizado por Vite/Rollup. |
+| **Cache-busting** | Técnica para invalidar caché del navegador añadiendo hash al nombre de archivos (ej: `app.a1b2c3.js`). | Nuxt lo hace automáticamente en producción. |
+| **CORS** (Cross-Origin Resource Sharing) | Mecanismo de seguridad que permite o deniega peticiones de otros dominios. Configurar en backend Django con `corsheaders`. | `CORS_ALLOWED_ORIGINS = ['http://localhost:3000']` para Nuxt. |
+| **Composable** | Función reutilizable en Vue 3/Nuxt que encapsula lógica con estado reactivo (ej: `useAuth()`, `useFetch()`). | `composables/useAuth.ts` para gestionar JWT. |
+| **CSRF** (Cross-Site Request Forgery) | Ataque que fuerza al usuario autenticado a ejecutar acciones no deseadas en otro sitio. | Protegido con `samesite='Lax'` en cookies y tokens CSRF en Django. |
+| **CSR** (Client-Side Rendering) | Renderizado en el navegador. El servidor envía HTML vacío y JavaScript construye la página. | SPA tradicional, sin SEO. |
+| **Hydration** (Hidratación) | Proceso por el que el framework (Vue) "activa" el HTML estático generado por el servidor, añadiendo interactividad y estado. | Nuxt transforma HTML estático en SPA automáticamente tras la carga inicial. |
+| **Hook** | Función de ciclo de vida que se ejecuta en momentos específicos (ej: `onMounted`, `definePageMeta`). | `onMounted` para cargar datos tras la hidratación. |
+| **Isomorphic / Universal** | Código que se ejecuta tanto en servidor como en cliente (ej: validaciones, utilidades). | Validación de formularios en `composables/` compartidos. |
+| **JWT** (JSON Web Token) | Token firmado que contiene información del usuario, usado para autenticación sin estado. | `access_token` y `refresh_token` entre Nuxt y Django. |
+| **Lazy-loading** | Cargar recursos solo cuando se necesitan (imágenes, componentes, rutas). | `defineAsyncComponent` en Vue o imágenes con `loading="lazy"`. |
+| **Middleware** | Función que se ejecuta antes de renderizar una ruta o petición (en Nuxt o Django). | Protección de rutas `/panel` en `middleware/auth.ts`. |
+| **Prefetching** | Cargar recursos antes de que el usuario los necesite (hover sobre links). | Nuxt lo hace automáticamente en enlaces `<NuxtLink>`. |
+| **Props** | Propiedades pasadas de padre a hijo en componentes Vue. | `:user="user"` en componentes de panel. |
+| **Rate Limiting** | Limitar el número de peticiones por IP/usuario para evitar abusos. | `django-ratelimit` en login, `rate-limit` en Nuxt server API. |
+| **Runtime** | Momento de ejecución del código. Las decisiones aquí son dinámicas. | Validar JWT en cada petición, cambiar tema oscuro/claro. |
+| **SPA** (Single Page Application) | Aplicación que carga una vez y navega sin recargar la página completa. | Interacción post-login en `/panel`. |
+| **SSG** (Static Site Generation) | Generar páginas HTML estáticas en buildtime. Ideal para contenido que no cambia. | Blog institucional, landing page de la FP. |
+| **SSR** (Server-Side Rendering) | Renderizar HTML en el servidor para cada petición. Mejora SEO y velocidad inicial. | Página de login y panel de Nuxt con `ssr: true`. |
+| **State** | Datos reactivos que definen el estado de la aplicación. | `const user = useState('user', () => null)` |
+| **Store** (Pinia/Vuex) | Gestor centralizado de estado para toda la aplicación. | `stores/auth.ts` con Pinia en proyectos complejos. |
+| **Tree-shaking** | Eliminar código muerto no utilizado del bundle final. | Nuxt + Vite eliminan automáticamente componentes y funciones no usados. |
