@@ -549,3 +549,154 @@ Es aconsejable versionar tu API para que puedas hacer cambios y mejoras sin romp
 | /productos/{id} | PUT | `{ "nombre": "Producto Actualizado", "precio": 12.99 }` | 200 (OK) | `{ "id": 1, "nombre": "Producto Actualizado", "precio": 12.99 }` | 400 (Solicitud incorrecta), 404 (No encontrado) |
 | /productos/{id} | PATCH | `{ "precio": 12.99 }` | 200 (OK) | `{ "id": 1, "nombre": "Producto Actualizado", "precio": 12.99 }` | 400 (Solicitud incorrecta), 404 (No encontrado) |
 | /productos/{id} | DELETE | N/A | 204 (No Content) | N/A | 404 (No encontrado) |
+
+## 5. Documentación automática de APIs REST
+
+La documentación es el único contrato entre tu API y el mundo exterior; sin ella, los desarrolladores adivinan y rompen integraciones sin querer. Generarla automáticamente garantiza que siempre refleje el código actual, eliminando el desfase que convierte los PDFs en documentos inservibles. Reduce el soporte técnico: con una UI interactiva (Swagger/ReDoc), el programador se resuelve sus dudas sin abrir tickets. Facilita el onboarding: un nuevo miembro del equipo puede empezar a consumir tu API en minutos, no en días de reuniones. Permite detección temprana de cambios rotos: si tu CI falla al validar la especificación, sabes que has roto retrocompatibilidad antes de llegar a producción.
+
+### 5.2 ¿Por qué automatizar la documentación?
+
+| Si **NO** la generas automáticamente… | …sucede lo siguiente |
+|--------------------------------------|----------------------|
+| Actualización manual | La API cambia el lunes; el PDF sigue desfasado el viernes → soporte inundado de tickets. |
+| Incoherencia | Postman, Notion y el README cuentan historias distintas; el desarrollador no sabe cuál creer. |
+| On-boarding lento | Nuevo compañero necesita 2 días de reuniones para entender endpoints que podría probar en 5 min con una UI interactiva. |
+| Breaking silencioso | Renombras `total` → `importe` y nadie avisa; la app móvil casca en producción. |
+
+Automatizar = **una fuente de verdad** que se **regenera en cada push** y que **rompe el CI** si la especificación y el código divergen.
+
+### 5.3 Herramientas
+
+#### 5.3.1 Swagger-Core / Swagger-UI
+- **Qué es**: Genera la especificación OpenAPI desde anotaciones en el código y sirve una UI web interactiva.
+- **Stack más usado**: Java (Springfox / Springdoc), Node (swagger-jsdoc), .NET (Swashbuckle).
+- **Ventajas**:
+  - **Zero-conf** en frameworks mayores: con 3 anotaciones ya aparece `/swagger-ui.html`.  
+  - **Prueba integrada**: desde el navegador ejecutas llamadas sin Postman.  
+  - **Extensión gigante**: generadores de clientes (JS, Python, C#, Go…) con Swagger-Codegen.
+- **Problemas si no la usas**:
+  - Tienes que escribir YAML a mano → olvídate de mantenerlo.  
+  - Los juniors prueban contra producción porque no tienen UI local → datos basura en BD.
+
+-----
+
+- **Ejemplo mínimo (Usando el ejemplo anterior de FastAPI)**
+Aunque FastAPI ya genera Swagger UI automáticament, necesitas enriquecerlo con anotaciones para que la documentación sea clara y visual:
+```python
+
+from fastapi import FastAPI, Query, HTTPException
+from typing import Optional, List
+from pydantic import BaseModel, Field
+
+app = FastAPI(
+    title="API de Productos - Campus FP",
+    description="Ejemplo completo CRUD con filtros, paginación y documentación Swagger",
+    version="1.0.0",
+    docs_url="/swagger",  # Swagger UI en /swagger
+    redoc_url="/redoc"    # ReDoc en /redoc
+)
+
+ # Modelo con descripciones para Swagger
+ class Producto(BaseModel):
+    id: int = Field(..., example=101)
+    nombre: str = Field(..., example="Portátil DELL XPS")
+    categoria: str = Field(..., example="Informática")
+    precio: float = Field(..., gt=0, example=1299.99)
+
+ # Simulación de base de datos
+ PRODUCTOS_DB = [
+    Producto(id=1, nombre="Teclado mecánico", categoria="Informática", precio=85.50),
+    Producto(id=2, nombre="Monitor 4K", categoria="Informática", precio=450.00),
+ ]
+
+ @app.get(
+    "/api/v1/productos",
+    tags=["productos"],
+    summary="Lista productos con filtros y paginación",
+    response_model=List[Producto],
+    responses={
+        200: {"description": "Lista de productos. Puede estar vacía."},
+        422: {"description": "Parámetro de paginación inválido (negativo)"}
+    }
+)
+ def listar_productos(
+    offset: int = Query(0, ge=0, description="Número de productos a saltar para paginar"),
+    limit: int = Query(20, ge=1, le=100, description="Máximo productos a devolver (1-100)"),
+    categoria: Optional[str] = Query(None, description="Filtrar por categoría exacta"),
+    q: Optional[str] = Query(None, description="Buscar texto en nombre (case-insensitive)")
+ ):
+    """
+    **Ejemplo de uso:**
+    
+    - `/productos?categoria=Informática&limit=10`
+    - `/productos?q=teclado&offset=5`
+    """
+    resultados = PRODUCTOS_DB
+    
+    if categoria:
+        resultados = [p for p in resultados if p.categoria == categoria]
+    if q:
+        resultados = [p for p in resultados if q.lower() in p.nombre.lower()]
+    
+    return resultados[offset:offset + limit]
+
+ @app.post(
+    "/api/v1/productos",
+    tags=["productos"],
+    summary="Crear un nuevo producto",
+    status_code=201,
+    response_model=Producto
+ )
+ def crear_producto(producto: Producto):
+    """Crea un producto. El ID debe ser único."""
+    if any(p.id == producto.id for p in PRODUCTOS_DB):
+        raise HTTPException(status_code=409, detail="ID duplicado")
+    PRODUCTOS_DB.append(producto)
+    return producto
+
+ # Ejecutar: uvicorn main:app --reload
+ # Swagger UI: http://localhost:8000/swagger
+ # ReDoc: http://localhost:8000/redoc
+ # OpenAPI JSON: http://localhost:8000/openapi.json
+```
+  Accede a `http://localhost:8080/swagger-ui.html` y listo .
+
+
+#### 5.3.2 ReDoc (community edition)
+- **Qué es**: UI alternativa a Swagger-UI, más rápida y con tres columnas (navegación, especificación, ejemplos).
+- **Licencia**: MIT → puedes embeberla en tu portal o venderla dentro de un producto.
+- **Ventajas**:
+  - **SPA ligera**: un único `index.html` + JSON de OpenAPI; no necesitas Node en producción.  
+  - **Responsive**: se lee bien desde móvil.  
+  - **Branding**: colores y logo por CSS variables.
+- **Problemas si te quedas con Swagger-UI por defecto**:
+  - En APIs grandes (> 100 endpoints) Swagger-UI se vuelve lenta; ReDoc carga **todo en memoria** y el scroll es instantáneo.  
+  - Tu documentación parece “genérica” y la empresa deja de ver valor en invertir en docs.
+- **Snippet rápido**
+  ```html
+  <redoc spec-url="/api/openapi.json"></redoc>
+  <script src="https://cdn.jsdelivr.net/npm/redoc@2.0.0/bundles/redoc.standalone.js"></script>
+  ```
+  Listo, 0 dependencias de build .
+
+#### 5.3.3 Swagger-Codegen / OpenAPI-Generator**
+- **Qué hace**: a partir del `.yaml` genera:
+  - **Servidor stub** (Spring, Flask, Express, PHP-Laravel…).  
+  - **Clientes** (Axios, Retrofit, Fetch, Angular, C#, Go…).  
+  - **Documentación estática HTML** para attachar por e-mail.
+- **Por qué es útil**:
+  - **Valida tu spec**: si el YAML tiene una referencia rota, codegen falla → CI rojo.  
+  - **Acelera MVP**: en 30 segundos tienes el proyecto base con modelos y *controllers* vacíos.  
+  - **Evita desfase**: el DTO que devuelve el servidor **es el mismo** que genera el cliente; cambias el spec y ambos lados fallan hasta actualizarse.
+- **Problemas si no lo usas**:
+  - El equipo de iOS escribe sus structs a mano → renombras `total` y la App Store aprueba una versión rota.  
+  - Tienes que mantener 5 lenguajes sincronizados; un *typo* en Go puede tardar días en detectarse.
+- **Ejemplo CLI**
+  ```bash
+  docker run --rm -v ${PWD}:/local \
+    openapitools/openapi-generator-cli generate \
+    -i /local/openapi.yaml \
+    -g python-flask \
+    -o /local/server
+  ```
+  Ya tienes el stub en `./server` .
