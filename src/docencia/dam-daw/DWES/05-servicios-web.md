@@ -4,17 +4,26 @@ date: 2025-09-29
 icon: mynaui:api-solid
 ---
 
-<!-- ![banner](/images/dwes/banner02.webp)-->
-
 # UT05 Servicios Web - REST
 
 > **En este tema trabajaremos los siguientes RAs:**
 > Contenido principal
 >  - **RA7. Desarrolla servicios Web reutilizables y accesibles mediante protocolos Web, verificando su funcionamiento.**
+> 
 > Otros RAs secundarios
 > - RA4. Desarrolla aplicaciones web que acceden a bases de datos utilizando lenguajes, librerías y patrones adecuados.
 > - RA5. Utiliza frameworks y componentes que simplifican el acceso a los datos y la persistencia de la información.
 
+| **RA7. Desarrolla servicios Web reutilizables y accesibles mediante protocolos Web, verificando su funcionamiento.**|
+| --- |
+|a) Se han reconocido las características propias y el ámbito de aplicación de los servicios Web.|
+|b) Se han reconocido las ventajas de utilizar servicios Web para proporcionar acceso a funcionalidades incorporadas a la lógica de negocio de una aplicación.|
+|c) Se han identificado las tecnologías y los protocolos implicados en el consumo de servicios Web.|
+|d) Se han utilizado los estándares y arquitecturas más difundidos e implicados en el desarrollo de servicios Web.|
+|e) Se ha programado un servicio Web.|
+|f) Se ha verificado el funcionamiento del servicio Web.|
+|g) Se ha consumido el servicio Web.|
+|h) Se ha documentado un servicio Web.|
 
 ## 1.1. ¿Qué es un servicio web?
 ### 1.1.1. Una definición de servicio web
@@ -346,9 +355,17 @@ REST, que significa Representational State Transfer, es un estilo de arquitectur
 ## 3. API REST (RestFul)
 
 Una API es RESTful cuando respeta de forma consistente los principios REST en su diseño y comportamiento.
+
 :::tip
 REST es la teoría. RESTful es la aplicación práctica, con todas sus implicaciones.
 :::
+
+
+#### Ejercicio práctico
+
+En este punto puedes realizar la prueba del consumo de un API real sólamente usando javascript básico y tu navegador. Te lo dejo en el siguiente enlace: 
+
+[Consumo API Rick & Morty](https://darioaxel.github.io/docencia/dam-daw/DWES/Ejercicios/UT05-ejercicios.html)
 
 ### 3.1. REST vs RESTful 
 | Aspecto	| REST (teoría)	| RESTful	| REST-like habitual |
