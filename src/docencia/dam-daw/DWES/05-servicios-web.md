@@ -7,12 +7,14 @@ icon: mynaui:api-solid
 <!-- ![banner](/images/dwes/banner02.webp)-->
 
 # UT05 Servicios Web - REST
-![En construcción](/images/under-construction.jpg)
 
 > **En este tema trabajaremos los siguientes RAs:**
+> Contenido principal
+>  - **RA7. Desarrolla servicios Web reutilizables y accesibles mediante protocolos Web, verificando su funcionamiento.**
+> Otros RAs secundarios
 > - RA4. Desarrolla aplicaciones web que acceden a bases de datos utilizando lenguajes, librerías y patrones adecuados.
 > - RA5. Utiliza frameworks y componentes que simplifican el acceso a los datos y la persistencia de la información.
-> - RA7. Desarrolla servicios Web reutilizables y accesibles mediante protocolos Web, verificando su funcionamiento.
+
 
 ## 1.1. ¿Qué es un servicio web?
 ### 1.1.1. Una definición de servicio web
