@@ -488,9 +488,19 @@ curl http://localhost:8000/marcas/2/modelos
   "modelos": ["Golf", "T-Roc", "Passat"]
 }
 ```
+::: note *¿Qué es Uvicorn?*
+**Uvicorn** es una implementación de servidor web **ASGI** (*Asynchronous Server Gateway Interface*) diseñada específicamente para Python. Antes de ASGI, Python carecía de una interfaz de servidor de bajo nivel y minimalista para frameworks asíncronos. La especificación ASGI actúa como un puente que permite crear un conjunto común de herramientas utilizables en cualquier framework asíncrono. Actualmente, Uvicorn ofrece soporte para **HTTP/1.1** y **WebSockets**.
 
+### ASGI vs. WSGI
 
+ASGI representa un avance significativo respecto a **WSGI** (*Web Server Gateway Interface*). Mientras que WSGI está diseñado para aplicaciones síncronas individuales que procesan una petición y devuelven una respuesta, no admite conexiones de larga duración como las conexiones WebSocket. Por el contrario, ASGI es asíncrono y acepta tres argumentos:
 
+- **Scope**: Un diccionario de Python que contiene los detalles específicos de la conexión.
+- **Send**: Permite a la aplicación enviar mensajes de eventos al cliente.
+- **Receive**: Permite a la aplicación recibir mensajes de eventos del cliente.
+
+ASGI posibilita múltiples eventos entrantes y salientes simultáneos para cada aplicación, permitiendo que ésta permanezca receptiva a la entrada del usuario mientras ejecutan *coroutines* (corrutinas) en segundo plano.
+:::
 
 Documentación generada de forma automática: `http://localhost:8000/docs` (Swagger UI)
 
@@ -597,9 +607,8 @@ Automatizar = **una fuente de verdad** que se **regenera en cada push** y que **
   - Tienes que escribir YAML a mano → olvídate de mantenerlo.  
   - Los juniors prueban contra producción porque no tienen UI local → datos basura en BD.
 
------
 
-- **Ejemplo mínimo (Usando el ejemplo anterior de FastAPI)**
+##### **Ejemplo mínimo (Usando el ejemplo anterior de FastAPI)**
 Aunque FastAPI ya genera Swagger UI automáticament, necesitas enriquecerlo con anotaciones para que la documentación sea clara y visual:
 ```python
 
