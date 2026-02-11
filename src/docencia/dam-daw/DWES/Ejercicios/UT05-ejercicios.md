@@ -98,7 +98,7 @@ getPagina('https://rickandmortyapi.com/api/character?page=2');
 poetry add fastapi uvicorn[standard] asyncpg
 ```
 
-**`main.py`** (todo en uno, ~60 líneas):
+**`main.py`** 
 ```python
 from fastapi import FastAPI
 import asyncpg
@@ -176,12 +176,12 @@ async def borrar_disco(disco_id: int):
         return {"message": f"Disco {disco_id} eliminado"}
 ```
 
-**SQL para crear la tabla** (ejecutar una vez en `psql` o pgAdmin):
+**SQL para crear la tabla** 
 ```sql
 CREATE TABLE discos (
     id SERIAL PRIMARY KEY,
     titulo VARCHAR(200) NOT NULL,
-    artista VARCHAR(50) NOT NULL,  -- 'NIN', 'THE_CURE', etc.
+    artista VARCHAR(50) NOT NULL,  
     anio INTEGER CHECK (anio > 1970 AND anio < 2030),
     genero VARCHAR(50),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
