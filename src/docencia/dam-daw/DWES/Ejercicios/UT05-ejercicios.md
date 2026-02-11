@@ -6,7 +6,6 @@ icon: pen
 
 ## EJERCICIO 1: Consumo de un API público
 
-
 ### **Paso 1: Abrir la consola**
 1. Abre cualquier página web (puede ser Google en blanco)
 2. Pulsa `F12` → Pestaña **Console**
@@ -91,3 +90,5 @@ getPagina('https://rickandmortyapi.com/api/character?page=2');
 | **Filtro** | `https://rickandmortyapi.com/api/character/?status=alive&species=human` |
 
 **Tip:** Si quieres ver la imagen de un personaje directamente, usa la URL del campo `image` de la respuesta (están hosteadas en CDN).
+
+## EJERCICIO 2: Creación de un proyecto con FastAPI 
