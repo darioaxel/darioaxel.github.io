@@ -4,11 +4,12 @@ date: 2026-02-19
 icon: mynaui:api-solid
 ---
 
-# Tema 5: Tratamiento Avanzado de Datos en MySQL
+# Tema 5: Tratamiento de Datos en MySQL
 
 > **En este tema trabajaremos los siguientes RAs:**
 > Contenido principal
-> ****RA 4: Modifica la información almacenada utilizando herramientas gráficas y DML**
+> **RA 4: Modifica la información almacenada utilizando herramientas gráficas y DML**
+
 > Objetivo del tema:
 > **Objetivo**: Dominar DML avanzado mediante subconsultas como tablas derivadas y joins complejos, garantizando integridad ACID.
 
@@ -52,96 +53,174 @@ El lenguaje DML (Data Manipulation Language) opera sobre el modelo relacional me
 | **UPDATE** | `UPDATE tabla SET col=val WHERE cond` | Modificar existentes |
 | **DELETE** | `DELETE FROM tabla WHERE cond` | Eliminar registros |
 
-> 🔥 **Regla de Oro**: Siempre ejecuta un `SELECT` con la misma cláusula `WHERE` antes de un UPDATE o DELETE para verificar el scope de filas afectadas.
+::: important
+**Regla de Oro**: Siempre ejecuta un `SELECT` con la misma cláusula `WHERE` antes de un UPDATE o DELETE para verificar el scope de filas afectadas.
+:::
 
 ### 2.2. Esquema de Trabajo: Jardinería Plus
 
 Adaptación del esquema clásico con complejidad relacional aumentada:
 
-```sql
--- Base de datos para prácticas
-CREATE DATABASE IF NOT EXISTS jardineria_pro CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-USE jardineria_pro;
-
--- Tabla de oficinas
-CREATE TABLE oficinas (
-    codigo_oficina VARCHAR(10) PRIMARY KEY,
-    ciudad VARCHAR(30) NOT NULL,
-    pais VARCHAR(50) NOT NULL,
-    region VARCHAR(50),
-    codigo_postal VARCHAR(10) NOT NULL,
-    telefono VARCHAR(20) NOT NULL,
-    linea_direccion1 VARCHAR(50) NOT NULL,
-    linea_direccion2 VARCHAR(50)
-) ENGINE=InnoDB;
-
--- Tabla de empleados
-CREATE TABLE empleados (
-    codigo_empleado INT AUTO_INCREMENT PRIMARY KEY,
-    nombre VARCHAR(50) NOT NULL,
-    apellido1 VARCHAR(50) NOT NULL,
-    apellido2 VARCHAR(50),
-    extension VARCHAR(10),
-    email VARCHAR(100) NOT NULL,
-    codigo_oficina VARCHAR(10),
-    codigo_jefe INT,
-    puesto VARCHAR(50),
-    FOREIGN KEY (codigo_oficina) REFERENCES oficinas(codigo_oficina)
-        ON DELETE SET NULL ON UPDATE CASCADE,
-    FOREIGN KEY (codigo_jefe) REFERENCES empleados(codigo_empleado)
-) ENGINE=InnoDB;
-
--- Tabla de clientes con representante
-CREATE TABLE clientes (
-    codigo_cliente INT AUTO_INCREMENT PRIMARY KEY,
-    nombre_cliente VARCHAR(50) NOT NULL,
-    nombre_contacto VARCHAR(30),
-    apellido_contacto VARCHAR(30),
-    telefono VARCHAR(15) NOT NULL,
-    fax VARCHAR(15),
-    linea_direccion1 VARCHAR(50) NOT NULL,
-    linea_direccion2 VARCHAR(50),
-    ciudad VARCHAR(50) NOT NULL,
-    region VARCHAR(50),
-    pais VARCHAR(50),
-    codigo_postal VARCHAR(10),
-    codigo_empleado_rep_ventas INT,
-    limite_credito DECIMAL(15,2) DEFAULT 0.00,
-    FOREIGN KEY (codigo_empleado_rep_ventas) REFERENCES empleados(codigo_empleado)
-        ON DELETE SET NULL ON UPDATE CASCADE
-) ENGINE=InnoDB;
-
--- Tabla de pedidos
-CREATE TABLE pedidos (
-    codigo_pedido INT AUTO_INCREMENT PRIMARY KEY,
-    fecha_pedido DATE NOT NULL,
-    fecha_esperada DATE,
-    fecha_entrega DATE,
-    estado VARCHAR(15) DEFAULT 'Pendiente',
-    comentarios TEXT,
-    codigo_cliente INT NOT NULL,
-    FOREIGN KEY (codigo_cliente) REFERENCES clientes(codigo_cliente)
-        ON DELETE RESTRICT ON UPDATE CASCADE
-) ENGINE=InnoDB;
-
--- Tabla de detalle con relación compleja
-CREATE TABLE detalle_pedidos (
-    codigo_pedido INT,
-    codigo_producto VARCHAR(15),
-    cantidad INT NOT NULL CHECK (cantidad > 0),
-    precio_unidad DECIMAL(15,2) NOT NULL,
-    numero_linea SMALLINT,
-    PRIMARY KEY (codigo_pedido, codigo_producto),
-    FOREIGN KEY (codigo_pedido) REFERENCES pedidos(codigo_pedido)
-        ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB;
-```
-
 > 📸 **[INSERTAR CAPTURA PANTALLA 1: Diagrama ER del esquema en DBeaver]**
 
----
+### 2.3. La sentencia ***INSERT***
 
-## 3. Subconsultas como Tablas Derivadas (Derived Tables)
+La sentencia ***INSERT*** permite la inserción de nuevas filas o registros en un tabla existente. Según la documentación oficial de MySQL esta es la sintaxis de la sentencia ***INSERT*** en MySQL:
+
+```sql
+INSERT [LOW_PRIORITY | DELAYED | HIGH_PRIORITY] [IGNORE]
+    [INTO] tbl_name
+    [PARTITION (partition_name [, partition_name] ...)]
+    [(col_name [, col_name] ...)]
+    {VALUES | VALUE} (value_list) [, (value_list)] ...
+    [ON DUPLICATE KEY UPDATE assignment_list]
+
+INSERT [LOW_PRIORITY | DELAYED | HIGH_PRIORITY] [IGNORE]
+    [INTO] tbl_name
+    [PARTITION (partition_name [, partition_name] ...)]
+    SET assignment_list
+    [ON DUPLICATE KEY UPDATE assignment_list]
+
+INSERT [LOW_PRIORITY | HIGH_PRIORITY] [IGNORE]
+    [INTO] tbl_name
+    [PARTITION (partition_name [, partition_name] ...)]
+    [(col_name [, col_name] ...)]
+    SELECT ...
+    [ON DUPLICATE KEY UPDATE assignment_list]
+
+value:
+    {expr | DEFAULT}
+
+value_list:
+    value [, value] ...
+
+assignment:
+    col_name = value
+
+assignment_list:
+    assignment [, assignment] ...
+```
+
+El formato más sencillo de utilización de la sentencia ***INSERT*** tiene la siguiente sintaxis:
+
+```sql
+INSERT INTO nombre_tabla (lista_campos) VALUES (lista_valores);
+```
+
+Donde:
+
+- *nombre_tabla* será el nombre de la tabla en la que quieras añadir nuevos registros.
+- En *lista_campos* se indicarán los campos de dicha tabla en los que se desea escribir los nuevos valores indicados en *lista_valores*. Es posible omitir la lista de campos (*lista_campos*), si se indican todos los valores de cada campo y en el orden en el que se encuentran en la tabla.
+    - Tanto la lista de campos *lista_campos* como la de valores *lista_valores*, tendrán separados por comas cada uno de sus elementos.
+    - Hay que tener en cuenta también que cada campo de *lista_campos* debe tener un valor válido en la posición correspondiente de la *lista_valores* (Si no recuerdas los valores válidos para cada campo puedes utilizar la sentencia **`*DESCRIBE*`** seguida del nombre de la tabla que deseas consultar).
+
+Para poder probar los ejemplos debes tener creadas y cargadas las tablas de **`JuegosOnline`** en el usuario **`c##juegos`** o similar. Si no lo has hecho en la unidad anterior, descárgate el script de este [enlace,](https://www.adistanciafparagon.es/pluginfile.php/61057/mod_resource/content/2/CreayCargaJuegosOnline.zip) conecta con **`sys as sysdba`** y a continuación ejecútalo. Recuerda que si lo haces desde sqlplus solo tienes que escribir la ruta y el nombre del script precedido del símbolo @ o bien de la palabra start.
+
+Antes de ejecutar el siguiente ejemplo que inserta un nuevo registro en la tabla **`*USUARIOS*`** en el que se tienen todos los datos disponibles debes ejecutar la sentencia
+
+```sql
+**ALTER SESSION SET NLS_DATE_FORMAT='DD/MM/YYYY';**
+```
+
+para que tome la fecha en ese formato en el que le estamos dando el dato fecha.
+
+```sql
+INSERT INTO USUARIOS (Login, Password, Nombre, Apellidos, Direccion, CP, Localidad, Provincia, Pais, F_Nac,
+F_Ing, Correo, Credito, Sexo) VALUES ('migrod86', '6PX5=V', 'MIGUEL ANGEL', 'RODRIGUEZ RODRIGUEZ', 'ARCO DEL LADRILLO,PASEO', 
+'47001', 'VALLADOLID', 'VALLADOLID', 'ESPAÑA', '27/04/1977', '10/01/2008', 'migrod86@gmail.com', 200, 'H');
+```
+
+En este otro ejemplo, se inserta un registro de igual manera, pero sin disponer de todos los datos:
+
+```sql
+INSERT INTO USUARIOS (Login, Password, Nombre, Apellidos, direccion,cp,localidad,provincia,pais,Correo) VALUES ('natsan63', 
+'VBROMI', 'NATALIA', 'SANCHEZ GARCIA','C/Blanca','28003','Madrid','Madrid','Spain', 'natsan63@hotmail.com');
+```
+
+Al hacer un **`*INSERT*`** en el que no se especifiquen los valores de todos los campos, se obtendrá el valor **`*NULL*`** en aquellos campos que no se han indicado.
+
+Si la lista de campos indicados no se corresponde con la lista de valores, o si no se proporcionan valores para campos que no admiten el valor **`NULL`**, se obtendrá un error en la ejecución. Por ejemplo, si no se indica el campo Apellidos pero sí se especifica un valor para dicho campo:
+
+**`INSERT INTO USUARIOS (Login, Password, Nombre, Correo) VALUES ('caysan56', 'W4IN5U', 'CAYETANO', 'SANCHEZ CIRIZA', 'caysan56@gmail.com');`**
+
+Se obtiene el siguiente error:
+
+### 2.4. La sentencia UPDATE
+
+La sentencia **`*UPDATE*`** permite modificar una serie de valores de determinados registros de las tablas de la base de datos.
+
+La manera más sencilla de utilizar la sentencia **`*UPDATE*`** tiene la siguiente sintaxis:
+
+```sql
+UPDATE nombre_tabla SET nombre_campo = valor [, nombre_ campo = valor]...
+[ WHERE condición ];
+```
+
+Donde *nombre_tabla* será el nombre de la tabla en la que quieras modificar datos. Se pueden especificar los nombres de campos que se deseen de la tabla indicada. A cada campo especificado se le debe asociar el nuevo valor utilizando el signo =. Cada emparejamiento *campo=valor* debe separarse del siguiente utilizando comas (,).
+
+La cláusula **`*WHERE*`** seguida de la condición es opcional (como pretenden indicar los corchetes). Si se indica, la actualización de los datos sólo afectará a los registros que cumplen la condición. Por tanto, ten en cuenta que si no indicas la cláusula **`*WHERE*`**, los cambios afectarán a todos los registros.
+
+Por ejemplo, si se desea poner a 200 el crédito de todos los usuarios:
+
+```sql
+UPDATE USUARIOS SET Credito = 200;
+```
+
+En este otro ejemplo puedes ver la actualización de dos campos, poniendo a 0 el crédito y poniendo a Nulos la información del campo *f_nac* de todos los usuarios:
+
+```sql
+UPDATE USUARIOS SET Credito = 0, f_nac = NULL;
+```
+
+Para que los cambios afecten a determinados registros hay que especificar una condición. Por ejemplo, si se quiere cambiar el crédito de todas la mujeres, estableciendo el valor 300:
+
+```sql
+UPDATE USUARIOS SET Credito = 300 WHERE Sexo = 'M';
+```
+
+Cuando termina la ejecución de una sentencia **`*UPDATE*`**, se muestra la cantidad de registros (filas) que han sido actualizadas, o el error correspondiente si se ha producido algún problema. Por ejemplo podríamos encontrarnos con un mensaje similar al siguiente:
+
+`9 fila(s) actualizada(s).`
+
+### 2.5. La sentencia DELETE
+
+La sentencia **`*DELETE*`** es la que permite eliminar o borrar registros de un tabla.
+
+Esta es la sintaxis que debes tener en cuenta para utilizarla:
+
+```sql
+DELETE FROM nombre_tabla [ WHERE condición ];
+```
+
+Al igual que hemos visto en las sentencias anteriores, nombre_tabla hace referencia a la tabla sobre la que se hará la operación, en este caso de borrado. Se puede observar que la cláusula **`*WHERE*`** es opcional. Si no se indica, debes tener muy claro que se borrará todo el contenido de la tabla, aunque la tabla seguirá existiendo con la estructura que tenía hasta el momento. 
+
+Por ejemplo, si usas la siguiente sentencia, borrarás todos los registros de la tabla **`*USUARIOS*:`**
+
+```sql
+DELETE FROM USUARIOS;
+```
+
+Es tan importante escribir la cláusula  **`WHERE`** en la sentencia,  si no quieres borrar la tabla entera, que incluso hay una canción que lo recuerda.. Puedes verla en este [enlace](https://www.youtube.com/watch?v=i_cVJgIz_Cs).
+
+Para ver un ejemplo de uso de la sentencia **`*DELETE*`** en la que se indique una condición, supongamos que queremos eliminar todos los usuarios cuyo crédito es cero:
+
+```sql
+DELETE FROM USUARIOS WHERE Credito = 0;
+```
+
+Como resultado de la ejecución de este tipo de sentencia, se obtendrá un mensaje de error si se ha producido algún problema, o bien, el número de filas que se han eliminado.
+
+#### 2.5.1. Borrado y modificación de datos con integridad referencial
+
+ON DELETE y ON UPDATE: Nos permiten indicar el efecto que provoca el borrado o la actualización de los datos que están referenciados por claves ajenas. Las opciones que podemos especificar son las siguientes:
+
+- RESTRICT: Impide que se puedan actualizar o eliminar las filas que tienen valores referenciados por claves ajenas. Es la opción por defecto en MySQL.
+- CASCADE: Permite actualizar o eliminar las filas que tienen valores referenciados por claves ajenas.
+- SET NULL: Asigna el valor NULL a las filas que tienen valores referenciados por claves ajenas.
+- NO ACTION: Es una palabra clave del estándar SQL. En MySQL es equivalente a RESTRICT.
+- SET DEFAULT: No es posible utilizar esta opción cuando trabajamos con el motor de almacenamiento InnoDB. Puedes encontrar más información en la documentación oficial de MySQL.
+
+## 3. Tratamiendo de datos con subconsultas como Tablas Derivadas (Derived Tables)
 
 La técnica más potente para operaciones DML complejas consiste en tratar una consulta `SELECT` como una tabla virtual dentro de otra operación.
 
