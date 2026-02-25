@@ -6,12 +6,11 @@ icon: mynaui:api-solid
 
 # Tema 5: Tratamiento de Datos en MySQL
 
-> **En este tema trabajaremos los siguientes RAs:**
-> Contenido principal
+> En este tema trabajaremos los siguientes RAs:
 > **RA 4: Modifica la información almacenada utilizando herramientas gráficas y DML**
 
-> Objetivo del tema:
-> **Objetivo**: Dominar DML avanzado mediante subconsultas como tablas derivadas y joins complejos, garantizando integridad ACID.
+> **Objetivo del tema**: 
+> Dominar DML y subconsultas como tablas derivadas y joins complejos. Estudiar los sistemas transacionales y la integridad ACID.
 
 
 | ****RA 4: Modifica la información almacenada utilizando herramientas gráficas y DML**|
