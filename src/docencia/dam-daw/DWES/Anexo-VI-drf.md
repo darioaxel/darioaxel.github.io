@@ -1,3 +1,4 @@
+---
 title: Anexo VI. Django REST Framework
 date: 2026-02-25
 icon: code-branch
