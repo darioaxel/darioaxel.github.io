@@ -5,10 +5,9 @@ icon: fluent:cookies-16-filled
 ---
 
 # UT06 Cookies y Seguridad en aplicaciones web
-![En construcción](/images/under-construction.jpg)
 
 > **En este tema trabajaremos los siguientes RAs:**
-> - RA5. Utiliza frameworks y componentes que simplifican el acceso a los datos y la persistencia de la información.
+> - RA4. Desarrolla aplicaciones Web embebidas en lenguajes de marcas analizando e incorporando funcionalidades según especificaciones.
 > - RA6. Desarrolla aplicaciones de acceso a almacenes de datos, aplicando medidas para mantener la seguridad y la integridad de la información.
 
 ## 1. Introducción
