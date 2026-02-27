@@ -1,122 +1,169 @@
+---
+title: Práctica UT05 Servicios Web
+date: 2026-28-02
+icon: pen
+---
+
 # Práctica 5: Gestión de Socios con Validación Externa
 
-## Objetivos de aprendizaje
+## Apartado 1: Crear endpoint validador de DNI
 
-- Implementar serializadores con lógica de negocio (no mapeo 1:1 modelo-JSON)
-- Consumir APIs externas desde Django
-- Integrar datos externos en el flujo de validación
-- Manejar errores de servicios terceros
+### Objetivo
+Convertir una función Python existente en un endpoint funcional de la API REST.
 
-## Escenario
-
-Tu ONG **MyOng** necesita verificar la validez de los documentos de identidad (DNI/NIE) de los socios antes de aceptarlos. Para ello, consultarás una API pública de validación (simulada con httpbin.org) y enriquecerás los datos del socio con información geográfica obtenida de la API de Códigos Postales de España.
-
-
-### 1.1 Contexto
-
-El modelo `Socio` tiene estos campos relevantes:
+### Código de la función
 
 ```python
-# models.py (ya existente)
-class Socio(models.Model):
-    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    nombre = models.CharField(max_length=100)
-    apellidos = models.CharField(max_length=200)
-    documento_identidad = models.CharField(max_length=20, unique=True)
-    codigo_postal = models.CharField(max_length=5)
-    provincia = models.CharField(max_length=100, blank=True)  # Se rellena automático
-    es_dni_valido = models.BooleanField(default=False)  # Se valida externamente
-    fecha_validacion = models.DateTimeField(null=True, blank=True)
+# socios/dni_utils.py
+import re
+
+def check_dni(dni: str) -> dict:
+    """
+    Valida el formato de un DNI español (8 dígitos + letra).
+    
+    Args:
+        dni: Cadena con el documento a validar
+        
+    Returns:
+        dict con el resultado de la validación
+    """
+    dni = dni.upper().strip()
+    
+    # Patrón: 8 dígitos seguidos de letra válida
+    if not re.match(r'^\d{8}[A-HJ-NP-TV-Z]$', dni):
+        return {
+            "valido": False,
+            "documento": dni,
+            "error": "Formato inválido. Use: 12345678A"
+        }
+    
+    # Validar letra (algoritmo módulo 23)
+    numero = int(dni[:-1])
+    letra = dni[-1]
+    letras_validas = 'TRWAGMYFPDXBNJZSQVHLCKE'
+    
+    if letras_validas[numero % 23] != letra:
+        return {
+            "valido": False,
+            "documento": dni,
+            "error": "Letra incorrecta"
+        }
+    
+    return {
+        "valido": True,
+        "documento": dni,
+        "tipo": "DNI"
+    }
 ```
 
-### 1.2 Problema a resolver
+### Tareas a realizar
 
-Debes crear un `SocioValidadoSerializer` que:
+1. **Crear el archivo `dni_utils.py`** con la función proporcionada
+2. **Crear un endpoint POST** en `api_views.py` accesible en `/api/socios/check-dni/`
+3. **El endpoint debe**:
+   - Recibir JSON: `{"documento": "12345678A"}`
+   - Usar la función `check_dni()` para validar
+   - Devolver el resultado como JSON
 
-1. **Al crear un socio**: Valide el formato del DNI/NIE (8 dígitos + letra, o formato NIE)
-2. **Consulte API externa**: Envíe el DNI a `https://httpbin.org/post` (simula validación) y registre la respuesta
-3. **Enriquezca datos**: Consulte `https://api.zippopotam.us/es/{cp}` para obtener la provincia desde el código postal
-4. **Guarde metadatos**: Almacene en `es_dni_valido` si la API respondió HTTP 200, y la fecha de validación
-
-### 1.3 Ayuda
-
-Para la resolución de cada uno de los apartados se debe buscar en la documentación oficial cómo resolver estos puntos (no se proporciona la solución directa):
+### Guía de ayuda con referencias
 
 | Problema | Referencias a consultar |
 |----------|------------------------|
-| ¿Cómo hacer peticiones HTTP desde Django? | Buscar: `requests python`, `urllib django` |
-| ¿Dónde ejecutar lógica de validación que requiera datos ya parseados? | Buscar: `serializer validate method drf`, `object level validation` |
-| ¿Cómo modificar datos antes de guardar sin que estén en el payload? | Buscar: `serializer create method override`, `validated_data modify` |
-| ¿Cómo manejar si la API externa está caída? | Buscar: `requests timeout exception`, `try except python` |
-| ¿Cómo formatear fechas automáticamente? | Buscar: `django timezone now`, `datetime utc` |
+| ¿Cómo crear un endpoint que no use modelo (solo recibe datos y devuelve resultado)? | Buscar: `APIView drf`, `GenericAPIView`, o `@action` en ViewSet |
+| ¿Cómo acceder a los datos del body de la petición POST? | Buscar: `request.data drf`, `django rest framework request object` |
+| ¿Cómo importar y usar una función desde otro archivo? | Buscar: `python import from module` |
+| ¿Cómo devolver una respuesta JSON con código HTTP 200 o 400 según validez? | Buscar: `Response drf status code`, `rest_framework.response` |
 
-### 1.4 Esqueleto proporcionado
+### Criterios de aceptación
 
-```python
-# socios/serializers.py
-import requests
-from django.utils import timezone
-from rest_framework import serializers
-from .models import Socio, Direccion
+- [ ] POST a `/api/socios/check-dni/` con `{"documento": "12345678A"}` devuelve `{"valido": true, ...}`
+- [ ] POST con `{"documento": "12345678Z"}` devuelve `{"valido": false, ...}` y HTTP 400
+- [ ] POST con formato incorrecto devuelve error descriptivo
+- [ ] El código importa `check_dni` desde `socios.dni_utils`
 
-class SocioValidadoSerializer(serializers.ModelSerializer):
-    """
-    Serializer que valida DNI contra API externa y enriquece provincia desde CP.
-    Campos de solo lectura: provincia, es_dni_valido, fecha_validacion
-    """
-    # TODO: Define qué campos son de solo lectura en Meta
-    
-    class Meta:
-        model = Socio
-        # TODO: Especifica fields o exclude según necesidad
-    
-    def validate_documento_identidad(self, value):
-        """
-        Valida formato del DNI/NIE.
-        Investiga: validación regex DNI español
-        """
-        # TU CÓDIGO AQUÍ
-        pass
-    
-    def validate(self, data):
-        """
-        Validación a nivel de objeto.
-        Investiga: cómo acceder a campos ya validados
-        """
-        # TODO: Verificar que codigo_postal tiene 5 dígitos
-        return data
-    
-    def create(self, validated_data):
-        """
-        Crea el socio consultando APIs externas.
-        Investiga: cómo hacer peticiones POST y GET, manejar timeouts
-        """
-        # PASO 1: Extraer datos necesarios (dni, cp)
-        dni = validated_data.get('documento_identidad')
-        cp = validated_data.get('codigo_postal')
-        
-        # PASO 2: Consultar API de validación de DNI (simulada con httpbin)
-        # Endpoint: POST https://httpbin.org/post
-        # Enviar JSON: {"documento": dni}
-        # Si responde 200, es_dni_valido = True
-        
-        # PASO 3: Consultar API de códigos postales
-        # Endpoint: GET https://api.zippopotam.us/es/{cp}
-        # Extraer: response.json()['places'][0]['state'] (es la provincia)
-        
-        # PASO 4: Añadir campos calculados a validated_data
-        # provincia = resultado de paso 3
-        # es_dni_valido = resultado de paso 2
-        # fecha_validacion = timezone.now()
-        
-        # PASO 5: Crear el socio con datos completos
-        return super().create(validated_data)
+
+
+## Apartado 2: Extender el Serializador
+
+### Objetivo
+Usar la misma lógica de validación pero integrada en el flujo de creación de socios.
+
+### Tareas a realizar
+
+1. **Crear `DNIValidatorSerializer`** en `serializers.py`:
+   - Campo `documento` de tipo CharField
+   - Método `validate_documento()` que use la función `check_dni()`
+   - Si `check_dni()` devuelve `valido: False`, lanzar `ValidationError`
+
+2. **Modificar `SocioCreateSerializer`**:
+   - Usar `DNIValidatorSerializer` como base o llamar a su validación
+   - Asegurar que no se puede crear un socio con DNI inválido
+
+### Guía de ayuda con referencias
+
+| Problema | Referencias |
+|----------|-------------|
+| ¿Cómo validar un campo específico en un serializer? | Buscar: `validate_<field> drf`, `field level validation` |
+| ¿Cómo reutilizar validación entre serializers? | Buscar: `serializer inheritance drf`, `mixin pattern` |
+| ¿Cómo convertir el dict de `check_dni()` en excepción de validación? | Buscar: `serializers.ValidationError`, `raise validation error drf` |
+
+### Criterios de aceptación
+
+- [ ] Intentar crear socio con DNI "12345678Z" devuelve error 400 con mensaje claro
+- [ ] Crear socio con DNI "12345678A" funciona correctamente
+- [ ] El código no duplica la lógica de validación (reusa `check_dni`)
+
+
+## PDF entregable:
+
+En la entrega de la tarea se deben incluir (a tamaño de letra legible!!!)
+
+1. **Capturas de pantalla** de:
+   - POST `/api/socios/check-dni/` con DNI válido (200 OK)
+   - POST `/api/socios/check-dni/` con DNI inválido (400 Bad Request)
+   - POST `/api/socios/` creando socio con DNI inválido (error de validación)
+
+2. **Código** de:
+   - `dni_utils.py` (proporcionado, sin cambios)
+   - `api_views.py` con el endpoint
+   - `serializers.py` con la validación integrada
+
+3. **Breve explicación** (5-10 líneas) de qué problema tuviste al montar el endpoint y cómo lo resolviste
+
+## Ejemplos de uso esperados
+
+### Endpoint check-dni (Parte 1)
+
+```bash
+# Válido
+curl -X POST http://localhost:8000/api/socios/check-dni/ \
+  -H "Content-Type: application/json" \
+  -d '{"documento": "12345678A"}'
+```
+Respuesta 200:
+```json
+{"valido": true, "documento": "12345678A", "tipo": "DNI"}
 ```
 
-### 1.5 Criterios de evaluación
+```bash
+# Inválido
+curl -X POST http://localhost:8000/api/socios/check-dni/ \
+  -H "Content-Type: application/json" \
+  -d '{"documento": "12345678Z"}'
+```
+Respuesta 400:
+```json
+{"valido": false, "documento": "12345678Z", "error": "Letra incorrecta"}
+```
 
-- [ ] El serializer rechaza DNIs con formato inválido (mensaje claro)
-- [ ] Consulta httpbin.org y registra si respondió correctamente
-- [ ] Obtiene provincia desde zippopotam.us y la guarda
-- [ ] Maneja excepciones si las APIs fallan (no crashea, guarda `es_dni_valido=False`)
-- [ ] Los campos calculados no aparecen en el payload de entrada (read-only)
+### Creación de socio (Parte 2)
+
+```bash
+curl -X POST http://localhost:8000/api/socios/ \
+  -H "Content-Type: application/json" \
+  -d '{"nombre": "Ana", "apellidos": "García", "documento_identidad": "12345678Z", ...}'
+```
+Respuesta 400:
+```json
+{"documento_identidad": ["Letra incorrecta"]}
+```
