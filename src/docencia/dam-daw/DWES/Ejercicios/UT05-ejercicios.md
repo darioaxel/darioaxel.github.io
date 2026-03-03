@@ -206,3 +206,193 @@ curl http://localhost:8000/discos
 curl "http://localhost:8000/discos?artista=NIN"
 curl -X POST "http://localhost:8000/discos?titulo=Pretty Hate Machine&artista=NIN&anio=1989&genero=industrial"
 ```
+## EJERCICIO 3: Creación de una documentación con OpenAPI/Swagger
+
+### 3.1: Instalación y Configuración Básica 
+
+#### 3.1.1: Instalar dependencia
+
+Ejecuta en tu entorno Poetry:
+
+```bash
+poetry add drf-spectacular
+```
+
+**Verificación:** Debe aparecer en tu `pyproject.toml`:
+```toml
+[tool.poetry.dependencies]
+drf-spectacular = "^0.27.0"
+```
+
+#### 3.1.2: Registrar en aplicaciones
+
+Abre `myong_proyect/settings.py` y añade `'drf_spectacular'` a `INSTALLED_APPS`:
+
+```python
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    # ... tus apps ...
+    'rest_framework',
+    'drf_spectacular',  # <-- Añade esta línea
+    'socios',
+]
+```
+
+#### 3.1.3: Configurar generador de schema
+
+En el mismo `settings.py`, añade o modifica estas secciones:
+
+```python
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.AllowAny',
+    ],
+    # Esta línea activa la generación automática
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
+}
+
+# Nueva sección: configuración de spectacular
+SPECTACULAR_SETTINGS = {
+    'TITLE': 'MyOng API',
+    'DESCRIPTION': 'API de gestión de socios para ONG',
+    'VERSION': '1.0.0',
+}
+```
+
+:::info
+**Investiga un poco:** ¿Qué otras opciones existen en `SPECTACULAR_SETTINGS`? Busca en la documentación oficial de drf-spectacular.
+:::
+
+
+### 2: Rutas de Documentación
+
+#### 2.1: Importar vistas de documentación
+
+En `myong_proyect/urls.py`, añade los imports:
+
+```python
+from django.contrib import admin
+from django.urls import path, include
+# NUEVOS IMPORTS
+from drf_spectacular.views import (
+    SpectacularAPIView,      # Descarga del schema
+    SpectacularSwaggerView,  # Interfaz Swagger UI
+    SpectacularRedocView,    # Interfaz ReDoc
+)
+```
+
+#### 2.2: Añadir URLs de documentación
+
+Añade estas rutas al `urlpatterns`:
+
+```python
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('api/', include('socios.urls_api')),
+    
+    # RUTAS DE DOCUMENTACIÓN (añade aquí)
+    # TODO: URL para descargar schema OpenAPI (YAML/JSON)
+    # path('api/schema/', ...)
+    
+    # TODO: URL para interfaz Swagger UI
+    # path('api/docs/', ...)
+    
+    # TODO: URL opcional para interfaz ReDoc
+    # path('api/redoc/', ...)
+]
+```
+:::info
+**Investiga un poco:** Busca en la documentación de drf-spectacular cómo se configuran `SpectacularAPIView`, `SpectacularSwaggerView` y `SpectacularRedocView`. Presta atención al parámetro `url_name`.
+:::
+
+### 3: Verificación
+
+#### 3.1: Ejecutar servidor
+
+```bash
+python manage.py runserver
+```
+
+#### 3.2: Comprobar endpoints
+
+Abre en navegador y verifica que cargan sin error:
+
+| URL | Debe mostrar |
+|-----|--------------|
+| `http://localhost:8000/api/schema/` | Archivo YAML/JSON con el schema |
+| `http://localhost:8000/api/docs/` | Interfaz Swagger UI interactiva |
+| `http://localhost:8000/api/redoc/` | Documentación ReDoc |
+
+**Verificación de contenido:** En Swagger UI (`/api/docs/`), debes ver:
+- Todos tus endpoints (`/socios/`, `/socios/check-dni/`, etc.)
+- Métodos HTTP disponibles (GET, POST, etc.)
+- Schemas de request/response generados desde tus serializers
+
+### 4: Mejora de Documentación
+
+#### 4.1: Añadir docstrings descriptivos
+
+En `socios/api_views.py`, añade docstrings a tu ViewSet:
+
+```python
+class SocioViewSet(viewsets.ModelViewSet):
+    """
+    Gestión completa de socios de la ONG.
+    
+    Permite crear, consultar, actualizar y eliminar socios.
+    Incluye validación automática de DNI y gestión de direcciones anidadas.
+    """
+    # ... tu código existente ...
+    
+    @action(detail=False, methods=['post'])
+    def check_dni(self, request):
+        """
+        Valida el formato y letra de un DNI/NIE español.
+        
+        Usa el algoritmo módulo 23 para verificar la letra de control.
+        No requiere autenticación.
+        """
+        # ... tu código ...
+```
+
+**Verificación:** Recarga `/api/docs/` y comprueba que aparecen las descripciones.
+
+#### 4.2: Personalizar endpoint con @extend_schema
+
+Importa y usa el decorador para mejorar la documentación del endpoint `check_dni`:
+
+```python
+from drf_spectacular.utils import extend_schema, OpenApiExample
+
+# ... en tu ViewSet ...
+
+@extend_schema(
+    # TODO: Añade summary (título corto)
+    # TODO: Añade description (descripción larga)
+    # TODO: Define responses con ejemplos para 200 y 400
+)
+@action(detail=False, methods=['post'])
+def check_dni(self, request):
+    # ... tu código ...
+```
+:::info
+**Investiga:** Busca en la documentación de drf-spectacular:
+- Cómo usar `OpenApiExample` para mostrar ejemplos de respuesta
+- Cómo definir diferentes responses por código HTTP (200, 400)
+:::
+#### 4.3: Añadir parámetros de query documentados
+
+Para el endpoint de pagos, documenta el parámetro `year`:
+
+```python
+from drf_spectacular.utils import OpenApiParameter
+
+@extend_schema(
+    # TODO: Añade parámetro 'year' de tipo integer, opcional, con default=2024
+    # TODO: Añade descripción: "Año de consulta para el historial de pagos"
+)
+@action(detail=True, methods=['get'])
+def pagos(self, request, pk=None):
+    # ... tu código ...
+```
