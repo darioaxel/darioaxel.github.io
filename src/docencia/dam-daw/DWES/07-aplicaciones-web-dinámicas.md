@@ -5,7 +5,6 @@ icon: material-symbols:dynamic-feed-rounded
 ---
 
 # UT07 Aplicaciones web dinámicas
-![En construcción](/images/under-construction.jpg)
 
 > **En este tema trabajaremos los siguientes RAs:**
 > RA8. - Genera páginas Web dinámicas analizando y utilizando tecnologías y frameworks del servidor Web que añadan código al lenguaje de marcas
@@ -115,7 +114,7 @@ Como lo define Roy Fielding en su tesis sobre REST: *"El estado de una aplicaci�
 | **Frameworks** | FastAPI, Express, Spring Boot (API) | Django, Laravel, ASP.NET MVC |
 
 
-## 3. HTMX: Voltear el modelo de SPAs
+## 3. HTMX: Replantear el modelo de SPAs
 
 ### 3.1. ¿Qué es HTMX?
 
