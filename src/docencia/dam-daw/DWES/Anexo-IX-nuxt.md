@@ -1117,30 +1117,8 @@ main()
 }
 ```
 
----
 
-## 7. Ejercicios prácticos
-
-### Ejercicio 1: Validación de DNI (15 min)
-Implementa el endpoint `/api/socios/check-dni` consumiéndolo desde el frontend para validación en tiempo real durante la alta de socios.
-
-### Ejercicio 2: Exportación a CSV (30 min)
-Crea un endpoint `/api/socios/export.csv` que genere un archivo CSV con los socios activos, utilizando la librería `papaparse` o generación manual de CSV.
-
-### Ejercicio 3: Estadísticas (45 min)
-Implementa un endpoint `/api/socios/stats` que retorne:
-- Total de socios activos/inactivos
-- Distribución por tipo de cuota
-- Altas por mes (últimos 12 meses)
-
-Crea un componente `SociosStats.vue` que visualice estos datos con gráficos simples.
-
-### Ejercicio 4: Soft delete vs Hard delete (30 min)
-Modifica el endpoint DELETE para soportar un parámetro `?permanente=true` que permita eliminación física (solo para admins), manteniendo la baja lógica por defecto.
-
----
-
-## 8. Comparativa: Django vs Nuxt+Nitro
+## 7. Comparativa: Django vs Nuxt+Nitro
 
 | Aspecto | Django (MyONG) | Nuxt + Nitro |
 |---------|---------------|--------------|
@@ -1154,9 +1132,9 @@ Modifica el endpoint DELETE para soportar un parámetro `?permanente=true` que p
 | **Admin** | Django Admin automático | Panel personalizado en `/pages/admin` |
 | **Despliegue** | Servidor WSGI/ASGI (Gunicorn) | Cualquier runtime (Node, Deno, Workers) |
 
----
 
-## 9. Recursos adicionales
+
+## 8. Recursos adicionales
 
 - **Documentación Nitro**: https://nitro.unjs.io/ 
 - **Prisma con Nuxt**: https://sidebase.io/nuxt-prisma/getting-started 
