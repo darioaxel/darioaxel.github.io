@@ -56,7 +56,7 @@ Como lo define Roy Fielding en su tesis sobre REST: *"El estado de una aplicaci�
 
 **Stateful (con estado)**: El servidor mantiene información de la sesión del usuario entre peticiones. Una vez autenticado, sabe quién eres sin reenviar credenciales cada vez.
 
-![Statefull vs stateless](https://media.licdn.com/dms/image/v2/D5622AQGf5r_MMJSHSw/feedshare-shrink_800/B56ZqryjNzH8Ag-/0/1763818772558?e=1770854400&v=beta&t=UC3C3Ipg9wBGT8cfcEQ5_Mydh1Y4l6BMHRKf7tMxQWo)
+![Statefull vs stateless](/images/dwes/statefullvsstateless.png)
 
 ### 2.2. **Aproximación Stateless – La web moderna**
 
