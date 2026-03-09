@@ -271,7 +271,7 @@ curl -s -X POST $BASE_URL/token/refresh/ \
   -d "{\"refresh\": \"$REFRESH\"}" | jq .
 ```
 
-### ✅ Entregable Parte 3:
+### Entregable Parte 3:
 - Captura del script `test_jwt.sh` ejecutándose mostrando todo el flujo
 - Explicación de qué sucede en el paso 5 y por qué
 
