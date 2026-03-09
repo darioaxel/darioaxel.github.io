@@ -1,0 +1,59 @@
+name: Deploy to Hetzner Server
+
+on:
+  push:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+      
+    - name: Setup pnpm
+      uses: pnpm/action-setup@v4
+      with:
+        version: 9
+        
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: 22
+        cache: 'pnpm'
+    
+    - name: Install Dependencies
+      run: |
+        corepack enable
+        pnpm install --frozen-lockfile
+
+    - name: Build Docs
+      env:
+        NODE_OPTIONS: --max_old_space_size=8192
+      run: |
+        pnpm run docs:build
+
+    - name: Deploy to Server via SSH
+      uses: appleboy/scp-action@master
+      with:
+        host: ${{ secrets.HETZNER_HOST }}
+        username: deploy
+        key: ${{ secrets.HETZNER_SSH_KEY }}
+        port: ${{ secrets.HETZNER_PORT || '22' }}
+        source: "src/.vuepress/dist/"
+        target: "/apps/app1/dist"
+        strip_components: 3  # Elimina src/.vuepress/ del path
+
+    - name: Restart Container
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.HETZNER_HOST }}
+        username: deploy
+        key: ${{ secrets.HETZNER_SSH_KEY }}
+        port: ${{ secrets.HETZNER_PORT || '22' }}
+        script: |
+          cd /apps/app1
+          docker compose down
+          docker compose up -d --build
