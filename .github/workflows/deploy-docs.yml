@@ -49,17 +49,3 @@ jobs:
           # Deploy Docs
           branch: gh-pages
           folder: src/.vuepress/dist
-  deploy-hetzner:
-    needs: deploy-gh-pages  # Se ejecuta después del deploy a GH Pages
-    runs-on: ubuntu-latest
-    steps:
-      - name: Deploy to Hetzner
-        uses: appleboy/ssh-action@master
-        with:
-          host: ${{ secrets.HETZNER_HOST }}
-          username: ${{ secrets.HETZNER_USER }}
-          key: ${{ secrets.HETZNER_SSH_KEY }}
-          script: |
-            cd /apps/app1
-            git pull origin main
-            docker compose up -d --build
