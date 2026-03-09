@@ -1,0 +1,45 @@
+# Git
+.git
+.gitignore
+
+# Node
+node_modules
+.npm
+.pnpm-store
+
+# VuePress dev/build
+src/.vuepress/.cache
+src/.vuepress/.temp
+src/.vuepress/dist  # Esto se copia aparte
+
+# Logs
+*.log
+npm-debug.log*
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Env
+.env
+.env.local
+.env.*.local
+
+# Backup
+.backup-original
+*.backup.*
+backups/
+
+# Docker
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+# GitHub
+.github

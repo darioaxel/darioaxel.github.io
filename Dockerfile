@@ -9,8 +9,8 @@ RUN rm /etc/nginx/conf.d/default.conf
 # Copiar configuración personalizada
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
-# Copiar archivos estáticos
-COPY public/ /usr/share/nginx/html/
+# Copiar archivos estáticos (build de VuePress)
+COPY dist/ /usr/share/nginx/html/
 
 # Health check
 HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
