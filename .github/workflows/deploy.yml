@@ -1,0 +1,43 @@
+name: Deploy to Hetzner Server
+
+on:
+  push:
+    branches: [ main, master ]
+  workflow_dispatch:  # Permite ejecutar manualmente
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    
+    - name: Deploy to Hetzner Server
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.HETZNER_HOST }}
+        username: ${{ secrets.HETZNER_USER }}
+        key: ${{ secrets.HETZNER_SSH_KEY }}
+        port: ${{ secrets.HETZNER_PORT || '22' }}
+        script: |
+          echo "🚀 Iniciando despliegue..."
+          cd /apps/app1
+          
+          # Hacer backup de la página actual (opcional)
+          cp -r public public.backup.$(date +%Y%m%d_%H%M%S) 2>/dev/null || true
+          
+          # Actualizar el código
+          git fetch origin
+          git reset --hard origin/main || git reset --hard origin/master
+          
+          # Reconstruir y reiniciar el contenedor
+          docker compose down
+          docker compose up -d --build
+          
+          # Verificar que está corriendo
+          sleep 5
+          docker ps | grep app1
+          
+          echo "✅ Despliegue completado"
+          echo "🌐 https://www.darioaxel.dev"

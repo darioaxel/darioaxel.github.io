@@ -1,0 +1,28 @@
+# Docker
+.dockerignore
+
+# Backups
+*.backup.*
+.backup-original/
+
+# Logs
+*.log
+
+# Environment
+.env
+.env.local
+
+# Node (para cuando migres a Nuxt)
+node_modules/
+.nuxt/
+.output/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
