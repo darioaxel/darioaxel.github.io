@@ -2,7 +2,7 @@
 title: Ejercicios UT05. Servicios Web - REST
 icon: pen
 ---
-# Ejercicios UT04. Persistencia de datos
+# Ejercicios UT05. Servicios Web - REST
 
 ## EJERCICIO 1: Consumo de un API público
 
