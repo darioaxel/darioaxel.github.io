@@ -1,3 +1,14 @@
+---
+title: Flasheando una placa ESP_IR_TR_WIFI
+icon: famicons:hardware-chip-outline
+tag:
+  - ESP6822
+  - Raspberry Pi Zero W
+  - Tasmota-IR
+date: 3/9/2026
+---
+
+
 # Flasheando una placa ESP_IR_TR_WIFI con Tasmota-IR: Crónica de un proyecto que casi fracasa
 
 > **Proyecto:** Análisis IR + Emulación Bus CCN Carrier  
