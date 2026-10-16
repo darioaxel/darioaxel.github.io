@@ -30,6 +30,20 @@ html[data-theme="dark"] .vp-blog-hero {
   }
 }
 
+// El título y la descripción del hero del blog vienen en blanco por
+// defecto (pensado para fotos de fondo) y no se leen sobre el fondo
+// claro de Space Invaders. En modo claro se ponen oscuros.
+.vp-blog-hero {
+  .vp-blog-hero-title {
+    color: #1b1b1b;
+    text-shadow: none;
+  }
+
+  .vp-blog-hero-description {
+    color: #3a3a3a;
+  }
+}
+
 // Cards visibles en las secciones Blog y Proyectos de la portada.
 // Por defecto el tema solo muestra icono + título sobre fondo transparente;
 // aquí se les da cuerpo de card con las variables de color de theme-hope
