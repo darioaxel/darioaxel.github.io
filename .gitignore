@@ -17,6 +17,11 @@ node_modules/
 .nuxt/
 .output/
 
+# VuePress build (el Dockerfile lo copia desde el contexto sin necesidad de commitearlo)
+src/.vuepress/dist/
+src/.vuepress/.temp/
+src/.vuepress/.cache/
+
 # IDE
 .vscode/
 .idea/

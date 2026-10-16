@@ -7,10 +7,9 @@ node_modules
 .npm
 .pnpm-store
 
-# VuePress dev/build
+# VuePress dev/build (dist NO se excluye: el Dockerfile lo copia a la imagen)
 src/.vuepress/.cache
 src/.vuepress/.temp
-src/.vuepress/dist  # Esto se copia aparte
 
 # Logs
 *.log

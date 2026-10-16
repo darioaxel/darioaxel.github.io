@@ -5,6 +5,11 @@ on:
     branches: [ main, master ]
   workflow_dispatch:  # Permite ejecutar manualmente
 
+# Evita deploys concurrentes (varios pushes seguidos)
+concurrency:
+  group: deploy-app1-hetzner
+  cancel-in-progress: false
+
 jobs:
   deploy-hetzner:
     runs-on: ubuntu-latest

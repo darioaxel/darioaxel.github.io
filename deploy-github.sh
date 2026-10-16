@@ -6,6 +6,9 @@
 
 set -e
 
+# Modo CI: pnpm aborta operaciones sin confirmación si no hay TTY
+export CI=true
+
 APP_DIR="/apps/app1"
 BACKUP_DIR="/apps/backups"
 
@@ -91,6 +94,17 @@ git reset --hard "origin/$BRANCH"
 log_success "Código actualizado a: $(git rev-parse --short HEAD)"
 
 # =============================================================================
+# BUILD DE LA DOCUMENTACIÓN (VuePress)
+# =============================================================================
+
+log_info "Instalando dependencias..."
+pnpm install --frozen-lockfile
+
+log_info "Generando build de VuePress..."
+NODE_OPTIONS=--max_old_space_size=8192 pnpm run docs:build
+log_success "Build generado en src/.vuepress/dist/"
+
+# =============================================================================
 # BUILD Y DEPLOY (Docker)
 # =============================================================================
 
@@ -146,7 +160,5 @@ echo "🔀 Commit: $(git rev-parse --short HEAD)"
 echo "👤 Usuario: $(whoami)"
 echo "🐋 Contenedor: $(docker ps --filter name=app1 --format 'table {{.Names}}\t{{.Status}}' | tail -1)"
 echo ""
-echo "🌐 URLs:"
-echo "   • Producción: https://www.darioaxel.dev"
-echo "   • GitHub:     https://darioaxel.github.io"
+echo "🌐 URL de producción: https://www.darioaxel.dev"
 echo ""
