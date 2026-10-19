@@ -44,28 +44,32 @@ html[data-theme="dark"] .vp-blog-hero {
   }
 }
 
-// Cards visibles en las secciones Blog y Proyectos de la portada.
-// Por defecto el tema solo muestra icono + título sobre fondo transparente;
-// aquí se les da cuerpo de card con las variables de color de theme-hope
-// (se adaptan solas al tema oscuro).
+// Cards de las secciones Blog y Proyectos de la portada, con el mismo
+// formato que los botones del hero (vp-hero-action): fondo
+// --vp-c-control, forma de píldora y colores de texto del tema
+// (se adaptan solos al tema oscuro).
 .vp-features .vp-feature-item {
-  background: var(--vp-c-bg-elv);
-  border: 1px solid var(--vp-c-border);
-  border-radius: 16px;
-  padding: 1.5rem 1.25rem;
-  box-shadow: 0 4px 16px rgb(0 0 0 / 8%);
+  background: var(--vp-c-control);
+  color: var(--vp-c-text);
+  border: none;
+  border-radius: 1.5rem;
+  padding: 1.5rem 1.5rem;
+  text-align: center;
+  box-shadow: none;
   transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease,
-    background 0.25s ease;
+    background var(--vp-t-color),
+    transform var(--vp-t-transform),
+    box-shadow var(--vp-t-transform);
 
   &:hover {
+    background: var(--vp-c-control-hover);
     transform: translateY(-4px);
-    box-shadow: 0 12px 28px rgb(0 0 0 / 15%);
+    box-shadow: 0 8px 20px rgb(0 0 0 / 12%);
   }
 
   .vp-feature-title {
-    margin-top: 0.25rem;
+    margin-top: 0.5rem;
+    color: var(--vp-c-text);
   }
 
   .vp-feature-description {
